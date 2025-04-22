@@ -8,7 +8,7 @@ export default function Home() {
       className="overflow-x-hidden"
     >
       {/* Header Section */}
-      <div className="absolute top-0 left-0 w-full h-[4vw] bg-[#121212] z-50 flex justify-center items-center text-[#ffffff] font-bold text-[clamp(12px,_2vw,_24px)]">
+      <div className="absolute top-0 left-0 w-full h-[4vw] bg-[#121212] z-50 flex justify-center items-center text-[#ffffff] font-bold text-[clamp(0px,_2vw,24px)]">
         <div className="flex justify-center items-center w-full max-w-screen-xl px-4 mx-auto space-x-[3vw]">
           <Link
             href="/tbd"
