@@ -31,7 +31,7 @@ export default function Home() {
               alt="BrickBot Logo"
               width={928}
               height={502}
-              className="w-[clamp(60px,_10vw,_180px)] h-auto object-contain mt-[2vw]"
+              className="w-[clamp(0px,_10vw,_180px)] h-auto object-contain mt-[2vw]"
             />
           </Link>
           <Link
@@ -57,7 +57,7 @@ export default function Home() {
             alt="random"
             height={1280}
             width={1920}
-            className="absolute top-[4vw] right-0 w-full h-[35vw] object-cover z-[-1] opacity-50"
+            className="absolute top-[4vw] right-0 w-[80vw] h-[35vw] object-cover z-[-1] opacity-50"
           />
           <div className="absolute top-[39vw] left-0 w-full h-[2px] bg-[linear-gradient(90deg,_#000000_10%,_#ffd100_35%,_#000000_85%)] opacity-50 z-10"></div>
         </div>
@@ -68,7 +68,7 @@ export default function Home() {
             <p className="mt-[-10px] mb-[-10px]">We build our future</p>
             <p className="mt-[-10px] mb-[-10px]">Brick by Brick!</p>
             <Link href="/support-us">
-              <button className="flex items-center justify-center h-[3vw] w-[15vw] max-w-full bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[1.25vw] rounded-[1.5vw] hover:opacity-75 border-2 border-[#ffd100] mt-[1vw]">
+              <button className="cursor-pointer flex items-center justify-center h-[3vw] w-[15vw] max-w-full bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[1.25vw] rounded-[1.5vw] hover:opacity-75 border-2 border-[#ffd100] mt-[1vw]">
                 BECOME A SPONSOR
               </button>
             </Link>
