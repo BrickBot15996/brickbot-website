@@ -68,7 +68,7 @@ export default function Home() {
             <p className="mt-[-10px] mb-[-10px]">We build our future</p>
             <p className="mt-[-10px] mb-[-10px]">Brick by Brick!</p>
             <Link href="/support-us">
-              <button className="flex items-center justify-center h-[3vw] w-[15vw] max-w-full bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[1.25vw] rounded-[1.5vw] hover:opacity-75 border-2 border-[#ffd100] mt-[3vw]">
+              <button className="flex items-center justify-center h-[3vw] w-[15vw] max-w-full bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[1.25vw] rounded-[1.5vw] hover:opacity-75 border-2 border-[#ffd100] mt-[1vw]">
                 BECOME A SPONSOR
               </button>
             </Link>
