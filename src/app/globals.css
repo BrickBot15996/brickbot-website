@@ -19,6 +19,13 @@
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+  margin: 0; /* Make sure no body margin causes horizontal overflow */
+  padding: 0; /* Ensure padding doesn't cause overflow */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
