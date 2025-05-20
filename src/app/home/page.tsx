@@ -37,7 +37,7 @@ function Banner() {
             <p className="text-[4.5vh]/[5.5vh]">We build our future</p>
             <p className="text-[4.5vh]/[5.5vh]">Brick by Brick!</p>
             <Link href="/support-us">
-              <button className="mt-4 bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[2.25vh] px-[1vh] py-[0.5vh] rounded-[2.5vh]  border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-105 transition-transform duration-150">
+              <button className="mt-4 bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[2.25vh] px-[2vh] py-[0.5vh] rounded-[2.5vh]  border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 transition-transform duration-150 cursor-pointer">
                 BECOME A SPONSOR
               </button>
             </Link>
