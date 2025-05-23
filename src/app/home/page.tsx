@@ -15,6 +15,7 @@ export default function Home() {
       <main>
         <Banner />
         <AboutUs />
+        <Projects />
       </main>
 
       <footer></footer>
@@ -40,9 +41,20 @@ function Banner() {
           </div>
           <div className="ml-[3vw]">
             <Link href="/support-us">
-              <button className="bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[2.25vh] px-[2vh] py-[0.5vh] rounded-[2.5vh] border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 transition-transform duration-150 cursor-pointer">
-                BECOME A SPONSOR
-              </button>
+              <div className="">
+                <button className="flex flex-row justify-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[1.25vw] py-[0.5vh] rounded-[2.5vh] border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 transition-transform duration-150 cursor-pointer">
+                  <p className="text-[#ffd100] font-extrabold text-[2.25vh]">
+                    BECOME A SPONSOR
+                  </p>
+                  <Image
+                    src="/right-arrow.png"
+                    alt="right-arrow"
+                    width={30}
+                    height={25}
+                    className="z-[10] inline mr-[-0.5vw]"
+                  />
+                </button>
+              </div>
             </Link>
           </div>
         </div>
@@ -54,15 +66,15 @@ function Banner() {
 
 function AboutUs() {
   return (
-    <section className="relative flex flex-col items-start justify-center h-full w-full ml-[3vw] mt-[2vh]">
+    <section className="relative flex flex-col items-start justify-center h-full w-full ml-[3vw] mt-[4vh] mb-[10vh]">
       <h1 className="text-[#ffd100] font-extrabold text-[4vh] mb-[1vh]">
         About Us
       </h1>
-      <div className="relative flex flex-row justify-center space-x-[2vw]">
-        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)]">
+      <div className="relative flex flex-row items-stretch justify-center space-x-[2vw]">
+        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[250px]">
           {/* this is so cursed */}
-          <div className="w-[46vw] h-[25vh] rounded-[2.375vh] bg-[#0a0a0a]">
-            <div className="w-[46vw] h-[25vh] rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[1vh]">
+          <div className="w-[46vw] h-auto rounded-[2.375vh] bg-[#0a0a0a]">
+            <div className="w-[46vw] h-auto rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[2vh] min-h-[250px]">
               <p className="text-[2vh]/[3vh] font-medium text-white">
                 We&apos;ve been in this since like 2016, certainly not the best
                 team but together we Brick and Bot!! (ts pmo Chicken jockey)
@@ -74,23 +86,57 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-[25vh] object-contain">
+        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] object-contain">
           <Image
             src="/random.jpg"
             alt="random"
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover rounded-[2.375vh] overflow-hidden"
+            fill
+            className="object-cover rounded-[2.375vh] overflow-hidden"
           />
         </div>
       </div>
       <div className="mt-[2vh]">
         <Link href="/achievements">
-          <button className="bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] text-[#ffd100] font-extrabold text-[2.25vh] px-[2vh] py-[0.5vh] rounded-[2.5vh] border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 transition-transform duration-150 cursor-pointer">
-            OUR ACHIEVEMENTS
-          </button>
+          <div className="">
+            <button className="flex flex-row justify-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[2vh] py-[0.5vh] rounded-[2.5vh] border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 transition-transform duration-150 cursor-pointer">
+              <p className="text-[#ffd100] font-extrabold text-[2.25vh]">
+                OUR ACHIEVEMENTS
+              </p>
+              <Image
+                src="/right-arrow.png"
+                alt="right-arrow"
+                width={30}
+                height={25}
+                className="z-[10] inline mr-[-0.25vw]"
+              />
+            </button>
+          </div>
         </Link>
       </div>
     </section>
+  );
+}
+
+function Projects() {
+  return (
+    <section className="relative flex flex-col items-start justify-center h-full w-full ml-[3vw] mt-[2vh]">
+      <h1 className="text-[#ffd100] font-extrabold text-[4vh] mb-[1vh]">
+        Projects
+      </h1>
+      <div className="flex flex-row">
+        <SmallProject />
+        <SmallProject />
+        <SmallProject />
+        <SmallProject />
+      </div>
+    </section>
+  );
+}
+
+function SmallProject() {
+  return (
+    <div>
+      <div></div>
+    </div>
   );
 }
