@@ -112,9 +112,9 @@ function Projects() {
         Projects
       </h1>
       <LargeProject
-        color="#50DCFF"
+        color="#54ECD8"
         name="SimplicityFTC"
-        logoPath="/brick_yellow.png"
+        logoPath="/projects/simplicityftclogo1.png"
         link="https://simplicityftc.github.io/SimplicityFTC-Docs/"
         description={
           "you give off chill pedophile vibes like you lowkey like kids but\n" +
@@ -133,28 +133,28 @@ function Projects() {
         <SmallProject
           color="#FFD100"
           name={"Portfolio\nLibrary"}
-          logoPath="/bricklogo.png"
+          logoPath="/projects/thevaultlogo1.png"
           link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
           description=""
         />
         <SmallProject
           color="#FF6750"
           name={"BrickBot Guide &\nDocumentation"}
-          logoPath="/bricklogo.png"
+          logoPath="/projects/brickdocslogo1.png"
           link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
           description=""
         />
         <SmallProject
           color="#9E50FF"
           name={"Connecting\nFTC Teams"}
-          logoPath="/bricklogo.png"
+          logoPath="/projects/sparkslogo.png"
           link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
           description=""
         />
         <SmallProject
-          color="#ADFF50"
-          name={"România\nOnestă"}
-          logoPath="/bricklogo.png"
+          color="#50FF9C"
+          name={"Caravana\nBrickBot"}
+          logoPath="/projects/caravanabrick1.png"
           link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
           description=""
         />
@@ -241,7 +241,7 @@ function LargeProject({
               ></div>
             </div>
           </div>
-          <div className="absolute left-0 bottom-0 px-[2vw] py-[2vh]">
+          <div className="absolute left-0 bottom-0 px-[1.25vw] py-[2vh]">
             <Image
               src={logoPath}
               alt={name + "Logo"}
@@ -250,7 +250,7 @@ function LargeProject({
               className="h-auto w-[10vw]"
             />
           </div>
-          <div className="absolute right-0 bottom-0 px-[1vw] py-[1vh]">
+          <div className="absolute right-0 bottom-0 px-[1vw] py-[1vw]">
             <div className="relative h-auto w-auto p-[0.25vh] bg-[linear-gradient(180deg,_#FFA5A5,_#EC7171)] rounded-full">
               <div className="relative h-full w-full bg-[#4B1717] rounded-full px-[1.25vw]">
                 <p className="font-semibold text-[1.5vh] text-[#FFBEBE]">New</p>
@@ -261,7 +261,10 @@ function LargeProject({
         <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw]">
           <div className="h-full rounded-[2.375vh] bg-[#0a0a0a]">
             <div className="h-full rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[1vh]">
-              <h1 className="font-semibold text-[3.5vh] text-[#54ECD8]">
+              <h1
+                className="font-semibold text-[3.5vh]"
+                style={{ color: color }}
+              >
                 {name}
               </h1>
               <p className="text-[2vh] font-medium text-white">{description}</p>
