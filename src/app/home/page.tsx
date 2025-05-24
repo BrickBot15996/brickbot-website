@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
-import { useEffect } from "react";
+// import { useKeenSlider } from "keen-slider/react";
+// import { useEffect } from "react";
 
 export default function Home() {
   return (
@@ -276,59 +276,59 @@ function LargeProject({
   );
 }
 
-function SponsorCarousel() {
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: true,
-    renderMode: "performance",
-    slides: { perView: 4, spacing: 16 },
-    drag: false,
-  });
+// function SponsorCarousel() {
+//   const [sliderRef, instanceRef] = useKeenSlider({
+//     loop: true,
+//     renderMode: "performance",
+//     slides: { perView: 4, spacing: 16 },
+//     drag: false,
+//   });
 
-  useEffect(() => {
-    const slider = instanceRef.current;
-    if (!slider) return;
+//   useEffect(() => {
+//     const slider = instanceRef.current;
+//     if (!slider) return;
 
-    let timeout: NodeJS.Timeout;
+//     let timeout: NodeJS.Timeout;
 
-    const next = () => {
-      slider.moveToIdx(slider.track.details.abs + 1, true, { duration: 1200 });
-      timeout = setTimeout(next, 1200);
-    };
+//     const next = () => {
+//       slider.moveToIdx(slider.track.details.abs + 1, true, { duration: 1200 });
+//       timeout = setTimeout(next, 1200);
+//     };
 
-    next();
+//     next();
 
-    return () => clearTimeout(timeout);
-  }, [instanceRef]);
+//     return () => clearTimeout(timeout);
+//   }, [instanceRef]);
 
-  return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw]">
-      <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
-        Sponsors
-      </h1>
-      <div
-        ref={sliderRef}
-        className="keen-slider py-[4vh]"
-      >
-        {sponsors.map((src, idx) => (
-          <div
-            key={idx}
-            className="keen-slider__slide flex justify-center items-center"
-          >
-            <img
-              src={src}
-              alt={`Sponsor ${idx}`}
-              className="h-[10vh]"
-            />
-          </div>
-        ))}
-      </div>
-      <NavButton
-        text="BECOME OUR NEXT SPONSOR"
-        arrow={false}
-      />
-    </section>
-  );
-}
+//   return (
+//     <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw]">
+//       <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
+//         Sponsors
+//       </h1>
+//       <div
+//         ref={sliderRef}
+//         className="keen-slider py-[4vh]"
+//       >
+//         {sponsors.map((src, idx) => (
+//           <div
+//             key={idx}
+//             className="keen-slider__slide flex justify-center items-center"
+//           >
+//             <img
+//               src={src}
+//               alt={`Sponsor ${idx}`}
+//               className="h-[10vh]"
+//             />
+//           </div>
+//         ))}
+//       </div>
+//       <NavButton
+//         text="BECOME OUR NEXT SPONSOR"
+//         arrow={false}
+//       />
+//     </section>
+//   );
+// }
 
 const sponsors = [
   "/brick_yellow.png",
