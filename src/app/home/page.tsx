@@ -190,7 +190,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
                 alt={name + "Logo"}
                 width={275}
                 height={275}
-                className="object-contain"
+                className="object-contain scale-70"
               />
             </div>
             <div className="absolute bottom-[1vw] left-[1.25vw] max-w-[80%] min-h-[4.5vh]">
