@@ -9,15 +9,16 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50.375%, 0, 0);
   }
 }
 
 .animate-marquee {
   animation: marquee 10s linear infinite;
+  will-change: transform;
 }
 
 @theme inline {

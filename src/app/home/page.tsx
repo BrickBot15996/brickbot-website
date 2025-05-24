@@ -21,7 +21,7 @@ export default function Home() {
         <Banner />
         <AboutUs />
         <Projects />
-        <SponsorCarousel />
+        <SponsorCarouselLoop />
       </main>
 
       <footer className="h-[10vh]"></footer>
@@ -112,7 +112,7 @@ function Projects() {
         Projects
       </h1>
       <LargeProject
-        color="#54ECD8"
+        color="#ADFF50"
         name="SimplicityFTC"
         logoPath="/projects/simplicityftclogo1.png"
         link="https://simplicityftc.github.io/SimplicityFTC-Docs/"
@@ -281,7 +281,7 @@ function SponsorCarousel() {
     loop: true,
     renderMode: "performance",
     slides: { perView: 4, spacing: 16 },
-    drag: false, // or true, depending on preference
+    drag: false,
   });
 
   useEffect(() => {
@@ -299,14 +299,6 @@ function SponsorCarousel() {
 
     return () => clearTimeout(timeout);
   }, [instanceRef]);
-
-  const sponsors = [
-    "/brick_yellow.png",
-    "/bricklogo.png",
-    "/random.jpg",
-    "/right-arrow-white.png",
-    "/right-arrow-yellow.png",
-  ];
 
   return (
     <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw]">
@@ -337,6 +329,41 @@ function SponsorCarousel() {
     </section>
   );
 }
+
+const sponsors = [
+  "/brick_yellow.png",
+  "/bricklogo.png",
+  "/random.jpg",
+  "/right-arrow-white.png",
+  "/right-arrow-yellow.png",
+];
+
+function SponsorCarouselLoop() {
+  return (
+    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw]">
+      <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
+        Sponsors
+      </h1>
+      <div className="overflow-hidden w-full py-[5vh]">
+        <div className="flex min-w-[200%] animate-marquee">
+          {[...sponsors, ...sponsors].map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`Sponsor ${idx}`}
+              className="h-[10vh] mx-[6vw] shrink-0"
+            />
+          ))}
+        </div>
+      </div>
+      <NavButton
+        text="BECOME OUR NEXT SPONSOR"
+        arrow={false}
+      />
+    </section>
+  );
+}
+
 type NavButtonProps = {
   text: string;
   arrow?: boolean;
