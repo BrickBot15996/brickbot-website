@@ -7,19 +7,19 @@ export default function Navbar() {
       <div className="flex justify-center items-center w-full max-w-screen-xl px-4 mx-auto space-x-[3vw]">
         <Link
           href="/tbd"
-          className="hover:opacity-75 hover:scale-107 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 focus:brightness-125 focus:scale-93 transition-transform duration-150"
         >
           TBD
         </Link>
         <Link
           href="/achievements"
-          className="hover:opacity-75 hover:scale-107 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 focus:brightness-125 focus:scale-93 transition-transform duration-150"
         >
           ACHIEVEMENTS
         </Link>
         <Link
           href="/home"
-          className="relative z-10 hover:opacity-75 hover:scale-107 transition-transform duration-150 hover:translate-y-[0.28vh]"
+          className="relative z-10 hover:opacity-75 hover:scale-107 transition-transform duration-150 hover:translate-y-[0.28vh] focus:brightness-125 focus:scale-93 focus:translate-y-[-0.28vh]"
         >
           <Image
             src="/brick_yellow.png"
@@ -32,13 +32,13 @@ export default function Navbar() {
         </Link>
         <Link
           href="/resources"
-          className="hover:opacity-75 hover:scale-107 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 focus:brightness-125 focus:scale-93 transition-transform duration-150"
         >
           RESOURCES
         </Link>
         <Link
           href="/support-us"
-          className="hover:opacity-75 hover:scale-107 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 focus:brightness-125 focus:scale-93 transition-transform duration-150"
         >
           SUPPORT US
         </Link>

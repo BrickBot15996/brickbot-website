@@ -173,43 +173,44 @@ type ProjectProps = {
 
 function SmallProject({ color, name, logoPath, link }: ProjectProps) {
   return (
-    <Link href={link}>
-      <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 transition-transform duration-150 cursor-pointer">
-        {/* this is so cursed */}
-        <div className="w-auto h-full rounded-[2.375vh] bg-[#0a0a0a]">
-          <div className="w-auto h-full rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[2vh]">
-            <div
-              className="absolute left-0 top-0 rounded-[2.5vh] w-full h-full"
-              style={{
-                background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
-              }}
-            ></div>
-            <div className="flex items-center justify-center w-full h-[23vh] overflow-hidden">
-              <Image
-                src={logoPath}
-                alt={name + "Logo"}
-                width={275}
-                height={275}
-                className="object-contain scale-70"
-              />
-            </div>
-            <div className="absolute bottom-[1vw] left-[1.25vw] max-w-[80%] min-h-[4.5vh]">
-              <p
-                className="font-medium text-[3vh]/[3vh]"
-                style={{ whiteSpace: "pre-line", color: color }}
-              >
-                {name}
-              </p>
-            </div>
-            <div className="absolute bottom-[1vw] right-[1vw]">
-              <Image
-                src="/right-arrow-white.png"
-                alt="right-arrow"
-                width={50}
-                height={50}
-                className="z-[10] inline mr-[-0.5vw]"
-              />
-            </div>
+    <Link
+      href={link}
+      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 focus:brightness-125 focus:scale-95 transition-transform duration-150 cursor-pointer"
+    >
+      {/* this is so cursed */}
+      <div className="w-auto h-full rounded-[2.375vh] bg-[#0a0a0a]">
+        <div className="w-auto h-full rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[2vh]">
+          <div
+            className="absolute left-0 top-0 rounded-[2.5vh] w-full h-full"
+            style={{
+              background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
+            }}
+          ></div>
+          <div className="flex items-center justify-center w-full h-[23vh] overflow-hidden">
+            <Image
+              src={logoPath}
+              alt={name + "Logo"}
+              width={275}
+              height={275}
+              className="object-contain scale-70"
+            />
+          </div>
+          <div className="absolute bottom-[1vw] left-[1.25vw] max-w-[80%] min-h-[4.5vh]">
+            <p
+              className="font-medium text-[3vh]/[3vh]"
+              style={{ whiteSpace: "pre-line", color: color }}
+            >
+              {name}
+            </p>
+          </div>
+          <div className="absolute bottom-[1vw] right-[1vw]">
+            <Image
+              src="/right-arrow-white.png"
+              alt="right-arrow"
+              width={50}
+              height={50}
+              className="z-[10] inline mr-[-0.5vw]"
+            />
           </div>
         </div>
       </div>
@@ -229,7 +230,7 @@ function LargeProject({
       <div className="relative flex flex-row items-stretch justify-center space-x-[2vw] h-full">
         <Link
           href={link}
-          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 transition-transform duration-150 cursor-pointer"
+          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 focus:brightness-125 focus:scale-97 transition-transform duration-150 cursor-pointer"
         >
           <div className="w-full h-full rounded-[2.375vh] bg-[#0a0a0a]">
             <div className="w-full h-full rounded-[2.5vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
@@ -331,11 +332,14 @@ function LargeProject({
 // }
 
 const sponsors = [
-  "/brick_yellow.png",
-  "/bricklogo.png",
-  "/random.jpg",
-  "/right-arrow-white.png",
-  "/right-arrow-yellow.png",
+  "/sponsors/autovip.png",
+  "/sponsors/aviputna.png",
+  "/sponsors/banca_transilvania.png",
+  "/sponsors/fundatia_fan.png",
+  "/sponsors/reina.png",
+  "/sponsors/remat.png",
+  "/sponsors/vrancart.png",
+  "/sponsors/zaga_zaga.png",
 ];
 
 function SponsorCarouselLoop() {
@@ -371,7 +375,7 @@ type NavButtonProps = {
 
 function NavButton({ text, arrow }: NavButtonProps) {
   return (
-    <button className="flex flex-row justify-center items-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[1.25vw] py-[0.5vh] rounded-full border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 transition-transform duration-150 cursor-pointer">
+    <button className="flex flex-row justify-center items-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[1.25vw] py-[0.5vh] rounded-full border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 focus:brightness-125 focus:scale-93 transition-transform duration-150 cursor-pointer">
       <p className="text-[#ffd100] font-extrabold text-[2.25vh]">{text}</p>
       {arrow && (
         <Image
