@@ -7,34 +7,6 @@
   scrollbar-width: thin;
 }
 
-@keyframes marquee-continuous {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    /*
-      This translates the inner div by exactly half of its OWN width.
-      Since the inner div contains two identical sets of sponsors,
-      moving it by 50% of its width means the first set has moved
-      completely out of view, and the second set (which is identical)
-      moves seamlessly into the starting position.
-    */
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee-continuous {
-  /* `display: flex;` is applied by the Tailwind 'flex' class in the component */
-  animation: marquee-continuous 10s linear infinite; /* Adjust duration for speed (e.g., 25s) */
-  will-change: transform; /* Performance hint for the browser */
-}
-
-/* Accessibility: Pause animation on hover/focus */
-.animate-marquee-continuous:hover,
-.animate-marquee-continuous:focus-within {
-  animation-play-state: paused;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -52,8 +24,9 @@
 html,
 body {
   overflow-x: hidden;
-  margin: 0; /* Make sure no body margin causes horizontal overflow */
-  padding: 0; /* Ensure padding doesn't cause overflow */
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth !important;
 }
 
 body {

@@ -3,23 +3,23 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="h-[6vh] bg-[#121212] flex justify-center items-center text-[#ffffff] font-bold text-[2vh] overflow-visible">
+    <div className="fixed top-0 h-[6vh] w-full bg-[#121212] flex justify-center items-center text-[#ffffff] font-bold text-[2vh] overflow-visible">
       <div className="flex justify-center items-center w-full max-w-screen-xl px-4 mx-auto space-x-[3vw]">
         <Link
           href="/tbd"
-          className="hover:opacity-75 hover:scale-107 active:brightness-125 active:scale-93 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           TBD
         </Link>
         <Link
           href="/achievements"
-          className="hover:opacity-75 hover:scale-107 active:brightness-125 active:scale-93 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           ACHIEVEMENTS
         </Link>
         <Link
           href="/home"
-          className="relative z-10 hover:opacity-75 hover:scale-107 transition-transform duration-150 hover:translate-y-[0.28vh] active:brightness-125 active:scale-93 active:translate-y-[-0.28vh]"
+          className="relative z-10 hover:opacity-75 hover:scale-107 transition-transform duration-150 hover:translate-y-[0.28vh] active:opacity-100 active:scale-93 active:translate-y-[-0.28vh]"
         >
           <Image
             src="/brick_yellow.png"
@@ -32,13 +32,13 @@ export default function Navbar() {
         </Link>
         <Link
           href="/resources"
-          className="hover:opacity-75 hover:scale-107 active:brightness-125 active:scale-93 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           RESOURCES
         </Link>
         <Link
           href="/support-us"
-          className="hover:opacity-75 hover:scale-107 active:brightness-125 active:scale-93 transition-transform duration-150"
+          className="hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           SUPPORT US
         </Link>

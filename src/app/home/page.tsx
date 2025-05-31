@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Button from "../components/Button";
+import Footer from "../components/Footer";
 import "keen-slider/keen-slider.min.css";
 import Marquee from "react-fast-marquee";
 
@@ -16,14 +18,16 @@ export default function Home() {
         <Navbar />
       </header>
 
-      <main>
+      <main className="py-[6vh]">
         <Banner />
         <AboutUs />
         <Projects />
         <SponsorCarouselLoop />
       </main>
 
-      <footer className="h-[10vh]"></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
@@ -46,9 +50,10 @@ function Banner() {
           </div>
           <div className="ml-[3vw]">
             <Link href="/support-us">
-              <NavButton
+              <Button
                 text="BECOME A SPONSOR"
                 arrow={true}
+                color="#ffd100"
               />
             </Link>
           </div>
@@ -71,12 +76,14 @@ function AboutUs() {
           <div className="h-auto rounded-[2.375vh] bg-[#0a0a0a]">
             <div className="h-auto rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] min-h-[250px] p-[1.25vw]">
               <p className="text-[2vh]/[3vh] font-medium text-white">
-                We&apos;ve been in this since like 2016, certainly not the best
-                team but together we Brick and Bot!! (ts pmo Chicken jockey)
-                Ruined thousands of kids dreams and killed their precious time
-                with impossible deadlines from dumbass colleagues. You know
-                what, FTC, this competition, the community—nothing matters.
-                Every year is just a descent into madness.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium consequuntur unde provident minus iure atque sunt
+                tenetur iste qui. Quibusdam officiis est voluptatum ullam at
+                reprehenderit accusantium quam illo minus. Lorem, ipsum dolor
+                sit amet consectetur adipisicing elit. Corrupti nulla eum
+                quisquam repellendus, aperiam, maiores distinctio fuga inventore
+                animi incidunt id quasi facere explicabo, officiis voluptas
+                dolor. Sapiente, repellat reprehenderit.
               </p>
             </div>
           </div>
@@ -94,9 +101,10 @@ function AboutUs() {
       </div>
       <div className="mt-[2vh]">
         <Link href="/achievements">
-          <NavButton
+          <Button
             text="OUR ACHIEVEMENTS"
             arrow={true}
+            color="#ffd100"
           />
         </Link>
       </div>
@@ -116,11 +124,7 @@ function Projects() {
         logoPath="/projects/simplicityftclogo1.png"
         link="https://simplicityftc.github.io/SimplicityFTC-Docs/"
         description={
-          "you give off chill pedophile vibes like you lowkey like kids but\n" +
-          "you went to therapy and got impulse control so you would\n" +
-          "never hurt one if you know what i mean. im a pedophile too and\n" +
-          "it makes me happy when i read your comments cuz it feels like i\n" +
-          "can participate on this sub too. good on you bro thank you so much"
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas expedita nostrum dolore minima nulla aperiam totam. Id excepturi repudiandae, dolores enim aspernatur tenetur libero debitis voluptatibus facilis, ea natus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laudantium fuga deleniti? Architecto temporibus voluptates possimus rerum vero ducimus suscipit praesentium sed? Id rem saepe dicta eligendi molestiae odit a."
         }
       />
       <div
@@ -174,7 +178,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
   return (
     <Link
       href={link}
-      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 active:brightness-125 active:scale-95 transition-transform duration-150 cursor-pointer"
+      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer"
     >
       {/* this is so cursed */}
       <div className="w-auto h-full rounded-[2.375vh] bg-[#0a0a0a]">
@@ -229,7 +233,7 @@ function LargeProject({
       <div className="relative flex flex-row items-stretch justify-center space-x-[2vw] h-full">
         <Link
           href={link}
-          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 active:brightness-125 active:scale-97 transition-transform duration-150 cursor-pointer"
+          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer"
         >
           <div className="w-full h-full rounded-[2.375vh] bg-[#0a0a0a]">
             <div className="w-full h-full rounded-[2.5vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
@@ -276,15 +280,44 @@ function LargeProject({
   );
 }
 
-const sponsors = [
-  "/sponsors/autovip.png",
-  "/sponsors/aviputna.png",
-  "/sponsors/banca_transilvania.png",
-  "/sponsors/fundatia_fan.png",
-  "/sponsors/reina.png",
-  "/sponsors/remat.png",
-  "/sponsors/vrancart.png",
-  "/sponsors/zaga_zaga.png",
+type SponsorData = {
+  logoPath: string;
+  websiteLink: string;
+};
+
+const sponsors: SponsorData[] = [
+  {
+    logoPath: "/sponsors/autovip.png",
+    websiteLink: "https://autoviptransfer.ro/",
+  },
+  {
+    logoPath: "/sponsors/aviputna.png",
+    websiteLink: "https://aviputna.ro/",
+  },
+  {
+    logoPath: "/sponsors/banca_transilvania.png",
+    websiteLink: "https://www.bancatransilvania.ro/",
+  },
+  {
+    logoPath: "/sponsors/fundatia_fan.png",
+    websiteLink: "https://fundatiafancourier.ro/",
+  },
+  {
+    logoPath: "/sponsors/reina.png",
+    websiteLink: "http://www.reinabijou.ro/",
+  },
+  {
+    logoPath: "/sponsors/remat.png",
+    websiteLink: "https://rematholding.ro/",
+  },
+  {
+    logoPath: "/sponsors/vrancart.png",
+    websiteLink: "https://vrancart.ro/",
+  },
+  {
+    logoPath: "/sponsors/zaga_zaga.png",
+    websiteLink: "https://zagazaga.ro/",
+  },
 ];
 
 function SponsorCarouselLoop() {
@@ -295,48 +328,34 @@ function SponsorCarouselLoop() {
       </h1>
       <Marquee
         pauseOnHover={true}
-        speed={100}
+        pauseOnClick={true}
+        speed={120}
         autoFill={true}
         gradient={false}
         className="h-[15vh]"
       >
-        {sponsors.map((src, index) => (
-          <Image
+        {sponsors.map((SponsorData, index) => (
+          <Link
+            href={SponsorData.websiteLink}
             key={index}
-            src={src}
-            alt={`Item ${index}`}
-            height={100}
-            width={100}
-            className="h-[10vh] w-auto px-[5vw]"
-          />
+            className="cursor-pointer hover:opacity-75"
+          >
+            <Image
+              key={index}
+              src={SponsorData.logoPath}
+              alt={`Item ${index}`}
+              height={100}
+              width={100}
+              className="h-[10vh] w-auto px-[5vw]"
+            />
+          </Link>
         ))}
       </Marquee>
-      <NavButton
+      <Button
         text="BECOME OUR NEXT SPONSOR"
         arrow={false}
+        color="#ffd100"
       />
     </section>
-  );
-}
-
-type NavButtonProps = {
-  text: string;
-  arrow?: boolean;
-};
-
-function NavButton({ text, arrow }: NavButtonProps) {
-  return (
-    <button className="flex flex-row justify-center items-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[1.25vw] py-[0.5vh] rounded-full border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 active:brightness-125 active:scale-93 transition-transform duration-150 cursor-pointer">
-      <p className="text-[#ffd100] font-extrabold text-[2.25vh]">{text}</p>
-      {arrow && (
-        <Image
-          src="/right-arrow-yellow.png"
-          alt="right-arrow"
-          width={30}
-          height={25}
-          className="z-[10] inline mr-[-0.5vw]"
-        />
-      )}
-    </button>
   );
 }
