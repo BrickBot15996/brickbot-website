@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import "keen-slider/keen-slider.min.css";
-// import { useKeenSlider } from "keen-slider/react";
-// import { useEffect } from "react";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
@@ -175,7 +174,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
   return (
     <Link
       href={link}
-      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 focus:brightness-125 focus:scale-95 transition-transform duration-150 cursor-pointer"
+      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 active:brightness-125 active:scale-95 transition-transform duration-150 cursor-pointer"
     >
       {/* this is so cursed */}
       <div className="w-auto h-full rounded-[2.375vh] bg-[#0a0a0a]">
@@ -230,7 +229,7 @@ function LargeProject({
       <div className="relative flex flex-row items-stretch justify-center space-x-[2vw] h-full">
         <Link
           href={link}
-          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 focus:brightness-125 focus:scale-97 transition-transform duration-150 cursor-pointer"
+          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 active:brightness-125 active:scale-97 transition-transform duration-150 cursor-pointer"
         >
           <div className="w-full h-full rounded-[2.375vh] bg-[#0a0a0a]">
             <div className="w-full h-full rounded-[2.5vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
@@ -277,60 +276,6 @@ function LargeProject({
   );
 }
 
-// function SponsorCarousel() {
-//   const [sliderRef, instanceRef] = useKeenSlider({
-//     loop: true,
-//     renderMode: "performance",
-//     slides: { perView: 4, spacing: 16 },
-//     drag: false,
-//   });
-
-//   useEffect(() => {
-//     const slider = instanceRef.current;
-//     if (!slider) return;
-
-//     let timeout: NodeJS.Timeout;
-
-//     const next = () => {
-//       slider.moveToIdx(slider.track.details.abs + 1, true, { duration: 1200 });
-//       timeout = setTimeout(next, 1200);
-//     };
-
-//     next();
-
-//     return () => clearTimeout(timeout);
-//   }, [instanceRef]);
-
-//   return (
-//     <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw]">
-//       <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
-//         Sponsors
-//       </h1>
-//       <div
-//         ref={sliderRef}
-//         className="keen-slider py-[4vh]"
-//       >
-//         {sponsors.map((src, idx) => (
-//           <div
-//             key={idx}
-//             className="keen-slider__slide flex justify-center items-center"
-//           >
-//             <img
-//               src={src}
-//               alt={`Sponsor ${idx}`}
-//               className="h-[10vh]"
-//             />
-//           </div>
-//         ))}
-//       </div>
-//       <NavButton
-//         text="BECOME OUR NEXT SPONSOR"
-//         arrow={false}
-//       />
-//     </section>
-//   );
-// }
-
 const sponsors = [
   "/sponsors/autovip.png",
   "/sponsors/aviputna.png",
@@ -344,22 +289,28 @@ const sponsors = [
 
 function SponsorCarouselLoop() {
   return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw]">
+    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw] space-y-[5vh]">
       <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
         Sponsors
       </h1>
-      <div className="overflow-hidden w-full py-[5vh]">
-        <div className="flex min-w-[200%] animate-marquee">
-          {[...sponsors, ...sponsors].map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`Sponsor ${idx}`}
-              className="h-[10vh] mx-[6vw] shrink-0"
-            />
-          ))}
-        </div>
-      </div>
+      <Marquee
+        pauseOnHover={true}
+        speed={100}
+        autoFill={true}
+        gradient={false}
+        className="h-[15vh]"
+      >
+        {sponsors.map((src, index) => (
+          <Image
+            key={index}
+            src={src}
+            alt={`Item ${index}`}
+            height={100}
+            width={100}
+            className="h-[10vh] w-auto px-[5vw]"
+          />
+        ))}
+      </Marquee>
       <NavButton
         text="BECOME OUR NEXT SPONSOR"
         arrow={false}
@@ -375,7 +326,7 @@ type NavButtonProps = {
 
 function NavButton({ text, arrow }: NavButtonProps) {
   return (
-    <button className="flex flex-row justify-center items-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[1.25vw] py-[0.5vh] rounded-full border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 focus:brightness-125 focus:scale-93 transition-transform duration-150 cursor-pointer">
+    <button className="flex flex-row justify-center items-center space-x-[0.25vw] bg-[linear-gradient(180deg,_#7D6800_0%,_#413400_50%)] px-[1.25vw] py-[0.5vh] rounded-full border-[0.25vh] border-[#ffd100] hover:opacity-75 hover:scale-107 active:brightness-125 active:scale-93 transition-transform duration-150 cursor-pointer">
       <p className="text-[#ffd100] font-extrabold text-[2.25vh]">{text}</p>
       {arrow && (
         <Image
