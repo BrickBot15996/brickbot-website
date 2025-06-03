@@ -35,7 +35,7 @@ export default function Footer() {
         <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.325rem] lg:text-[1.75rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
           Follow Us
         </h1>
-        <div className="grid grid-cols-4 items-start space-x-[1rem] pt-[0.25rem]">
+        <div className="grid grid-cols-4 items-start space-x-[1rem] pt-[0.25rem] mr-[-1rem]">
           <Link
             href="https://www.instagram.com/brickbotcnu/"
             target="_blank"
@@ -66,7 +66,7 @@ export default function Footer() {
           >
             <Image
               src="/socials/youtube.svg"
-              alt="Instagram"
+              alt="YouTube"
               width={24}
               height={24}
               className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
@@ -78,7 +78,7 @@ export default function Footer() {
           >
             <Image
               src="/socials/tiktok.svg"
-              alt="Instagram"
+              alt="TikTok"
               width={24}
               height={24}
               className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"

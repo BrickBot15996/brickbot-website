@@ -18,13 +18,13 @@ function Banner() {
   return (
     <section className="relative w-full flex flex-col">
       <div className="relative flex h-[60vh] w-full">
-        {/* <Image
+        <Image
           src="/random.jpg"
           alt="random"
           fill
           priority
           className="object-cover z-[-1] opacity-90 translate-x-[17.5%]"
-        /> */}
+        />
         <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh]">
           <div className="text-[#ffd100] font-extrabold z-10 ml-[3vw]">
             <p className="text-[4.5vh]/[5.5vh]">We build our future</p>
@@ -40,18 +40,6 @@ function Banner() {
             </Link>
           </div>
         </div>
-        <video
-          width="1280"
-          height="1000"
-          controls={false}
-          autoPlay={true}
-          loop={true}
-          muted={false}
-          className="h-full w-auto ml-auto object-cover z-[-1] opacity-40"
-          src="/bowghean.mp4"
-        >
-          That&apoc;s that me espresso.
-        </video>
       </div>
       <div className="w-full h-[0.25vh] bg-[linear-gradient(90deg,_#000000_10%,_#ffd100_35%,_#000000_85%)] opacity-50" />
     </section>
