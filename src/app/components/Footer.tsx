@@ -12,30 +12,30 @@ export default function Footer() {
     el.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <footer className="bg-[#191919] h-[30vh] w-full">
-      <div className="absolute left-[10vh]">
-        <h1 className="text-[#ffffff] font-bold text-[2.25vh] pt-[4vh]">
+    <footer className="bg-[#191919] h-auto min-h-[10rem] w-full flex">
+      <span className="h-auto w-auto ml-[3rem] md:ml-[4rem] lg:ml-[5rem]">
+        <h1 className="text-[#ffffff] font-bold text-[1.5rem] pt-[2.5rem]">
           BrickBot
         </h1>
-        <p className="text-[#929292] font-semibold pt-[1vh]">
+        <p className="text-[#929292] font-semibold pt-[0.75rem]">
           &quot;Unirea&quot; National College
         </p>
-        <p className="text-[#929292] font-semibold pt-[1vh]">
+        <p className="text-[#929292] font-semibold pt-[0.75rem]">
           Str. Cezar-Bolliac Nr. 13-15
           <br /> Focșani, Vrancea, Romania
         </p>
-        <p className="text-[#929292] font-semibold pt-[2vh]">
+        <p className="text-[#929292] font-semibold pt-[1.5rem]">
           Powered by DataHost
         </p>
-        <p className="text-[#ffffff] font-normal pt-[3vh]">
+        <p className="text-[#ffffff] font-normal py-[2.25rem]">
           Brickbot © {currentYear}
         </p>
-      </div>
-      <div className="absolute right-[10vh] w-[15vw]">
-        <h1 className="text-[#ffffff] font-bold text-[2.25vh] pt-[4vh]">
+      </span>
+      <span className="relative h-auto ml-auto mr-[3rem] md:mr-[4rem] lg:mr-[5rem] w-auto">
+        <h1 className="text-[#ffffff] font-bold text-[1.5rem] pt-[2.5rem]">
           Follow Us
         </h1>
-        <div className="grid grid-cols-4 items-start space-x-[1vw] pt-[1vh] ml-[-1.1vh] mr-[-2vh]">
+        <div className="grid grid-cols-4 items-start space-x-[1rem] pt-[0.25rem]">
           <Link
             href="https://www.instagram.com/brickbotcnu/"
             target="_blank"
@@ -43,9 +43,9 @@ export default function Footer() {
             <Image
               src="/socials/instagram.svg"
               alt="Instagram"
-              width={100}
-              height={100}
-              className="hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 h-[4vh]"
+              width={24}
+              height={24}
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
           <Link
@@ -55,9 +55,9 @@ export default function Footer() {
             <Image
               src="/socials/facebook.svg"
               alt="Facebook"
-              width={100}
-              height={100}
-              className="hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 h-[4vh] fill-[#ffffff]"
+              width={24}
+              height={24}
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
           <Link
@@ -67,9 +67,9 @@ export default function Footer() {
             <Image
               src="/socials/youtube.svg"
               alt="Instagram"
-              width={100}
-              height={100}
-              className="hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 h-[4vh] fill-[#ffffff]"
+              width={24}
+              height={24}
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
           <Link
@@ -79,13 +79,13 @@ export default function Footer() {
             <Image
               src="/socials/tiktok.svg"
               alt="Instagram"
-              width={100}
-              height={100}
-              className="hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 h-[4vh] fill-[#ffffff]"
+              width={24}
+              height={24}
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
         </div>
-        <div className="flex flex-col pt-[4vh] items-end">
+        <div className="flex flex-col pt-[2.5rem] items-end">
           <Button
             text="BACK TO TOP"
             arrow={false}
@@ -93,7 +93,7 @@ export default function Footer() {
             action={scrollToTop}
           ></Button>
         </div>
-      </div>
+      </span>
     </footer>
   );
 }

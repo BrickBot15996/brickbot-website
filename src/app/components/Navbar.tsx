@@ -7,8 +7,8 @@ type NavbarButtonProps = {
 
 function NavbarButton({ text }: NavbarButtonProps) {
   return (
-    <li className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center">
-      <div className="absolute w-full h-full overflow-visible opacity-0 hover:opacity-100">
+    <li className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer">
+      <div className="absolute w-full h-full overflow-visible opacity-0 hover:opacity-100 transition-opacity duration-300">
         <div className="relative opacity-20 h-full w-full bg-[linear-gradient(0deg,_#ffd100_0%,_transparent_100%)]" />
         <div className="relative opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_#ffd1003f_0%,_#ffd100_50%,_#ffd1003f_100%)]" />
       </div>

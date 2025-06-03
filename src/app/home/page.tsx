@@ -9,7 +9,7 @@ export default function Home() {
       <Banner />
       <AboutUs />
       <Projects />
-      <SponsorCarouselLoop />
+      <SponsorMarquee />
     </section>
   );
 }
@@ -253,7 +253,9 @@ function LargeProject({
               >
                 {name}
               </h1>
-              <p className="text-[2vh] font-medium text-white">{description}</p>
+              <p className="text-[2vh] font-medium text-white pb-[1vh]">
+                {description}
+              </p>
             </div>
           </div>
         </div>
@@ -302,7 +304,7 @@ const sponsors: SponsorData[] = [
   },
 ];
 
-function SponsorCarouselLoop() {
+function SponsorMarquee() {
   return (
     <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw] space-y-[5vh]">
       <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
@@ -321,7 +323,7 @@ function SponsorCarouselLoop() {
             href={SponsorData.websiteLink}
             target="_blank"
             key={index}
-            className="cursor-pointer hover:opacity-75"
+            className="cursor-pointer hover:opacity-50"
           >
             <Image
               key={index}
