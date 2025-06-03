@@ -14,25 +14,25 @@ export default function Footer() {
   return (
     <footer className="bg-[#191919] h-auto min-h-[10rem] w-full flex">
       <span className="h-auto w-auto ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem]">
-        <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
+        <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.325rem] lg:text-[1.75rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
           BrickBot
         </h1>
-        <p className="text-[#929292] font-semibold text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
+        <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           &quot;Unirea&quot; National College
         </p>
-        <p className="text-[#929292] font-semibold text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
+        <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           Str. Cezar-Bolliac Nr. 13-15
           <br /> Focșani, Vrancea, Romania
         </p>
-        <p className="text-[#929292] font-semibold text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
+        <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           Powered by DataHost
         </p>
-        <p className="text-[#ffffff] font-normal text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] py-[1rem] md:py-[1.25rem] lg:pt-[1.5rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
+        <p className="text-[#ffffff] font-normal text-[0.75rem] md:text-[0.1rem] lg:text-[1.25rem] pt-[1rem] md:pt-[1.25rem] lg:pt-[1.5rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
           Brickbot © {currentYear}
         </p>
       </span>
       <span className="relative h-auto ml-auto mr-[1.5rem] md:mr-[3rem] lg:mr-[5rem] w-auto">
-        <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
+        <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.325rem] lg:text-[1.75rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
           Follow Us
         </h1>
         <div className="grid grid-cols-4 items-start space-x-[1rem] pt-[0.25rem]">
