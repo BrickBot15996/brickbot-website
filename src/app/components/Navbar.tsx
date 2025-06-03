@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NewNavbar() {
   return (
-    <header className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-[#121212] z-[100] flex justify-center items-center">
+    <header className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-opacity-70 bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center">
       {/* Desktop Navbar */}
       <ul className="hidden md:flex gap-[1.5rem] lg:gap-[2rem] justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem]">
         <li className="w-[7rem] lg:w-[8rem] items-center hover:opacity-75 hover:scale-107 transition-transform duration-150">
