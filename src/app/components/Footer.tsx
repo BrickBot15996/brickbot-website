@@ -13,7 +13,7 @@ export default function Footer() {
   };
   return (
     <footer className="bg-[#191919] h-auto min-h-[10rem] w-full flex">
-      <span className="h-auto w-auto ml-[3rem] md:ml-[4rem] lg:ml-[5rem]">
+      <span className="h-auto w-auto ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem]">
         <h1 className="text-[#ffffff] font-bold text-[1.5rem] pt-[2.5rem]">
           BrickBot
         </h1>
@@ -31,7 +31,7 @@ export default function Footer() {
           Brickbot © {currentYear}
         </p>
       </span>
-      <span className="relative h-auto ml-auto mr-[3rem] md:mr-[4rem] lg:mr-[5rem] w-auto">
+      <span className="relative h-auto ml-auto mr-[1.5rem] md:mr-[3rem] lg:mr-[5rem] w-auto">
         <h1 className="text-[#ffffff] font-bold text-[1.5rem] pt-[2.5rem]">
           Follow Us
         </h1>

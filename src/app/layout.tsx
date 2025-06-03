@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Anek_Latin } from "next/font/google";
 import "./globals.css";
@@ -32,7 +33,10 @@ export default function RootLayout({
       <body className={`${anekLatin.variable} ${inter.variable} antialiased`}>
         <Navbar />
 
-        <main>{children}</main>
+        <main>
+          {children}
+          <Analytics />
+        </main>
 
         <Footer />
       </body>
