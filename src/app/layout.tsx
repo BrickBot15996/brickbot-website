@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Anek_Latin } from "next/font/google";
 import "./globals.css";
-import NewNavbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const inter = Inter({
@@ -30,7 +30,7 @@ export default function RootLayout({
       className="overflow-x-hidden flex flex-col"
     >
       <body className={`${anekLatin.variable} ${inter.variable} antialiased`}>
-        <NewNavbar />
+        <Navbar />
 
         <main>{children}</main>
 
