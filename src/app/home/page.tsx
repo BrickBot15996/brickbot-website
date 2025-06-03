@@ -1,34 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 import Button from "../components/Button";
-import Footer from "../components/Footer";
-import "keen-slider/keen-slider.min.css";
 import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
-    <div
-      lang="en"
-      className="overflow-x-hidden flex flex-col"
-    >
-      <header className="z-50">
-        <Navbar />
-      </header>
-
-      <main className="py-[6vh]">
-        <Banner />
-        <AboutUs />
-        <Projects />
-        <SponsorCarouselLoop />
-      </main>
-
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <section>
+      <Banner />
+      <AboutUs />
+      <Projects />
+      <SponsorCarouselLoop />
+    </section>
   );
 }
 
@@ -337,6 +319,7 @@ function SponsorCarouselLoop() {
         {sponsors.map((SponsorData, index) => (
           <Link
             href={SponsorData.websiteLink}
+            target="_blank"
             key={index}
             className="cursor-pointer hover:opacity-75"
           >
@@ -351,11 +334,16 @@ function SponsorCarouselLoop() {
           </Link>
         ))}
       </Marquee>
-      <Button
-        text="BECOME OUR NEXT SPONSOR"
-        arrow={false}
-        color="#ffd100"
-      />
+      <Link
+        href="https://letmegooglethat.com/?q=BrickBot"
+        className="mb-[6vh]"
+      >
+        <Button
+          text="BECOME OUR NEXT SPONSOR"
+          arrow={false}
+          color="#ffd100"
+        />
+      </Link>
     </section>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "./Button";
@@ -11,7 +12,7 @@ export default function Footer() {
     el.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <section className="bg-[#191919] h-[30vh] w-full">
+    <footer className="bg-[#191919] h-[30vh] w-full">
       <div className="absolute left-[10vh]">
         <h1 className="text-[#ffffff] font-bold text-[2.25vh] pt-[4vh]">
           BrickBot
@@ -84,7 +85,7 @@ export default function Footer() {
             />
           </Link>
         </div>
-        <div className="flex flex-col pt-[7.5vh] items-end">
+        <div className="flex flex-col pt-[4vh] items-end">
           <Button
             text="BACK TO TOP"
             arrow={false}
@@ -93,6 +94,6 @@ export default function Footer() {
           ></Button>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }
