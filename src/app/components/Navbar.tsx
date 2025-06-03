@@ -24,7 +24,7 @@ function NavbarButton({ text, path }: NavButtonProps) {
 
 function SidebarButton({ text, path, action }: NavButtonProps) {
   return (
-    <button className="bg-transparent rounded-[1rem] text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] px-[1rem] py-[0.2rem] font-semibold">
+    <button className="bg-transparent rounded-[1rem] text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] px-[1rem] py-[0.2rem] font-semibold hover:opacity-80 hover:scale-110 active:opacity-100 active:scale-90 transition-transform duration-150">
       <Link
         href={path}
         onClick={action}
@@ -96,7 +96,7 @@ export default function Navbar() {
               className="h-[1rem] w-auto object-contain"
             />
           </div>
-          <div className="absolute right-[1rem] cursor-pointer fill-[#ffd100] h-full">
+          <div className="absolute right-[0.1rem] cursor-pointer fill-[#ffd100] h-full">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
@@ -111,7 +111,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex md:hidden">
           <div className="w-full h-full text-[#ffffff] flex flex-col space-y-[0.5rem]">
-            <h1 className="text-center text-[2.25rem] font-bold text-[#ffd100] pb-[0.5rem]">
+            <h1 className="text-center text-[2.25rem] font-bold text-[#ffd100] pt-[1rem] pb-[0.5rem]">
               MENU
             </h1>
             <SidebarButton

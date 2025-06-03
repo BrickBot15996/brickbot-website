@@ -27,7 +27,7 @@ export default function Footer() {
         <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           Powered by DataHost
         </p>
-        <p className="text-[#ffffff] font-normal text-[0.75rem] md:text-[0.1rem] lg:text-[1.25rem] pt-[1rem] md:pt-[1.25rem] lg:pt-[1.5rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
+        <p className="text-[#ffffff] font-normal text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[1rem] md:pt-[1.25rem] lg:pt-[1.5rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
           Brickbot © {currentYear}
         </p>
       </span>

@@ -23,9 +23,9 @@ function Banner() {
           alt="random"
           fill
           priority
-          className="object-cover z-[-1] opacity-90 translate-x-[17.5%]"
+          className="object-cover z-1 opacity-90 translate-x-[17.5%]"
         />
-        <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh]">
+        <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh] z-2">
           <div className="text-[#ffd100] font-extrabold z-10 ml-[3vw]">
             <p className="text-[4.5vh]/[5.5vh]">We build our future</p>
             <p className="text-[4.5vh]/[5.5vh]">Brick by Brick!</p>
