@@ -323,7 +323,7 @@ function SponsorMarquee() {
             href={SponsorData.websiteLink}
             target="_blank"
             key={index}
-            className="cursor-pointer hover:opacity-50"
+            className="cursor-pointer hover:opacity-50 items-center"
           >
             <Image
               key={index}

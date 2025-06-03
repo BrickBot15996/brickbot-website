@@ -14,20 +14,20 @@ export default function Footer() {
   return (
     <footer className="bg-[#191919] h-auto min-h-[10rem] w-full flex">
       <span className="h-auto w-auto ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem]">
-        <h1 className="text-[#ffffff] font-bold text-[1.5rem] pt-[2.5rem]">
+        <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
           BrickBot
         </h1>
-        <p className="text-[#929292] font-semibold pt-[0.75rem]">
+        <p className="text-[#929292] font-semibold text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           &quot;Unirea&quot; National College
         </p>
-        <p className="text-[#929292] font-semibold pt-[0.75rem]">
+        <p className="text-[#929292] font-semibold text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           Str. Cezar-Bolliac Nr. 13-15
           <br /> Focșani, Vrancea, Romania
         </p>
-        <p className="text-[#929292] font-semibold pt-[1.5rem]">
+        <p className="text-[#929292] font-semibold text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
           Powered by DataHost
         </p>
-        <p className="text-[#ffffff] font-normal py-[2.25rem]">
+        <p className="text-[#ffffff] font-normal text-[0.5rem] md:text-[0.75rem] lg:text-[1rem] py-[1rem] md:py-[1.25rem] lg:pt-[1.5rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
           Brickbot © {currentYear}
         </p>
       </span>
@@ -85,7 +85,7 @@ export default function Footer() {
             />
           </Link>
         </div>
-        <div className="flex flex-col pt-[2.5rem] items-end">
+        <div className="flex flex-col pt-[2rem] md:pt-[2.25rem] lg:pt-[2.5rem] items-end">
           <Button
             text="BACK TO TOP"
             arrow={false}
