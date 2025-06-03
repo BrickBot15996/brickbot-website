@@ -32,7 +32,7 @@ export default function Footer() {
         </p>
       </span>
       <span className="relative h-auto ml-auto mr-[1.5rem] md:mr-[3rem] lg:mr-[5rem] w-auto">
-        <h1 className="text-[#ffffff] font-bold text-[1.5rem] pt-[2.5rem]">
+        <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.25rem] lg:text-[1.5rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
           Follow Us
         </h1>
         <div className="grid grid-cols-4 items-start space-x-[1rem] pt-[0.25rem]">
@@ -45,7 +45,7 @@ export default function Footer() {
               alt="Instagram"
               width={24}
               height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
           <Link
@@ -57,7 +57,7 @@ export default function Footer() {
               alt="Facebook"
               width={24}
               height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
           <Link
@@ -69,7 +69,7 @@ export default function Footer() {
               alt="Instagram"
               width={24}
               height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
           <Link
@@ -81,11 +81,11 @@ export default function Footer() {
               alt="Instagram"
               width={24}
               height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[3rem] w-auto transition-transform duration-150"
+              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
             />
           </Link>
         </div>
-        <div className="flex flex-col pt-[2rem] md:pt-[2.25rem] lg:pt-[2.5rem] items-end">
+        <div className="flex flex-col pt-[2rem] md:pt-[2.5rem] lg:pt-[3rem] items-end">
           <Button
             text="BACK TO TOP"
             arrow={false}
