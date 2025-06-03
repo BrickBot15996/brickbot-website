@@ -41,7 +41,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center">
+      <header className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none">
         {/* Desktop Navbar */}
         <ul className="hidden md:flex justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
           <NavbarButton
@@ -109,7 +109,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar Overlay */}
       {isOpen && (
-        <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex md:hidden">
+        <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex md:hidden select-none">
           <div className="w-full h-full text-[#ffffff] flex flex-col space-y-[0.5rem]">
             <h1 className="text-center text-[2.25rem] font-bold text-[#ffd100] pt-[1rem] pb-[0.5rem]">
               MENU

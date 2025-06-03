@@ -23,7 +23,7 @@ function Banner() {
           alt="random"
           fill
           priority
-          className="object-cover z-1 opacity-90 translate-x-[17.5%]"
+          className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
         />
         <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh] z-2">
           <div className="text-[#ffd100] font-extrabold z-10 ml-[3vw]">
@@ -70,7 +70,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw]">
+        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] select-none">
           <div className="relative w-full h-full rounded-[2.375vh] overflow-hidden">
             <Image
               src="/random.jpg"
@@ -160,7 +160,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
   return (
     <Link
       href={link}
-      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer"
+      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
     >
       {/* this is so cursed */}
       <div className="w-auto h-full rounded-[2.375vh] bg-[#0a0a0a]">
@@ -215,7 +215,7 @@ function LargeProject({
       <div className="relative flex flex-row items-stretch justify-center space-x-[2vw] h-full">
         <Link
           href={link}
-          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer"
+          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer select-none"
         >
           <div className="w-full h-full rounded-[2.375vh] bg-[#0a0a0a]">
             <div className="w-full h-full rounded-[2.5vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
@@ -306,8 +306,8 @@ const sponsors: SponsorData[] = [
 
 function SponsorMarquee() {
   return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw] space-y-[5vh]">
-      <h1 className="text-[#ffd100] font-extrabold text-[4vh] mr-auto">
+    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw] space-y-[2rem] md:space-y-[3rem]">
+      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.75rem] mr-auto">
         Sponsors
       </h1>
       <Marquee
@@ -316,7 +316,7 @@ function SponsorMarquee() {
         speed={120}
         autoFill={true}
         gradient={false}
-        className="h-[15vh]"
+        className="h-[5rem] md:h-[8rem]"
       >
         {sponsors.map((SponsorData, index) => (
           <Link
@@ -331,7 +331,7 @@ function SponsorMarquee() {
               alt={`Item ${index}`}
               height={100}
               width={100}
-              className="h-[10vh] w-auto px-[5vw]"
+              className="h-[3rem] md:h-[5rem] w-auto px-[3rem] md:px-[5rem] select-none"
             />
           </Link>
         ))}
