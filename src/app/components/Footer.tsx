@@ -2,6 +2,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "./Button";
+import { RiInstagramLine } from "react-icons/ri";
+import { RiFacebookBoxLine } from "react-icons/ri";
+import { RiYoutubeLine } from "react-icons/ri";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,37 +43,19 @@ export default function Footer() {
             href="https://www.instagram.com/brickbotcnu/"
             target="_blank"
           >
-            <Image
-              src="/socials/instagram.svg"
-              alt="Instagram"
-              width={24}
-              height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
-            />
+            <RiInstagramLine className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150" />
           </Link>
           <Link
             href="https://www.facebook.com/brickbotcnu/"
             target="_blank"
           >
-            <Image
-              src="/socials/facebook.svg"
-              alt="Facebook"
-              width={24}
-              height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
-            />
+            <RiFacebookBoxLine className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150" />
           </Link>
           <Link
             href="https://www.youtube.com/channel/UCRpA5UNXSZDl2GmPt_E91ew"
             target="_blank"
           >
-            <Image
-              src="/socials/youtube.svg"
-              alt="YouTube"
-              width={24}
-              height={24}
-              className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150"
-            />
+            <RiYoutubeLine className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[3rem] w-auto transition-transform duration-150" />
           </Link>
           <Link
             href="https://www.tiktok.com/@brickbotcnu"

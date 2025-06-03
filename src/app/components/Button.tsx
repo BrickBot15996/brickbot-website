@@ -1,4 +1,5 @@
 import React from "react";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 type ButtonParams = {
   text: string;
@@ -24,18 +25,22 @@ export default function Button({ text, arrow, color, action }: ButtonParams) {
         {text}
       </p>
       {arrow && (
-        <div
-          className="mr-[-1.7rem] h-[1rem] md:h-[1.5rem] lg:h-[1.8rem] w-[2.3rem] md:w-[2.7rem] lg:w-[3rem]"
-          style={{
-            WebkitMaskImage: `url('/right-arrow-yellow.png')`,
-            maskImage: `url('/right-arrow-yellow.png')`,
-            WebkitMaskRepeat: "no-repeat",
-            maskRepeat: "no-repeat",
-            WebkitMaskSize: "contain",
-            maskSize: "contain",
-            backgroundColor: color,
-          }}
+        <HiArrowNarrowRight
+          className="ml-[0.2rem] mr-[-0.3rem] h-[1rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+          style={{ color: color }}
         />
+        // <div
+        //   className="mr-[-1.7rem] h-[1rem] md:h-[1.5rem] lg:h-[1.8rem] w-[2.3rem] md:w-[2.7rem] lg:w-[3rem]"
+        //   style={{
+        //     WebkitMaskImage: `url('/right-arrow-yellow.png')`,
+        //     maskImage: `url('/right-arrow-yellow.png')`,
+        //     WebkitMaskRepeat: "no-repeat",
+        //     maskRepeat: "no-repeat",
+        //     WebkitMaskSize: "contain",
+        //     maskSize: "contain",
+        //     backgroundColor: color,
+        //   }}
+        // />
       )}
     </button>
   );

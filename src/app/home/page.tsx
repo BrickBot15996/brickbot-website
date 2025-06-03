@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "../components/Button";
 import Marquee from "react-fast-marquee";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 export default function Home() {
   return (
@@ -188,14 +189,8 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
               {name}
             </p>
           </div>
-          <div className="absolute bottom-[1vw] right-[1vw]">
-            <Image
-              src="/right-arrow-white.png"
-              alt="right-arrow"
-              width={50}
-              height={50}
-              className="z-[10] inline mr-[-0.5vw]"
-            />
+          <div className="absolute bottom-[1rem] right-[1.5rem]">
+            <HiArrowNarrowRight className="z-[10] inline mr-[-0.5vw] h-[3rem] w-auto fill-white" />
           </div>
         </div>
       </div>
@@ -307,7 +302,7 @@ const sponsors: SponsorData[] = [
 function SponsorMarquee() {
   return (
     <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw] space-y-[2rem] md:space-y-[3rem]">
-      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.75rem] mr-auto">
+      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.35rem] lg:text-[2.75rem] mr-auto">
         Sponsors
       </h1>
       <Marquee
@@ -316,7 +311,7 @@ function SponsorMarquee() {
         speed={120}
         autoFill={true}
         gradient={false}
-        className="h-[5rem] md:h-[8rem]"
+        className="h-[5rem] md:h-[6.5rem] lg:h-[8rem] select-none"
       >
         {sponsors.map((SponsorData, index) => (
           <Link
@@ -331,14 +326,14 @@ function SponsorMarquee() {
               alt={`Item ${index}`}
               height={100}
               width={100}
-              className="h-[3rem] md:h-[5rem] w-auto px-[3rem] md:px-[5rem] select-none"
+              className="h-[3rem] md:h-[4rem] lg:h-[5rem] w-auto px-[2.5rem] md:px-[3.5rem] lg:px-[4.5rem]"
             />
           </Link>
         ))}
       </Marquee>
       <Link
         href="https://letmegooglethat.com/?q=BrickBot"
-        className="mb-[6vh]"
+        className="mb-[3rem] md:mb-[4rem]"
       >
         <Button
           text="BECOME OUR NEXT SPONSOR"
