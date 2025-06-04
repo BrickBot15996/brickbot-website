@@ -26,7 +26,7 @@ function Banner() {
           priority
           className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
         />
-        <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh] z-2">
+        <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1rem] z-2">
           <div className="text-[#ffd100] font-extrabold z-10 ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem] text-[2rem]/[2.5rem] md:text-[2.5rem]/[3rem] lg:text-[2.75rem]/[3.25rem]">
             <p>We build our future</p>
             <p>Brick by Brick!</p>
@@ -53,7 +53,7 @@ function AboutUs() {
       <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
         About Us
       </h1>
-      <div className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-[1rem] xl:gap-[3rem] 2xl:gap-[5rem]">
+      <div className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-[1rem] xl:gap-[5rem] 2xl:gap-[7rem]">
         <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
           <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
             <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]">
@@ -100,35 +100,39 @@ function Projects() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas expedita nostrum dolore minima nulla aperiam totam. Id excepturi repudiandae, dolores enim aspernatur tenetur libero debitis voluptatibus facilis, ea natus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laudantium fuga deleniti? Architecto temporibus voluptates possimus rerum vero ducimus suscipit praesentium sed? Id rem saepe dicta eligendi molestiae odit a."
         }
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[2rem] sm:gap-x-[7rem] xl:gap-x-[6rem] w-full">
-        <SmallProject
-          color="#FFD100"
-          name={"Portfolio\nLibrary"}
-          logoPath="/projects/thevaultlogo1.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
-        />
-        <SmallProject
-          color="#FF6750"
-          name={"BrickBot Guide &\nDocumentation"}
-          logoPath="/projects/brickdocslogo1.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
-        />
-        <SmallProject
-          color="#9E50FF"
-          name={"Connecting\nFTC Teams"}
-          logoPath="/projects/sparkslogo.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
-        />
-        <SmallProject
-          color="#50FF9C"
-          name={"Caravana\nBrickBot"}
-          logoPath="/projects/caravanabrick1.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
-        />
+      <div className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-y-[2rem] xl:gap-x-[5rem] 2xl:gap-x-[7rem] w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 items-stretch gap-y-[2rem] sm:gap-x-[5rem] 2xl:gap-x-[7rem] w-full">
+          <SmallProject
+            color="#FFD100"
+            name={"Portfolio\nLibrary"}
+            logoPath="/projects/thevaultlogo1.png"
+            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+            description=""
+          />
+          <SmallProject
+            color="#FF6750"
+            name={"BrickBot Guide &\nDocumentation"}
+            logoPath="/projects/brickdocslogo1.png"
+            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+            description=""
+          />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 items-stretch gap-y-[2rem] sm:gap-[5rem] 2xl:gap-[7rem] w-full">
+          <SmallProject
+            color="#9E50FF"
+            name={"Connecting\nFTC Teams"}
+            logoPath="/projects/sparkslogo.png"
+            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+            description=""
+          />
+          <SmallProject
+            color="#50FF9C"
+            name={"Caravana\nBrickBot"}
+            logoPath="/projects/caravanabrick1.png"
+            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+            description=""
+          />
+        </div>
       </div>
     </section>
   );
@@ -168,14 +172,14 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
             </div>
             <div className="absolute bottom-[1.2rem] left-[1.6rem] w-[65%]">
               <p
-                className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[2rem]/[2.25rem]"
+                className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
                 style={{ color: color }}
               >
                 {name}
               </p>
             </div>
             <div className="absolute bottom-[1rem] right-[1.5rem]">
-              <HiArrowNarrowRight className="z-[10] inline mb-[-0.25rem] mr-[-0.5rem] h-[2.5rem] w-auto fill-white" />
+              <HiArrowNarrowRight className="z-[10] inline mb-[-0.25rem] mr-[-0.5rem] xl:h-[1.5rem] 2xl:h-[2rem] w-auto fill-white" />
             </div>
           </div>
         </div>
@@ -192,7 +196,7 @@ function LargeProject({
   link,
 }: ProjectProps) {
   return (
-    <section className="grid grid-cols-1 xl:grid-cols-2 gap-[1rem] xl:gap-[3rem] 2xl:gap-[5rem]">
+    <section className="grid grid-cols-1 xl:grid-cols-2 gap-[1rem] xl:gap-[5rem] 2xl:gap-[7rem]">
       <Link
         href={link}
         className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer select-none overflow-hidden"

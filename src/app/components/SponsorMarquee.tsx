@@ -45,7 +45,7 @@ const sponsors: SponsorData[] = [
 
 export default function SponsorMarquee() {
   return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] space-y-[2rem] md:space-y-[3rem]">
+    <section className="relative flex flex-col items-center justify-center h-full w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem]  space-y-[2rem] md:space-y-[3rem]">
       <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.35rem] lg:text-[2.75rem] mr-auto">
         Sponsors
       </h1>

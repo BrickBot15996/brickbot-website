@@ -20,16 +20,22 @@ export default function Footer() {
         <h1 className="text-[#ffffff] font-bold text-[1rem] md:text-[1.325rem] lg:text-[1.75rem] pt-[1.5rem] md:pt-[2rem] lg:pt-[2.5rem]">
           BrickBot
         </h1>
-        <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
-          &quot;Unirea&quot; National College
-        </p>
-        <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
-          Str. Cezar-Bolliac Nr. 13-15
-          <br /> Focșani, Vrancea, Romania
-        </p>
-        <p className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem]">
+        <Link
+          href="https://maps.app.goo.gl/nDGHSv337ajW8SPD9"
+          className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem] hover:brightness-150 active:scale-90 active:brightness-100 transition-transform duration-150 cursor-pointer"
+        >
+          <p className="pb-[0.5rem]">&quot;Unirea&quot; National College</p>
+          <p className="pb-[1.0rem]">
+            Str. Cezar-Bolliac Nr. 13-15
+            <br /> Focșani, Vrancea, Romania
+          </p>
+        </Link>
+        <Link
+          href=""
+          className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem] hover:brightness-150 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer"
+        >
           Powered by DataHost
-        </p>
+        </Link>
         <p className="text-[#ffffff] font-normal text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[1rem] md:pt-[1.25rem] lg:pt-[1.5rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
           Brickbot © {currentYear}
         </p>

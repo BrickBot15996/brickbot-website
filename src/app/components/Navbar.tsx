@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
@@ -38,11 +38,28 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (!mobile) setOpen(false); // Auto-close menu if resizing to desktop
+    };
+
+    handleResize(); // Call once on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <header
         className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none transition-all duration-300"
-        style={{ height: isOpen ? "100vh" : undefined }}
+        style={{
+          height: isOpen && isMobile ? "100vh" : undefined,
+        }}
       >
         {/* Desktop Navbar */}
         <ul className="hidden md:flex justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
