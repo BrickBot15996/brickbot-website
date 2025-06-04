@@ -24,7 +24,7 @@ function NavbarButton({ text, path }: NavButtonProps) {
 
 function SidebarButton({ text, path, action }: NavButtonProps) {
   return (
-    <button className="bg-transparent rounded-[1rem] text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] px-[1rem] py-[0.2rem] font-semibold hover:opacity-80 hover:scale-110 active:opacity-100 active:scale-90 transition-transform duration-150">
+    <button className="bg-transparent rounded-[1rem] text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] px-[1rem] py-[0.2rem] font-semibold hover:scale-110 active:scale-90 transition-transform duration-150">
       <Link
         href={path}
         onClick={action}
@@ -38,10 +38,12 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
-
   return (
     <>
-      <header className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none">
+      <header
+        className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none transition-all duration-300"
+        style={{ height: isOpen ? "100vh" : undefined }}
+      >
         {/* Desktop Navbar */}
         <ul className="hidden md:flex justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
           <NavbarButton
@@ -75,28 +77,29 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Navbar */}
-        <div className="flex justify-center items-center md:hidden">
-          <div className="absolute left-[1rem] flex flex-row gap-[0.5rem] items-center hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
-            <Link href="/home">
-              <Image
-                src="/brick_yellow.png"
-                alt="BrickBot Logo"
-                priority
-                width={1325}
-                height={151}
-                className="h-[1.5rem] w-auto object-contain"
-              />
-            </Link>
+        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full">
+          <Link
+            href="/home"
+            className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
+          >
+            <Image
+              src="/brick_yellow.png"
+              alt="BrickBot Logo"
+              priority
+              width={1325}
+              height={151}
+              className="h-[1.5rem] w-auto object-contain inline-block mr-[0.5rem]"
+            />
             <Image
               src="/brickbot_text.png"
               alt="BrickBot Text Logo"
               priority
               width={928}
               height={502}
-              className="h-[1rem] w-auto object-contain"
+              className="h-[1rem] w-auto object-contain inline-block"
             />
-          </div>
-          <div className="absolute right-[0.1rem] cursor-pointer fill-[#ffd100] h-full">
+          </Link>
+          <div className="relative ml-auto mr-[0.1rem] cursor-pointer fill-[#ffd100] h-full">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
@@ -109,7 +112,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar Overlay */}
       {isOpen && (
-        <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex md:hidden select-none">
+        <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex md:hidden select-none">
           <div className="w-full h-full text-[#ffffff] flex flex-col space-y-[0.5rem]">
             <h1 className="text-center text-[2.25rem] font-bold text-[#ffd100] pt-[1rem] pb-[0.5rem]">
               MENU

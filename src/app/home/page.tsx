@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../components/Button";
-import Marquee from "react-fast-marquee";
+import SponsorMarquee from "../components/SponsorMarquee";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
 function Banner() {
   return (
     <section className="relative w-full flex flex-col">
-      <div className="relative flex h-[60vh] w-full">
+      <div className="relative flex h-[20rem] md:h-[25rem] lg:h-[30rem] w-full">
         <Image
           src="/random.jpg"
           alt="random"
@@ -27,11 +27,11 @@ function Banner() {
           className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
         />
         <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh] z-2">
-          <div className="text-[#ffd100] font-extrabold z-10 ml-[3vw]">
-            <p className="text-[4.5vh]/[5.5vh]">We build our future</p>
-            <p className="text-[4.5vh]/[5.5vh]">Brick by Brick!</p>
+          <div className="text-[#ffd100] font-extrabold z-10 px-[1.5rem] md:px-[1.75rem] lg:px-[2rem] text-[2rem]/[2.5rem] md:text-[2.5rem]/[3rem] lg:text-[2.75rem]/[3.25rem]">
+            <p>We build our future</p>
+            <p>Brick by Brick!</p>
           </div>
-          <div className="ml-[3vw]">
+          <div className="px-[1.5rem] md:px-[1.75rem] lg:px-[2rem]">
             <Link href="/support-us">
               <Button
                 text="BECOME A SPONSOR"
@@ -42,7 +42,7 @@ function Banner() {
           </div>
         </div>
       </div>
-      <div className="w-full h-[0.25vh] bg-[linear-gradient(90deg,_#000000_10%,_#ffd100_35%,_#000000_85%)] opacity-50" />
+      <div className="w-full h-[0.15rem] md:[0.3rem] lg:[0.4rem] bg-[linear-gradient(90deg,_#000000_10%,_#ffd100_35%,_#000000_85%)] opacity-50" />
     </section>
   );
 }
@@ -255,92 +255,6 @@ function LargeProject({
           </div>
         </div>
       </div>
-    </section>
-  );
-}
-
-type SponsorData = {
-  logoPath: string;
-  websiteLink: string;
-};
-
-const sponsors: SponsorData[] = [
-  {
-    logoPath: "/sponsors/autovip.png",
-    websiteLink: "https://autoviptransfer.ro/",
-  },
-  {
-    logoPath: "/sponsors/aviputna.png",
-    websiteLink: "https://aviputna.ro/",
-  },
-  {
-    logoPath: "/sponsors/banca_transilvania.png",
-    websiteLink: "https://www.bancatransilvania.ro/",
-  },
-  {
-    logoPath: "/sponsors/fundatia_fan.png",
-    websiteLink: "https://fundatiafancourier.ro/",
-  },
-  {
-    logoPath: "/sponsors/reina.png",
-    websiteLink: "http://www.reinabijou.ro/",
-  },
-  {
-    logoPath: "/sponsors/remat.png",
-    websiteLink: "https://rematholding.ro/",
-  },
-  {
-    logoPath: "/sponsors/vrancart.png",
-    websiteLink: "https://vrancart.ro/",
-  },
-  {
-    logoPath: "/sponsors/zaga_zaga.png",
-    websiteLink: "https://zagazaga.ro/",
-  },
-];
-
-function SponsorMarquee() {
-  return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full px-[3vw] space-y-[2rem] md:space-y-[3rem]">
-      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.35rem] lg:text-[2.75rem] mr-auto">
-        Sponsors
-      </h1>
-      <Marquee
-        pauseOnHover={true}
-        pauseOnClick={true}
-        speed={120}
-        autoFill={true}
-        gradient={false}
-        className="h-[5rem] md:h-[6.5rem] lg:h-[8rem] select-none"
-      >
-        {sponsors.map((SponsorData, index) => (
-          <Link
-            href={SponsorData.websiteLink}
-            target="_blank"
-            key={index}
-            className="cursor-pointer hover:opacity-50 items-center"
-          >
-            <Image
-              key={index}
-              src={SponsorData.logoPath}
-              alt={`Item ${index}`}
-              height={100}
-              width={100}
-              className="h-[3rem] md:h-[4rem] lg:h-[5rem] w-auto px-[2.5rem] md:px-[3.5rem] lg:px-[4.5rem]"
-            />
-          </Link>
-        ))}
-      </Marquee>
-      <Link
-        href="https://letmegooglethat.com/?q=BrickBot"
-        className="mb-[3rem] md:mb-[4rem]"
-      >
-        <Button
-          text="BECOME OUR NEXT SPONSOR"
-          arrow={false}
-          color="#ffd100"
-        />
-      </Link>
     </section>
   );
 }
