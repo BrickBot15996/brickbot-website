@@ -87,7 +87,7 @@ function AboutUs() {
 
 function Projects() {
   return (
-    <section className="flex flex-col items-stretch justify-center min-h-[15rem] h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
+    <section className="flex flex-col justify-center min-h-[15rem] h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
       <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
         Projects
       </h1>
@@ -100,7 +100,7 @@ function Projects() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas expedita nostrum dolore minima nulla aperiam totam. Id excepturi repudiandae, dolores enim aspernatur tenetur libero debitis voluptatibus facilis, ea natus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laudantium fuga deleniti? Architecto temporibus voluptates possimus rerum vero ducimus suscipit praesentium sed? Id rem saepe dicta eligendi molestiae odit a."
         }
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-items-center-safe gap-y-[1rem] gap-x-[7rem] w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[2rem] sm:gap-x-[7rem] xl:gap-x-[6rem] w-full">
         <SmallProject
           color="#FFD100"
           name={"Portfolio\nLibrary"}
@@ -147,7 +147,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
     <>
       <Link
         href={link}
-        className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[17rem] md:h-[20rem] 2xl:h-[25rem] w-[15rem] md:w-[17.6rem] 2xl:w-[22rem] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+        className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[17rem] md:h-[20rem] 2xl:h-[25rem] w-auto hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
       >
         <div
           className="absolute inset-0 rounded-[1.5rem] z-10"
@@ -163,13 +163,13 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
                 alt={name + "Logo"}
                 width={275}
                 height={275}
-                className="object-contain scale-60 md:scale-65 lg:scale-75"
+                className="object-contain scale-75"
               />
             </div>
-            <div className="absolute bottom-[1.2rem] left-[1.6rem]">
+            <div className="absolute bottom-[1.2rem] left-[1.6rem] w-[65%]">
               <p
                 className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[2rem]/[2.25rem]"
-                style={{ whiteSpace: "pre-line", color: color }}
+                style={{ color: color }}
               >
                 {name}
               </p>
@@ -192,7 +192,7 @@ function LargeProject({
   link,
 }: ProjectProps) {
   return (
-    <section className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-[1rem] xl:gap-[3rem] 2xl:gap-[5rem]">
+    <section className="grid grid-cols-1 xl:grid-cols-2 gap-[1rem] xl:gap-[3rem] 2xl:gap-[5rem]">
       <Link
         href={link}
         className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer select-none overflow-hidden"

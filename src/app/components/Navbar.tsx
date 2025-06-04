@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none transition-all duration-300"
+        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none transition-all duration-300"
         style={{ height: isOpen ? "100vh" : undefined }}
       >
         {/* Desktop Navbar */}
@@ -77,7 +77,7 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Navbar */}
-        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[3rem] md:h-[3.5rem] lg:h-[4rem] w-full">
+        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[3.5rem] lg:h-[4rem] w-full">
           <Link
             href="/home"
             className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
@@ -99,7 +99,7 @@ export default function Navbar() {
               className="h-[1rem] w-auto object-contain inline-block"
             />
           </Link>
-          <div className="relative ml-auto mr-[0.1rem] cursor-pointer fill-[#ffd100] h-full">
+          <div className="relative ml-auto mr-[0.1rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
