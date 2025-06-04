@@ -9,7 +9,7 @@ export default function Home() {
     <section>
       <Banner />
       <AboutUs />
-      <Projects />
+      <NewProjects />
       <SponsorMarquee />
     </section>
   );
@@ -17,7 +17,7 @@ export default function Home() {
 
 function Banner() {
   return (
-    <section className="relative w-full flex flex-col">
+    <section className="relative w-full flex flex-col py-[3rem] md:py-[3.5rem] lg:py-[4rem]">
       <div className="relative flex h-[20rem] md:h-[25rem] lg:h-[30rem] w-full">
         <Image
           src="/random.jpg"
@@ -49,16 +49,15 @@ function Banner() {
 
 function AboutUs() {
   return (
-    <section className="relative flex flex-col items-stretch justify-center h-full w-full px-[3vw] py-[5vh]">
-      <h1 className="text-[#ffd100] font-extrabold text-[4vh] mb-[1vh]">
+    <section className="flex flex-col items-stretch justify-center h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
+      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
         About Us
       </h1>
-      <div className="relative flex flex-row items-stretch justify-center space-x-[2vw]">
-        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[250px] w-[46vw]">
-          {/* this is so cursed */}
-          <div className="h-auto rounded-[2.375vh] bg-[#0a0a0a]">
-            <div className="h-auto rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] min-h-[250px] p-[1.25vw]">
-              <p className="text-[2vh]/[3vh] font-medium text-white">
+      <div className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-[1rem] xl:gap-[3rem] 2xl:gap-[5rem]">
+        <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
+          <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
+            <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]">
+              <p className="text-[1.25rem]/[1.75rem] md:text-[1.5rem]/[2rem] font-medium text-[#ffffff]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Laudantium consequuntur unde provident minus iure atque sunt
                 tenetur iste qui. Quibusdam officiis est voluptatum ullam at
@@ -71,34 +70,25 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] select-none">
-          <div className="relative w-full h-full rounded-[2.375vh] overflow-hidden">
+        <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto select-none">
+          <div className="relative w-full h-full rounded-[1.3rem] overflow-hidden">
             <Image
               src="/random.jpg"
               alt="random"
               fill
-              className="object-cover"
+              className="object-cover relative w-full h-full rounded-[1.3rem] overflow-hidden"
             />
           </div>
         </div>
-      </div>
-      <div className="mt-[2vh]">
-        <Link href="/achievements">
-          <Button
-            text="OUR ACHIEVEMENTS"
-            arrow={true}
-            color="#ffd100"
-          />
-        </Link>
       </div>
     </section>
   );
 }
 
-function Projects() {
+function NewProjects() {
   return (
-    <section className="relative flex flex-col items-start justify-center h-full w-full px-[3vw] py-[5vh]">
-      <h1 className="text-[#ffd100] font-extrabold text-[4vh] pb-[2vh]">
+    <section className="flex flex-col items-stretch justify-center min-h-[15rem] h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
+      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
         Projects
       </h1>
       <LargeProject
@@ -110,12 +100,7 @@ function Projects() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas expedita nostrum dolore minima nulla aperiam totam. Id excepturi repudiandae, dolores enim aspernatur tenetur libero debitis voluptatibus facilis, ea natus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laudantium fuga deleniti? Architecto temporibus voluptates possimus rerum vero ducimus suscipit praesentium sed? Id rem saepe dicta eligendi molestiae odit a."
         }
       />
-      <div
-        className="grid gap-[8vw] w-full py-[5vh]"
-        style={{
-          gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 ml-auto mr-auto gap-[1rem] lg:gap-[5rem]">
         <SmallProject
           color="#FFD100"
           name={"Portfolio\nLibrary"}
@@ -158,39 +143,41 @@ type ProjectProps = {
 };
 
 function SmallProject({ color, name, logoPath, link }: ProjectProps) {
+  // <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
+  //         <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
+  //           <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]"></div>
   return (
     <Link
       href={link}
-      className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[35vh] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+      className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] md:h-[20rem] 2xl:h-[25rem] md:w-[17.6rem] 2xl:w-[22rem] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
     >
-      {/* this is so cursed */}
-      <div className="w-auto h-full rounded-[2.375vh] bg-[#0a0a0a]">
-        <div className="w-auto h-full rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[2vh]">
-          <div
-            className="absolute left-0 top-0 rounded-[2.5vh] w-full h-full"
-            style={{
-              background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
-            }}
-          ></div>
-          <div className="flex items-center justify-center w-full h-[23vh] overflow-hidden">
+      <div
+        className="absolute inset-0 rounded-[1.5rem] z-10"
+        style={{
+          background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
+        }}
+      />
+      <div className="w-full h-full rounded-[1.3rem] bg-[#0a0a0a]">
+        <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
+          <div className="flex items-center justify-center w-full h-[70%] overflow-hidden">
             <Image
               src={logoPath}
               alt={name + "Logo"}
               width={275}
               height={275}
-              className="object-contain scale-70"
+              className="object-contain scale-75"
             />
           </div>
-          <div className="absolute bottom-[1vw] left-[1.25vw] max-w-[80%] min-h-[4.5vh]">
+          <div className="absolute bottom-[1.2rem] left-[1.6rem]">
             <p
-              className="font-medium text-[3vh]/[3vh]"
+              className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[2rem]/[2.25rem]"
               style={{ whiteSpace: "pre-line", color: color }}
             >
               {name}
             </p>
           </div>
           <div className="absolute bottom-[1rem] right-[1.5rem]">
-            <HiArrowNarrowRight className="z-[10] inline mr-[-0.5vw] h-[3rem] w-auto fill-white" />
+            <HiArrowNarrowRight className="z-[10] inline mb-[-0.25rem] mr-[-0.5rem] h-[2.5rem] w-auto fill-white" />
           </div>
         </div>
       </div>
@@ -206,52 +193,53 @@ function LargeProject({
   link,
 }: ProjectProps) {
   return (
-    <section className="relative justify-center w-full h-full">
-      <div className="relative flex flex-row items-stretch justify-center space-x-[2vw] h-full">
-        <Link
-          href={link}
-          className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw] h-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer select-none"
-        >
-          <div className="w-full h-full rounded-[2.375vh] bg-[#0a0a0a]">
-            <div className="w-full h-full rounded-[2.5vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
-              <div
-                className="absolute left-0 top-0 rounded-[2.5vh] w-full h-full"
-                style={{
-                  background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
-                }}
-              ></div>
-            </div>
-          </div>
-          <div className="absolute left-0 bottom-0 px-[1.25vw] py-[2vh]">
-            <Image
-              src={logoPath}
-              alt={name + "Logo"}
-              width={275}
-              height={275}
-              className="h-auto w-[10vw]"
-            />
-          </div>
-          <div className="absolute right-0 bottom-0 px-[1vw] py-[1vw]">
-            <div className="relative h-auto w-auto p-[0.25vh] bg-[linear-gradient(180deg,_#FFA5A5,_#EC7171)] rounded-full">
-              <div className="relative h-full w-full bg-[#4B1717] rounded-full px-[1.25vw]">
-                <p className="font-semibold text-[1.5vh] text-[#FFBEBE]">New</p>
+    <section className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-[1rem] xl:gap-[3rem] 2xl:gap-[5rem]">
+      <Link
+        href={link}
+        className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer select-none overflow-hidden"
+      >
+        <div
+          className="absolute inset-0 rounded-[1.5rem] z-10"
+          style={{
+            background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
+          }}
+        />
+
+        <div className="relative h-full rounded-[1.3rem] bg-[#0a0a0a]">
+          <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)]">
+            <div className="relative flex flex-row h-full w-full z-20">
+              <Image
+                src={logoPath}
+                alt={name + "Logo"}
+                width={275}
+                height={275}
+                className="mt-auto mr-auto h-[4rem] md:h-[4.5rem] xl:h-[4rem] 2xl:h-[4.5rem] w-auto mx-[1.5rem] py-[1rem]"
+              />
+              <div className="mt-auto ml-auto px-[0.5rem] py-[0.5rem]">
+                <div className="relative h-auto w-auto p-[0.2rem] bg-[linear-gradient(180deg,_#FFA5A5,_#EC7171)] rounded-full">
+                  <div className="relative h-full w-full bg-[#4B1717] rounded-full px-[1.2rem]">
+                    <p className="font-semibold text-[1rem] md:text-[1.2rem] xl:text-[1rem] text-[#FFBEBE]">
+                      New
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </Link>
-        <div className="relative rounded-[2.5vh] p-[0.25vh] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] w-[46vw]">
-          <div className="h-full rounded-[2.375vh] bg-[#0a0a0a]">
-            <div className="h-full rounded-[2.375vh] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)] px-[1vw] py-[1vh]">
-              <h1
-                className="font-semibold text-[3.5vh]"
-                style={{ color: color }}
-              >
-                {name}
-              </h1>
-              <p className="text-[2vh] font-medium text-white pb-[1vh]">
-                {description}
-              </p>
-            </div>
+        </div>
+      </Link>
+      <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
+        <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
+          <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]">
+            <h1
+              className="font-semibold text-[2rem]"
+              style={{ color: color }}
+            >
+              {name}
+            </h1>
+            <p className="text-[1.25rem]/[1.75rem] md:text-[1.5rem]/[2rem] font-medium text-[#ffffff] pb-[1vh]">
+              {description}
+            </p>
           </div>
         </div>
       </div>
