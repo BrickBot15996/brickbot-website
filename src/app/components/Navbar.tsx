@@ -44,10 +44,10 @@ export default function Navbar() {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      if (!mobile) setOpen(false); // Auto-close menu if resizing to desktop
+      if (!mobile) setOpen(false);
     };
 
-    handleResize(); // Call once on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -116,7 +116,7 @@ export default function Navbar() {
               className="h-[1rem] w-auto object-contain inline-block"
             />
           </Link>
-          <div className="relative ml-auto mr-[0.1rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
+          <div className="relative ml-auto mr-[0.1rem] mt-[0.4rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
