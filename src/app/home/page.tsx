@@ -206,21 +206,21 @@ function LargeProject({
 
         <div className="relative h-full rounded-[1.3rem] bg-[#0a0a0a]">
           <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)]">
-            <div className="relative flex flex-row h-full w-full z-20">
+            <div className="relative flex flex-col items-center h-full w-full z-20">
               <Image
                 src={logoPath}
                 alt={name + "Logo"}
                 width={275}
                 height={275}
-                className="mt-auto mr-auto h-[4rem] md:h-[4.5rem] xl:h-[4rem] 2xl:h-[4.5rem] w-auto mx-[1.5rem] py-[1rem]"
+                className="mt-auto mb-auto h-[3rem] md:h-[3.5rem] xl:h-[3rem] 2xl:h-[3.5rem] w-auto mx-[1.5rem] my-[1rem]"
               />
-              <div className="mt-auto ml-auto px-[0.5rem] py-[0.5rem]">
-                <div className="relative h-auto w-auto p-[0.2rem] bg-[linear-gradient(180deg,_#FFA5A5,_#EC7171)] rounded-full">
-                  <div className="relative h-full w-full bg-[#4B1717] rounded-full px-[1.2rem]">
-                    <p className="font-semibold text-[1rem] md:text-[1.2rem] xl:text-[1rem] text-[#FFBEBE]">
-                      New
-                    </p>
-                  </div>
+            </div>
+            <div className="absolute bottom-[0.5rem] right-[0.5rem]">
+              <div className="relative h-auto w-auto p-[0.2rem] bg-[linear-gradient(180deg,_#FFA5A5,_#EC7171)] rounded-full">
+                <div className="relative h-full w-full bg-[#4B1717] rounded-full px-[1.2rem]">
+                  <p className="font-semibold text-[0.8rem] md:text-[1.2rem] xl:text-[1rem] text-[#FFBEBE]">
+                    New
+                  </p>
                 </div>
               </div>
             </div>
@@ -231,7 +231,7 @@ function LargeProject({
         <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
           <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]">
             <h1
-              className="font-semibold text-[2rem]"
+              className="font-semibold text-[2rem] mb-[0.5rem]"
               style={{ color: color }}
             >
               {name}

@@ -20,7 +20,7 @@ export default function Button({ text, arrow, color, action }: ButtonParams) {
     >
       {/* text-[2rem]/[2.5rem] md:text-[2.5rem]/[3rem] lg:text-[2.75rem]/[3.25rem] */}
       <p
-        className="mr-auto font-extrabold text-[1rem] md:text-[1.3rem] lg:text-[1.5rem]"
+        className="mr-auto font-extrabold text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem]"
         style={{ color: color }}
       >
         {text}
