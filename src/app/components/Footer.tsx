@@ -23,6 +23,7 @@ export default function Footer() {
         <Link
           href="https://maps.app.goo.gl/nDGHSv337ajW8SPD9"
           className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem] hover:brightness-150 active:scale-90 active:brightness-100 transition-transform duration-150 cursor-pointer"
+          target="_blank"
         >
           <p className="pb-[0.5rem]">&quot;Unirea&quot; National College</p>
           <p className="pb-[1.0rem]">
@@ -31,8 +32,9 @@ export default function Footer() {
           </p>
         </Link>
         <Link
-          href=""
+          href="https://www.datahost.ro/"
           className="text-[#929292] font-semibold text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] pt-[0.25rem] md:pt-[0.5rem] lg:pt-[0.75rem] hover:brightness-150 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer"
+          target="_blank"
         >
           Powered by DataHost
         </Link>
