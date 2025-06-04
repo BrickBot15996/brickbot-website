@@ -113,7 +113,7 @@ export default function Navbar() {
       {/* Mobile Sidebar Overlay */}
       {isOpen && (
         <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex md:hidden select-none">
-          <div className="w-full h-full text-[#ffffff] flex flex-col space-y-[0.5rem]">
+          <div className="w-full h-full text-[#ffffff] flex flex-col space-y-[0.5rem] opacity-0 animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]">
             <h1 className="text-center text-[2.25rem] font-bold text-[#ffd100] pt-[1rem] pb-[0.5rem]">
               MENU
             </h1>
@@ -140,6 +140,19 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeInDelay {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </>
   );
 }
