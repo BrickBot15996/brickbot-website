@@ -9,7 +9,7 @@ export default function Home() {
     <section>
       <Banner />
       <AboutUs />
-      <NewProjects />
+      <Projects />
       <SponsorMarquee />
     </section>
   );
@@ -27,11 +27,11 @@ function Banner() {
           className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
         />
         <div className="flex flex-col mr-auto items-start justify-center h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] space-y-[1vh] z-2">
-          <div className="text-[#ffd100] font-extrabold z-10 px-[1.5rem] md:px-[1.75rem] lg:px-[2rem] text-[2rem]/[2.5rem] md:text-[2.5rem]/[3rem] lg:text-[2.75rem]/[3.25rem]">
+          <div className="text-[#ffd100] font-extrabold z-10 ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem] text-[2rem]/[2.5rem] md:text-[2.5rem]/[3rem] lg:text-[2.75rem]/[3.25rem]">
             <p>We build our future</p>
             <p>Brick by Brick!</p>
           </div>
-          <div className="px-[1.5rem] md:px-[1.75rem] lg:px-[2rem]">
+          <div className="ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem]">
             <Link href="/support-us">
               <Button
                 text="BECOME A SPONSOR"
@@ -85,7 +85,7 @@ function AboutUs() {
   );
 }
 
-function NewProjects() {
+function Projects() {
   return (
     <section className="flex flex-col items-stretch justify-center min-h-[15rem] h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
       <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
@@ -100,7 +100,7 @@ function NewProjects() {
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas expedita nostrum dolore minima nulla aperiam totam. Id excepturi repudiandae, dolores enim aspernatur tenetur libero debitis voluptatibus facilis, ea natus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laudantium fuga deleniti? Architecto temporibus voluptates possimus rerum vero ducimus suscipit praesentium sed? Id rem saepe dicta eligendi molestiae odit a."
         }
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 ml-auto mr-auto gap-[1rem] lg:gap-[5rem]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-items-center-safe gap-y-[1rem] gap-x-[7rem] w-full">
         <SmallProject
           color="#FFD100"
           name={"Portfolio\nLibrary"}
@@ -143,45 +143,44 @@ type ProjectProps = {
 };
 
 function SmallProject({ color, name, logoPath, link }: ProjectProps) {
-  // <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
-  //         <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
-  //           <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]"></div>
   return (
-    <Link
-      href={link}
-      className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] md:h-[20rem] 2xl:h-[25rem] md:w-[17.6rem] 2xl:w-[22rem] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
-    >
-      <div
-        className="absolute inset-0 rounded-[1.5rem] z-10"
-        style={{
-          background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
-        }}
-      />
-      <div className="w-full h-full rounded-[1.3rem] bg-[#0a0a0a]">
-        <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
-          <div className="flex items-center justify-center w-full h-[70%] overflow-hidden">
-            <Image
-              src={logoPath}
-              alt={name + "Logo"}
-              width={275}
-              height={275}
-              className="object-contain scale-75"
-            />
-          </div>
-          <div className="absolute bottom-[1.2rem] left-[1.6rem]">
-            <p
-              className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[2rem]/[2.25rem]"
-              style={{ whiteSpace: "pre-line", color: color }}
-            >
-              {name}
-            </p>
-          </div>
-          <div className="absolute bottom-[1rem] right-[1.5rem]">
-            <HiArrowNarrowRight className="z-[10] inline mb-[-0.25rem] mr-[-0.5rem] h-[2.5rem] w-auto fill-white" />
+    <>
+      <Link
+        href={link}
+        className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[17rem] md:h-[20rem] 2xl:h-[25rem] w-[15rem] md:w-[17.6rem] 2xl:w-[22rem] hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+      >
+        <div
+          className="absolute inset-0 rounded-[1.5rem] z-10"
+          style={{
+            background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
+          }}
+        />
+        <div className="w-full h-full rounded-[1.3rem] bg-[#0a0a0a]">
+          <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
+            <div className="flex items-center justify-center w-full h-[75%]">
+              <Image
+                src={logoPath}
+                alt={name + "Logo"}
+                width={275}
+                height={275}
+                className="object-contain scale-60 md:scale-65 lg:scale-75"
+              />
+            </div>
+            <div className="absolute bottom-[1.2rem] left-[1.6rem]">
+              <p
+                className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[2rem]/[2.25rem]"
+                style={{ whiteSpace: "pre-line", color: color }}
+              >
+                {name}
+              </p>
+            </div>
+            <div className="absolute bottom-[1rem] right-[1.5rem]">
+              <HiArrowNarrowRight className="z-[10] inline mb-[-0.25rem] mr-[-0.5rem] h-[2.5rem] w-auto fill-white" />
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </>
   );
 }
 
