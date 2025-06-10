@@ -163,44 +163,6 @@ function NewAboutUs() {
   );
 }
 
-function AboutUs() {
-  return (
-    <section className="flex flex-col items-stretch justify-center h-auto w-full py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
-      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
-        About Us
-      </h1>
-      <div className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-[1rem] xl:gap-[5rem] 2xl:gap-[7rem]">
-        <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
-          <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
-            <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]">
-              <p className="text-[1.25rem]/[1.75rem] md:text-[1.5rem]/[2rem] font-medium text-[#ffffff]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium consequuntur unde provident minus iure atque sunt
-                tenetur iste qui. Quibusdam officiis est voluptatum ullam at
-                reprehenderit accusantium quam illo minus. Lorem, ipsum dolor
-                sit amet consectetur adipisicing elit. Corrupti nulla eum
-                quisquam repellendus, aperiam, maiores distinctio fuga inventore
-                animi incidunt id quasi facere explicabo, officiis voluptas
-                dolor. Sapiente, repellat reprehenderit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto select-none">
-          <div className="relative w-full h-full rounded-[1.3rem] overflow-hidden">
-            <Image
-              src="/random.jpg"
-              alt="random"
-              fill
-              className="object-cover relative w-full h-full rounded-[1.3rem] overflow-hidden"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Projects() {
   return (
     <section className="flex flex-col justify-center min-h-[15rem] h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
