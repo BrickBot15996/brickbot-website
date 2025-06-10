@@ -117,11 +117,11 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-200"
+        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgb(10,10,10)] z-[100] flex justify-center items-center select-none transition-all duration-200"
         style={{
           backdropFilter: !(isOpen && isMobile) ? "blur(8px)" : undefined,
           background:
-            isOpen && isMobile ? "rgba(18,18,18,1.0)" : "rgba(18,18,18,0.8)",
+            isOpen && isMobile ? "rgba(10,10,10,1.0)" : "rgba(10,10,10,0.8)",
         }}
       >
         {/* Desktop Navbar */}

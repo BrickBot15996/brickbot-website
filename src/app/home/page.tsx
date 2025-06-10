@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../components/Button";
 import useEmblaCarousel from "embla-carousel-react";
 import SponsorMarquee from "../components/SponsorMarquee";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center">
       <Banner />
-      <section className="flex flex-col space-y-[2rem] w-[calc(100vw-3rem)] md:w-[calc(100vw-4rem)] lg:w-[calc(100cw-6rem)] xl:w-[calc(100vw-8rem)] max-w-[37rem] md:max-w-[44rem] lg:max-w-[58rem] xl:max-w-[72rem] 2xl:max-w-[88rem]">
+      <section className="flex flex-col space-y-[4rem] mt-[4rem] md:mt-[6rem] lg:mt-[8rem] w-[calc(100vw-3rem)] md:w-[calc(100vw-4rem)] lg:w-[calc(100vw-6rem)] xl:w-[calc(100vw-8rem)] max-w-[37rem] md:max-w-[44rem] lg:max-w-[58rem] xl:max-w-[72rem] 2xl:max-w-[88rem]">
         <NewAboutUs />
         <Projects />
         <SponsorMarquee />
@@ -32,9 +32,9 @@ function Banner() {
           priority
           className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
         />
-        <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_#000000_30%,_transparent)] z-2">
+        <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_#0a0a0a_30%,_transparent)] z-2">
           <div className="flex flex-col z-10  ml-[1.5rem] md:ml-[2rem] lg:ml-[3rem] xl:ml-[4rem] space-y-[1rem]">
-            <p className="text-[#ffd100] font-extrabold text-[2rem]/[2.5rem] md:text-[2.5rem]/[3rem] lg:text-[2.75rem]/[3.25rem]">
+            <p className="text-[#ffd100] font-extrabold text-[2.25rem]/[2.85rem] md:text-[2.75rem]/[3.35rem] lg:text-[3rem]/[3.6rem]">
               We build our future
               <br />
               Brick by Brick!
@@ -72,91 +72,116 @@ function NewAboutUs() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  const [isEnd, setIsEnd] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setIsEnd(!emblaApi.canScrollNext());
+      setIsBeginning(!emblaApi.canScrollPrev());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
   return (
-    <section className="flex flex-col h-auto w-full space-y-[2rem]">
-      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
+    <section className="flex flex-col h-auto w-full space-y-[0.5rem]">
+      <h1 className="text-[#ffd100] font-extrabold text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem]">
         About Us
       </h1>
-      <p className="text-[1.25rem]/[1.75rem] md:text-[1.5rem]/[2rem] font-medium text-[#ffffff] w-[70%]">
+      <p className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium text-[#B1B1B1] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] ">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
         temporibus molestiae omnis saepe dolorem, dignissimos nobis dolorum
         velit explicabo exercitationem nulla eaque, asperiores eligendi sequi
-        molestias quae optio ipsum. Ipsam. Lorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Atque sed eaque unde placeat nesciunt
-        distinctio sit quis fugiat minima? Totam temporibus eius quisquam id
-        eaque. Similique aut repellendus alias sunt.
+        molestias quae optio ipsum. Ipsam.
       </p>
-      <div className="relative w-screen flex flex-col">
+
+      <div className="relative w-full flex flex-col mt-[2rem] md:mt-[2.5rem] lg:mt-[3rem] select-none">
+        <div className="absolute left-[calc((-100vw + 37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
+          <div className="mr-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(90deg,_#0a0a0a_20%,_transparent)] z-10" />
+          <div className="ml-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(270deg,_#0a0a0a_20%,_transparent)] z-10" />
+        </div>
         <div
           className="embla overflow-visible"
           ref={emblaRef}
         >
           <div className="embla__container flex">
-            <div className="embla__slide flex-[0_0_75%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] xl:flex-[0_0_35%] min-w-0 relative h-[20rem] md:h-[25rem] lg:h-[30rem] mr-[1.5rem]">
-              <Image
-                src="/random.jpg"
-                alt="BrickBot at event 1"
-                fill
-                className="object-cover rounded-[1rem]"
-              />
+            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src="/random.jpg"
+                  alt="BrickBot at event 1"
+                  fill
+                  className="object-cover rounded-[0.8rem] contain-content"
+                />
+              </div>
             </div>
-            <div className="embla__slide flex-[0_0_75%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] xl:flex-[0_0_35%] min-w-0 relative h-[20rem] md:h-[25rem] lg:h-[30rem] mr-[1.5rem]">
-              <Image
-                src="/random.jpg"
-                alt="BrickBot at event 2"
-                fill
-                className="object-cover rounded-[1rem]"
-              />
+            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src="/random.jpg"
+                  alt="BrickBot at event 1"
+                  fill
+                  className="object-cover rounded-[0.8rem] contain-content"
+                />
+              </div>
             </div>
-            <div className="embla__slide flex-[0_0_75%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] xl:flex-[0_0_35%] min-w-0 relative h-[20rem] md:h-[25rem] lg:h-[30rem] mr-[1.5rem]">
-              <Image
-                src="/random.jpg"
-                alt="BrickBot at event 3"
-                fill
-                className="object-cover rounded-[1rem]"
-              />
+            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src="/random.jpg"
+                  alt="BrickBot at event 1"
+                  fill
+                  className="object-cover rounded-[0.8rem] contain-content"
+                />
+              </div>
             </div>
-            <div className="embla__slide flex-[0_0_75%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] xl:flex-[0_0_35%] min-w-0 relative h-[20rem] md:h-[25rem] lg:h-[30rem] mr-[1.5rem]">
-              <Image
-                src="/random.jpg"
-                alt="BrickBot at event 4"
-                fill
-                className="object-cover rounded-[1rem]"
-              />
+            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src="/random.jpg"
+                  alt="BrickBot at event 1"
+                  fill
+                  className="object-cover rounded-[0.8rem] contain-content"
+                />
+              </div>
             </div>
-            <div className="embla__slide flex-[0_0_75%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] xl:flex-[0_0_35%] min-w-0 relative h-[20rem] md:h-[25rem] lg:h-[30rem] mr-[1.5rem]">
-              <Image
-                src="/random.jpg"
-                alt="BrickBot at event 5"
-                fill
-                className="object-cover rounded-[1rem]"
-              />
-            </div>
-            <div className="embla__slide flex-[0_0_75%] sm:flex-[0_0_60%] md:flex-[0_0_50%] lg:flex-[0_0_40%] xl:flex-[0_0_35%] min-w-0 relative h-[20rem] md:h-[25rem] lg:h-[30rem] mr-[1.5rem]">
-              <Image
-                src="/random.jpg"
-                alt="BrickBot at event 6"
-                fill
-                className="object-cover rounded-[1rem]"
-              />
+            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src="/random.jpg"
+                  alt="BrickBot at event 1"
+                  fill
+                  className="object-cover rounded-[0.8rem] contain-content"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-row ml-auto">
+      <div className="flex flex-row ml-auto space-x-[1rem] mt-[1.25rem] md:mt-[1.5rem] lg:mt-[2rem]">
         <button
-          className="bg-[rgba(255,209,0,0.9)] hover:bg-[#ffd100] active:bg-[#cc9900] text-[#121212] rounded-full w-[2.5rem] h-[2.5rem] flex items-center justify-center font-bold text-[1rem] cursor-pointer transition-all duration-200 shadow-lg backdrop-blur-sm"
+          className="bg-[linear-gradient(180deg,_#ffd10055,_#ffd10035)] w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] border-[#ffd100] flex flex-col justify-center cursor-pointer transition-all duration-300"
           onClick={scrollPrev}
           aria-label="Previous slide"
+          style={{ filter: isBeginning ? "brightness(0.75)" : "brightness(1)" }}
         >
-          ←
+          <HiArrowNarrowLeft className="fill-[#ffd100] h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto" />
         </button>
         <button
-          className="bg-[rgba(255,209,0,0.9)] hover:bg-[#ffd100] active:bg-[#cc9900] text-[#121212] rounded-full w-[2.5rem] h-[2.5rem] flex items-center justify-center font-bold text-[1rem] cursor-pointer transition-all duration-200 shadow-lg backdrop-blur-sm"
+          className="bg-[linear-gradient(180deg,_#ffd10055,_#ffd10035)] w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] border-[#ffd100] flex flex-col justify-center cursor-pointer transition-all duration-300"
           onClick={scrollNext}
           aria-label="Next slide"
+          style={{ filter: isEnd ? "brightness(0.75)" : "brightness(1)" }}
         >
-          →
+          <HiArrowNarrowRight className="fill-[#ffd100] h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto" />
         </button>
       </div>
     </section>
