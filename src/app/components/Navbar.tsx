@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
@@ -24,17 +24,32 @@ function NavbarButton({ text, path }: NavButtonProps) {
 
 function SidebarButton({ text, path, action }: NavButtonProps) {
   const [isHovered, setHovered] = useState(false);
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    const handleTouchOutside = (e: TouchEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setHovered(false);
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouchOutside);
+    return () => {
+      document.removeEventListener("touchstart", handleTouchOutside);
+    };
+  }, []);
 
   return (
     <Link
       href={path}
-      onClick={() => {
-        if (action) action();
+      onClick={action}
+      className="text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
+      style={{
+        color: isHovered ? "#ffd100" : "#ffffff",
       }}
-      className="text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
-      onTouchStart={() => setHovered(true)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered(true)}
     >
       <div
         className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
