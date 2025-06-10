@@ -23,14 +23,34 @@ function NavbarButton({ text, path }: NavButtonProps) {
 }
 
 function SidebarButton({ text, path, action }: NavButtonProps) {
+  const [isHovered, setHovered] = useState(false);
+
   return (
     <Link
       href={path}
       onClick={action}
       className="text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      <div className="bg-transparent rounded-[1.3rem] hover:bg-[#ffffff05] border-[#ffffff00] hover:border-[#ffffff0f] border-[0.1rem] px-[1rem] py-[0.5rem]">
-        {text}
+      <div
+        className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
+        style={{
+          background: isHovered
+            ? "linear-gradient(180deg, #FFFFFF32, #66666632)"
+            : "transparent",
+        }}
+      >
+        <div className="h-full rounded-[1.4rem] bg-[#121212]">
+          <div
+            className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
+            style={{
+              backgroundColor: isHovered ? "#ffffff05" : "transparent",
+            }}
+          >
+            {text}
+          </div>
+        </div>
       </div>
     </Link>
   );
@@ -47,7 +67,7 @@ export default function Navbar() {
     setTimeout(() => {
       setOpen(false);
       setIsClosing(false);
-    }, 300);
+    }, 200);
   };
 
   useEffect(() => {
@@ -66,7 +86,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-300"
+        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-300"
         style={{
           backdropFilter: !(isOpen && isMobile) ? "blur(8px)" : undefined,
           background:
@@ -106,7 +126,7 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Navbar */}
-        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[4rem] w-full">
+        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[3.5rem] lg:h-[4rem] w-full">
           <Link
             href="/home"
             className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
@@ -117,7 +137,7 @@ export default function Navbar() {
               priority
               width={1325}
               height={151}
-              className="h-[2.5rem] w-auto object-contain inline-block mr-[0.5rem]"
+              className="h-[2rem] w-auto object-contain inline-block mr-[0.5rem]"
             />
             <Image
               src="/brickbot_text.png"
@@ -125,10 +145,10 @@ export default function Navbar() {
               priority
               width={928}
               height={502}
-              className="h-[1.5rem] w-auto object-contain inline-block"
+              className="h-[1.25rem] w-auto object-contain inline-block"
             />
           </Link>
-          <div className="relative ml-auto mr-[0.1rem] mt-[0.9rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
+          <div className="relative ml-auto mr-[0.1rem] mt-[0.4rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
@@ -141,24 +161,21 @@ export default function Navbar() {
 
       {/* Mobile Sidebar Overlay */}
       <div
-        className="fixed top-[3.5rem] left-0 bg-[rgba(18,18,18,1.0)] h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-300"
+        className="fixed top-[3.5rem] left-0 w-full bg-[rgba(18,18,18,1.0)] h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-200"
         style={{
-          width: isOpen && isMobile ? "100vw" : "0vw",
+          height: isOpen && isMobile ? "100vh" : "3.5rem",
           visibility: isOpen && isMobile ? "visible" : "hidden",
         }}
       >
-        {/* This conditional rendering of the child div ensures the animation 
-        re-triggers every time the sidebar opens.
-      */}
         {isOpen && (
           <div
             className={`w-full h-full px-[1rem] text-[#ffffff] flex flex-col ${
               isClosing
-                ? "animate-[fadeOut_0.3s_ease-in-out_forwards]"
-                : "opacity-0 animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]"
+                ? "animate-[fadeOut_0.2s_ease-in-out_forwards]"
+                : "opacity-0 animate-[fadeInDelay_0.15s_ease-in-out_0.05s_forwards]"
             }`}
           >
-            <h1 className="text-[2.25rem] font-bold text-[#ffffff] mb-[1rem] mt-[1.5rem] px-[1rem]">
+            <h1 className="text-[2.25rem] font-extrabold text-[#ffffff] mb-[1rem] mt-[1.5rem] px-[1rem]">
               Menu
             </h1>
             <SidebarButton
@@ -194,21 +211,21 @@ export default function Navbar() {
         @keyframes fadeInDelay {
           from {
             opacity: 0;
-            transform: translateX(-10px);
+            transform: translateY(-10px);
           }
           to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
           }
         }
         @keyframes fadeOut {
           from {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
           }
           to {
             opacity: 0;
-            transform: translateX(-10px);
+            transform: translateY(-10px);
           }
         }
       `}</style>
