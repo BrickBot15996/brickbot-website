@@ -33,16 +33,27 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
       }
     };
 
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setHovered(false);
+      }
+    };
+
     document.addEventListener("touchstart", handleTouchOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("touchstart", handleTouchOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <a
+    <Link
+      ref={ref}
       href={path}
       onClick={() => {
+        setHovered(false);
         if (action) action();
       }}
       onMouseEnter={() => setHovered(true)}
@@ -72,7 +83,7 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
