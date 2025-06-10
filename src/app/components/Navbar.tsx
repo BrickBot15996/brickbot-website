@@ -24,21 +24,31 @@ function NavbarButton({ text, path }: NavButtonProps) {
 
 function SidebarButton({ text, path, action }: NavButtonProps) {
   return (
-    <button className="bg-transparent rounded-[1rem] text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] px-[1rem] py-[0.2rem] font-semibold hover:scale-110 active:scale-90 transition-transform duration-150">
-      <Link
-        href={path}
-        onClick={action}
-        className=""
-      >
+    <Link
+      href={path}
+      onClick={action}
+      className="text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
+    >
+      <div className="bg-transparent rounded-[1.3rem] hover:bg-[#ffffff05] border-[#ffffff00] hover:border-[#ffffff0f] border-[0.1rem] px-[1rem] py-[0.5rem]">
         {text}
-      </Link>
-    </button>
+      </div>
+    </Link>
   );
 }
 
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+
+    setTimeout(() => {
+      setOpen(false);
+      setIsClosing(false);
+    }, 300);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,19 +66,21 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] backdrop-blur z-[100] flex justify-center items-center select-none transition-all duration-300"
+        className="fixed top-0 h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-300"
         style={{
-          height: isOpen && isMobile ? "100vh" : undefined,
+          backdropFilter: !(isOpen && isMobile) ? "blur(8px)" : undefined,
+          background:
+            isOpen && isMobile ? "rgba(18,18,18,1.0)" : "rgba(18,18,18,0.8)",
         }}
       >
         {/* Desktop Navbar */}
         <ul className="hidden md:flex justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
           <NavbarButton
-            text="BRICKBOTING"
+            text="BRICKLOG"
             path="/tbd"
           />
           <NavbarButton
-            text="ACHIEVEMENTS"
+            text="OUR TEAM"
             path="/achievements"
           />
           <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-107 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-93 active:translate-y-[-0.15rem] active:lg:translate-y-[-0.2rem]">
@@ -84,7 +96,7 @@ export default function Navbar() {
             </Link>
           </li>
           <NavbarButton
-            text="RESOURCES"
+            text="PROJECTS"
             path="/resources"
           />
           <NavbarButton
@@ -94,7 +106,7 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Navbar */}
-        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[3.5rem] lg:h-[4rem] w-full">
+        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[4rem] w-full">
           <Link
             href="/home"
             className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
@@ -105,7 +117,7 @@ export default function Navbar() {
               priority
               width={1325}
               height={151}
-              className="h-[1.5rem] w-auto object-contain inline-block mr-[0.5rem]"
+              className="h-[2.5rem] w-auto object-contain inline-block mr-[0.5rem]"
             />
             <Image
               src="/brickbot_text.png"
@@ -113,10 +125,10 @@ export default function Navbar() {
               priority
               width={928}
               height={502}
-              className="h-[1rem] w-auto object-contain inline-block"
+              className="h-[1.5rem] w-auto object-contain inline-block"
             />
           </Link>
-          <div className="relative ml-auto mr-[0.1rem] mt-[0.4rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
+          <div className="relative ml-auto mr-[0.1rem] mt-[0.9rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
@@ -128,45 +140,75 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Sidebar Overlay */}
-      {isOpen && (
-        <div className="fixed top-[3rem] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex md:hidden select-none">
-          <div className="w-full h-full text-[#ffffff] flex flex-col space-y-[0.5rem] opacity-0 animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]">
-            <h1 className="text-center text-[2.25rem] font-bold text-[#ffd100] pt-[1rem] pb-[0.5rem]">
-              MENU
+      <div
+        className="fixed top-[3.5rem] left-0 bg-[rgba(18,18,18,1.0)] h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-300"
+        style={{
+          width: isOpen && isMobile ? "100vw" : "0vw",
+          visibility: isOpen && isMobile ? "visible" : "hidden",
+        }}
+      >
+        {/* This conditional rendering of the child div ensures the animation 
+        re-triggers every time the sidebar opens.
+      */}
+        {isOpen && (
+          <div
+            className={`w-full h-full px-[1rem] text-[#ffffff] flex flex-col ${
+              isClosing
+                ? "animate-[fadeOut_0.3s_ease-in-out_forwards]"
+                : "opacity-0 animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]"
+            }`}
+          >
+            <h1 className="text-[2.25rem] font-bold text-[#ffffff] mb-[1rem] mt-[1.5rem] px-[1rem]">
+              Menu
             </h1>
             <SidebarButton
-              text="BRICKBOTING"
+              text="Home"
+              path="/home"
+              action={handleClose}
+            />
+            <SidebarButton
+              text="Bricklog"
               path="/tbd"
-              action={() => setOpen(false)}
+              action={handleClose}
             />
             <SidebarButton
-              text="ACHIEVEMENTS"
+              text="Our Team"
               path="/achievements"
-              action={() => setOpen(false)}
+              action={handleClose}
             />
             <SidebarButton
-              text="RESOURCES"
+              text="Projects"
               path="/resources"
-              action={() => setOpen(false)}
+              action={handleClose}
             />
             <SidebarButton
-              text="SUPPORT US"
+              text="Support Us"
               path="/support-us"
-              action={() => setOpen(false)}
+              action={handleClose}
             />
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       <style jsx>{`
         @keyframes fadeInDelay {
           from {
             opacity: 0;
-            transform: translateY(-10px);
+            transform: translateX(-10px);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
+          }
+        }
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateX(-10px);
           }
         }
       `}</style>
