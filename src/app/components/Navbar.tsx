@@ -40,16 +40,18 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
   }, []);
 
   return (
-    <Link
+    <a
       href={path}
-      onClick={action}
-      className="text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
-      style={{
-        color: isHovered ? "#ffd100" : "#ffffff",
+      onClick={() => {
+        if (action) action();
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
+      className="text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
+      style={{
+        color: isHovered ? "#ffd100" : "#ffffff",
+      }}
     >
       <div
         className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
@@ -70,7 +72,7 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 
