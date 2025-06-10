@@ -30,9 +30,9 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
       href={path}
       onClick={() => {
         if (action) action();
-        setHovered(true);
       }}
       className="text-[#ffffff] hover:text-[#ffd100] text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
+      onTouchStart={() => setHovered(true)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
