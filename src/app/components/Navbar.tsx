@@ -117,7 +117,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-300"
+        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-200"
         style={{
           backdropFilter: !(isOpen && isMobile) ? "blur(8px)" : undefined,
           background:
