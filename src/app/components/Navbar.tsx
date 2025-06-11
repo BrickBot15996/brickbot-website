@@ -123,13 +123,9 @@ export default function Navbar() {
     <>
       <header
         className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(10,10,10,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
-        style={
-          {
-            // backdropFilter: !(isOpen && isMobile) ? "blur(8px)" : undefined,
-            // background:
-            //   isOpen && isMobile ? "rgba(10,10,10,1.0)" : "rgba(10,10,10,0.8)",
-          }
-        }
+        style={{
+          height: isOpen && isMobile ? "100vh" : undefined,
+        }}
       >
         {/* Desktop Navbar */}
         <ul className="hidden md:flex justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
@@ -195,78 +191,77 @@ export default function Navbar() {
             />
           </div>
         </div>
+        {/* Mobile Sidebar Overlay */}
+        <div
+          className="fixed top-[3.5rem] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-200"
+          style={{
+            height: isOpen && isMobile ? "100vh" : "3.5rem",
+            visibility: isOpen && isMobile ? "visible" : "hidden",
+          }}
+        >
+          {isOpen && (
+            <div
+              className={`w-full h-full px-[1rem] text-[#ffffff] flex flex-col ${
+                isClosing
+                  ? "animate-[fadeOut_0.2s_ease-in-out_forwards]"
+                  : "opacity-0 animate-[fadeInDelay_0.15s_ease-in-out_0.05s_forwards]"
+              }`}
+            >
+              <h1 className="text-[2.25rem] font-extrabold text-[#ffffff] mb-[1rem] mt-[1.5rem] px-[1rem]">
+                Menu
+              </h1>
+              <SidebarButton
+                text="Home"
+                path="/home"
+                action={handleClose}
+              />
+              <SidebarButton
+                text="Bricklog"
+                path="/tbd"
+                action={handleClose}
+              />
+              <SidebarButton
+                text="Our Team"
+                path="/achievements"
+                action={handleClose}
+              />
+              <SidebarButton
+                text="Projects"
+                path="/resources"
+                action={handleClose}
+              />
+              <SidebarButton
+                text="Support Us"
+                path="/support-us"
+                action={handleClose}
+              />
+            </div>
+          )}
+        </div>
+
+        <style jsx>{`
+          @keyframes fadeInDelay {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          @keyframes fadeOut {
+            from {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            to {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+          }
+        `}</style>
       </header>
-
-      {/* Mobile Sidebar Overlay */}
-      <div
-        className="fixed top-[3.5rem] left-0 w-full bg-[rgba(10,10,10,0.8)] backdrop-blur-md h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-200"
-        style={{
-          height: isOpen && isMobile ? "100vh" : "3.5rem",
-          visibility: isOpen && isMobile ? "visible" : "hidden",
-        }}
-      >
-        {isOpen && (
-          <div
-            className={`w-full h-full px-[1rem] text-[#ffffff] flex flex-col ${
-              isClosing
-                ? "animate-[fadeOut_0.2s_ease-in-out_forwards]"
-                : "opacity-0 animate-[fadeInDelay_0.15s_ease-in-out_0.05s_forwards]"
-            }`}
-          >
-            <h1 className="text-[2.25rem] font-extrabold text-[#ffffff] mb-[1rem] mt-[1.5rem] px-[1rem]">
-              Menu
-            </h1>
-            <SidebarButton
-              text="Home"
-              path="/home"
-              action={handleClose}
-            />
-            <SidebarButton
-              text="Bricklog"
-              path="/tbd"
-              action={handleClose}
-            />
-            <SidebarButton
-              text="Our Team"
-              path="/achievements"
-              action={handleClose}
-            />
-            <SidebarButton
-              text="Projects"
-              path="/resources"
-              action={handleClose}
-            />
-            <SidebarButton
-              text="Support Us"
-              path="/support-us"
-              action={handleClose}
-            />
-          </div>
-        )}
-      </div>
-
-      <style jsx>{`
-        @keyframes fadeInDelay {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fadeOut {
-          from {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          to {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-        }
-      `}</style>
     </>
   );
 }

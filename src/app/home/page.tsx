@@ -113,7 +113,7 @@ function AboutUs() {
           ref={emblaRef}
         >
           <div className="embla__container flex">
-            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/random.jpg"
@@ -123,7 +123,7 @@ function AboutUs() {
                 />
               </div>
             </div>
-            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/random.jpg"
@@ -133,7 +133,7 @@ function AboutUs() {
                 />
               </div>
             </div>
-            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/random.jpg"
@@ -143,7 +143,7 @@ function AboutUs() {
                 />
               </div>
             </div>
-            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/random.jpg"
@@ -153,7 +153,7 @@ function AboutUs() {
                 />
               </div>
             </div>
-            <div className="embla__slide flex-[0_0_25rem] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/random.jpg"
