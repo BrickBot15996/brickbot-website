@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../components/Button";
@@ -22,6 +23,8 @@ export default function Home() {
 }
 
 function Banner() {
+  const router = useRouter();
+
   return (
     <section className="relative w-full flex flex-col py-[3rem] md:py-[3.5rem] lg:py-[4rem]">
       <div className="relative flex h-[30rem] md:h-[35rem] lg:h-[45rem] w-full">
@@ -39,13 +42,12 @@ function Banner() {
               <br />
               Brick by Brick!
             </p>
-            <Link href="/support-us">
-              <Button
-                text="BECOME A SPONSOR"
-                arrow={true}
-                color="#ffd100"
-              />
-            </Link>
+            <Button
+              text="BECOME A SPONSOR"
+              arrow={true}
+              color="#ffd100"
+              action={() => router.push("/support-us")}
+            />
           </div>
         </div>
       </div>
@@ -105,8 +107,8 @@ function AboutUs() {
 
       <div className="relative w-full flex flex-col mt-[2rem] md:mt-[2.5rem] lg:mt-[3rem] select-none">
         <div className="absolute left-[calc((-100vw + 37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
-          <div className="mr-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(90deg,_#0a0a0a_20%,_transparent)] z-10" />
-          <div className="ml-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(270deg,_#0a0a0a_20%,_transparent)] z-10" />
+          <div className="mr-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(90deg,_#0a0a0a_20%,_transparent)] z-10 pointer-events-none" />
+          <div className="ml-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(270deg,_#0a0a0a_20%,_transparent)] z-10 pointer-events-none" />
         </div>
         <div
           className="embla overflow-visible"
@@ -153,7 +155,7 @@ function AboutUs() {
                 />
               </div>
             </div>
-            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9 mr-[1.5rem]">
+            <div className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] bg-[linear-gradient(180deg,_#ffffff12,_#58585812)] rounded-[1rem] p-[0.25rem] relative h-auto aspect-16/9">
               <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src="/random.jpg"

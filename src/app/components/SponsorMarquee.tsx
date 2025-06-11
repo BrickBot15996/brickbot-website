@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
@@ -44,47 +45,50 @@ const sponsors: SponsorData[] = [
 ];
 
 export default function SponsorMarquee() {
+  const router = useRouter();
+
   return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem]  space-y-[2rem] md:space-y-[3rem]">
+    <section className="h-full w-auto py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[2rem] md:space-y-[3rem] overflow-visible">
       <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.35rem] lg:text-[2.75rem] mr-auto">
         Sponsors
       </h1>
-      <Marquee
-        pauseOnHover={true}
-        pauseOnClick={true}
-        speed={120}
-        autoFill={true}
-        gradient={false}
-        className="h-[5rem] md:h-[6.5rem] lg:h-[8rem] select-none"
-      >
-        {sponsors.map((SponsorData, index) => (
-          <Link
-            href={SponsorData.websiteLink}
-            target="_blank"
-            key={index}
-            className="cursor-pointer hover:opacity-50 items-center"
-          >
-            <Image
+      <div className="ml-[calc((-100vw + 37rem)/2)] md:ml-[calc((-100vw+44rem)/2)] lg:ml-[calc((-100vw+58rem)/2)] xl:ml-[calc((-100vw+72rem)/2)] 2xl:ml-[calc((-100vw+88rem)/2)] w-[100vw] h-full">
+        <Marquee
+          pauseOnHover={true}
+          pauseOnClick={true}
+          speed={120}
+          autoFill={true}
+          gradient={true}
+          gradientColor="#0a0a0a"
+          className="h-[5rem] md:h-[6.5rem] lg:h-[8rem] select-none"
+        >
+          {sponsors.map((SponsorData, index) => (
+            <Link
+              href={SponsorData.websiteLink}
+              target="_blank"
               key={index}
-              src={SponsorData.logoPath}
-              alt={`Item ${index}`}
-              height={100}
-              width={100}
-              className="h-[3rem] md:h-[4rem] lg:h-[5rem] w-auto px-[2.5rem] md:px-[3.5rem] lg:px-[4.5rem]"
-            />
-          </Link>
-        ))}
-      </Marquee>
-      <Link
-        href="https://letmegooglethat.com/?q=BrickBot"
-        className="mb-[3rem] md:mb-[4rem]"
-      >
+              className="cursor-pointer hover:opacity-50 items-center"
+            >
+              <Image
+                key={index}
+                src={SponsorData.logoPath}
+                alt={`Item ${index}`}
+                height={100}
+                width={100}
+                className="h-[3rem] md:h-[4rem] lg:h-[5rem] w-auto px-[2.5rem] md:px-[3.5rem] lg:px-[4.5rem]"
+              />
+            </Link>
+          ))}
+        </Marquee>
+      </div>
+      <div className="flex justify-center">
         <Button
           text="BECOME OUR NEXT SPONSOR"
           arrow={false}
           color="#ffd100"
+          action={() => router.push("https://letmegooglethat.com/?q=BrickBot")}
         />
-      </Link>
+      </div>
     </section>
   );
 }
