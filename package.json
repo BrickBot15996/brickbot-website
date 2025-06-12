@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@squircle-js/react": "^1.2.18",
     "@vercel/analytics": "^1.5.0",
+    "corner-smoothing": "^0.1.5",
     "embla-carousel-react": "^8.6.0",
     "hamburger-react": "^2.5.2",
     "keen-slider": "^6.8.6",
@@ -19,7 +21,8 @@
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.5.0",
     "react-image-gallery": "^1.4.0",
-    "react-slideshow-image": "^4.3.2"
+    "react-slideshow-image": "^4.3.2",
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

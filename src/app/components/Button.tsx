@@ -3,33 +3,44 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 type ButtonParams = {
   text: string;
-  arrow?: boolean;
-  color?: string;
+  arrow: boolean;
+  accentColor: string;
+  gradientColorLight: string;
+  gradientColorDark: string;
   action?: () => void;
 };
 
-export default function Button({ text, arrow, color, action }: ButtonParams) {
+export default function Button({
+  text,
+  arrow = false,
+  accentColor,
+  gradientColorLight,
+  gradientColorDark,
+  action,
+}: ButtonParams) {
   return (
     <button
-      className="inline-flex justify-center items-center space-x-[0.15rem] md:space-x-[0.2rem] lg:space-x-[0.25rem] px-[0.85rem] md:px-[1.1rem] lg:px-[1.25rem] py-[0.14rem] md:py-[0.17rem] lg:py-[0.2rem] rounded-full border-[0.13rem] md:border-[0.15rem] lg:border-[0.17rem] hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150 cursor-pointer select-none w-fit"
+      className="group inline-flex justify-center items-center space-x-[0.15rem] md:space-x-[0.2rem] lg:space-x-[0.25rem] px-[1.2rem] md:px-[1.5rem] lg:px-[1.75rem] py-[0.25rem] md:py-[0.35rem] lg:py-[0.4rem] rounded-[1.1rem] md:rounded-[1.3rem] lg:rounded-[1.5rem] border-[0.13rem] md:border-[0.15rem] lg:border-[0.17rem] hover:brightness-75 hover:scale-107 active:brightness-100 active:scale-93 transition-transform duration-150 cursor-pointer select-none w-fit"
       style={{
-        borderColor: color,
-        backgroundImage: `linear-gradient(180deg, ${color}55, ${color}35)`,
+        borderColor: accentColor,
+        backgroundImage: `linear-gradient(180deg, ${gradientColorLight}, ${gradientColorDark})`,
       }}
       onClick={action}
     >
-      <p
-        className="font-extrabold text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem]"
-        style={{ color: color }}
-      >
-        {text}
-      </p>
-      {arrow && (
-        <HiArrowNarrowRight
-          className="ml-[0.2rem] mr-[-0.3rem] h-[1.2rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
-          style={{ color: color }}
-        />
-      )}
+      <div className="inline-flex space-x-[0.8rem] items-center">
+        <p
+          className="font-extrabold text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem]"
+          style={{ color: accentColor }}
+        >
+          {text}
+        </p>
+        {arrow && (
+          <HiArrowNarrowRight
+            className=" mr-[-0.5rem] mt-[0.05rem] h-[1.2rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+            style={{ color: accentColor }}
+          />
+        )}
+      </div>
     </button>
   );
 }

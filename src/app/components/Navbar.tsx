@@ -59,7 +59,7 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
-      className="text-[1.5rem]/[2.5rem] font-semibold transition-transform duration-150"
+      className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150"
       style={{
         color: isHovered ? "#ffd100" : "#ffffff",
       }}
@@ -75,7 +75,7 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
         <div
           className="h-full rounded-[1.4rem]"
           style={{
-            backgroundColor: isHovered ? "rgba(10,10,10,1.0)" : "transparent",
+            backgroundColor: isHovered ? "rgba(18,18,18,1.0)" : "transparent",
           }}
         >
           <div
@@ -122,7 +122,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(10,10,10,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
+        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
         style={{
           height: isOpen && isMobile ? "100vh" : undefined,
         }}

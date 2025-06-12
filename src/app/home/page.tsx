@@ -35,8 +35,8 @@ function Banner() {
           priority
           className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
         />
-        <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_#0a0a0a_30%,_transparent)] z-2">
-          <div className="flex flex-col z-10  ml-[1.5rem] md:ml-[2rem] lg:ml-[3rem] xl:ml-[4rem] space-y-[1rem]">
+        <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_#121212_30%,_transparent)] z-2">
+          <div className="flex flex-col z-10  ml-[1.5rem] md:ml-[2rem] lg:ml-[3rem] xl:ml-[4rem] space-y-[2rem]">
             <p className="text-[#ffd100] font-extrabold text-[2.25rem]/[2.85rem] md:text-[2.75rem]/[3.35rem] lg:text-[3rem]/[3.6rem]">
               We build our future
               <br />
@@ -45,7 +45,9 @@ function Banner() {
             <Button
               text="BECOME A SPONSOR"
               arrow={true}
-              color="#ffd100"
+              accentColor="#ffd100"
+              gradientColorLight="#463B08"
+              gradientColorDark="#282208"
               action={() => router.push("/support-us")}
             />
           </div>
@@ -107,8 +109,8 @@ function AboutUs() {
 
       <div className="relative w-full flex flex-col mt-[2rem] md:mt-[2.5rem] lg:mt-[3rem] select-none">
         <div className="absolute left-[calc((-100vw + 37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
-          <div className="mr-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(90deg,_#0a0a0a_20%,_transparent)] z-10 pointer-events-none" />
-          <div className="ml-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(270deg,_#0a0a0a_20%,_transparent)] z-10 pointer-events-none" />
+          <div className="mr-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(90deg,_#121212_20%,_transparent)] z-10 pointer-events-none" />
+          <div className="ml-auto w-[calc((100vw-88rem))] h-full bg-[linear-gradient(270deg,_#121212_20%,_transparent)] z-10 pointer-events-none" />
         </div>
         <div
           className="embla overflow-visible"
@@ -170,18 +172,30 @@ function AboutUs() {
       </div>
       <div className="flex flex-row ml-auto space-x-[1rem] mt-[1.25rem] md:mt-[1.5rem] lg:mt-[2rem]">
         <button
-          className="bg-[linear-gradient(180deg,_#ffd10055,_#ffd10035)] w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] border-[#ffd100] flex flex-col justify-center cursor-pointer transition-all duration-300"
+          className="bg-[linear-gradient(180deg,_#ffd10055,_#ffd10035)] hover:bg-[linear-gradient(180deg,_#ffd1006f,_#ffd1004f)] w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] border-[#ffd100] flex flex-col justify-center transition-all duration-300"
           onClick={scrollPrev}
           aria-label="Previous slide"
-          style={{ filter: isBeginning ? "brightness(0.75)" : "brightness(1)" }}
+          style={{
+            filter: isBeginning ? "brightness(0.75)" : undefined,
+            background: isBeginning
+              ? "linear-gradient(180deg,#ffd10055,#ffd10035)"
+              : undefined,
+            cursor: isBeginning ? undefined : "pointer",
+          }}
         >
           <HiArrowNarrowLeft className="fill-[#ffd100] h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto" />
         </button>
         <button
-          className="bg-[linear-gradient(180deg,_#ffd10055,_#ffd10035)] w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] border-[#ffd100] flex flex-col justify-center cursor-pointer transition-all duration-300"
+          className="bg-[linear-gradient(180deg,_#ffd10055,_#ffd10035)] hover:bg-[linear-gradient(180deg,_#ffd1006f,_#ffd1004f)] w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] border-[#ffd100] flex flex-col justify-center transition-all duration-300"
           onClick={scrollNext}
           aria-label="Next slide"
-          style={{ filter: isEnd ? "brightness(0.75)" : "brightness(1)" }}
+          style={{
+            filter: isEnd ? "brightness(0.75)" : undefined,
+            background: isEnd
+              ? "linear-gradient(180deg,#ffd10055,#ffd10035)"
+              : undefined,
+            cursor: isEnd ? undefined : "pointer",
+          }}
         >
           <HiArrowNarrowRight className="fill-[#ffd100] h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto" />
         </button>
@@ -191,53 +205,52 @@ function AboutUs() {
 }
 
 function Projects() {
+  const router = useRouter();
+
   return (
-    <section className="flex flex-col justify-center min-h-[15rem] h-auto w-full px-[1.5rem] md:px-[3rem] lg:px-[5rem] py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[1.5rem] md:space-y-[2rem]">
-      <h1 className="text-[#ffd100] font-extrabold text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]">
+    <section className="flex flex-col items-center justify-center space-y-[2rem] w-full h-fit">
+      <h1 className="text-[#ffd100] font-extrabold mr-auto text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] mb-[3rem]">
         Projects
       </h1>
-      <LargeProject
-        color="#ADFF50"
-        name="SimplicityFTC"
-        logoPath="/projects/simplicityftclogo1.png"
-        link="https://simplicityftc.github.io/SimplicityFTC-Docs/"
-        description={
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas expedita nostrum dolore minima nulla aperiam totam. Id excepturi repudiandae, dolores enim aspernatur tenetur libero debitis voluptatibus facilis, ea natus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laudantium fuga deleniti? Architecto temporibus voluptates possimus rerum vero ducimus suscipit praesentium sed? Id rem saepe dicta eligendi molestiae odit a."
-        }
-      />
-      <div className="grid grid-cols-1 xl:grid-cols-2 items-stretch gap-y-[2rem] xl:gap-x-[5rem] 2xl:gap-x-[7rem] w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 items-stretch gap-y-[2rem] sm:gap-x-[5rem] 2xl:gap-x-[7rem] w-full">
-          <SmallProject
-            color="#FFD100"
-            name={"Portfolio\nLibrary"}
-            logoPath="/projects/thevaultlogo1.png"
-            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-            description=""
-          />
-          <SmallProject
-            color="#FF6750"
-            name={"BrickBot Guide &\nDocumentation"}
-            logoPath="/projects/brickdocslogo1.png"
-            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-            description=""
-          />
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 items-stretch gap-y-[2rem] sm:gap-[5rem] 2xl:gap-[7rem] w-full">
-          <SmallProject
-            color="#9E50FF"
-            name={"Connecting\nFTC Teams"}
-            logoPath="/projects/sparkslogo.png"
-            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-            description=""
-          />
-          <SmallProject
-            color="#50FF9C"
-            name={"Caravana\nBrickBot"}
-            logoPath="/projects/caravanabrick1.png"
-            link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-            description=""
-          />
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[2rem] md:gap-x-[2rem] w-full">
+        <SmallProject
+          color="#FFD100"
+          name={"Portfolio Library"}
+          logoPath="/projects/thevaultlogo1.png"
+          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+          description=""
+        />
+        <SmallProject
+          color="#FF6750"
+          name={"BrickBot Guide & Documentation"}
+          logoPath="/projects/brickdocslogo1.png"
+          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+          description=""
+        />
+        <SmallProject
+          color="#9E50FF"
+          name={"Connecting FTC Teams"}
+          logoPath="/projects/sparkslogo.png"
+          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+          description=""
+        />
+        <SmallProject
+          color="#30CAAE"
+          name={"Brickbot is Here!"}
+          logoPath="/projects/brickbotishere.png"
+          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+          description=""
+        />
+      </div>
+      <div className="ml-auto">
+        <Button
+          text="SEE ALL"
+          arrow={false}
+          accentColor="#ffd100"
+          gradientColorLight="#463B08"
+          gradientColorDark="#282208"
+          action={() => router.push("/projects")}
+        />
       </div>
     </section>
   );
@@ -256,7 +269,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
     <>
       <Link
         href={link}
-        className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] h-[17rem] md:h-[20rem] 2xl:h-[25rem] w-auto hover:opacity-75 hover:scale-105 active:opacity-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+        className="group relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-105 active:brightness-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
       >
         <div
           className="absolute inset-0 rounded-[1.5rem] z-10"
@@ -264,93 +277,31 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
             background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
           }}
         />
-        <div className="w-full h-full rounded-[1.3rem] bg-[#0a0a0a]">
+        <div className="w-full h-full rounded-[1.3rem] bg-[#121212]">
           <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363630D,_#0202020D)]">
-            <div className="flex items-center justify-center w-full h-[75%]">
+            <div className="flex items-center justify-center w-full h-[80%]">
               <Image
                 src={logoPath}
                 alt={name + "Logo"}
                 width={275}
                 height={275}
-                className="object-contain scale-75"
+                className="object-contain w-[70%] h-auto"
               />
             </div>
-            <div className="absolute bottom-[1.2rem] left-[1.6rem] w-[65%]">
+            <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%]">
               <p
-                className="font-medium text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
+                className="font-medium text-[2rem]/[2.25rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
                 style={{ color: color }}
               >
                 {name}
               </p>
             </div>
-            <div className="absolute bottom-[1rem] right-[1.5rem]">
-              <HiArrowNarrowRight className="z-[10] inline mb-[-0.25rem] mr-[-0.5rem] xl:h-[1.5rem] 2xl:h-[2rem] w-auto fill-white" />
+            <div className="absolute bottom-[1rem] left-[85%] w-full">
+              <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] mr-[-0.5rem] h-auto w-[10%] fill-white" />
             </div>
           </div>
         </div>
       </Link>
     </>
-  );
-}
-
-function LargeProject({
-  color,
-  name,
-  description,
-  logoPath,
-  link,
-}: ProjectProps) {
-  return (
-    <section className="grid grid-cols-1 xl:grid-cols-2 gap-[1rem] xl:gap-[5rem] 2xl:gap-[7rem]">
-      <Link
-        href={link}
-        className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto hover:opacity-75 hover:scale-103 active:opacity-100 active:scale-97 transition-transform duration-150 cursor-pointer select-none overflow-hidden"
-      >
-        <div
-          className="absolute inset-0 rounded-[1.5rem] z-10"
-          style={{
-            background: `linear-gradient(180deg, ${color}2F, #0202021B)`,
-          }}
-        />
-
-        <div className="relative h-full rounded-[1.3rem] bg-[#0a0a0a]">
-          <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)]">
-            <div className="relative flex flex-col items-center h-full w-full z-20">
-              <Image
-                src={logoPath}
-                alt={name + "Logo"}
-                width={275}
-                height={275}
-                className="mt-auto mb-auto h-[3rem] md:h-[3.5rem] xl:h-[3rem] 2xl:h-[3.5rem] w-auto mx-[1.5rem] my-[1rem]"
-              />
-            </div>
-            <div className="absolute bottom-[0.5rem] right-[0.5rem]">
-              <div className="relative h-auto w-auto p-[0.2rem] bg-[linear-gradient(180deg,_#FFA5A5,_#EC7171)] rounded-full">
-                <div className="relative h-full w-full bg-[#4B1717] rounded-full px-[1.2rem]">
-                  <p className="font-semibold text-[0.8rem] md:text-[1.2rem] xl:text-[1rem] text-[#FFBEBE]">
-                    New
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Link>
-      <div className="rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_#ffffff26,_#58585826)] min-h-[15rem] w-auto">
-        <div className="h-full rounded-[1.3rem] bg-[#0a0a0a]">
-          <div className="h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_#6363631F,_#0202021F)] px-[1.5rem] py-[1rem]">
-            <h1
-              className="font-semibold text-[2rem] mb-[0.5rem]"
-              style={{ color: color }}
-            >
-              {name}
-            </h1>
-            <p className="text-[1.25rem]/[1.75rem] md:text-[1.5rem]/[2rem] font-medium text-[#ffffff] pb-[1vh]">
-              {description}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
