@@ -1,28 +1,31 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
 
 type NavButtonProps = {
   text: string;
-  path: string;
   action?: () => void;
 };
 
-function NavbarButton({ text, path }: NavButtonProps) {
+function NavbarButton({ text, action }: NavButtonProps) {
   return (
-    <li className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer">
+    <li
+      className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
+      onClick={action}
+    >
       <div className="absolute w-full h-full overflow-visible opacity-0 hover:opacity-100 transition-opacity duration-300">
         <div className="relative opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)]" />
         <div className="relative opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)]" />
       </div>
-      <Link href={path}>{text}</Link>
+      <p>{text}</p>
     </li>
   );
 }
 
-function SidebarButton({ text, path, action }: NavButtonProps) {
+function SidebarButton({ text, action }: NavButtonProps) {
   const [isHovered, setHovered] = useState(false);
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -49,9 +52,7 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
   }, []);
 
   return (
-    <Link
-      ref={ref}
-      href={path}
+    <div
       onClick={() => {
         setHovered(false);
         if (action) action();
@@ -81,14 +82,14 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
           <div
             className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
             style={{
-              backgroundColor: isHovered ? "#ffffff05" : "transparent",
+              backgroundColor: isHovered ? "#1e1e1e" : "transparent",
             }}
           >
             {text}
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -96,6 +97,7 @@ export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const router = useRouter();
 
   const handleClose = () => {
     setIsClosing(true);
@@ -131,11 +133,11 @@ export default function Navbar() {
         <ul className="hidden md:flex justify-center items-center md:text-[var(--alternate-text)] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
           <NavbarButton
             text="BRICKLOG"
-            path="/tbd"
+            action={() => router.push("/blog")}
           />
           <NavbarButton
             text="OUR TEAM"
-            path="/achievements"
+            action={() => router.push("/our-team")}
           />
           <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-110 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
             <Link href="/home">
@@ -151,11 +153,11 @@ export default function Navbar() {
           </li>
           <NavbarButton
             text="PROJECTS"
-            path="/resources"
+            action={() => router.push("/projects")}
           />
           <NavbarButton
             text="SUPPORT US"
-            path="/support-us"
+            action={() => router.push("/support-us")}
           />
         </ul>
 
@@ -212,28 +214,38 @@ export default function Navbar() {
               </h1>
               <SidebarButton
                 text="Home"
-                path="/home"
-                action={handleClose}
+                action={() => {
+                  router.push("/home");
+                  handleClose();
+                }}
               />
               <SidebarButton
                 text="Bricklog"
-                path="/tbd"
-                action={handleClose}
+                action={() => {
+                  router.push("/blog");
+                  handleClose();
+                }}
               />
               <SidebarButton
                 text="Our Team"
-                path="/achievements"
-                action={handleClose}
+                action={() => {
+                  router.push("/our-team");
+                  handleClose();
+                }}
               />
               <SidebarButton
                 text="Projects"
-                path="/resources"
-                action={handleClose}
+                action={() => {
+                  router.push("/projects");
+                  handleClose();
+                }}
               />
               <SidebarButton
                 text="Support Us"
-                path="/support-us"
-                action={handleClose}
+                action={() => {
+                  router.push("/support-us");
+                  handleClose();
+                }}
               />
             </div>
           )}

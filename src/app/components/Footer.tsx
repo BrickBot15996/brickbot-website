@@ -39,13 +39,13 @@ export default function Footer() {
             href="https://www.tiktok.com/@brickbotcnu"
             target="_blank"
           >
-            <RiTiktokFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.2rem] md:h-[2.2rem] lg:h-[2.7rem] w-auto transition-transform duration-150" />
+            <RiTiktokFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2.5rem] lg:h-[3rem] w-auto transition-transform duration-150" />
           </Link>
           <Link
             href="https://www.facebook.com/brickbotcnu/"
             target="_blank"
           >
-            <RiFacebookFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.2rem] md:h-[2.2rem] lg:h-[2.7rem] w-auto transition-transform duration-150" />
+            <RiFacebookFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2.5rem] lg:h-[3rem] w-auto transition-transform duration-150" />
           </Link>
           <Link
             href="https://www.youtube.com/channel/UCRpA5UNXSZDl2GmPt_E91ew"

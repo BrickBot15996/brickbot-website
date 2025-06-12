@@ -53,6 +53,7 @@ export default function SponsorMarquee() {
         Sponsors
       </h1>
       <div className="ml-[calc((-100vw + 37rem)/2)] md:ml-[calc((-100vw+44rem)/2)] lg:ml-[calc((-100vw+58rem)/2)] xl:ml-[calc((-100vw+72rem)/2)] 2xl:ml-[calc((-100vw+88rem)/2)] w-[100vw] h-full">
+        {/* Desktop Marquee */}
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
@@ -60,7 +61,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[5rem] md:h-[6.5rem] lg:h-[8rem] select-none"
+          className="h-[0rem] md:h-[6.5rem] lg:h-[8rem] select-none hidden"
         >
           {sponsors.map((SponsorData, index) => (
             <Link
@@ -75,12 +76,70 @@ export default function SponsorMarquee() {
                 alt={`Item ${index}`}
                 height={100}
                 width={100}
-                className="h-[3rem] md:h-[4rem] lg:h-[5rem] w-auto px-[2.5rem] md:px-[3.5rem] lg:px-[4.5rem]"
+                className="h-[4rem] lg:h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
+              />
+            </Link>
+          ))}
+        </Marquee>
+
+        {/* Mobile Marquee */}
+        <Marquee
+          pauseOnHover={true}
+          pauseOnClick={true}
+          speed={120}
+          autoFill={true}
+          gradient={true}
+          gradientColor="var(--default-dark)"
+          className="h-[5rem] md:h-[0rem] select-none"
+        >
+          {sponsors.slice(0, 4).map((SponsorData, index) => (
+            <Link
+              href={SponsorData.websiteLink}
+              target="_blank"
+              key={index}
+              className="cursor-pointer hover:opacity-50 items-center"
+            >
+              <Image
+                key={index}
+                src={SponsorData.logoPath}
+                alt={`Item ${index}`}
+                height={100}
+                width={100}
+                className="h-[3rem] w-auto px-[2.5rem]"
+              />
+            </Link>
+          ))}
+        </Marquee>
+        <Marquee
+          pauseOnHover={true}
+          pauseOnClick={true}
+          speed={120}
+          autoFill={true}
+          gradient={true}
+          direction="right"
+          gradientColor="var(--default-dark)"
+          className="h-[5rem] md:h-[0rem] select-none"
+        >
+          {sponsors.slice(4, 8).map((SponsorData, index) => (
+            <Link
+              href={SponsorData.websiteLink}
+              target="_blank"
+              key={index}
+              className="cursor-pointer hover:opacity-50 items-center"
+            >
+              <Image
+                key={index}
+                src={SponsorData.logoPath}
+                alt={`Item ${index}`}
+                height={100}
+                width={100}
+                className="h-[3rem] w-auto px-[2.5rem]"
               />
             </Link>
           ))}
         </Marquee>
       </div>
+      {/* Sponsor Button */}
       <div className="flex justify-center">
         <Button
           text="BECOME OUR NEXT SPONSOR"
@@ -88,7 +147,7 @@ export default function SponsorMarquee() {
           accentColor="var(--default-yellow)"
           gradientColorLight="var(--yellow-gradient-light)"
           gradientColorDark="var(--yellow-gradient-dark)"
-          action={() => router.push("https://letmegooglethat.com/?q=BrickBot")}
+          action={() => router.push("/support-us")}
         />
       </div>
     </section>

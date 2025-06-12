@@ -178,7 +178,7 @@ function AboutUs() {
           style={{
             filter: isBeginning ? "brightness(0.75)" : undefined,
             background: isBeginning
-              ? `linear-gradient(180deg, --yellow-gradient-light, --yellow-gradient-dark)`
+              ? `linear-gradient(180deg, var(--yellow-gradient-light), var(--yellow-gradient-dark))`
               : undefined,
             cursor: isBeginning ? undefined : "pointer",
           }}
@@ -192,7 +192,7 @@ function AboutUs() {
           style={{
             filter: isEnd ? "brightness(0.75)" : undefined,
             background: isEnd
-              ? `linear-gradient(180deg, --yellow-gradient-light, --yellow-gradient-dark)`
+              ? `linear-gradient(180deg, var(--yellow-gradient-light), var(--yellow-gradient-dark))`
               : undefined,
             cursor: isEnd ? undefined : "pointer",
           }}
@@ -217,29 +217,25 @@ function Projects() {
           color="var(--the-vault)"
           name={"Portfolio Library"}
           logoPath="/projects/thevaultlogo1.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
+          link="/projects/the-vault"
         />
         <SmallProject
           color="var(--brick-docs)"
           name={"BrickBot Guide & Documentation"}
           logoPath="/projects/brickdocslogo1.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
+          link="https://brickbot15996.github.io/brickbot-docs/"
         />
         <SmallProject
           color="var(--sparks)"
           name={"Connecting FTC Teams"}
           logoPath="/projects/sparkslogo.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
+          link="projects/sparks"
         />
         <SmallProject
           color="var(--brickbot-is-here)"
           name={"BrickBot is Here!"}
           logoPath="/projects/brickbotishere.png"
-          link="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-          description=""
+          link="projects/brickbot-is-here"
         />
       </div>
       <div className="ml-auto">
@@ -261,7 +257,6 @@ type ProjectProps = {
   name: string;
   link: string;
   logoPath: string;
-  description: string;
 };
 
 function SmallProject({ color, name, logoPath, link }: ProjectProps) {
