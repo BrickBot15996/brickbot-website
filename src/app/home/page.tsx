@@ -264,7 +264,7 @@ function SmallProject({ color, name, logoPath, link }: ProjectProps) {
     <>
       <Link
         href={link}
-        className="group relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_var(--box-gradient-light),_var(--box-gradient-dark))] min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-105 active:brightness-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+        className="group relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_var(--box-gradient-light),_var(--box-gradient-dark))] min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-103 md:hover:scale-105 lg:hover:scale-103 xl:hover:scale-105 active:brightness-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
       >
         <div
           className="absolute inset-0 rounded-[1.5rem] z-10"

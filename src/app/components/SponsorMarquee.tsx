@@ -86,7 +86,7 @@ export default function SponsorMarquee() {
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
-          speed={120}
+          speed={70}
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
@@ -113,7 +113,7 @@ export default function SponsorMarquee() {
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
-          speed={120}
+          speed={70}
           autoFill={true}
           gradient={true}
           direction="right"

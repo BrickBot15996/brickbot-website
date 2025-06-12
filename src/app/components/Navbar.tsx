@@ -7,7 +7,7 @@ import Hamburger from "hamburger-react";
 
 type NavButtonProps = {
   text: string;
-  action?: () => void;
+  action: () => void;
 };
 
 function NavbarButton({ text, action }: NavButtonProps) {
@@ -27,7 +27,7 @@ function NavbarButton({ text, action }: NavButtonProps) {
 
 function SidebarButton({ text, action }: NavButtonProps) {
   const [isHovered, setHovered] = useState(false);
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleTouchOutside = (e: TouchEvent) => {
@@ -53,14 +53,15 @@ function SidebarButton({ text, action }: NavButtonProps) {
 
   return (
     <div
+      ref={ref}
       onClick={() => {
         setHovered(false);
-        if (action) action();
+        action();
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
-      className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150"
+      className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150 cursor-pointer"
       style={{
         color: isHovered ? "var(--default-yellow)" : "var(--alternate-text)",
       }}
@@ -120,6 +121,28 @@ export default function Navbar() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const body = document.body;
+    const html = document.documentElement;
+    const nextDiv = document.getElementById("__next");
+
+    if (isOpen && isMobile) {
+      body.style.overflowY = "hidden";
+      html.style.overflowY = "hidden";
+      if (nextDiv) {
+        nextDiv.style.overflowY = "hidden";
+      }
+    }
+
+    return () => {
+      body.style.overflowY = "unset";
+      html.style.overflowY = "unset";
+      if (nextDiv) {
+        nextDiv.style.overflowY = "unset";
+      }
+    };
+  }, [isOpen, isMobile]);
 
   return (
     <>
