@@ -1,8 +1,11 @@
 import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
+
 import Marquee from "react-fast-marquee";
+
+import Button from "./brickbot-button";
 
 type SponsorData = {
   logoPath: string;

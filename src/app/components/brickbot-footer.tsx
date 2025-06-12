@@ -1,6 +1,9 @@
 "use client";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
+
+import Link from "next/link";
+
 import { RiInstagramLine } from "react-icons/ri";
 import { RiTiktokFill } from "react-icons/ri";
 import { RiFacebookFill } from "react-icons/ri";

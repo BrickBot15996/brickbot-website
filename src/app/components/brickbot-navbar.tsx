@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+
 import Hamburger from "hamburger-react";
 
 type NavButtonProps = {
@@ -16,15 +18,14 @@ function NavbarButton({ text, action }: NavButtonProps) {
       className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
       onClick={action}
     >
-      <div className="absolute w-full h-full overflow-visible opacity-0 hover:opacity-100 transition-opacity duration-300">
-        <div className="relative opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)]" />
-        <div className="relative opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)]" />
+      <div className="group absolute w-full h-full overflow-visible">
+        <div className="relative opacity-0 group-hover:opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250" />
+        <div className="relative opacity-0 group-hover:opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250 group-hover:delay-150" />
       </div>
       <p>{text}</p>
     </li>
   );
 }
-
 function SidebarButton({ text, action }: NavButtonProps) {
   const [isHovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

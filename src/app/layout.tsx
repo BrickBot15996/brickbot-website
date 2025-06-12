@@ -2,8 +2,8 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Anek_Latin } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/brickbot-navbar";
+import Footer from "./components/brickbot-footer";
 
 const inter = Inter({
   variable: "--font-inter",
