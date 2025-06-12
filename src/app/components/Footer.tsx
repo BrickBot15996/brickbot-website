@@ -14,20 +14,20 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-[#191919] h-auto min-h-[10rem] w-full flex">
+    <footer className="bg-[var(--footer)] h-auto min-h-[10rem] w-full inline-flex items-center">
       <span className="h-auto w-auto ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem] mt-[2rem] md:mt-[2.5rem] lg:mt-[3rem]">
         <Link
           href="https://www.datahost.ro/"
-          className="text-[#ffffff] font-medium text-[0.8rem]/[2rem] md:text-[1rem]/[2.5rem] lg:text-[1.25rem]/[3rem] hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
+          className="text-[var(--alternate-text)] font-medium text-[0.8rem]/[2rem] md:text-[1rem]/[2.5rem] lg:text-[1.25rem]/[3rem] hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
           target="_blank"
         >
           Powered by DataHost
         </Link>
-        <p className="text-[#ffffff] font-medium text-[0.8rem]/[2rem] md:text-[1rem]/[2.5rem] lg:text-[1.25rem]/[3rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
+        <p className="text-[var(--alternate-text)] font-medium text-[0.8rem]/[2rem] md:text-[1rem]/[2.5rem] lg:text-[1.25rem]/[3rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
           Brickbot © {year}
         </p>
       </span>
-      <span className="relative h-auto ml-auto mr-[1.5rem] md:mr-[3rem] lg:mr-[5rem] mt-[3rem] md:mt-[3.5rem] lg:mt-[4rem] w-fit select-none">
+      <span className="relative h-auto ml-auto mr-[1.5rem] md:mr-[3rem] lg:mr-[5rem] w-fit select-none">
         <div className="grid grid-cols-4 items-start space-x-[1.2rem] md:space-x-[1.5rem] pt-[0.25rem] mr-[-1rem]">
           <Link
             href="https://www.instagram.com/brickbotcnu/"

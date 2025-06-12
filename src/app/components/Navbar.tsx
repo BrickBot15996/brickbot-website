@@ -14,8 +14,8 @@ function NavbarButton({ text, path }: NavButtonProps) {
   return (
     <li className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer">
       <div className="absolute w-full h-full overflow-visible opacity-0 hover:opacity-100 transition-opacity duration-300">
-        <div className="relative opacity-20 h-full w-full bg-[linear-gradient(0deg,_#ffd100_0%,_transparent_100%)]" />
-        <div className="relative opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_#ffd1003f_0%,_#ffd100_50%,_#ffd1003f_100%)]" />
+        <div className="relative opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)]" />
+        <div className="relative opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)]" />
       </div>
       <Link href={path}>{text}</Link>
     </li>
@@ -61,21 +61,21 @@ function SidebarButton({ text, path, action }: NavButtonProps) {
       onTouchStart={() => setHovered(true)}
       className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150"
       style={{
-        color: isHovered ? "#ffd100" : "#ffffff",
+        color: isHovered ? "var(--default-yellow)" : "var(--alternate-text)",
       }}
     >
       <div
         className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
         style={{
           background: isHovered
-            ? "linear-gradient(180deg, #FFFFFF32, #66666632)"
+            ? "linear-gradient(180deg, var(--box-gradient-light), var(--box-gradient-dark))"
             : "transparent",
         }}
       >
         <div
           className="h-full rounded-[1.4rem]"
           style={{
-            backgroundColor: isHovered ? "rgba(18,18,18,1.0)" : "transparent",
+            backgroundColor: isHovered ? "var(--default-dark)" : "transparent",
           }}
         >
           <div
@@ -122,13 +122,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[rgba(18,18,18,0.8)] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
+        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
         style={{
           height: isOpen && isMobile ? "100vh" : undefined,
         }}
       >
         {/* Desktop Navbar */}
-        <ul className="hidden md:flex justify-center items-center md:text-[#ffffff] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
+        <ul className="hidden md:flex justify-center items-center md:text-[var(--alternate-text)] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
           <NavbarButton
             text="BRICKLOG"
             path="/tbd"
@@ -137,7 +137,7 @@ export default function Navbar() {
             text="OUR TEAM"
             path="/achievements"
           />
-          <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-107 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-93 active:translate-y-[-0.15rem] active:lg:translate-y-[-0.2rem]">
+          <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-110 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
             <Link href="/home">
               <Image
                 src="/brick_yellow.png"
@@ -182,11 +182,11 @@ export default function Navbar() {
               className="h-[1.25rem] w-auto object-contain inline-block"
             />
           </Link>
-          <div className="relative ml-auto mr-[0.1rem] mt-[0.4rem] cursor-pointer fill-[#ffd100] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
+          <div className="relative ml-auto mr-[0.1rem] mt-[0.4rem] cursor-pointer fill-[var(--default-yellow)] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
-              color="#ffd100"
+              color="var(--default-yellow)"
               size={24}
             />
           </div>
@@ -201,13 +201,13 @@ export default function Navbar() {
         >
           {isOpen && (
             <div
-              className={`w-full h-full px-[1rem] text-[#ffffff] flex flex-col ${
+              className={`w-full h-full px-[1rem] text-[var(--alternate-text)] flex flex-col ${
                 isClosing
                   ? "animate-[fadeOut_0.2s_ease-in-out_forwards]"
                   : "opacity-0 animate-[fadeInDelay_0.15s_ease-in-out_0.05s_forwards]"
               }`}
             >
-              <h1 className="text-[2.25rem] font-extrabold text-[#ffffff] mb-[1rem] mt-[1.5rem] px-[1rem]">
+              <h1 className="text-[2.25rem] font-extrabold text-[var(--alternate-text)] mb-[1rem] mt-[1.5rem] px-[1rem]">
                 Menu
               </h1>
               <SidebarButton

@@ -49,7 +49,7 @@ export default function SponsorMarquee() {
 
   return (
     <section className="h-full w-auto py-[2.5rem] md:py-[3rem] lg:py-[3.25rem] space-y-[2rem] md:space-y-[3rem] overflow-visible">
-      <h1 className="text-[#ffd100] font-extrabold mr-auto text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem]">
+      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem]">
         Sponsors
       </h1>
       <div className="ml-[calc((-100vw + 37rem)/2)] md:ml-[calc((-100vw+44rem)/2)] lg:ml-[calc((-100vw+58rem)/2)] xl:ml-[calc((-100vw+72rem)/2)] 2xl:ml-[calc((-100vw+88rem)/2)] w-[100vw] h-full">
@@ -59,7 +59,7 @@ export default function SponsorMarquee() {
           speed={120}
           autoFill={true}
           gradient={true}
-          gradientColor="#121212"
+          gradientColor="var(--default-dark)"
           className="h-[5rem] md:h-[6.5rem] lg:h-[8rem] select-none"
         >
           {sponsors.map((SponsorData, index) => (
@@ -85,9 +85,9 @@ export default function SponsorMarquee() {
         <Button
           text="BECOME OUR NEXT SPONSOR"
           arrow={false}
-          accentColor="#ffd100"
-          gradientColorLight="#463B08"
-          gradientColorDark="#282208"
+          accentColor="var(--default-yellow)"
+          gradientColorLight="var(--yellow-gradient-light)"
+          gradientColorDark="var(--yellow-gradient-dark)"
           action={() => router.push("https://letmegooglethat.com/?q=BrickBot")}
         />
       </div>

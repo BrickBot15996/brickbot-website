@@ -1,10 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --default-dark: rgba(18, 18, 18, 1);
+  --dark-transparent: rgba(18, 18, 18, 0.8);
+  --accents-dark: rgba(9, 9, 9, 1);
+  --accents-dark-transparent: rgba(9, 9, 9, 0.8);
+
+  --footer: rgba(35, 35, 35, 1);
+
+  --default-yellow: rgba(255, 209, 0, 1);
+
+  --yellow-gradient-light: rgba(70, 59, 8, 1);
+  --yellow-gradient-dark: rgba(40, 34, 8, 1);
+  --lit-up-yellow-gradient-light: rgba(90, 79, 28, 1);
+  --lit-up-yellow-gradient-dark: rgba(60, 54, 28, 1);
+
+  --box-gradient-light: rgba(255, 255, 255, 0.149);
+  --box-gradient-dark: rgba(88, 88, 88, 0.149);
+  --box-inner-gradient-light: rgba(99, 99, 99, 0.051);
+  --box-inner-gradient-dark: rgba(2, 2, 2, 0.051);
+
+  --carousel-gradient-light: #ffffff12;
+  --carousel-gradient-dark: #58585812;
+
+  --default-text: rgba(177, 177, 177, 1);
+  --alternate-text: rgba(255, 255, 255, 1);
+
+  --the-vault: var(--default-yellow);
+  --brick-docs: #ff6750;
+  --sparks: #9e50ff;
+  --brickbot-is-here: #30caae;
+
   scrollbar-color: #2f2f2f #1b1b1b;
-  scrollbar-width: thin;
+  scrollbar-width: normal;
 }
 
 @theme inline {
