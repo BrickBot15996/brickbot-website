@@ -25,6 +25,7 @@
 
   --default-text: rgba(177, 177, 177, 1);
   --alternate-text: rgba(255, 255, 255, 1);
+  --darker-text: rgb(108, 108, 108, 1);
 
   --the-vault: var(--default-yellow);
   --brick-docs: #ff6750;
