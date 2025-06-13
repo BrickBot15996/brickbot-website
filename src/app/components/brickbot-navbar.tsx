@@ -7,94 +7,6 @@ import Link from "next/link";
 
 import Hamburger from "hamburger-react";
 
-type NavButtonProps = {
-  text: string;
-  action: () => void;
-};
-
-function NavbarButton({ text, action }: NavButtonProps) {
-  return (
-    <li
-      className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
-      onClick={action}
-    >
-      <div className="group absolute w-full h-full overflow-visible">
-        <div className="relative opacity-0 group-hover:opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250 group-hover:delay-150" />
-        <div className="relative opacity-0 group-hover:opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250" />
-      </div>
-      <p>{text}</p>
-    </li>
-  );
-}
-function SidebarButton({ text, action }: NavButtonProps) {
-  const [isHovered, setHovered] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleTouchOutside = (e: TouchEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setHovered(false);
-      }
-    };
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setHovered(false);
-      }
-    };
-
-    document.addEventListener("touchstart", handleTouchOutside);
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("touchstart", handleTouchOutside);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      onClick={() => {
-        setHovered(false);
-        action();
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onTouchStart={() => setHovered(true)}
-      className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150 cursor-pointer"
-      style={{
-        color: isHovered ? "var(--default-yellow)" : "var(--alternate-text)",
-      }}
-    >
-      <div
-        className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
-        style={{
-          background: isHovered
-            ? "linear-gradient(180deg, var(--box-gradient-light), var(--box-gradient-dark))"
-            : "transparent",
-        }}
-      >
-        <div
-          className="h-full rounded-[1.4rem]"
-          style={{
-            backgroundColor: isHovered ? "var(--default-dark)" : "transparent",
-          }}
-        >
-          <div
-            className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
-            style={{
-              backgroundColor: isHovered ? "#1e1e1e" : "transparent",
-            }}
-          >
-            {text}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -299,5 +211,93 @@ export default function Navbar() {
         `}</style>
       </header>
     </>
+  );
+}
+
+type NavButtonProps = {
+  text: string;
+  action: () => void;
+};
+
+function NavbarButton({ text, action }: NavButtonProps) {
+  return (
+    <li
+      className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
+      onClick={action}
+    >
+      <div className="group absolute w-full h-full overflow-visible">
+        <div className="relative opacity-0 group-hover:opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250 group-hover:delay-150" />
+        <div className="relative opacity-0 group-hover:opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250" />
+      </div>
+      <p>{text}</p>
+    </li>
+  );
+}
+function SidebarButton({ text, action }: NavButtonProps) {
+  const [isHovered, setHovered] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleTouchOutside = (e: TouchEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setHovered(false);
+      }
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setHovered(false);
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouchOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("touchstart", handleTouchOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      onClick={() => {
+        setHovered(false);
+        action();
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered(true)}
+      className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150 cursor-pointer"
+      style={{
+        color: isHovered ? "var(--default-yellow)" : "var(--alternate-text)",
+      }}
+    >
+      <div
+        className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
+        style={{
+          background: isHovered
+            ? "linear-gradient(180deg, var(--box-gradient-light), var(--box-gradient-dark))"
+            : "transparent",
+        }}
+      >
+        <div
+          className="h-full rounded-[1.4rem]"
+          style={{
+            backgroundColor: isHovered ? "var(--default-dark)" : "transparent",
+          }}
+        >
+          <div
+            className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
+            style={{
+              backgroundColor: isHovered ? "#1e1e1e" : "transparent",
+            }}
+          >
+            {text}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

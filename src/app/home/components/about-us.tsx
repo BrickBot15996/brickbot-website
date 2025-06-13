@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Carousel from "../../components/generic-carousel";
 
 export default function AboutUs() {
@@ -7,42 +9,62 @@ export default function AboutUs() {
         About Us
       </h1>
       <p className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[2.5rem] md:mb-[3rem] lg:mb-[3.5rem]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-        temporibus molestiae omnis saepe dolorem, dignissimos nobis dolorum
-        velit explicabo exercitationem nulla eaque, asperiores eligendi sequi
-        molestias quae optio ipsum. Ipsam.
+        We are team #15996, BrickBot, from{" "}
+        <Link
+          href="https://maps.app.goo.gl/dDSZJpAszXq8b3nJA"
+          target="_blank"
+          className="hover:text-[var(--alternate-text)]"
+        >
+          “Unirea” National College, Focșani, Romania
+        </Link>
+        . Since 2016, we have been competing in{" "}
+        <Link
+          href="https://www.firstinspires.org/robotics/ftc"
+          target="_blank"
+          className="hover:text-[var(--alternate-text)]"
+        >
+          FIRST Tech Challenge
+        </Link>
+        . Beyond building robots, we love spreading the STEAM spirit in both the
+        local and FTC communities.
       </p>
       <Carousel
         content={[
           {
-            imageSrc: "/random.jpg",
-            alt: "Random Brickbot",
+            imageSrc: "/about-us/caravan-2025.jpg",
+            alt: "BrickBot Caravan presentation in May 2025",
             aspectRatio: "16/9",
-            description: "BrickBot at FTC Championship 2028 in Las Vegas",
+            description: "BrickBot Caravan, May 2025",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "Random Brickbot",
+            imageSrc: "/about-us/italy-2025.jpg",
+            alt: "BrickBot at the Italian Championship in February 2025",
             aspectRatio: "16/9",
-            description: "BrickBot at FTC Championship 2028 in Las Vegas",
+            description: "Italy Championship, Feb 2025",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "Random Brickbot",
+            imageSrc: "/about-us/regionals-2025.jpg",
+            alt: "BrickBot at the East Regional in January 2025",
             aspectRatio: "16/9",
-            description: "BrickBot at FTC Championship 2028 in Las Vegas",
+            description: "Romania East Championship, Jan 2025",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "Random Brickbot",
+            imageSrc: "/about-us/focsani-meet-2025.jpg",
+            alt: "BrickBot at the Focșani League Meet in January 2025",
             aspectRatio: "16/9",
-            description: "BrickBot at FTC Championship 2028 in Las Vegas",
+            description: "DIVE Into Innovation League Meet, Jan 2025",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "Random Brickbot",
+            imageSrc: "/about-us/btc-2024.jpg",
+            alt: "BrickBot at the Bucharest Twin Cup in August 2024",
             aspectRatio: "16/9",
-            description: "BrickBot at FTC Championship 2028 in Las Vegas",
+            description: "Bucharest Twin Cup, Aug 2024",
+          },
+          {
+            imageSrc: "/about-us/regionals-2023.jpg",
+            alt: "BrickBot at the First Qualifying Tournament in February 2023",
+            aspectRatio: "16/9",
+            description: "Romania Qualifying Tournament, Feb 2023",
           },
         ]}
         buttonAccentColor="var(--default-yellow)"

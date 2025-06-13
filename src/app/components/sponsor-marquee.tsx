@@ -95,23 +95,25 @@ export default function SponsorMarquee() {
           gradientColor="var(--default-dark)"
           className="h-[5rem] md:h-[0rem] select-none"
         >
-          {sponsors.slice(0, 4).map((SponsorData, index) => (
-            <Link
-              href={SponsorData.websiteLink}
-              target="_blank"
-              key={index}
-              className="cursor-pointer hover:opacity-50 items-center"
-            >
-              <Image
+          {sponsors
+            .slice(0, sponsors.length / 2 + 1)
+            .map((SponsorData, index) => (
+              <Link
+                href={SponsorData.websiteLink}
+                target="_blank"
                 key={index}
-                src={SponsorData.logoPath}
-                alt={`Item ${index}`}
-                height={100}
-                width={100}
-                className="h-[3rem] w-auto px-[2.5rem]"
-              />
-            </Link>
-          ))}
+                className="cursor-pointer hover:opacity-50 items-center"
+              >
+                <Image
+                  key={index}
+                  src={SponsorData.logoPath}
+                  alt={`Item ${index}`}
+                  height={100}
+                  width={100}
+                  className="h-[3rem] w-auto px-[2.5rem]"
+                />
+              </Link>
+            ))}
         </Marquee>
         <Marquee
           pauseOnHover={true}
@@ -123,23 +125,25 @@ export default function SponsorMarquee() {
           gradientColor="var(--default-dark)"
           className="h-[5rem] md:h-[0rem] select-none"
         >
-          {sponsors.slice(4, 8).map((SponsorData, index) => (
-            <Link
-              href={SponsorData.websiteLink}
-              target="_blank"
-              key={index}
-              className="cursor-pointer hover:opacity-50 items-center"
-            >
-              <Image
+          {sponsors
+            .slice(sponsors.length / 2 + 1, sponsors.length)
+            .map((SponsorData, index) => (
+              <Link
+                href={SponsorData.websiteLink}
+                target="_blank"
                 key={index}
-                src={SponsorData.logoPath}
-                alt={`Item ${index}`}
-                height={100}
-                width={100}
-                className="h-[3rem] w-auto px-[2.5rem]"
-              />
-            </Link>
-          ))}
+                className="cursor-pointer hover:opacity-50 items-center"
+              >
+                <Image
+                  key={index}
+                  src={SponsorData.logoPath}
+                  alt={`Item ${index}`}
+                  height={100}
+                  width={100}
+                  className="h-[3rem] w-auto px-[2.5rem]"
+                />
+              </Link>
+            ))}
         </Marquee>
       </div>
       {/* Sponsor Button */}

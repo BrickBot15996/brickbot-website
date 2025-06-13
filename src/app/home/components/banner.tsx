@@ -8,14 +8,13 @@ export default function Banner() {
   const router = useRouter();
 
   return (
-    <section className="relative w-full flex flex-col py-[3rem] md:py-[3.5rem] lg:py-[4rem]">
+    <section className="relative w-full flex flex-col">
       <div className="relative flex h-[30rem] md:h-[35rem] lg:h-[45rem] w-full">
         <Image
-          src="/random.jpg"
-          alt="random"
+          src="/banner.jpg"
+          alt="BrickBot Group Photo"
           fill
-          priority
-          className="object-cover z-1 opacity-90 translate-x-[17.5%] select-none"
+          className="object-cover z-1 opacity-90 translate-x-[22.5%] select-none"
         />
         <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_var(--default-dark)_30%,_transparent)] z-2">
           <div className="flex flex-col z-10  ml-[1.5rem] md:ml-[2rem] lg:ml-[3rem] xl:ml-[4rem] space-y-[2rem]">

@@ -99,16 +99,14 @@ export default function Carousel({
           className="embla overflow-visible"
           ref={emblaRef}
         >
-          <div className="embla__container flex">
+          <div className="embla__container grid grid-flow-col auto-cols-[clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:auto-cols-[30rem] lg:auto-cols-[35rem] xl:auto-cols-[40rem] gap-x-[1.5rem]">
             {content.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="embla__slide flex-[0_0_clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:flex-[0_0_30rem] lg:flex-[0_0_35rem] xl:flex-[0_0_40rem] rounded-[1rem] relative h-auto flex flex-col"
+                  className="embla__slide rounded-[1rem] relative flex flex-col"
                   style={{
                     aspectRatio: `${item.aspectRatio}`,
-                    marginRight:
-                      index != content.length - 1 ? "1.5rem" : "0rem",
                   }}
                 >
                   <div className="bg-[linear-gradient(180deg,_var(--carousel-gradient-light),_var(--carousel-gradient-dark))] w-full h-full p-[0.25rem] rounded-[1rem]">

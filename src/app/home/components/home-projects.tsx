@@ -15,7 +15,7 @@ export default function Projects() {
       <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] mb-[3rem]">
         Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[2rem] md:gap-x-[2rem] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[3rem] md:gap-y-[5rem] gap-x-[5rem] xl:gap-x-[3rem] w-full">
         <SmallProject
           color="var(--the-vault)"
           name={"Portfolio Library"}
@@ -64,43 +64,42 @@ type ProjectProps = {
 
 function SmallProject({ color, name, logoPath, link }: ProjectProps) {
   return (
-    <>
-      <Link
-        href={link}
-        className="group relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_var(--box-gradient-light),_var(--box-gradient-dark))] min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-103 md:hover:scale-105 lg:hover:scale-103 xl:hover:scale-105 active:brightness-100 active:scale-95 transition-transform duration-150 cursor-pointer select-none"
-      >
-        <div
-          className="absolute inset-0 rounded-[1.5rem] z-10"
-          style={{
-            background: `linear-gradient(180deg, ${color}, var(--accents-dark-transparent))`,
-            filter: "opacity(0.20)",
-          }}
-        />
-        <div className="w-full h-full rounded-[1.3rem] bg-[var(--default-dark)]">
-          <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_var(--box-inner-gradient-light),_var(--box-inner-gradient-dark))]">
-            <div className="flex items-center justify-center w-full h-[80%]">
-              <Image
-                src={logoPath}
-                alt={name + "Logo"}
-                width={275}
-                height={275}
-                className="object-contain w-[70%] h-auto"
-              />
-            </div>
-            <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%]">
-              <p
-                className="font-medium text-[2rem]/[2.25rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
-                style={{ color: color }}
-              >
-                {name}
-              </p>
-            </div>
-            <div className="absolute bottom-[1rem] left-[85%] w-full">
-              <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] mr-[-0.5rem] h-auto w-[10%] fill-white" />
-            </div>
+    <Link
+      href={link}
+      className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_var(--box-gradient-light),_var(--box-gradient-dark))] min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-103 md:hover:scale-105 lg:hover:scale-103 xl:hover:scale-105 active:brightness-100 active:scale-97 md:active:scale-95 lg:active:scale-97 xl:active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+    >
+      <div></div>
+      <div
+        className="absolute inset-0 rounded-[1.5rem] z-10"
+        style={{
+          background: `linear-gradient(180deg, ${color}, var(--accents-dark-transparent))`,
+          filter: "opacity(0.20)",
+        }}
+      />
+      <div className="w-full h-full rounded-[1.3rem] bg-[var(--default-dark)]">
+        <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_var(--box-inner-gradient-light),_var(--box-inner-gradient-dark))]">
+          <div className="flex items-center justify-center w-full h-[80%]">
+            <Image
+              src={logoPath}
+              alt={name + "Logo"}
+              width={275}
+              height={275}
+              className="object-contain w-[70%] h-auto"
+            />
+          </div>
+          <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%]">
+            <p
+              className="font-medium text-[2rem]/[2.25rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
+              style={{ color: color }}
+            >
+              {name}
+            </p>
+          </div>
+          <div className="absolute bottom-[1rem] left-[85%] w-full">
+            <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] mr-[-0.5rem] h-auto w-[10%] fill-white" />
           </div>
         </div>
-      </Link>
-    </>
+      </div>
+    </Link>
   );
 }
