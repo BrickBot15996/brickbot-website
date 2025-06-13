@@ -78,7 +78,7 @@ export default function Navbar() {
           <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-110 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
             <Link href="/home">
               <Image
-                src="/brick_yellow.png"
+                src="/brick-yellow.svg"
                 alt="BrickBot Logo"
                 priority
                 width={928}
@@ -104,20 +104,12 @@ export default function Navbar() {
             className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
           >
             <Image
-              src="/brick_yellow.png"
+              src="/brick-mobile-logo.svg"
               alt="BrickBot Logo"
               priority
               width={1325}
               height={151}
               className="h-[2rem] w-auto object-contain inline-block mr-[0.5rem]"
-            />
-            <Image
-              src="/brickbot_text.png"
-              alt="BrickBot Text Logo"
-              priority
-              width={928}
-              height={502}
-              className="h-[1.25rem] w-auto object-contain inline-block"
             />
           </Link>
           <div className="relative ml-auto mr-[0.1rem] mt-[0.4rem] cursor-pointer fill-[var(--default-yellow)] h-full hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150">

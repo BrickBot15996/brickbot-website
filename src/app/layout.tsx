@@ -4,7 +4,6 @@ import { Inter, Anek_Latin } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/brickbot-navbar";
 import Footer from "./components/brickbot-footer";
-import LoadingScreen from "./components/brickbot-loading";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,7 +33,6 @@ export default function RootLayout({
       <body
         className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
       >
-        <LoadingScreen />
         <Navbar />
 
         <main className="mt-[3.5rem] lg:mt-[4rem]">

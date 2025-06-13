@@ -34,7 +34,7 @@ export default function AboutUs() {
             imageSrc: "/about-us/caravan-2025.jpg",
             alt: "BrickBot Caravan presentation in May 2025",
             aspectRatio: "16/9",
-            description: "BrickBot Caravan, May 2025",
+            description: "BrickBot In Schools, May 2025",
           },
           {
             imageSrc: "/about-us/italy-2025.jpg",

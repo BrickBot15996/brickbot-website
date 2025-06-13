@@ -45,6 +45,22 @@ const sponsors: SponsorData[] = [
     logoPath: "/sponsors/zaga_zaga.png",
     websiteLink: "https://zagazaga.ro/",
   },
+  {
+    logoPath: "/sponsors/idna_power.png",
+    websiteLink: "https://idnasolarpower.ro/",
+  },
+  {
+    logoPath: "/sponsors/micromet.png",
+    websiteLink: "https://www.micromet.ro/",
+  },
+  {
+    logoPath: "/sponsors/rikora.png",
+    websiteLink: "https://rikora.net/",
+  },
+  {
+    logoPath: "/sponsors/romans.png",
+    websiteLink: "https://romans.ro/",
+  },
 ];
 
 export default function SponsorMarquee() {
@@ -60,7 +76,7 @@ export default function SponsorMarquee() {
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
-          speed={120}
+          speed={100}
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
@@ -89,7 +105,7 @@ export default function SponsorMarquee() {
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
-          speed={70}
+          speed={55}
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
@@ -118,7 +134,7 @@ export default function SponsorMarquee() {
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
-          speed={70}
+          speed={55}
           autoFill={true}
           gradient={true}
           direction="right"

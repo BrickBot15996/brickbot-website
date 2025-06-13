@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { GiRadioactive } from "react-icons/gi";
+import Image from "next/image";
 
 const MIN_DURATION = 150;
 
@@ -31,14 +31,19 @@ export default function LoadingScreen() {
 
   return (
     <section
-      className="fixed top-0 left-0 h-[100vh] w-[100vw] z-[10000] bg-[var(--default-dark)] inline-flex transition-opacity duration-200 items-center justify-center"
+      className="fixed inset-0 h-[100vh] w-[100vw] z-[10000] bg-[var(--default-dark)] flex items-center justify-center transition-opacity duration-200"
       style={{
         opacity: hide ? "0" : "100",
         pointerEvents: hide ? "none" : undefined,
       }}
     >
-      <div className="relative w-fit h-fit overflow-hidden rotate-slow">
-        <GiRadioactive className="w-[15rem] h-[15rem] fill-[var(--default-yellow)]" />
+      <div className="relative w-[12rem] h-[12rem] md:w-[18rem] md:h-[18rem] overflow-hidden rotate-slow mt-[-6rem]">
+        <Image
+          src="/loading-logo.svg"
+          alt="Radioactive Logo"
+          fill
+          className="object-contain rounded-[0.75rem]"
+        />
       </div>
     </section>
   );

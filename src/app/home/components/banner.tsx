@@ -14,7 +14,7 @@ export default function Banner() {
           src="/banner.jpg"
           alt="BrickBot Group Photo"
           fill
-          className="object-cover z-1 opacity-90 translate-x-[22.5%] select-none"
+          className="object-cover z-1 opacity-95 translate-x-[22.5%] select-none"
         />
         <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_var(--default-dark)_30%,_transparent)] z-2">
           <div className="flex flex-col z-10  ml-[1.5rem] md:ml-[2rem] lg:ml-[3rem] xl:ml-[4rem] space-y-[2rem]">
