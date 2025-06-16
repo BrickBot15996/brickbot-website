@@ -31,37 +31,37 @@ export default function AboutUs() {
       <Carousel
         content={[
           {
-            imageSrc: "/about-us/caravan-2025.jpg",
+            imageSrc: "/about-us/caravan-2025.webp",
             alt: "BrickBot Caravan presentation in May 2025",
             aspectRatio: "16/9",
             description: "BrickBot In Schools, May 2025",
           },
           {
-            imageSrc: "/about-us/italy-2025.jpg",
+            imageSrc: "/about-us/italy-2025.webp",
             alt: "BrickBot at the Italian Championship in February 2025",
             aspectRatio: "16/9",
             description: "Italy Championship, Feb 2025",
           },
           {
-            imageSrc: "/about-us/regionals-2025.jpg",
+            imageSrc: "/about-us/regionals-2025.webp",
             alt: "BrickBot at the East Regional in January 2025",
             aspectRatio: "16/9",
             description: "Romania East Championship, Jan 2025",
           },
           {
-            imageSrc: "/about-us/focsani-meet-2025.jpg",
+            imageSrc: "/about-us/focsani-meet-2025.webp",
             alt: "BrickBot at the Focșani League Meet in January 2025",
             aspectRatio: "16/9",
             description: "DIVE Into Innovation League Meet, Jan 2025",
           },
           {
-            imageSrc: "/about-us/btc-2024.jpg",
+            imageSrc: "/about-us/btc-2024.webp",
             alt: "BrickBot at the Bucharest Twin Cup in August 2024",
             aspectRatio: "16/9",
             description: "Bucharest Twin Cup, Aug 2024",
           },
           {
-            imageSrc: "/about-us/regionals-2023.jpg",
+            imageSrc: "/about-us/regionals-2023.webp",
             alt: "BrickBot at the First Qualifying Tournament in February 2023",
             aspectRatio: "16/9",
             description: "Romania Qualifying Tournament, Feb 2023",

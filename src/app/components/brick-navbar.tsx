@@ -60,7 +60,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[3.5rem] lg:h-[4rem] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
+        className="fixed top-0 h-[var(--navbar-height)] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
         style={{
           height: isOpen && isMobile ? "100vh" : undefined,
         }}
@@ -98,7 +98,7 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile Navbar */}
-        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[3.5rem] lg:h-[4rem] w-full">
+        <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[var(--navbar-height)] w-full">
           <Link
             href="/home"
             className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
@@ -123,7 +123,7 @@ export default function Navbar() {
         </div>
         {/* Mobile Sidebar Overlay */}
         <div
-          className="fixed top-[3.5rem] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-200"
+          className="fixed top-[var(--navbar-height)] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-200"
           style={{
             height: isOpen && isMobile ? "100vh" : "3.5rem",
             visibility: isOpen && isMobile ? "visible" : "hidden",

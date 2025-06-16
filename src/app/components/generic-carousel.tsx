@@ -115,6 +115,7 @@ export default function Carousel({
                         src={item.imageSrc}
                         alt={item.alt}
                         fill
+                        priority
                         className="object-cover rounded-[0.75rem] contain-content"
                       />
                     </div>

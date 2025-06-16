@@ -2,19 +2,20 @@ import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 
-import Button from "../../components/brickbot-button";
+import Button from "../../components/brick-button";
 
 export default function Banner() {
   const router = useRouter();
 
   return (
     <section className="relative w-full flex flex-col">
-      <div className="relative flex h-[30rem] md:h-[35rem] lg:h-[45rem] w-full">
+      <div className="relative flex h-[var(--banner-height)] w-full">
         <Image
-          src="/banner.jpg"
+          src="/banner.webp"
           alt="BrickBot Group Photo"
           fill
-          className="object-cover z-1 opacity-95 translate-x-[22.5%] select-none"
+          priority
+          className="object-cover z-1 opacity-95 translate-x-[22.5%] select-none aspect-16/9"
         />
         <div className="flex items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_var(--default-dark)_30%,_transparent)] z-2">
           <div className="flex flex-col z-10  ml-[1.5rem] md:ml-[2rem] lg:ml-[3rem] xl:ml-[4rem] space-y-[2rem]">

@@ -1,9 +1,11 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 
-import Link from "next/link";
 import Image from "next/image";
 
-import Button from "../../components/brickbot-button";
+import Button from "../../components/brick-button";
+import Box from "../../components/brick-box";
 
 import { HiArrowNarrowRight } from "react-icons/hi";
 
@@ -17,28 +19,32 @@ export default function Projects() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[3rem] md:gap-y-[5rem] gap-x-[5rem] xl:gap-x-[3rem] w-full">
         <SmallProject
-          color="var(--the-vault)"
+          textColor="var(--the-vault-text)"
+          gradientColor="var(--the-vault)"
           name={"Portfolio Library"}
           logoPath="/projects/thevaultlogo1.png"
           link="/projects/the-vault"
         />
         <SmallProject
-          color="var(--brick-docs)"
+          textColor="var(--brick-docs-text)"
+          gradientColor="var(--brick-docs)"
           name={"BrickBot Guide & Documentation"}
           logoPath="/projects/brickdocslogo1.png"
           link="https://brickbot15996.github.io/brickbot-docs/"
         />
         <SmallProject
-          color="var(--sparks)"
+          textColor="var(--sparks-text)"
+          gradientColor="var(--sparks)"
           name={"Connecting FTC Teams"}
           logoPath="/projects/sparkslogo.png"
           link="projects/sparks"
         />
         <SmallProject
-          color="var(--brickbot-is-here)"
-          name={"BrickBot is Here!"}
-          logoPath="/projects/brickbotishere.png"
-          link="projects/brickbot-is-here"
+          textColor="var(--checkpoint-text)"
+          gradientColor="var(--checkpoint)"
+          name={"Checkpoint"}
+          logoPath="/projects/checkpoint-logo.svg"
+          link="projects/checkpoint"
         />
       </div>
       <div className="ml-auto">
@@ -56,50 +62,52 @@ export default function Projects() {
 }
 
 type ProjectProps = {
-  color: string;
+  textColor: string;
+  gradientColor: string;
   name: string;
   link: string;
   logoPath: string;
 };
 
-function SmallProject({ color, name, logoPath, link }: ProjectProps) {
+function SmallProject({
+  textColor,
+  gradientColor,
+  name,
+  logoPath,
+  link,
+}: ProjectProps) {
+  const router = useRouter();
+
   return (
-    <Link
-      href={link}
-      className="relative rounded-[1.5rem] p-[0.2rem] bg-[linear-gradient(180deg,_var(--box-gradient-light),_var(--box-gradient-dark))] min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-103 md:hover:scale-105 lg:hover:scale-103 xl:hover:scale-105 active:brightness-100 active:scale-97 md:active:scale-95 lg:active:scale-97 xl:active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+    <Box
+      action={() => {
+        router.push(link);
+      }}
+      color={gradientColor}
+      gradient={true}
+      className="min-h-[17rem] aspect-3/4 w-auto hover:brightness-75 hover:scale-103 md:hover:scale-105 lg:hover:scale-103 xl:hover:scale-105 active:brightness-100 active:scale-97 md:active:scale-95 lg:active:scale-97 xl:active:scale-95 transition-transform duration-150 cursor-pointer select-none"
+      borderRadius="1.5rem"
     >
-      <div></div>
-      <div
-        className="absolute inset-0 rounded-[1.5rem] z-10"
-        style={{
-          background: `linear-gradient(180deg, ${color}, var(--accents-dark-transparent))`,
-          filter: "opacity(0.20)",
-        }}
-      />
-      <div className="w-full h-full rounded-[1.3rem] bg-[var(--default-dark)]">
-        <div className="w-full h-full rounded-[1.3rem] bg-[linear-gradient(180deg,_var(--box-inner-gradient-light),_var(--box-inner-gradient-dark))]">
-          <div className="flex items-center justify-center w-full h-[80%]">
-            <Image
-              src={logoPath}
-              alt={name + "Logo"}
-              width={275}
-              height={275}
-              className="object-contain w-[70%] h-auto"
-            />
-          </div>
-          <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%]">
-            <p
-              className="font-medium text-[2rem]/[2.25rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
-              style={{ color: color }}
-            >
-              {name}
-            </p>
-          </div>
-          <div className="absolute bottom-[1rem] left-[85%] w-full">
-            <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] mr-[-0.5rem] h-auto w-[10%] fill-white" />
-          </div>
-        </div>
+      <div className="flex items-center justify-center w-full h-[80%]">
+        <Image
+          src={logoPath}
+          alt={name + "Logo"}
+          width={275}
+          height={275}
+          className="object-contain w-[70%] h-auto"
+        />
       </div>
-    </Link>
+      <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%]">
+        <p
+          className="font-semibold text-[2rem]/[2.25rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
+          style={{ color: textColor }}
+        >
+          {name}
+        </p>
+      </div>
+      <div className="absolute bottom-[1rem] left-[85%] w-full">
+        <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] mr-[-0.5rem] h-auto w-[10%] fill-white" />
+      </div>
+    </Box>
   );
 }

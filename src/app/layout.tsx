@@ -1,9 +1,8 @@
-import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Anek_Latin } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/brickbot-navbar";
-import Footer from "./components/brickbot-footer";
+import { PageLoadProvider } from "./page-load-context";
+import ClientLayout from "./client-layout";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,9 +21,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
@@ -33,14 +32,9 @@ export default function RootLayout({
       <body
         className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
       >
-        <Navbar />
-
-        <main className="mt-[3.5rem] lg:mt-[4rem]">
-          {children}
-          <Analytics />
-        </main>
-
-        <Footer />
+        <PageLoadProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </PageLoadProvider>
       </body>
     </html>
   );

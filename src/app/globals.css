@@ -28,15 +28,60 @@
   --darker-text: rgb(108, 108, 108, 1);
 
   --the-vault: var(--default-yellow);
-  --brick-docs: #ff6750;
-  --sparks: #9e50ff;
-  --brickbot-is-here: #30caae;
+  --the-vault-text: var(--the-vault);
 
-  --navbar-height: 3.5rem;
-  --lg-navbar-height: 4rem;
+  --brick-docs: #ff6750;
+  --brick-docs-text: var(--brick-docs);
+
+  --sparks: #9e50ff;
+  --sparks-text: #d3d3ff;
+
+  --checkpoint: #30caae;
+  --checkpoint-text: var(--checkpoint);
+
+  --simplicity-ftc: #aae348;
+  --simplicity-ftc-text: var(--simplicity-ftc);
 
   scrollbar-color: #2f2f2f #1b1b1b;
   scrollbar-width: thin;
+}
+
+/* sm */
+:root {
+  --page-width: min(calc(100vw - 3rem), 37rem);
+  --navbar-height: 3.5rem;
+  --banner-height: 30rem;
+}
+
+/* md */
+@media (min-width: 768px) {
+  :root {
+    --page-width: min(calc(100vw - 4rem), 44rem);
+    --banner-height: 35rem;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  :root {
+    --page-width: min(calc(100vw - 6rem), 58rem);
+    --navbar-height: 4rem;
+    --banner-height: 45rem;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  :root {
+    --page-width: min(calc(100vw - 8rem), 72rem);
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  :root {
+    --page-width: min(calc(100vw - 8rem), 88rem);
+  }
 }
 
 @keyframes rotate {

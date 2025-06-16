@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import Marquee from "react-fast-marquee";
 
-import Button from "./brickbot-button";
+import Button from "./brick-button";
 
 type SponsorData = {
   logoPath: string;
@@ -14,51 +14,51 @@ type SponsorData = {
 
 const sponsors: SponsorData[] = [
   {
-    logoPath: "/sponsors/autovip.png",
+    logoPath: "/sponsors/autovip.webp",
     websiteLink: "https://autoviptransfer.ro/",
   },
   {
-    logoPath: "/sponsors/aviputna.png",
+    logoPath: "/sponsors/aviputna.webp",
     websiteLink: "https://aviputna.ro/",
   },
   {
-    logoPath: "/sponsors/banca_transilvania.png",
+    logoPath: "/sponsors/banca_transilvania.webp",
     websiteLink: "https://www.bancatransilvania.ro/",
   },
   {
-    logoPath: "/sponsors/fundatia_fan.png",
+    logoPath: "/sponsors/fundatia_fan.webp",
     websiteLink: "https://fundatiafancourier.ro/",
   },
   {
-    logoPath: "/sponsors/reina.png",
+    logoPath: "/sponsors/reina.webp",
     websiteLink: "http://www.reinabijou.ro/",
   },
   {
-    logoPath: "/sponsors/remat.png",
+    logoPath: "/sponsors/remat.webp",
     websiteLink: "https://rematholding.ro/",
   },
   {
-    logoPath: "/sponsors/vrancart.png",
+    logoPath: "/sponsors/vrancart.webp",
     websiteLink: "https://vrancart.ro/",
   },
   {
-    logoPath: "/sponsors/zaga_zaga.png",
+    logoPath: "/sponsors/zaga_zaga.webp",
     websiteLink: "https://zagazaga.ro/",
   },
   {
-    logoPath: "/sponsors/idna_power.png",
+    logoPath: "/sponsors/idna_power.webp",
     websiteLink: "https://idnasolarpower.ro/",
   },
   {
-    logoPath: "/sponsors/micromet.png",
+    logoPath: "/sponsors/micromet.webp",
     websiteLink: "https://www.micromet.ro/",
   },
   {
-    logoPath: "/sponsors/rikora.png",
+    logoPath: "/sponsors/rikora.webp",
     websiteLink: "https://rikora.net/",
   },
   {
-    logoPath: "/sponsors/romans.png",
+    logoPath: "/sponsors/romans.webp",
     websiteLink: "https://romans.ro/",
   },
 ];
@@ -80,7 +80,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[0rem] md:h-[6.5rem] lg:h-[8rem] select-none hidden"
+          className="h-[0rem] lg:h-[8rem] select-none hidden"
         >
           {sponsors.map((SponsorData, index) => (
             <Link
@@ -95,7 +95,7 @@ export default function SponsorMarquee() {
                 alt={`Item ${index}`}
                 height={100}
                 width={100}
-                className="h-[4rem] lg:h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
+                className="h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
               />
             </Link>
           ))}
@@ -109,7 +109,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[5rem] md:h-[0rem] select-none"
+          className="h-[5rem] md:h-[6.5rem] lg:h-[0rem] select-none"
         >
           {sponsors
             .slice(0, sponsors.length / 2 + 1)
@@ -126,7 +126,7 @@ export default function SponsorMarquee() {
                   alt={`Item ${index}`}
                   height={100}
                   width={100}
-                  className="h-[3rem] w-auto px-[2.5rem]"
+                  className="h-[3rem] md:h-[4rem] w-auto px-[2.5rem]"
                 />
               </Link>
             ))}
@@ -139,7 +139,7 @@ export default function SponsorMarquee() {
           gradient={true}
           direction="right"
           gradientColor="var(--default-dark)"
-          className="h-[5rem] md:h-[0rem] select-none"
+          className="h-[5rem] md:h-[6.5rem] lg:h-[0rem] select-none"
         >
           {sponsors
             .slice(sponsors.length / 2 + 1, sponsors.length)
@@ -156,7 +156,7 @@ export default function SponsorMarquee() {
                   alt={`Item ${index}`}
                   height={100}
                   width={100}
-                  className="h-[3rem] w-auto px-[2.5rem]"
+                  className="h-[3rem] md:h-[4rem] w-auto px-[2.5rem]"
                 />
               </Link>
             ))}
