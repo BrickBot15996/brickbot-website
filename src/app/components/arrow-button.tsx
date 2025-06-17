@@ -42,8 +42,8 @@ export default function ArrowButton({
 
   const currentGradient =
     isLit && !disabled
-      ? `linear-gradient(to right, ${litUpGradientLight}, ${litUpGradientDark})`
-      : `linear-gradient(to right, ${gradientLight}, ${gradientDark})`;
+      ? `linear-gradient(to bottom, ${litUpGradientLight}, ${litUpGradientDark})`
+      : `linear-gradient(to bottom, ${gradientLight}, ${gradientDark})`;
 
   const handleClick = () => {
     if (disabled) return;

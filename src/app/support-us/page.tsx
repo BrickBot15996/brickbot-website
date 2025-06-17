@@ -43,63 +43,67 @@ function ContractSection() {
       </h4>
       <div
         className="w-full overflow-hidden transition-all duration-400"
-        style={{ height: isExpanded ? "30rem" : "13rem" }}
+        style={{
+          height: isExpanded ? "25rem" : "13rem",
+        }}
       >
-        <div className="grid grid-cols-5 w-[90%] h-full gap-x-[1rem]">
+        <div className="grid grid-cols-5 w-[93%] h-full gap-x-[1rem]">
           <SponsorshipTier
             name="Bronze"
             priceThreshold={100}
             color="var(--bronze-tier)"
-            benefits={[
-              "Logo pe robot",
-              "Postari pe conturile echipei",
-              "Logo pe site",
-            ]}
+            benefits={["Social Media Mentions", "Logo on Robot"]}
           />
           <SponsorshipTier
             name="Silver"
-            priceThreshold={200}
+            priceThreshold={250}
             color="var(--silver-tier)"
             benefits={[
-              "Logo pe robot",
-              "Postari pe conturile echipei",
-              "Logo pe site",
+              "Social Media Mentions",
+              "Logo on Robot",
+              "Logo on Website",
             ]}
           />
           <SponsorshipTier
             name="Gold"
-            priceThreshold={500}
+            priceThreshold={750}
             color="var(--gold-tier)"
             benefits={[
-              "Logo pe robot",
-              "Postari pe conturile echipei",
-              "Logo pe site",
+              "Social Media Mentions",
+              "Logo on Robot",
+              "Logo on Website",
+              "Logo on Roll-Up",
             ]}
           />
           <SponsorshipTier
             name="Diamond"
-            priceThreshold={1000}
+            priceThreshold={1500}
             color="var(--diamond-tier)"
             benefits={[
-              "Logo pe robot",
-              "Postari pe conturile echipei",
-              "Logo pe site",
+              "Social Media Mentions",
+              "Logo on Robot",
+              "Logo on Website",
+              "Logo on Roll-Up",
+              "Logo on shirts",
             ]}
           />
           <SponsorshipTier
-            name="Super"
-            priceThreshold={2000}
-            color="var(--super-tier)"
+            name="Ultimate"
+            priceThreshold={3000}
+            color="var(--ultimate-tier)"
             benefits={[
-              "Logo pe robot",
-              "Postari pe conturile echipei",
-              "Logo pe site",
+              "Social Media Mentions",
+              "Logo on Robot",
+              "Logo on Website",
+              "Logo on Roll-Up",
+              "Logo on shirts",
+              "To be decided",
             ]}
           />
         </div>
       </div>
       <div
-        className="absolute bottom-0 left-0 bg-[linear-gradient(0deg,_var(--default-dark),_transparent)] w-[90%] z-10 transition-all duration-400 delay-50"
+        className="absolute bottom-0 left-0 bg-[linear-gradient(0deg,_var(--default-dark),_transparent)] w-[93%] z-10 transition-all duration-400 delay-50"
         style={{
           height: isExpanded ? "0rem" : "10rem",
         }}
@@ -144,7 +148,7 @@ function SponsorshipTier({
       gradient={true}
       color={color}
       borderRadius="2rem"
-      className="flex flex-col h-auto w-auto px-[1.25rem] py-[1.5rem]"
+      className="flex flex-col h-auto w-auto px-[1.25rem] py-[1.5rem] select-none"
     >
       <h4
         className="font-semibold text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem]"
