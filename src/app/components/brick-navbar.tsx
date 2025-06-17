@@ -218,7 +218,7 @@ function NavbarButton({ text, action }: NavButtonProps) {
       onClick={action}
     >
       <div className="group absolute w-full h-full overflow-visible">
-        <div className="relative opacity-0 group-hover:opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250 group-hover:delay-150" />
+        <div className="relative opacity-0 group-hover:opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250" />
         <div className="relative opacity-0 group-hover:opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250" />
       </div>
       <p>{text}</p>

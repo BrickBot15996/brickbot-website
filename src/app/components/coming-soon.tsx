@@ -10,7 +10,7 @@ export default function ComingSoon({
   pageDescription,
 }: ComingSoonProps) {
   return (
-    <section className="flex items-center justify-center bg-[linear-gradient(0deg,_#1E1703,_#0f0f0f_98%)] h-[calc(100vh-var(--navbar-height))] w-full select-none">
+    <section className="flex items-center justify-center bg-[linear-gradient(0deg,_#1E1703,_#0f0f0f_98%)] min-h-[calc(100vh-var(--navbar-height))] w-full select-none">
       <div className="flex flex-col items-center justify-center mt-[-2rem]">
         <h1 className="text-[var(--default-yellow)] text-[5.375rem] md:text-[6.375rem] xl:text-[7.875rem] 2xl:text-[9.375rem] font-bold mb-[-1rem]">
           {pageName}
