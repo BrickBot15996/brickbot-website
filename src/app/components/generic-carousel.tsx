@@ -3,7 +3,7 @@ import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
-import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
+import ArrowButton from "./arrow-button";
 
 export type CarouselItem = {
   imageSrc: string;
@@ -139,42 +139,34 @@ export default function Carousel({
         </div>
       </div>
       <div className="flex flex-row justify-end space-x-[1rem] mt-[1.25rem] md:mt-[1.5rem] lg:mt-[2rem]">
-        <button
-          className="carousel-button w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] flex flex-col justify-center"
-          onClick={scrollPrev}
-          aria-label="Previous slide"
+        <ArrowButton
+          action={scrollPrev}
+          ariaLabel="Previous slide button"
+          color="var(--default-yellow)"
+          gradientLight="var(--yellow-gradient-light)"
+          gradientDark="var(--yellow-gradient-dark)"
+          litUpGradientLight="var(--lit-up-yellow-gradient-light)"
+          litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+          arrowDirection="left"
+          disabled={isBeginning}
           style={{
-            filter: isBeginning ? "brightness(0.75)" : undefined,
-            background: isBeginning
-              ? `linear-gradient(180deg, var(--yellow-gradient-light), var(--yellow-gradient-dark))`
-              : undefined,
             borderColor: buttonAccentColor,
-            cursor: isBeginning ? undefined : "pointer",
           }}
-        >
-          <HiArrowNarrowLeft
-            className="h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
-            style={{ fill: buttonAccentColor }}
-          />
-        </button>
-        <button
-          className="carousel-button w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] flex flex-col justify-center"
-          onClick={scrollNext}
-          aria-label="Next slide"
+        />
+        <ArrowButton
+          action={scrollNext}
+          ariaLabel="Next slide button"
+          color="var(--default-yellow)"
+          gradientLight="var(--yellow-gradient-light)"
+          gradientDark="var(--yellow-gradient-dark)"
+          litUpGradientLight="var(--lit-up-yellow-gradient-light)"
+          litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+          arrowDirection="right"
+          disabled={isEnd}
           style={{
-            filter: isEnd ? "brightness(0.75)" : undefined,
-            background: isEnd
-              ? `linear-gradient(180deg, var(--yellow-gradient-light), var(--yellow-gradient-dark))`
-              : undefined,
             borderColor: buttonAccentColor,
-            cursor: isEnd ? undefined : "pointer",
           }}
-        >
-          <HiArrowNarrowRight
-            className=" h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
-            style={{ fill: buttonAccentColor }}
-          />
-        </button>
+        />
       </div>
     </section>
   );

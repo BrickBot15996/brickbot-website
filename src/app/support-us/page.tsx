@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Box from "../components/brick-box";
 import Button from "../components/brick-button";
+import ArrowButton from "../components/arrow-button";
 
 let expanded: boolean = false;
 
@@ -103,12 +104,23 @@ function ContractSection() {
           height: isExpanded ? "0rem" : "10rem",
         }}
       />
-      <button
-        className="absolute right-0 bottom-0 h-[3rem] w-[3rem] bg-[#ffd100] rounded-full"
-        onClick={() => {
+      <ArrowButton
+        action={() => {
           setExpanded(!isExpanded);
           expanded = !expanded;
         }}
+        ariaLabel="Sponsorship Tiers expand or retract"
+        color="var(--default-yellow)"
+        gradientLight="var(--yellow-gradient-light)"
+        gradientDark="var(--yellow-gradient-dark"
+        litUpGradientLight="var(--lit-up-yellow-gradient-light)"
+        litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+        arrowDirection="down"
+        toggleDirection={true}
+        style={{
+          borderColor: "var(--default-yellow)",
+        }}
+        className="absolute right-0 bottom-0"
       />
     </section>
   );
