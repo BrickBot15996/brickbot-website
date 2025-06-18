@@ -80,7 +80,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[0rem] lg:h-[8rem] select-none hidden"
+          className="h-[0rem] lg:h-[5rem] select-none hidden mt-[4rem]"
         >
           {sponsors.map((SponsorData, index) => (
             <Link
@@ -109,7 +109,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[5rem] md:h-[6.5rem] lg:h-[0rem] select-none"
+          className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none my-[2rem]"
         >
           {sponsors
             .slice(0, sponsors.length / 2 + 1)
@@ -139,7 +139,7 @@ export default function SponsorMarquee() {
           gradient={true}
           direction="right"
           gradientColor="var(--default-dark)"
-          className="h-[5rem] md:h-[6.5rem] lg:h-[0rem] select-none"
+          className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none my-[2rem]"
         >
           {sponsors
             .slice(sponsors.length / 2 + 1, sponsors.length)
