@@ -21,7 +21,7 @@ type CarouselProps = {
   buttonLitUpDark: string;
 };
 
-export default function Carousel({
+export default function ImageCarousel({
   content,
   buttonAccentColor,
   buttonGradientLight,
@@ -71,25 +71,6 @@ export default function Carousel({
 
   return (
     <section className="select-none">
-      <style jsx>{`
-        .carousel-button {
-          background: linear-gradient(
-            180deg,
-            ${buttonGradientLight},
-            ${buttonGradientDark}
-          );
-          transition: all 0.3s ease;
-        }
-
-        .carousel-button:hover {
-          background: linear-gradient(
-            180deg,
-            ${buttonLitUpLight},
-            ${buttonLitUpDark}
-          );
-        }
-      `}</style>
-
       <div className="relative w-full flex flex-col select-none">
         <div className="absolute left-[calc((-100vw+37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
           <div className="mr-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-100 pointer-events-none" />
@@ -142,11 +123,11 @@ export default function Carousel({
         <ArrowButton
           action={scrollPrev}
           ariaLabel="Previous slide button"
-          color="var(--default-yellow)"
-          gradientLight="var(--yellow-gradient-light)"
-          gradientDark="var(--yellow-gradient-dark)"
-          litUpGradientLight="var(--lit-up-yellow-gradient-light)"
-          litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+          color={`${buttonAccentColor}`}
+          gradientLight={`${buttonGradientLight}`}
+          gradientDark={`${buttonGradientDark}`}
+          litUpGradientLight={`${buttonLitUpLight}`}
+          litUpGradientDark={`${buttonLitUpDark}`}
           arrowDirection="left"
           disabled={isBeginning}
           style={{
@@ -156,11 +137,11 @@ export default function Carousel({
         <ArrowButton
           action={scrollNext}
           ariaLabel="Next slide button"
-          color="var(--default-yellow)"
-          gradientLight="var(--yellow-gradient-light)"
-          gradientDark="var(--yellow-gradient-dark)"
-          litUpGradientLight="var(--lit-up-yellow-gradient-light)"
-          litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+          color={`${buttonAccentColor}`}
+          gradientLight={`${buttonGradientLight}`}
+          gradientDark={`${buttonGradientDark}`}
+          litUpGradientLight={`${buttonLitUpLight}`}
+          litUpGradientDark={`${buttonLitUpDark}`}
           arrowDirection="right"
           disabled={isEnd}
           style={{

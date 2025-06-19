@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Carousel from "../../components/generic-carousel";
+import ImageCarousel from "../../components/image-carousel";
 
 export default function AboutUs() {
   return (
@@ -28,7 +28,7 @@ export default function AboutUs() {
         . Beyond building robots, we love spreading the STEAM spirit in both the
         local and FTC communities.
       </p>
-      <Carousel
+      <ImageCarousel
         content={[
           {
             imageSrc: "/about-us/caravan-2025.webp",

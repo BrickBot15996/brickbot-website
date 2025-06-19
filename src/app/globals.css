@@ -6,49 +6,91 @@
   --accents-dark: rgba(9, 9, 9, 1);
   --accents-dark-transparent: rgba(9, 9, 9, 0.8);
 
-  --footer: rgba(35, 35, 35, 1);
+  --footer: rgb(35, 35, 35);
 
-  --default-yellow: rgba(255, 209, 0, 1);
+  --default-yellow: rgb(255, 209, 0);
 
-  --yellow-gradient-light: rgba(70, 59, 8, 1);
-  --yellow-gradient-dark: rgba(40, 34, 8, 1);
-  --lit-up-yellow-gradient-light: rgba(90, 79, 28, 1);
-  --lit-up-yellow-gradient-dark: rgba(60, 54, 28, 1);
+  --yellow-gradient-light: rgb(70, 59, 8);
+  --yellow-gradient-dark: rgb(40, 34, 8);
+  --lit-up-yellow-gradient-light: rgb(90, 79, 28);
+  --lit-up-yellow-gradient-dark: rgb(60, 54, 28);
 
-  --box-gradient-light: rgba(255, 255, 255, 0.149);
-  --box-gradient-dark: rgba(88, 88, 88, 0.149);
+  --box-gradient-light: rgb(52, 52, 52);
+  --box-gradient-dark: rgb(37, 37, 37);
   --box-inner-gradient-light: rgba(99, 99, 99, 0.051);
   --box-inner-gradient-dark: rgba(2, 2, 2, 0.051);
 
-  --carousel-gradient-light: #ffffff12;
-  --carousel-gradient-dark: #58585812;
+  --carousel-gradient-light: rgba(255, 255, 255, 0.0706);
+  --carousel-gradient-dark: rgba(88, 88, 88, 0.0706);
 
   --default-text: rgba(177, 177, 177, 1);
   --alternate-text: rgba(255, 255, 255, 1);
-  --darker-text: rgb(108, 108, 108, 1);
+  --darker-text: rgba(108, 108, 108, 1);
+
+  /* Projects */
 
   --the-vault: var(--default-yellow);
   --the-vault-text: var(--the-vault);
 
-  --brick-docs: #ff6750;
+  --brick-docs: rgb(255, 103, 80);
   --brick-docs-text: var(--brick-docs);
 
-  --sparks: #9e50ff;
-  --sparks-text: #d3d3ff;
+  --sparks: rgb(158, 80, 255);
+  --sparks-text: rgb(211, 211, 255);
 
-  --checkpoint: #30caae;
+  --checkpoint: rgb(48, 202, 174);
   --checkpoint-text: var(--checkpoint);
 
-  --simplicity-ftc: #aae348;
+  --simplicity-ftc: rgb(170, 227, 72);
   --simplicity-ftc-text: var(--simplicity-ftc);
 
-  --bronze-tier: #957e32;
-  --silver-tier: #8aa2ac;
-  --gold-tier: #ffd650;
-  --diamond-tier: #5de7ff;
-  --ultimate-tier: #a450ff;
+  /* Sponsorship tiers */
 
-  scrollbar-color: #2f2f2f #1b1b1b;
+  --bronze-tier-gradient: rgb(149, 126, 50);
+  --bronze-tier-text: rgb(167, 139, 91);
+
+  --silver-tier-gradient: rgb(138, 162, 172);
+  --silver-tier-text: rgb(180, 181, 184);
+
+  --gold-tier-gradient: rgb(255, 214, 80);
+  --gold-tier-text: rgb(255, 237, 132);
+
+  --diamond-tier-gradient: rgb(93, 231, 255);
+  --diamond-tier-text: rgb(153, 223, 255);
+
+  --ultimate-tier-gradient: rgb(164, 80, 255);
+  --ultimate-tier-text: rgb(243, 189, 255);
+
+  /* FTC Seasons */
+
+  --into-the-deep-text: rgb(77, 196, 255);
+  --into-the-deep-gradient: rgb(140, 186, 255);
+
+  --centerstage-text: rgb(255, 62, 129);
+  --centerstage-gradient: rgb(255, 140, 200);
+
+  --powerplay-text: rgb(142, 255, 62);
+  --powerplay-gradient: rgb(184, 255, 140);
+
+  --freight-frenzy-text: rgb(255, 231, 108);
+  --freight-frenzy-gradient: rgb(255, 224, 140);
+
+  --ultimate-goal-text: rgb(108, 140, 255);
+  --ultimate-goal-gradient: rgb(108, 140, 255);
+
+  --skystone-text: rgb(185, 185, 185);
+  --skystone-gradient: rgb(157, 157, 157);
+
+  --rover-ruckus-text: rgb(255, 134, 69);
+  --rover-ruckus-gradient: rgb(255, 134, 69);
+
+  --relic-recovery-text: rgb(115, 146, 82);
+  --relic-recovery-gradient: rgb(255, 224, 140);
+
+  --velocity-vortex-text: rgb(255, 92, 83);
+  --velocity-vortex-gradient: rgb(255, 144, 140);
+
+  scrollbar-color: rgb(47, 47, 47) rgb(27, 27, 27);
   scrollbar-width: thin;
 }
 
@@ -112,8 +154,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #121212;
-    --foreground: #ededed;
+    --background: rgb(18, 18, 18);
+    --foreground: rgb(237, 237, 237);
   }
 }
 

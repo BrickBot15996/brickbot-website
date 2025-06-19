@@ -1,6 +1,7 @@
+// Box.tsx
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, CSSProperties } from "react";
 
 type BoxProps = {
   color?: string;
@@ -11,10 +12,11 @@ type BoxProps = {
   borderRadius?: string;
   borderThickness?: string;
   hoverEffect?: boolean;
+  style?: CSSProperties;
 };
 
 export default function Box({
-  color = "var(--default-yellow)",
+  color = "var(--box-gradient-light)",
   action = () => {},
   children,
   className = "",
@@ -22,32 +24,52 @@ export default function Box({
   borderRadius = "1.5rem",
   borderThickness = "0.2rem",
   hoverEffect = false,
+  style = {},
 }: BoxProps) {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Helper function to get the background with proper opacity
+  const getBackgroundWithOpacity = () => {
+    if (color === "var(--box-gradient-light)") {
+      // Default color - full opacity
+      return `linear-gradient(180deg, ${color}, var(--box-gradient-dark))`;
+    } else {
+      // Custom color - apply opacity only to the custom color
+      const colorWithOpacity = color.startsWith("var(")
+        ? `color-mix(in srgb, ${color} 8%, transparent)`
+        : `${color}14`; // 14 is hex for ~8% opacity
+
+      return `linear-gradient(180deg, ${colorWithOpacity}, var(--box-gradient-dark))`;
+    }
+  };
+
   return (
     <div
-      className={`relative ${className}`}
+      className={`relative h-full w-full`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={action}
+      style={{
+        ...style,
+      }}
     >
       {gradient && (
         <div
           className="absolute inset-0 w-full h-full z-10 transition-opacity duration-300"
           style={{
             background: `linear-gradient(180deg, ${color}, var(--accents-dark-transparent))`,
-            opacity: hoverEffect ? (isHovered ? 0.2 : 0) : 0.2,
+            opacity: hoverEffect ? (isHovered ? 0.08 : 0) : 0.08,
             borderRadius: `${borderRadius}`,
           }}
         />
       )}
 
       <div
-        className={`absolute inset-0 bg-[linear-gradient(180deg,_var(--box-gradient-light),_var(--box-gradient-dark))] transition-opacity duration-200 ${
+        className={`absolute inset-0 transition-opacity duration-200 ${
           hoverEffect && !isHovered ? "opacity-0" : "opacity-100"
         }`}
         style={{
+          background: getBackgroundWithOpacity(),
           borderRadius: `${borderRadius}`,
           padding: `${borderThickness}`,
         }}
@@ -67,7 +89,9 @@ export default function Box({
         </div>
       </div>
 
-      <div className="relative z-20 h-full w-full">{children}</div>
+      <div className={`relative z-20 h-full w-full ${className}`}>
+        {children}
+      </div>
     </div>
   );
 }

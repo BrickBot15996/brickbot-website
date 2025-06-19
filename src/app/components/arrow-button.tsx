@@ -65,6 +65,7 @@ export default function ArrowButton({
           background: currentGradient,
           filter: disabled ? "brightness(0.75)" : "none",
           cursor: disabled ? "default" : "pointer",
+          borderColor: color,
           ...style,
         }}
         onMouseEnter={() => !disabled && setIsLit(true)}
