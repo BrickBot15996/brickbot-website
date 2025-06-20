@@ -17,7 +17,7 @@ export default function Projects() {
       <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] mb-[3rem]">
         Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch gap-y-[3rem] md:gap-y-[5rem] gap-x-[5rem] xl:gap-x-[3rem] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch px-[3rem] md:px-[0rem] gap-y-[3rem] md:gap-y-[5rem] gap-x-[5rem] xl:gap-x-[3rem] w-full">
         <SmallProject
           textColor="var(--the-vault-text)"
           gradientColor="var(--the-vault)"
@@ -101,7 +101,7 @@ function SmallProject({
         </div>
         <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%] pointer-events-none">
           <p
-            className="font-semibold text-[2rem]/[2.25rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
+            className="font-semibold text-[1.5rem]/[2rem] sm:text-[2.5rem]/[2.75rem] md:text-[1.75rem]/[2rem] lg:text-[2.5rem]/[2.75rem] xl:text-[1.5rem]/[1.75rem] 2xl:text-[1.75rem]/[2rem]"
             style={{ color: textColor }}
           >
             {name}

@@ -7,6 +7,7 @@ import ArrowButton from "../components/arrow-button";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
 import LoadingScreen from "../components/brick-loading";
+import PageTitle from "../components/page-title";
 
 let expanded: boolean = false;
 
@@ -28,7 +29,8 @@ export default function SupportUs() {
   return (
     <section className="flex flex-col items-center">
       <LoadingScreen />
-      <section className="relative flex flex-col space-y-[3rem] lg:space-y-[6rem] my-[4rem] md:my-[6rem] lg:my-[8rem] w-[var(--page-width)]">
+      <section className="relative flex flex-col space-y-[3rem] lg:space-y-[6rem] mb-[4rem] md:mb-[6rem] lg:mb-[8rem] w-[var(--page-width)]">
+        <PageTitle title="SUPPORT US" />
         {!isMobile && <ContractSectionDesktop />}
         {isMobile && <ContractSectionMobile />}
         <DonationSection />
@@ -52,12 +54,9 @@ export default function SupportUs() {
 function ContractSectionMobile() {
   return (
     <section className="relative mb-[1rem]">
-      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.75rem]/[3rem] md:text-[3.25rem]/[3.5rem] lg:text-[3.75rem]/[4rem] mb-[0.5rem]">
-        Sponsorship Contract
-      </h1>
-      <h4 className="text-[var(--alternate-text)] font-medium mr-auto text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] mb-[1rem]">
+      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.75rem]/[3rem] md:text-[3.25rem]/[3.5rem] lg:text-[3.75rem]/[4rem] mb-[2rem]">
         Sponsorship Tiers
-      </h4>
+      </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1rem] items-start">
         <div className="self-start">
           <SponsorshipTierMobile
@@ -139,12 +138,9 @@ function ContractSectionDesktop() {
 
   return (
     <section className="relative mb-[5rem]">
-      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[3.75rem]/[4rem] mb-[0.5rem]">
-        Sponsorship Contract
-      </h1>
-      <h4 className="text-[var(--alternate-text)] font-medium mr-auto text-[2rem] mb-[2.5rem]">
+      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[3.75rem]/[4rem] mb-[3rem]">
         Sponsorship Tiers
-      </h4>
+      </h1>
       <div
         className="w-full overflow-hidden transition-all duration-400"
         style={{

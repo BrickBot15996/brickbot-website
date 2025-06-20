@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
 import Image from "next/image";
@@ -12,6 +12,7 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleClose = () => {
     setIsClosing(true);
@@ -70,10 +71,12 @@ export default function Navbar() {
           <NavbarButton
             text="BRICKLOG"
             action={() => router.push("/blog")}
+            isActive={pathname.startsWith("/blog")}
           />
           <NavbarButton
             text="OUR TEAM"
             action={() => router.push("/our-team")}
+            isActive={pathname.startsWith("/our-team")}
           />
           <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-110 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
             <Link href="/home">
@@ -90,10 +93,12 @@ export default function Navbar() {
           <NavbarButton
             text="PROJECTS"
             action={() => router.push("/projects")}
+            isActive={pathname.startsWith("/projects")}
           />
           <NavbarButton
             text="SUPPORT US"
             action={() => router.push("/support-us")}
+            isActive={pathname.startsWith("/support-us")}
           />
         </ul>
 
@@ -146,6 +151,7 @@ export default function Navbar() {
                   router.push("/home");
                   handleClose();
                 }}
+                isActive={pathname.startsWith("/home")}
               />
               <SidebarButton
                 text="Bricklog"
@@ -153,6 +159,7 @@ export default function Navbar() {
                   router.push("/blog");
                   handleClose();
                 }}
+                isActive={pathname.startsWith("/blog")}
               />
               <SidebarButton
                 text="Our Team"
@@ -160,6 +167,7 @@ export default function Navbar() {
                   router.push("/our-team");
                   handleClose();
                 }}
+                isActive={pathname.startsWith("/our-team")}
               />
               <SidebarButton
                 text="Projects"
@@ -167,6 +175,7 @@ export default function Navbar() {
                   router.push("/projects");
                   handleClose();
                 }}
+                isActive={pathname.startsWith("/projects")}
               />
               <SidebarButton
                 text="Support Us"
@@ -174,6 +183,7 @@ export default function Navbar() {
                   router.push("/support-us");
                   handleClose();
                 }}
+                isActive={pathname.startsWith("/support-us")}
               />
             </div>
           )}
@@ -209,23 +219,33 @@ export default function Navbar() {
 type NavButtonProps = {
   text: string;
   action: () => void;
+  isActive?: boolean;
 };
 
-function NavbarButton({ text, action }: NavButtonProps) {
+function NavbarButton({ text, action, isActive = false }: NavButtonProps) {
   return (
     <li
       className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
       onClick={action}
     >
       <div className="group absolute w-full h-full overflow-visible">
-        <div className="relative opacity-0 group-hover:opacity-20 h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250" />
-        <div className="relative opacity-0 group-hover:opacity-75 w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250" />
+        <div
+          className={`relative h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250 ${
+            isActive ? "opacity-20" : "opacity-0 group-hover:opacity-20"
+          }`}
+        />
+        <div
+          className={`relative w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250 ${
+            isActive ? "opacity-75" : "opacity-0 group-hover:opacity-75"
+          }`}
+        />
       </div>
       <p>{text}</p>
     </li>
   );
 }
-function SidebarButton({ text, action }: NavButtonProps) {
+
+function SidebarButton({ text, action, isActive = false }: NavButtonProps) {
   const [isHovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -251,6 +271,8 @@ function SidebarButton({ text, action }: NavButtonProps) {
     };
   }, []);
 
+  const shouldShowActiveStyle = isActive || isHovered;
+
   return (
     <div
       ref={ref}
@@ -263,13 +285,15 @@ function SidebarButton({ text, action }: NavButtonProps) {
       onTouchStart={() => setHovered(true)}
       className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150 cursor-pointer"
       style={{
-        color: isHovered ? "var(--default-yellow)" : "var(--alternate-text)",
+        color: shouldShowActiveStyle
+          ? "var(--default-yellow)"
+          : "var(--alternate-text)",
       }}
     >
       <div
         className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
         style={{
-          background: isHovered
+          background: shouldShowActiveStyle
             ? "linear-gradient(180deg, var(--box-gradient-light), var(--box-gradient-dark))"
             : "transparent",
         }}
@@ -277,13 +301,17 @@ function SidebarButton({ text, action }: NavButtonProps) {
         <div
           className="h-full rounded-[1.4rem]"
           style={{
-            backgroundColor: isHovered ? "var(--default-dark)" : "transparent",
+            backgroundColor: shouldShowActiveStyle
+              ? "var(--default-dark)"
+              : "transparent",
           }}
         >
           <div
             className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
             style={{
-              backgroundColor: isHovered ? "#1e1e1e" : "transparent",
+              backgroundColor: shouldShowActiveStyle
+                ? "#1e1e1e"
+                : "transparent",
             }}
           >
             {text}

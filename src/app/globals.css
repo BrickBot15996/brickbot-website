@@ -29,7 +29,7 @@
 
   /* Projects */
 
-  --the-vault: var(--default-yellow);
+  --the-vault: rgb(255, 183, 0);
   --the-vault-text: var(--the-vault);
 
   --brick-docs: rgb(255, 103, 80);

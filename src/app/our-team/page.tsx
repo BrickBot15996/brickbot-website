@@ -10,15 +10,14 @@ import LoadingScreen from "../components/brick-loading";
 import ImageCarousel from "../components/image-carousel";
 import Box from "../components/brick-box";
 import ArrowButton from "../components/arrow-button";
+import PageTitle from "../components/page-title";
 
 export default function OurTeam() {
   return (
     <section className="flex flex-col items-center">
       <LoadingScreen />
-      <section className="flex flex-col my-[4rem] md:my-[6rem] lg:my-[8rem] w-[var(--page-width)] space-y-[5rem]">
-        <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] mb-[4rem]">
-          Our Team
-        </h1>
+      <section className="flex flex-col w-[var(--page-width)] space-y-[5rem] mb-[4rem] md:mb-[6rem] lg:mb-[8rem]">
+        <PageTitle title="OUR TEAM" />
         <Introduction />
         <Achievements />
       </section>
@@ -41,7 +40,7 @@ function Introduction() {
         >
           “Unirea” National College, Focșani, Romania
         </Link>
-        . Since 2016, we have been competing in{" "}
+        . Since 2016, we have taken part in the{" "}
         <Link
           href="https://www.firstinspires.org/robotics/ftc"
           target="_blank"
@@ -49,8 +48,9 @@ function Introduction() {
         >
           FIRST Tech Challenge
         </Link>
-        . Beyond building robots, we love spreading the STEAM spirit in both the
-        local and FTC communities.
+        , working hard to build competitive robots. We are passionate about
+        promoting STEAM education and creating opportunities for learning and
+        growth in both our local community and the wider FTC network.
       </p>
       <ImageCarousel
         content={[
@@ -168,7 +168,7 @@ function Achievements() {
 
   return (
     <section>
-      <h3 className="text-[var(--default-yellow)] font-bold text-[2.25rem]/[2.85rem] md:text-[2.75rem]/[3.35rem] lg:text-[3rem]/[3.6rem] mb-[4rem]">
+      <h3 className="text-[var(--default-yellow)] font-bold text-[2.25rem]/[2.85rem] md:text-[2.75rem]/[3.35rem] lg:text-[3rem]/[3.6rem] mb-[3rem]">
         Achievements
       </h3>
       <section className="select-none">
@@ -393,13 +393,13 @@ function SeasonAchievements({
         color={gradientColor}
         gradient={true}
       >
-        <div className="relative h-[4.5rem] md:h-[6.5rem] lg:h-[8rem] xl:h-[9rem] overflow-hidden flex flex-col items-center justify-center my-[2rem]">
+        <div className="relative h-[4.5rem] md:h-[6.5rem] lg:h-[7rem] xl:h-[8rem] w-full overflow-hidden flex flex-col items-center justify-center my-[2rem]">
           <Image
             src={logoPath}
             alt={name + " season logo"}
             width={200}
             height={200}
-            className="h-full w-full object-cover content-contain"
+            className="h-auto w-auto max-h-[100%] max-w-[55%] object-cover content-contain"
           />
         </div>
         {awards.map((award, index) => {
@@ -408,14 +408,14 @@ function SeasonAchievements({
               key={index}
               className="flex flex-col items-center justify-center"
             >
-              <h5 className="text-[1rem]/[1.5rem] md:text-[1.3rem]/[1.8rem] xl:text-[1.75rem]/[2.25rem] font-bold text-[var(--alternate-text)]">
+              <h5 className="text-[1rem]/[1.35rem] md:text-[1.2rem]/[1.55rem] xl:text-[1.65rem]/[2rem] font-bold text-[var(--alternate-text)]">
                 {award.event}
               </h5>
               <h6
-                className="text-[1rem]/[1.5rem] md:text-[1.3rem]/[1.8rem] xl:text-[1.75rem]/[2.25rem] font-medium"
+                className="text-[1rem]/[1.35rem] md:text-[1.2rem]/[1.55rem] xl:text-[1.65rem]/[2rem] font-medium"
                 style={{
                   color: textColor,
-                  paddingBottom: index == awards.length - 1 ? "3rem" : "0rem",
+                  paddingBottom: index == awards.length - 1 ? "2rem" : "0rem",
                 }}
               >
                 {award.awardName}
