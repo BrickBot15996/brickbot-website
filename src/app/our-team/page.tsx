@@ -6,20 +6,21 @@ import Link from "next/link";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
-import LoadingScreen from "../components/brick-loading";
 import ImageCarousel from "../components/image-carousel";
 import Box from "../components/brick-box";
 import ArrowButton from "../components/arrow-button";
 import PageTitle from "../components/page-title";
+import Button from "../components/brick-button";
+import { useRouter } from "next/navigation";
 
 export default function OurTeam() {
   return (
     <section className="flex flex-col items-center">
-      <LoadingScreen />
       <section className="flex flex-col w-[var(--page-width)] space-y-[5rem] mb-[4rem] md:mb-[6rem] lg:mb-[8rem]">
         <PageTitle title="OUR TEAM" />
         <Introduction />
         <Achievements />
+        <JoinBrickBot />
       </section>
     </section>
   );
@@ -36,7 +37,7 @@ function Introduction() {
         <Link
           href="https://maps.app.goo.gl/dDSZJpAszXq8b3nJA"
           target="_blank"
-          className="hover:text-[var(--alternate-text)]"
+          className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
         >
           “Unirea” National College, Focșani, Romania
         </Link>
@@ -44,7 +45,7 @@ function Introduction() {
         <Link
           href="https://www.firstinspires.org/robotics/ftc"
           target="_blank"
-          className="hover:text-[var(--alternate-text)]"
+          className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
         >
           FIRST Tech Challenge
         </Link>
@@ -55,64 +56,52 @@ function Introduction() {
       <ImageCarousel
         content={[
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-into-the-deep.webp",
+            alt: "BrickBot 2024-25 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2025",
+            description: "BrickBot in 2024-25",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-powerplay.webp",
+            alt: "BrickBot 2022-23 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2024",
+            description: "BrickBot in 2022-23",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-freight-frenzy.webp",
+            alt: "BrickBot 2021-22 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2023",
+            description: "BrickBot in 2021-22",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-ultimate-goal.webp",
+            alt: "BrickBot 2020-21 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2022",
+            description: "BrickBot in 2020-21",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-skystone.webp",
+            alt: "BrickBot 2019-20 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2021",
+            description: "BrickBot in 2019-20",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-rover-ruckus.webp",
+            alt: "BrickBot 2018-19 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2020",
+            description: "BrickBot in 2018-19",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-relic-recovery.webp",
+            alt: "BrickBot 2017-18 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2019",
+            description: "BrickBot in 2017-18",
           },
           {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
+            imageSrc: "/our-team/brickbot-velocity-vortex.webp",
+            alt: "BrickBot 2016-17 Group Picture",
             aspectRatio: "16/9",
-            description: "BrickBot in 2018",
-          },
-          {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
-            aspectRatio: "16/9",
-            description: "BrickBot in 2017",
-          },
-          {
-            imageSrc: "/random.jpg",
-            alt: "BrickBot Caravan presentation in May 2025",
-            aspectRatio: "16/9",
-            description: "BrickBot in 2016",
+            description: "BrickBot in 2016-17",
           },
         ]}
         buttonAccentColor="var(--default-yellow)"
@@ -440,6 +429,33 @@ function SeasonAchievements({
 
 function SeparatorGradient() {
   return (
-    <div className="bg-[linear-gradient(90deg,_var(--default-dark),_#ffffff,_var(--default-dark))] opacity-50 w-[11rem] md:w-[16rem] lg:w-[18rem] xl:w-[20rem] h-[0.075rem] my-[2rem]" />
+    <div className="bg-[linear-gradient(90deg,_var(--default-dark),_#ffffff,_var(--default-dark))] opacity-50 w-[11rem] md:w-[16rem] lg:w-[18rem] xl:w-[20rem] h-[0.075rem] my-[1rem]" />
+  );
+}
+
+function JoinBrickBot() {
+  const router = useRouter();
+  return (
+    <section className="relative ml-[calc((-100vw+var(--page-width))/2)] bg-[linear-gradient(180deg,_transparent,_#1E1800)] h-fit w-[100vw] flex flex-col items-center justify-center overflow-visible">
+      <div className="w-[var(--page-width)] h-fit flex flex-col items-center justify-center my-[3rem] lg:my-[4rem]">
+        <h3 className="text-[var(--default-yellow)] text-[2rem] md:text-[3rem] lg:text-[3.5rem] font-bold">
+          Join BrickBot
+        </h3>
+        <p className="text-[1.25rem] md:text-[1.5rem] xl:text-[1.75rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[2rem] mb-[3rem] text-center">
+          Passionate about robotics? Fill out the form to show your interest in
+          joining our team.
+        </p>
+        <Button
+          text="APPLY"
+          accentColor="var(--default-yellow)"
+          gradientColorLight="var(--yellow-gradient-light)"
+          gradientColorDark="var(--yellow-gradient-dark)"
+          arrow={false}
+          action={() => {
+            router.push("/apply");
+          }}
+        />
+      </div>
+    </section>
   );
 }

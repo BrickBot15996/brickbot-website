@@ -13,7 +13,7 @@ export default function AboutUs() {
         <Link
           href="https://maps.app.goo.gl/dDSZJpAszXq8b3nJA"
           target="_blank"
-          className="hover:text-[var(--alternate-text)]"
+          className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
         >
           “Unirea” National College, Focșani, Romania
         </Link>
@@ -21,7 +21,7 @@ export default function AboutUs() {
         <Link
           href="https://www.firstinspires.org/robotics/ftc"
           target="_blank"
-          className="hover:text-[var(--alternate-text)]"
+          className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
         >
           FIRST Tech Challenge
         </Link>

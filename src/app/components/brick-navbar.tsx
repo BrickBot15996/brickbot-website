@@ -228,15 +228,19 @@ function NavbarButton({ text, action, isActive = false }: NavButtonProps) {
       className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
       onClick={action}
     >
-      <div className="group absolute w-full h-full overflow-visible">
+      <div className="group absolute w-full h-full overflow-visible flex flex-col items-center justify-end">
         <div
-          className={`relative h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-opacity duration-250 ${
-            isActive ? "opacity-20" : "opacity-0 group-hover:opacity-20"
+          className={`relative h-[0rem] group-hover:h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-all duration-300 opacity-20 ${
+            isActive
+              ? "h-full opacity-30"
+              : "h-[0rem] group-hover:h-full opacity-20"
           }`}
         />
         <div
-          className={`relative w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-opacity duration-250 ${
-            isActive ? "opacity-75" : "opacity-0 group-hover:opacity-75"
+          className={`relative w-[0rem] group-hover:w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-all group-hover:duration-300 duration-600 opacity-75 ${
+            isActive
+              ? "w-full opacity-90"
+              : "w-[0rem] group-hover:w-full opacity-75"
           }`}
         />
       </div>
@@ -293,7 +297,7 @@ function SidebarButton({ text, action, isActive = false }: NavButtonProps) {
       <div
         className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
         style={{
-          background: shouldShowActiveStyle
+          background: isHovered
             ? "linear-gradient(180deg, var(--box-gradient-light), var(--box-gradient-dark))"
             : "transparent",
         }}
@@ -301,17 +305,13 @@ function SidebarButton({ text, action, isActive = false }: NavButtonProps) {
         <div
           className="h-full rounded-[1.4rem]"
           style={{
-            backgroundColor: shouldShowActiveStyle
-              ? "var(--default-dark)"
-              : "transparent",
+            backgroundColor: isHovered ? "var(--default-dark)" : "transparent",
           }}
         >
           <div
             className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
             style={{
-              backgroundColor: shouldShowActiveStyle
-                ? "#1e1e1e"
-                : "transparent",
+              backgroundColor: isHovered ? "#1e1e1e" : "transparent",
             }}
           >
             {text}

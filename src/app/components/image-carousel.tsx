@@ -73,8 +73,8 @@ export default function ImageCarousel({
     <section className="select-none">
       <div className="relative w-full flex flex-col select-none">
         <div className="absolute left-[calc((-100vw+37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
-          <div className="mr-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-100 pointer-events-none" />
-          <div className="ml-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)]  h-full bg-[linear-gradient(270deg,_var(--default-dark)_20%,_transparent)] z-100 pointer-events-none" />
+          <div className="mr-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
+          <div className="ml-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)]  h-full bg-[linear-gradient(270deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
         </div>
         <div
           className="embla overflow-visible"
@@ -130,9 +130,6 @@ export default function ImageCarousel({
           litUpGradientDark={`${buttonLitUpDark}`}
           arrowDirection="left"
           disabled={isBeginning}
-          style={{
-            borderColor: buttonAccentColor,
-          }}
         />
         <ArrowButton
           action={scrollNext}
@@ -144,9 +141,6 @@ export default function ImageCarousel({
           litUpGradientDark={`${buttonLitUpDark}`}
           arrowDirection="right"
           disabled={isEnd}
-          style={{
-            borderColor: buttonAccentColor,
-          }}
         />
       </div>
     </section>

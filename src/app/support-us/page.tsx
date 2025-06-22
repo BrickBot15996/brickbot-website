@@ -6,10 +6,7 @@ import Button from "../components/brick-button";
 import ArrowButton from "../components/arrow-button";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
-import LoadingScreen from "../components/brick-loading";
 import PageTitle from "../components/page-title";
-
-let expanded: boolean = false;
 
 export default function SupportUs() {
   const [isMobile, setIsMobile] = useState(false);
@@ -18,7 +15,6 @@ export default function SupportUs() {
     const handleResize = () => {
       const mobile = window.innerWidth < 1280;
       setIsMobile(mobile);
-      expanded = false;
     };
 
     handleResize();
@@ -26,9 +22,9 @@ export default function SupportUs() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
     <section className="flex flex-col items-center">
-      <LoadingScreen />
       <section className="relative flex flex-col space-y-[3rem] lg:space-y-[6rem] mb-[4rem] md:mb-[6rem] lg:mb-[8rem] w-[var(--page-width)]">
         <PageTitle title="SUPPORT US" />
         {!isMobile && <ContractSectionDesktop />}
@@ -107,7 +103,7 @@ function ContractSectionMobile() {
               "Logo on Robot",
               "Logo on Website",
               "Logo on Roll-Up",
-              "Logo on shirts",
+              "Merch with your Logo",
             ]}
             className="self-start"
           />
@@ -123,8 +119,8 @@ function ContractSectionMobile() {
               "Logo on Robot",
               "Logo on Website",
               "Logo on Roll-Up",
-              "Logo on shirts",
-              "To be decided",
+              "Merch with your Logo",
+              "Social Media Campaign",
             ]}
           />
         </div>
@@ -142,18 +138,19 @@ function ContractSectionDesktop() {
         Sponsorship Tiers
       </h1>
       <div
-        className="w-full overflow-hidden transition-all duration-400"
+        className="w-full overflow-hidden transition-all duration-400 flex flex-row"
         style={{
-          height: isExpanded ? "25rem" : "13rem",
+          height: isExpanded ? "29rem" : "13rem",
         }}
       >
-        <div className="grid grid-cols-5 w-[93%] h-full gap-[1rem]">
+        <div className="grid grid-cols-5 flex-[0_0_93%] h-full gap-[1rem]">
           <SponsorshipTierDesktop
             name="Bronze"
             priceThreshold={100}
             textColor="var(--bronze-tier-text)"
             gradientColor="var(--bronze-tier-gradient)"
             benefits={["Social Media Mentions", "Logo on Robot"]}
+            expansionState={isExpanded}
           />
           <SponsorshipTierDesktop
             name="Silver"
@@ -165,6 +162,7 @@ function ContractSectionDesktop() {
               "Logo on Robot",
               "Logo on Website",
             ]}
+            expansionState={isExpanded}
           />
           <SponsorshipTierDesktop
             name="Gold"
@@ -177,6 +175,7 @@ function ContractSectionDesktop() {
               "Logo on Website",
               "Logo on Roll-Up",
             ]}
+            expansionState={isExpanded}
           />
           <SponsorshipTierDesktop
             name="Diamond"
@@ -188,8 +187,9 @@ function ContractSectionDesktop() {
               "Logo on Robot",
               "Logo on Website",
               "Logo on Roll-Up",
-              "Logo on shirts",
+              "Merch with your Logo",
             ]}
+            expansionState={isExpanded}
           />
           <SponsorshipTierDesktop
             name="Ultimate"
@@ -201,9 +201,26 @@ function ContractSectionDesktop() {
               "Logo on Robot",
               "Logo on Website",
               "Logo on Roll-Up",
-              "Logo on shirts",
-              "To be decided",
+              "Merch with your Logo",
+              "Social Media Campaign",
             ]}
+            expansionState={isExpanded}
+          />
+        </div>
+        <div className="flex-[0_0_7%] ml-auto h-full flex items-end justify-end">
+          <ArrowButton
+            key="sponsorship-expand-button"
+            action={() => {
+              setExpanded(!isExpanded);
+            }}
+            ariaLabel="Sponsorship Tiers expand or retract"
+            color="var(--default-yellow)"
+            gradientLight="var(--yellow-gradient-light)"
+            gradientDark="var(--yellow-gradient-dark) "
+            litUpGradientLight="var(--lit-up-yellow-gradient-light)"
+            litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+            arrowDirection="down"
+            toggleDirection={true}
           />
         </div>
       </div>
@@ -212,24 +229,6 @@ function ContractSectionDesktop() {
         style={{
           height: isExpanded ? "0rem" : "10rem",
         }}
-      />
-      <ArrowButton
-        action={() => {
-          setExpanded(!isExpanded);
-          expanded = !expanded;
-        }}
-        ariaLabel="Sponsorship Tiers expand or retract"
-        color="var(--default-yellow)"
-        gradientLight="var(--yellow-gradient-light)"
-        gradientDark="var(--yellow-gradient-dark"
-        litUpGradientLight="var(--lit-up-yellow-gradient-light)"
-        litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
-        arrowDirection="down"
-        toggleDirection={true}
-        style={{
-          borderColor: "var(--default-yellow)",
-        }}
-        className="absolute right-0 bottom-0"
       />
     </section>
   );
@@ -242,6 +241,7 @@ type SponsorshipTierProps = {
   gradientColor: string;
   benefits: string[];
   className?: string;
+  expansionState?: boolean;
 };
 
 function SponsorshipTierDesktop({
@@ -251,6 +251,7 @@ function SponsorshipTierDesktop({
   gradientColor,
   benefits,
   className = "",
+  expansionState = false,
 }: SponsorshipTierProps) {
   return (
     <Box
@@ -269,13 +270,20 @@ function SponsorshipTierDesktop({
         <br />≥ {priceThreshold} EUR
       </h4>
       <ul
-        className="pl-[1.25rem] mt-[1rem] list-disc transition-all duration-400 font-medium text-[1.25rem] mb-[3rem]"
+        className="mt-[1rem] list-none transition-all duration-400 font-medium text-[1.25rem] mb-[3rem]"
         style={{
-          opacity: expanded ? "100" : "0",
+          opacity: expansionState ? "100" : "0",
         }}
       >
         {benefits.map((benefit, index) => {
-          return <li key={index}>{benefit}</li>;
+          return (
+            <li
+              key={index}
+              className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[1rem] before:flex-shrink-0 before:mt-[0.2rem]"
+            >
+              {benefit}
+            </li>
+          );
         })}
       </ul>
     </Box>
@@ -343,11 +351,11 @@ function SponsorshipTierMobile({
         }}
         className="overflow-hidden"
       >
-        <ul className="pt-[1rem] pl-[2rem] list-disc font-medium text-[1.1rem]/[1.35rem] md:text-[1.25rem]/[1.5rem] text-[var(--alternate-text)]">
+        <ul className="pt-[1rem] font-medium text-[1.1rem]/[1.35rem] md:text-[1.25rem]/[1.5rem] text-[var(--alternate-text)] list-none">
           {benefits.map((benefit, index) => (
             <li
               key={index}
-              className="mb-[0.25rem] last:mb-0"
+              className="mb-[0.25rem] last:mb-0 flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[1rem] before:flex-shrink-0 before:mt-[0.15rem]"
             >
               {benefit}
             </li>
@@ -367,10 +375,10 @@ function DonationSection() {
             Redirect 3.5%
           </h1>
           <p className="text-[1.1rem] md:text-[1.5rem] xl:text-[1.75rem] font-medium text-[var(--default-text)]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, a
-            earum! Sapiente, modi perferendis? Et quibusdam eligendi ab
-            aspernatur, voluptates, eveniet, quam reiciendis recusandae cum odio
-            saepe! Natus, pariatur modi!
+            For Romanian citizens, redirecting 3.5% of your income tax through
+            Form 230 is a simple way to support the BrickBot Association. It
+            costs nothing and helps fund our robotics, education, and outreach
+            efforts.
           </p>
           <Button
             text="COMPLETE THE FORM"
@@ -389,10 +397,10 @@ function DonationSection() {
             Donation
           </h1>
           <p className="text-[1.1rem] md:text-[1.5rem] xl:text-[1.75rem] font-medium text-[var(--default-text)]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            praesentium ipsam magni, voluptatibus fugit nihil iste sunt
-            expedita. Optio rerum aliquam perspiciatis dolores, quia ipsum! Fuga
-            quibusdam facilis eaque facere.
+            Anyone can support the BrickBot Association by making a secure
+            donation through Stripe. Your contribution directly funds our
+            robotics development, competition participation, and outreach
+            events.
           </p>
           <Button
             text="DONATE HERE"

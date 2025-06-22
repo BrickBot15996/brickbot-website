@@ -1,7 +1,6 @@
 "use client";
 
-import { usePageLoad } from "./page-load-context";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import Navbar from "./components/brick-navbar";
 import Footer from "./components/brick-footer";
 import { Analytics } from "@vercel/analytics/next";
@@ -11,26 +10,25 @@ export default function ClientLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { isFullyLoaded } = usePageLoad();
-
+  const pathname = usePathname();
   return (
-    <AnimatePresence>
-      {isFullyLoaded && (
-        <motion.section
-          key="page"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+    <>
+      {!(pathname.length == 0 || pathname.startsWith("/apply")) && (
+        <>
           <Navbar />
           <main className="mt-[var(--navbar-height)]">
             {children}
             <Analytics />
           </main>
           <Footer />
-        </motion.section>
+        </>
       )}
-    </AnimatePresence>
+      {(pathname.length == 0 || pathname.startsWith("/apply")) && (
+        <main className="mt-[var(--navbar-height)]">
+          {children}
+          <Analytics />
+        </main>
+      )}
+    </>
   );
 }

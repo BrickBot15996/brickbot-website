@@ -28,17 +28,13 @@ export default function Box({
 }: BoxProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Helper function to get the background with proper opacity
   const getBackgroundWithOpacity = () => {
     if (color === "var(--box-gradient-light)") {
-      // Default color - full opacity
       return `linear-gradient(180deg, ${color}, var(--box-gradient-dark))`;
     } else {
-      // Custom color - apply opacity only to the custom color
       const colorWithOpacity = color.startsWith("var(")
         ? `color-mix(in srgb, ${color} 8%, transparent)`
-        : `${color}14`; // 14 is hex for ~8% opacity
-
+        : `${color}14`;
       return `linear-gradient(180deg, ${colorWithOpacity}, var(--box-gradient-dark))`;
     }
   };

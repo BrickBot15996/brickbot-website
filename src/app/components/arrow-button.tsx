@@ -42,8 +42,8 @@ export default function ArrowButton({
 
   const currentGradient =
     isLit && !disabled
-      ? `linear-gradient(to bottom, ${litUpGradientLight}, ${litUpGradientDark})`
-      : `linear-gradient(to bottom, ${gradientLight}, ${gradientDark})`;
+      ? `linear-gradient(180deg, ${litUpGradientLight}, ${litUpGradientDark})`
+      : `linear-gradient(180deg, ${gradientLight}, ${gradientDark})`;
 
   const handleClick = () => {
     if (disabled) return;
@@ -57,7 +57,7 @@ export default function ArrowButton({
   return (
     <div>
       <button
-        className={`w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] flex flex-col justify-center transition-all ${className}`}
+        className={`group w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] flex flex-col justify-center transition-all ${className}`}
         onClick={handleClick}
         aria-label={ariaLabel}
         aria-disabled={disabled}
