@@ -72,15 +72,15 @@ export default function ImageCarousel({
   return (
     <section className="select-none">
       <div className="relative w-full flex flex-col select-none">
-        <div className="absolute left-[calc((-100vw+37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
-          <div className="mr-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
-          <div className="ml-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)]  h-full bg-[linear-gradient(270deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
+        <div className="absolute left-[calc((-100vw+var(--page-width))/2)] w-[100vw] h-full flex flex-row justify-center">
+          <div className="mr-auto w-[calc((100vw-var(--page-width))/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
+          <div className="ml-auto w-[calc((100vw-var(--page-width))/2)] h-full bg-[linear-gradient(270deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
         </div>
         <div
           className="embla overflow-visible"
           ref={emblaRef}
         >
-          <div className="embla__container grid grid-flow-col auto-cols-[clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:auto-cols-[30rem] lg:auto-cols-[35rem] xl:auto-cols-[40rem] gap-x-[1.5rem]">
+          <div className="embla__container grid grid-flow-col auto-cols-[clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:auto-cols-[30rem] lg:auto-cols-[35rem] xl:auto-cols-[40rem] gap-x-[var(--sm-space-x)]">
             {content.map((item, index) => {
               return (
                 <div
@@ -103,7 +103,7 @@ export default function ImageCarousel({
                   </div>
                   {item.description && (
                     <p
-                      className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium mt-[0.6rem] lg:mt-[1rem] ml-[0.25rem] transition-colors duration-300"
+                      className="mt-[var(--sm-space-y)] transition-colors duration-300"
                       style={{
                         color: slidesInView.includes(index)
                           ? "var(--darker-text)"
@@ -119,7 +119,7 @@ export default function ImageCarousel({
           </div>
         </div>
       </div>
-      <div className="flex flex-row justify-end space-x-[1rem] mt-[1.25rem] md:mt-[1.5rem] lg:mt-[2rem]">
+      <div className="flex flex-row justify-end space-x-[var(--sm-space-x)] mt-[var(--md-space-y)]">
         <ArrowButton
           action={scrollPrev}
           ariaLabel="Previous slide button"

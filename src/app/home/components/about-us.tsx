@@ -4,11 +4,9 @@ import ImageCarousel from "../../components/image-carousel";
 
 export default function AboutUs() {
   return (
-    <section className="flex flex-col h-auto w-full space-y-[0.5rem]">
-      <h1 className="text-[var(--default-yellow)] font-extrabold text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem]">
-        About Us
-      </h1>
-      <p className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[2.5rem] md:mb-[3rem] lg:mb-[3.5rem]">
+    <section className="flex flex-col h-auto w-full">
+      <h2 className="mb-[var(--md-space-y)]">About Us</h2>
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--xl-space-y)]">
         We are team #15996, BrickBot, from{" "}
         <Link
           href="https://maps.app.goo.gl/dDSZJpAszXq8b3nJA"

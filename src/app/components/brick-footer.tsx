@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-// import { RefObject } from "react";
 
 import Link from "next/link";
 
@@ -10,13 +9,10 @@ import { RiTiktokFill } from "react-icons/ri";
 import { RiFacebookFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 
-// import useOnScreen from "../hooks/in-view";
-
 export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
 
   const ref = useRef<HTMLElement>(null);
-  // const isVisible = useOnScreen(ref as RefObject<HTMLElement>);
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -25,21 +21,21 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className="bg-[var(--footer)] h-auto min-h-[10rem] w-full inline-flex items-center"
+      className="bg-[var(--footer)] h-auto w-full inline-flex items-center"
     >
-      <span className="h-auto w-auto ml-[1.5rem] md:ml-[3rem] lg:ml-[5rem] mt-[2rem] md:mt-[2.5rem] lg:mt-[3rem]">
+      <span className="h-auto w-auto ml-[var(--lg-space-x)] mt-[var(--lg-space-y)]">
         <Link
           href="https://www.datahost.ro/"
-          className="text-[var(--alternate-text)] font-medium text-[0.8rem]/[2rem] md:text-[1rem]/[2.5rem] lg:text-[1.25rem]/[3rem] hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
+          className="hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
           target="_blank"
         >
-          Powered by DataHost
+          <p style={{ color: "var(--alternate-text)" }}>Powered by DataHost</p>
         </Link>
-        <p className="text-[var(--alternate-text)] font-medium text-[0.8rem]/[2rem] md:text-[1rem]/[2.5rem] lg:text-[1.25rem]/[3rem] pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem]">
+        <p className="pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem] mt-[0.5rem]">
           Brickbot © {year}
         </p>
       </span>
-      <span className="relative h-auto ml-auto mr-[1.5rem] md:mr-[3rem] lg:mr-[5rem] w-fit select-none">
+      <span className="relative h-auto ml-auto mr-[var(--lg-space-x)] w-fit select-none">
         <div className="grid grid-rows-2 grid-cols-3 items-start gap-x-[1rem] md:gap-x-[1.5rem] gap-y-[0.8rem] md:gap-y-[1rem] pt-[0.25rem]">
           <Link
             href="https://www.instagram.com/brickbotcnu/"

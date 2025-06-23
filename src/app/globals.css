@@ -90,6 +90,20 @@
   --velocity-vortex-text: rgb(255, 92, 83);
   --velocity-vortex-gradient: rgb(255, 144, 140);
 
+  --sm-space-x: 1.5rem;
+  --md-space-x: 2.5rem;
+  --lg-space-x: 4rem;
+  --xl-space-x: 5rem;
+  --2xl-space-x: 6rem;
+
+  --sm-space-y: 1rem;
+  --md-space-y: 1.5rem;
+  --lg-space-y: 2.5rem;
+  --xl-space-y: 3rem;
+  --2xl-space-y: 5rem;
+
+  --separator-thickness: 0.1rem;
+
   scrollbar-color: rgb(47, 47, 47) rgb(27, 27, 27);
   scrollbar-width: thin;
 }
@@ -99,6 +113,67 @@
   --page-width: min(calc(100vw - 3rem), 37rem);
   --navbar-height: 3.5rem;
   --banner-height: 30rem;
+
+  --sm-space-x: 1rem;
+  --md-space-x: 1.25rem;
+  --lg-space-x: 1.5rem;
+  --xl-space-x: 3rem;
+  --2xl-space-x: 4rem;
+
+  --sm-space-y: 0.5rem;
+  --md-space-y: 1rem;
+  --lg-space-y: 2rem;
+  --xl-space-y: 2.5rem;
+  --2xl-space-y: 3.5rem;
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    color: var(--default-yellow);
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--default-yellow);
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    line-height: 1.35rem;
+    color: var(--default-yellow);
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    color: var(--default-yellow);
+    font-weight: 800;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    color: var(--alternate-text);
+    font-weight: 700;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    color: var(--alternate-text);
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    color: var(--default-text);
+    font-weight: 500;
+  }
 }
 
 /* md */
@@ -106,6 +181,67 @@
   :root {
     --page-width: min(calc(100vw - 4rem), 44rem);
     --banner-height: 35rem;
+
+    --sm-space-x: 1rem;
+    --md-space-x: 1.5rem;
+    --lg-space-x: 2.5rem;
+    --xl-space-x: 4rem;
+    --2xl-space-x: 5rem;
+
+    --sm-space-y: 0.75rem;
+    --md-space-y: 1.25rem;
+    --lg-space-y: 2rem;
+    --xl-space-y: 2.5rem;
+    --2xl-space-y: 3.75rem;
+
+    h1 {
+      font-size: 3.2rem;
+      line-height: 3.2rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      line-height: 2.2rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      line-height: 1.6rem;
+      color: var(--default-yellow);
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h5 {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: var(--alternate-text);
+      font-weight: 700;
+    }
+
+    h6 {
+      font-size: 1.1rem;
+      line-height: 1.3rem;
+      color: var(--alternate-text);
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.55rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
   }
 }
 
@@ -115,6 +251,67 @@
     --page-width: min(calc(100vw - 6rem), 58rem);
     --navbar-height: 4rem;
     --banner-height: 45rem;
+
+    --sm-space-x: 1rem;
+    --md-space-x: 1.5rem;
+    --lg-space-x: 2.75rem;
+    --xl-space-x: 4.5rem;
+    --2xl-space-x: 5.5rem;
+
+    --sm-space-y: 1rem;
+    --md-space-y: 1.5rem;
+    --lg-space-y: 2.5rem;
+    --xl-space-y: 3.25rem;
+    --2xl-space-y: 4.5rem;
+
+    h1 {
+      font-size: 3.6rem;
+      line-height: 3.6rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2.6rem;
+      line-height: 2.6rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.55rem;
+      line-height: 1.8rem;
+      color: var(--default-yellow);
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h5 {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: var(--alternate-text);
+      font-weight: 700;
+    }
+
+    h6 {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: var(--alternate-text);
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.65rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
   }
 }
 
@@ -122,6 +319,67 @@
 @media (min-width: 1280px) {
   :root {
     --page-width: min(calc(100vw - 8rem), 72rem);
+
+    --sm-space-x: 1rem;
+    --md-space-x: 1.75rem;
+    --lg-space-x: 3.25rem;
+    --xl-space-x: 4.75rem;
+    --2xl-space-x: 5.75rem;
+
+    --sm-space-y: 1rem;
+    --md-space-y: 1.75rem;
+    --lg-space-y: 2.75rem;
+    --xl-space-y: 3.75rem;
+    --2xl-space-y: 5rem;
+
+    h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 3rem;
+      line-height: 3rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      color: var(--default-yellow);
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h5 {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      color: var(--alternate-text);
+      font-weight: 700;
+    }
+
+    h6 {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: var(--alternate-text);
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.85rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
   }
 }
 
@@ -129,6 +387,63 @@
 @media (min-width: 1536px) {
   :root {
     --page-width: min(calc(100vw - 8rem), 88rem);
+
+    --small-spacing-x: 2rem;
+    --medium-spacing-x: 4rem;
+    --large-spacing-x: 6rem;
+
+    --small-spacing-y: 1.5rem;
+    --medium-spacing-y: 2.5rem;
+    --large-spacing-y: 5rem;
+
+    h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 3rem;
+      line-height: 3rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      line-height: 2rem;
+      color: var(--default-yellow);
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      color: var(--default-yellow);
+      font-weight: 800;
+    }
+
+    h5 {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      color: var(--alternate-text);
+      font-weight: 700;
+    }
+
+    h6 {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      color: var(--alternate-text);
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.85rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
   }
 }
 

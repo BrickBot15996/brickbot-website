@@ -26,14 +26,8 @@ export default function ProjectTitle({
     const handleResize = () => {
       setShowProjectBadge(window.innerWidth > 400);
     };
-
-    // Set initial value
     handleResize();
-
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -47,13 +41,8 @@ export default function ProjectTitle({
       >
         <div className="flex flex-row items-center justify-center w-[var(--page-width)] h-full">
           <div className="flex flex-col items-start justify-center">
-            <div className="flex flex-row space-x-[2rem] lg:space-x-[3rem] items-center mb-[1rem] h-fit">
-              <h1
-                className="font-extrabold text-[3rem]/[3.5rem] md:text-[3.25rem]/[3.75rem] lg:text-[3.5rem]/[4rem] xl:text-[4rem]/[4.5rem]"
-                style={{ color: textColor }}
-              >
-                {title}
-              </h1>
+            <div className="flex flex-row space-x-[var(--md-space-x)] items-center mb-[var(--md-space-y)] h-fit">
+              <h1 style={{ color: textColor }}>{title}</h1>
               {showProjectBadge && (
                 <div className="bg-[var(--default-dark)] border-[0.075rem] border-[#5D5D5D] rounded-full px-[1.5rem] lg:px-[1.9rem] text-[#5D5D5D] text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] py-[0.1rem] font-semibold h-fit">
                   Project
@@ -61,12 +50,15 @@ export default function ProjectTitle({
               )}
             </div>
             <h4
-              className="font-semibold text-[1rem]/[1.25rem] md:text-[1.25rem]/[1.5rem] lg:text-[1.5rem]/[1.75rem] mb-[2rem]"
-              style={{ color: textColor }}
+              className="mb-[var(--lg-space-y)]"
+              style={{ color: textColor, fontWeight: 600 }}
             >
               {subtitle.toUpperCase()}
             </h4>
-            <p className="text-[var(--alternate-text)] text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] lg:text-[1.75rem]/[2rem] font-medium w-[100%] md:w-[90%] lg:w-[65%]">
+            <p
+              className="w-[100%] md:w-[90%] lg:w-[65%]"
+              style={{ color: "var(--alternate-text)" }}
+            >
               {description}
             </p>
           </div>
@@ -82,7 +74,7 @@ export default function ProjectTitle({
         </div>
       </div>
       <div
-        className="h-[0.1rem]"
+        className="h-[var(--separator-thickness)]"
         style={{
           background: `linear-gradient(90deg, transparent 3%, ${textColor} 34%, transparent 78%)`,
           filter: `opacity(0.75)`,

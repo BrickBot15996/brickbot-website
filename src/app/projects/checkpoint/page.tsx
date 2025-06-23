@@ -18,11 +18,11 @@ export default function Checkpoint() {
         logoPath="/projects/checkpoint-logo.svg"
       />
       <section className="w-[var(--page-width)] flex flex-col items-center justify-center">
-        <div className="w-full mt-[5rem]">
-          <h2 className="font-bold text-[3rem]/[3.5rem] md:text-[3.25rem]/[3.75rem] lg:text-[3.5rem]/[4rem] xl:text-[4rem]/[4.5rem] text-[var(--checkpoint-text)]">
+        <div className="w-full mt-[var(--2xl-space-y)]">
+          <h2 style={{ color: "var(--checkpoint-text)" }}>
             Interacting With Students
           </h2>
-          <p className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[2.5rem] lg:mb-[3.5rem] mt-[2rem] lg:mt-[3rem]">
+          <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--sm-space-y)] mb-[var(--md-space-y)]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
             velit quaerat doloribus sunt qui, praesentium vero autem excepturi
             voluptates provident ipsum voluptate temporibus! Deserunt nobis
@@ -73,11 +73,11 @@ export default function Checkpoint() {
             ]}
           />
         </div>
-        <div className="w-full mt-[4rem]">
-          <h2 className="font-bold text-[3rem]/[3.5rem] md:text-[3.25rem]/[3.75rem] lg:text-[3.5rem]/[4rem] xl:text-[4rem]/[4.5rem] text-[var(--checkpoint-text)]">
+        <div className="w-full mt-[var(--2xl-space-y)]">
+          <h2 style={{ color: "var(--checkpoint-text)" }}>
             Interacting With The Public
           </h2>
-          <p className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[2.5rem] lg:mb-[3.5rem] mt-[2rem] lg:mt-[3rem]">
+          <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--sm-space-y)] mb-[var(--md-space-y)]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
             velit quaerat doloribus sunt qui, praesentium vero autem excepturi
             voluptates provident ipsum voluptate temporibus! Deserunt nobis
@@ -128,7 +128,7 @@ export default function Checkpoint() {
             ]}
           />
         </div>
-        <div className="my-[5rem]">
+        <div className="mt-[var(--2xl-space-y)] mb-[var(--2xl-space-y)]">
           <Button
             text="EXPLORE ALL PROJECTS"
             accentColor="var(--default-yellow)"

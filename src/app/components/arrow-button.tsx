@@ -74,7 +74,7 @@ export default function ArrowButton({
         <motion.div
           animate={{ rotate: isToggled && toggleDirection ? 180 : 0 }}
           transition={{ duration: 0.4 }}
-          className="flex items-center justify-center"
+          className="flex flex-col items-center justify-center"
         >
           {arrowDirection == "left" && (
             <HiArrowNarrowLeft

@@ -25,15 +25,18 @@ export default function SupportUs() {
 
   return (
     <section className="flex flex-col items-center">
-      <section className="relative flex flex-col space-y-[3rem] lg:space-y-[6rem] mb-[4rem] md:mb-[6rem] lg:mb-[8rem] w-[var(--page-width)]">
+      <section className="relative flex flex-col space-y-[var(--2xl-space-y)] mb-[var(--2xl-space-y)] w-[var(--page-width)]">
         <PageTitle title="SUPPORT US" />
         {!isMobile && <ContractSectionDesktop />}
         {isMobile && <ContractSectionMobile />}
         <DonationSection />
-        <div className="flex flex-col items-center justify-center w-full">
-          <h3 className="text-[var(--alternate-text)] text-[1.5rem] md:text-[2.25rem] lg:text-[2.75rem] font-extrabold mb-[2rem]">
+        <div className="flex flex-col items-center justify-center w-full mb-[var(--lg-space-y)]">
+          <h2
+            className="mb-[var(--lg-space-y)] text-center"
+            style={{ color: "var(--alternate-text)", fontWeight: 700 }}
+          >
             Want to help in other ways?
-          </h3>
+          </h2>
           <Button
             text="CONTACT US"
             arrow={true}
@@ -49,11 +52,9 @@ export default function SupportUs() {
 
 function ContractSectionMobile() {
   return (
-    <section className="relative mb-[1rem]">
-      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[2.75rem]/[3rem] md:text-[3.25rem]/[3.5rem] lg:text-[3.75rem]/[4rem] mb-[2rem]">
-        Sponsorship Tiers
-      </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1rem] items-start">
+    <section className="relative">
+      <h1 className="mb-[var(--lg-space-y)]">Sponsorship Tiers</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--md-space-y)] items-start">
         <div className="self-start">
           <SponsorshipTierMobile
             name="Bronze"
@@ -133,17 +134,15 @@ function ContractSectionDesktop() {
   const [isExpanded, setExpanded] = useState(false);
 
   return (
-    <section className="relative mb-[5rem]">
-      <h1 className="text-[var(--default-yellow)] font-extrabold mr-auto text-[3.75rem]/[4rem] mb-[3rem]">
-        Sponsorship Tiers
-      </h1>
+    <section className="relative">
+      <h2 className="mr-auto mb-[var(--xl-space-y)]">Sponsorship Tiers</h2>
       <div
         className="w-full overflow-hidden transition-all duration-400 flex flex-row"
         style={{
           height: isExpanded ? "29rem" : "13rem",
         }}
       >
-        <div className="grid grid-cols-5 flex-[0_0_93%] h-full gap-[1rem]">
+        <div className="grid grid-cols-5 flex-[0_0_93%] h-full gap-[var(--sm-space-x)]">
           <SponsorshipTierDesktop
             name="Bronze"
             priceThreshold={100}
@@ -258,28 +257,29 @@ function SponsorshipTierDesktop({
       gradient={true}
       color={gradientColor}
       borderRadius="2rem"
-      className={`flex flex-col h-auto w-auto px-[1.25rem] py-[1.5rem] select-none ${className}`}
+      className={`flex flex-col h-auto w-auto py-[var(--sm-space-y)] select-none ${className}`}
     >
-      <h4
-        className="font-semibold text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem]"
+      <h5
+        className="px-[1.25rem]"
         style={{
           color: textColor,
         }}
       >
         {name}
         <br />≥ {priceThreshold} EUR
-      </h4>
+      </h5>
       <ul
-        className="mt-[1rem] list-none transition-all duration-400 font-medium text-[1.25rem] mb-[3rem]"
+        className="mt-[1rem] list-none transition-all duration-300 font-medium text-[1.25rem] mb-[var(--md-space-y)]"
         style={{
           opacity: expansionState ? "100" : "0",
+          translate: expansionState ? "0 0" : "0 -1.5rem",
         }}
       >
         {benefits.map((benefit, index) => {
           return (
             <li
               key={index}
-              className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[1rem] before:flex-shrink-0 before:mt-[0.2rem]"
+              className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]"
             >
               {benefit}
             </li>
@@ -304,30 +304,25 @@ function SponsorshipTierMobile({
       gradient={true}
       color={gradientColor}
       borderRadius="1.3rem"
-      className="flex flex-col w-full select-none p-[1rem] cursor-pointer overflow-hidden"
+      className="flex flex-col w-full select-none px-[1rem] py-[1rem] cursor-pointer overflow-hidden"
       action={() => {
         setExpanded(!isExpanded);
       }}
     >
-      <div className="flex items-center justify-between w-full min-h-[3rem]">
+      <div className="flex flex-row items-center justify-center w-full">
         <h5
-          className="font-semibold text-[1.25rem]/[1.25rem] md:text-[1.5rem]/[1.5rem]"
+          className="mr-auto"
           style={{ color: textColor }}
         >
           {name}
         </h5>
 
-        <h5
-          className="font-semibold text-[1.25rem]/[1.25rem] md:text-[1.5rem]/[1.5rem]"
-          style={{ color: textColor }}
-        >
-          ≥ {priceThreshold} EUR
-        </h5>
+        <h5 style={{ color: textColor }}>≥ {priceThreshold} EUR</h5>
 
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="flex items-center justify-center h-[1.75rem] w-[1.75rem]"
+          className="ml-auto flex items-center justify-center h-[1.75rem] w-[1.75rem]"
         >
           <IoIosArrowDown
             className="h-full w-full"
@@ -351,7 +346,13 @@ function SponsorshipTierMobile({
         }}
         className="overflow-hidden"
       >
-        <ul className="pt-[1rem] font-medium text-[1.1rem]/[1.35rem] md:text-[1.25rem]/[1.5rem] text-[var(--alternate-text)] list-none">
+        <ul
+          className="pt-[1rem] font-medium text-[1.1rem]/[1.35rem] md:text-[1.25rem]/[1.5rem] text-[var(--alternate-text)] list-none transition-all duration-300"
+          style={{
+            opacity: isExpanded ? "100" : "0",
+            translate: isExpanded ? "0 0" : "0 -1.5rem",
+          }}
+        >
           {benefits.map((benefit, index) => (
             <li
               key={index}
@@ -368,13 +369,11 @@ function SponsorshipTierMobile({
 
 function DonationSection() {
   return (
-    <section className="flex flex-col items-center justify-center w-[100vw] ml-[calc((-100vw+var(--page-width))/2)] h-auto min-h-[15rem] bg-[linear-gradient(180deg,_var(--default-dark),_#1e1e1e)]">
-      <div className="flex flex-col lg:flex-row w-[var(--page-width)] h-full gap-x-[2.5rem] lg:gap-x-[5rem] gap-y-[4rem] my-[5rem]">
-        <div className="flex flex-col w-full lg:w-1/2 gap-y-[2rem] md:gap-y-[2.5rem] lg:gap-y-[3rem]">
-          <h1 className="text-[var(--default-yellow)] font-bold text-[2.75rem]/[3rem] md:text-[3.25rem]/[3.5rem] lg:text-[3.75rem]/[4rem]">
-            Redirect 3.5%
-          </h1>
-          <p className="text-[1.1rem] md:text-[1.5rem] xl:text-[1.75rem] font-medium text-[var(--default-text)]">
+    <section className="flex flex-col items-center justify-center w-[100vw] ml-[calc((-100vw+var(--page-width))/2)] h-auto bg-[linear-gradient(180deg,_var(--default-dark),_#1e1e1e)]">
+      <div className="flex flex-col lg:flex-row w-[var(--page-width)] h-full gap-x-[var(--xl-space-x)] gap-y-[var(--xl-space-y)] my-[var(--xl-space-y)]">
+        <div className="flex flex-col w-full lg:w-1/2">
+          <h2 className="mb-[var(--md-space-y)]">Redirect 3.5%</h2>
+          <p className="mb-[var(--lg-space-y)]">
             For Romanian citizens, redirecting 3.5% of your income tax through
             Form 230 is a simple way to support the BrickBot Association. It
             costs nothing and helps fund our robotics, education, and outreach
@@ -392,11 +391,9 @@ function DonationSection() {
           />
         </div>
 
-        <div className="flex flex-col w-full lg:w-1/2 gap-y-[2rem] md:gap-y-[2.5rem] lg:gap-y-[3rem]">
-          <h1 className="text-[var(--default-yellow)] font-bold text-[2.75rem]/[3rem] md:text-[3.25rem]/[3.5rem] lg:text-[3.75rem]/[4rem]">
-            Donation
-          </h1>
-          <p className="text-[1.1rem] md:text-[1.5rem] xl:text-[1.75rem] font-medium text-[var(--default-text)]">
+        <div className="flex flex-col w-full lg:w-1/2">
+          <h2 className="mb-[var(--md-space-y)]">Donation</h2>
+          <p className="mb-[var(--lg-space-y)]">
             Anyone can support the BrickBot Association by making a secure
             donation through Stripe. Your contribution directly funds our
             robotics development, competition participation, and outreach

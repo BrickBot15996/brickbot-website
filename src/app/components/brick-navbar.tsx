@@ -20,7 +20,7 @@ export default function Navbar() {
     setTimeout(() => {
       setOpen(false);
       setIsClosing(false);
-    }, 200);
+    }, 300);
   };
 
   useEffect(() => {
@@ -61,13 +61,13 @@ export default function Navbar() {
   return (
     <>
       <header
-        className="fixed top-0 h-[var(--navbar-height)] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-[100] flex justify-center items-center select-none transition-all duration-200 backdrop-blur"
+        className="fixed top-0 h-[var(--navbar-height)] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-10000 flex justify-center items-center select-none transition-all duration-300 backdrop-blur"
         style={{
           height: isOpen && isMobile ? "100vh" : undefined,
         }}
       >
         {/* Desktop Navbar */}
-        <ul className="hidden md:flex justify-center items-center md:text-[var(--alternate-text)] font-bold text-[1.2rem] lg:text-[1.4rem] w-full h-full">
+        <ul className="hidden md:flex justify-center items-center w-full h-full">
           <NavbarButton
             text="BRICKLOG"
             action={() => router.push("/blog")}
@@ -106,7 +106,7 @@ export default function Navbar() {
         <div className="absolute top-0 left-0 flex justify-center items-center md:hidden h-[var(--navbar-height)] w-full">
           <Link
             href="/home"
-            className="relative ml-[1rem] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
+            className="relative ml-[var(--sm-space-x)] mr-auto hover:opacity-75 hover:scale-107 active:opacity-100 active:scale-93 transition-transform duration-150"
           >
             <Image
               src="/brick-mobile-logo.svg"
@@ -128,21 +128,23 @@ export default function Navbar() {
         </div>
         {/* Mobile Sidebar Overlay */}
         <div
-          className="fixed top-[var(--navbar-height)] left-0 w-full h-[calc(100vh-3rem)] z-[100] flex flex-col md:hidden select-none transition-all duration-200"
+          className="fixed top-[var(--navbar-height)] left-0 w-full h-[calc(100vh-var(--navbar-height))] flex flex-col md:hidden select-none transition-all duration-300"
           style={{
-            height: isOpen && isMobile ? "100vh" : "3.5rem",
-            visibility: isOpen && isMobile ? "visible" : "hidden",
+            height: isOpen && isMobile ? "100vh" : "var(--navbar-height)",
           }}
         >
           {isOpen && (
             <div
-              className={`w-full h-full px-[1rem] text-[var(--alternate-text)] flex flex-col ${
+              className={`w-full h-full px-[var(--sm-space-x)] text-[var(--alternate-text)] flex flex-col ${
                 isClosing
-                  ? "animate-[fadeOut_0.2s_ease-in-out_forwards]"
-                  : "opacity-0 animate-[fadeInDelay_0.15s_ease-in-out_0.05s_forwards]"
+                  ? "animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]"
+                  : "opacity-0 animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]"
               }`}
             >
-              <h1 className="text-[2.25rem] font-extrabold text-[var(--alternate-text)] mb-[1rem] mt-[1.5rem] px-[1rem]">
+              <h1
+                className="my-[var(--sm-space-y)] px-[var(--sm-space-x)]"
+                style={{ color: "var(--alternate-text)" }}
+              >
                 Menu
               </h1>
               <SidebarButton
@@ -244,7 +246,7 @@ function NavbarButton({ text, action, isActive = false }: NavButtonProps) {
           }`}
         />
       </div>
-      <p>{text}</p>
+      <h5>{text}</h5>
     </li>
   );
 }

@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 export default function OurTeam() {
   return (
     <section className="flex flex-col items-center">
-      <section className="flex flex-col w-[var(--page-width)] space-y-[5rem] mb-[4rem] md:mb-[6rem] lg:mb-[8rem]">
+      <section className="flex flex-col w-[var(--page-width)] space-y-[var(--2xl-space-y)]">
         <PageTitle title="OUR TEAM" />
         <Introduction />
         <Achievements />
@@ -29,10 +29,8 @@ export default function OurTeam() {
 function Introduction() {
   return (
     <section>
-      <h3 className="text-[var(--default-yellow)] font-bold text-[2.25rem]/[2.85rem] md:text-[2.75rem]/[3.35rem] lg:text-[3rem]/[3.6rem] mb-[2rem]">
-        Introduction
-      </h3>
-      <p className="text-[1.25rem]/[1.85rem] md:text-[1.5rem]/[2.1rem] xl:text-[1.75rem]/[2.35rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[4rem]">
+      <h2 className="mb-[var(--md-space-y)]">Introduction</h2>
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--xl-space-y)]">
         We are team #15996, BrickBot, from{" "}
         <Link
           href="https://maps.app.goo.gl/dDSZJpAszXq8b3nJA"
@@ -157,20 +155,18 @@ function Achievements() {
 
   return (
     <section>
-      <h3 className="text-[var(--default-yellow)] font-bold text-[2.25rem]/[2.85rem] md:text-[2.75rem]/[3.35rem] lg:text-[3rem]/[3.6rem] mb-[3rem]">
-        Achievements
-      </h3>
+      <h2 className="mb-[var(--xl-space-y)]">Achievements</h2>
       <section className="select-none">
         <div className="relative w-full flex flex-col">
-          <div className="absolute left-[calc((-100vw+37rem)/2)] md:left-[calc((-100vw+44rem)/2)] lg:left-[calc((-100vw+58rem)/2)] xl:left-[calc((-100vw+72rem)/2)] 2xl:left-[calc((-100vw+88rem)/2)] w-[100vw] h-full flex flex-row justify-center">
-            <div className="mr-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-100 pointer-events-none" />
-            <div className="ml-auto w-[calc((100vw-37rem)/2)] md:w-[calc((100vw-44rem)/2)] lg:w-[calc((100vw-58rem)/2)] xl:w-[calc((100vw-72rem)/2)] 2xl:w-[calc((100vw-88rem)/2)]  h-full bg-[linear-gradient(270deg,_var(--default-dark)_20%,_transparent)] z-100 pointer-events-none" />
+          <div className="absolute left-[calc((-100vw+var(--page-width))/2)] w-[100vw] h-full flex flex-row justify-center">
+            <div className="mr-auto w-[calc((100vw-var(--page-width))/2)] h-full bg-[linear-gradient(90deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
+            <div className="ml-auto w-[calc((100vw-var(--page-width))/2)] h-full bg-[linear-gradient(270deg,_var(--default-dark)_20%,_transparent)] z-10 pointer-events-none" />
           </div>
           <div
             className="embla overflow-visible"
             ref={emblaRef}
           >
-            <div className="embla__container grid grid-flow-col auto-cols-[clamp(0rem,_calc(calc(100vw-3rem)),_18rem)] md:auto-cols-[23rem] lg:auto-cols-[26rem] xl:auto-cols-[32rem] gap-x-[1.5rem] items-stretch">
+            <div className="embla__container grid grid-flow-col auto-cols-[clamp(0rem,_calc(calc(100vw-3rem)),_20rem)] md:auto-cols-[22rem] lg:auto-cols-[24rem] xl:auto-cols-[28rem] gap-x-[var(--sm-space-x)] items-stretch">
               {seasons.map((season, index) => {
                 return (
                   <div
@@ -193,7 +189,7 @@ function Achievements() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-end space-x-[1rem] mt-[1.25rem] md:mt-[1.5rem] lg:mt-[2rem]">
+        <div className="flex flex-row justify-end space-x-[var(--sm-space-x)] mt-[var(--md-space-y)]">
           <ArrowButton
             action={scrollPrev}
             ariaLabel="Previous slide button"
@@ -382,7 +378,7 @@ function SeasonAchievements({
         color={gradientColor}
         gradient={true}
       >
-        <div className="relative h-[4.5rem] md:h-[6.5rem] lg:h-[7rem] xl:h-[8rem] w-full overflow-hidden flex flex-col items-center justify-center my-[2rem]">
+        <div className="relative h-[4.5rem] md:h-[6.5rem] lg:h-[7rem] xl:h-[8rem] w-full overflow-hidden flex flex-col items-center justify-center my-[var(--md-space-y)]">
           <Image
             src={logoPath}
             alt={name + " season logo"}
@@ -397,14 +393,12 @@ function SeasonAchievements({
               key={index}
               className="flex flex-col items-center justify-center"
             >
-              <h5 className="text-[1rem]/[1.35rem] md:text-[1.2rem]/[1.55rem] xl:text-[1.65rem]/[2rem] font-bold text-[var(--alternate-text)]">
-                {award.event}
-              </h5>
+              <h5 className="text-[var(--alternate-text)]">{award.event}</h5>
               <h6
-                className="text-[1rem]/[1.35rem] md:text-[1.2rem]/[1.55rem] xl:text-[1.65rem]/[2rem] font-medium"
                 style={{
                   color: textColor,
-                  paddingBottom: index == awards.length - 1 ? "2rem" : "0rem",
+                  paddingBottom:
+                    index == awards.length - 1 ? "var(--md-space-y)" : "0rem",
                 }}
               >
                 {award.awardName}
@@ -414,34 +408,32 @@ function SeasonAchievements({
           );
         })}
       </Box>
-      <h2
-        className="text-[1.25rem]/[1.5rem] md:text-[1.5rem]/[1.75rem] lg:text-[1.75rem]/[2rem] xl:text-[2rem]/[2.5rem] font-bold my-[2rem] mr-auto transition-opacity duration-300"
+      <h3
+        className="mt-[var(--md-space-y)] mr-auto transition-opacity duration-300"
         style={{
           opacity: hideDescription ? "0" : "1.0",
           color: textColor,
         }}
       >
         {name.toUpperCase()} ({years})
-      </h2>
+      </h3>
     </div>
   );
 }
 
 function SeparatorGradient() {
   return (
-    <div className="bg-[linear-gradient(90deg,_var(--default-dark),_#ffffff,_var(--default-dark))] opacity-50 w-[11rem] md:w-[16rem] lg:w-[18rem] xl:w-[20rem] h-[0.075rem] my-[1rem]" />
+    <div className="bg-[linear-gradient(90deg,_var(--default-dark),_#ffffff,_var(--default-dark))] opacity-50 w-[11rem] md:w-[16rem] lg:w-[18rem] xl:w-[20rem] h-[0.075rem] my-[var(--sm-space-y)]" />
   );
 }
 
 function JoinBrickBot() {
   const router = useRouter();
   return (
-    <section className="relative ml-[calc((-100vw+var(--page-width))/2)] bg-[linear-gradient(180deg,_transparent,_#1E1800)] h-fit w-[100vw] flex flex-col items-center justify-center overflow-visible">
-      <div className="w-[var(--page-width)] h-fit flex flex-col items-center justify-center my-[3rem] lg:my-[4rem]">
-        <h3 className="text-[var(--default-yellow)] text-[2rem] md:text-[3rem] lg:text-[3.5rem] font-bold">
-          Join BrickBot
-        </h3>
-        <p className="text-[1.25rem] md:text-[1.5rem] xl:text-[1.75rem] font-medium text-[var(--default-text)] w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[2rem] mb-[3rem] text-center">
+    <section className="relative ml-[calc((-100vw+var(--page-width))/2)] bg-[linear-gradient(180deg,_transparent,_#1E1800)] h-fit w-[100vw] flex flex-col items-center justify-center overflow-visible mt-[calc(0rem-var(--lg-space-y))]">
+      <div className="w-[var(--page-width)] h-fit flex flex-col items-center justify-center my-[var(--xl-space-y)]">
+        <h2>Join BrickBot</h2>
+        <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--lg-space-y)] text-center">
           Passionate about robotics? Fill out the form to show your interest in
           joining our team.
         </p>

@@ -11,9 +11,9 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 export default function Projects() {
   return (
     <section className="flex flex-col items-center">
-      <section className="flex flex-col mb-[4rem] md:mb-[6rem] lg:mb-[8rem] w-[var(--page-width)]">
+      <section className="flex flex-col mb-[var(--2xl-space-y)] w-[var(--page-width)]">
         <PageTitle title="PROJECTS" />
-        <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row items-stretch gap-[6rem] md:gap-[3rem] lg:gap-[4rem] px-[0rem] sm:px-[2rem] md:px-[0rem] xl:px-[2rem] xl:gap-[8rem] mt-[4rem]">
+        <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row items-stretch gap-x-[var(--xl-space-x)] gap-y-[var(--2xl-space-y)] mt-[var(--2xl-space-y)]">
           <Project
             textColor="var(--the-vault-text)"
             gradientColor="var(--the-vault)"
@@ -50,7 +50,7 @@ export default function Projects() {
             textColor="var(--simplicity-ftc-text)"
             gradientColor="var(--simplicity-ftc)"
             logoPath="/projects/simplicityftc-logo.svg"
-            pagePath="https://simplicityftc.github.io/SimplicityFTC-Docs/"
+            pagePath="https://github.com/SimplicityFTC"
             title="SimplicityFTC: Software Library"
             description="A programming library designed to simplify coding for FTC teams. Open-source and easy to use for everyone."
           />
@@ -90,7 +90,7 @@ function Project({
         <Box
           color={gradientColor}
           gradient={true}
-          borderRadius="2rem"
+          borderRadius="1.5rem"
           className="w-[80%] aspect-[2/1] inline-flex items-center justify-center mr-auto"
         >
           <Image
@@ -103,15 +103,13 @@ function Project({
         </Box>
       </div>
       <h3
-        className="mr-auto font-bold text-[1.1rem]/[1.2rem] sm:text-[1.2rem]/[1.4rem] md:text-[1.4rem]/[1.6rem] lg:text-[1.5rem]/[1.75rem] xl:text-[1.75rem]/[2rem] 2xl:text-[2rem]/[2.25rem] mt-[1rem] md:mt-[2rem] group-hover:underline transition-all duration-200"
+        className="mr-auto mt-[var(--md-space-y)] group-hover:underline transition-all duration-200"
         style={{ color: textColor }}
       >
         {title}
-        <HiArrowNarrowRight className="inline-flex ml-[0.5rem] group-hover:translate-x-[1rem] transition-transform duration-200" />
+        <HiArrowNarrowRight className="inline-flex ml-[0.5rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-transform duration-200" />
       </h3>
-      <p className="w-full h-full text-[0.9rem]/[1.0rem] sm:text-[1rem]/[1.25rem] md:text-[1rem]/[1.25rem] lg:text-[1.2rem]/[1.45rem] xl:text-[1.4rem]/[1.55rem] 2xl:text-[1.65rem]/[1.9rem] font-medium text-[var(--default-text)] mt-[0.5rem] lg:mt-[1rem]">
-        {description}
-      </p>
+      <p className="w-full h-full mt-[var(--sm-space-y)]">{description}</p>
     </div>
   );
 }

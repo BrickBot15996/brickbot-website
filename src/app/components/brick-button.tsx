@@ -28,15 +28,15 @@ export default function Button({
       onClick={action}
     >
       <div className="inline-flex space-x-[0.8rem] items-center">
-        <p
-          className="font-extrabold text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem]"
+        <h4
+          className="py-[0.35rem]"
           style={{ color: accentColor }}
         >
           {text}
-        </p>
+        </h4>
         {arrow && (
           <HiArrowNarrowRight
-            className=" mr-[-0.5rem] mt-[0.05rem] h-[1.2rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+            className=" mr-[-0.4rem] mt-[0.05rem] h-[1.2rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
             style={{ color: accentColor }}
           />
         )}
