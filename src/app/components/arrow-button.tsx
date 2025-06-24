@@ -57,7 +57,7 @@ export default function ArrowButton({
   return (
     <div>
       <button
-        className={`group w-[2.5rem] md:w-[3rem] lg:w-[3.5rem] h-[2.5rem] md:h-[3rem] lg:h-[3.5rem] rounded-full border-[0.1rem] md:border-[0.15rem] lg:border-[0.2rem] flex flex-col justify-center transition-all ${className}`}
+        className={`group w-[var(--arrow-button-size)] h-[var(--arrow-button-size)] p-[0.3rem] md:p-[0.35rem] lg:p-[0.5rem] xl:p-[0.75rem] rounded-full border-[0.1rem] flex flex-col justify-center ${className}`}
         onClick={handleClick}
         aria-label={ariaLabel}
         aria-disabled={disabled}
@@ -78,25 +78,25 @@ export default function ArrowButton({
         >
           {arrowDirection == "left" && (
             <HiArrowNarrowLeft
-              className="h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+              className="h-full w-full"
               style={{ fill: color }}
             />
           )}
           {arrowDirection == "right" && (
             <HiArrowNarrowRight
-              className="h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+              className="h-full w-full"
               style={{ fill: color }}
             />
           )}
           {arrowDirection == "up" && (
             <HiArrowNarrowUp
-              className="h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+              className="h-full w-full"
               style={{ fill: color }}
             />
           )}
           {arrowDirection == "down" && (
             <HiArrowNarrowDown
-              className="h-[1.3rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
+              className="h-full w-full"
               style={{ fill: color }}
             />
           )}

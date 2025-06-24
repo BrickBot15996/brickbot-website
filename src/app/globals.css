@@ -30,19 +30,24 @@
   /* Projects */
 
   --the-vault: rgb(255, 183, 0);
+  --the-vault-gradient: rgb(32, 22, 0);
   --the-vault-text: var(--the-vault);
 
-  --brick-docs: rgb(255, 103, 80);
-  --brick-docs-text: var(--brick-docs);
+  --brickdocs: rgb(255, 103, 80);
+  --brickdocs-gradient: rgb(32, 22, 20);
+  --brickdocs-text: var(--brickdocs);
 
   --sparks: rgb(158, 80, 255);
+  --sparks-gradient: rgb(15, 3, 30);
   --sparks-text: rgb(211, 211, 255);
 
   --checkpoint: rgb(48, 202, 174);
+  --checkpoint-gradient: rgb(3, 30, 25);
   --checkpoint-text: var(--checkpoint);
 
-  --simplicity-ftc: rgb(170, 227, 72);
-  --simplicity-ftc-text: var(--simplicity-ftc);
+  --simplicityftc: rgb(170, 227, 72);
+  --simplicityftc-gradient: rgb(28, 32, 20);
+  --simplicityftc-text: var(--simplicityftc);
 
   /* Sponsorship tiers */
 
@@ -103,6 +108,7 @@
   --2xl-space-y: 5rem;
 
   --separator-thickness: 0.1rem;
+  --arrow-button-size: 2.5rem;
 
   scrollbar-color: rgb(47, 47, 47) rgb(27, 27, 27);
   scrollbar-width: thin;
@@ -113,6 +119,7 @@
   --page-width: min(calc(100vw - 3rem), 37rem);
   --navbar-height: 3.5rem;
   --banner-height: 30rem;
+  --arrow-button-size: 2.5rem;
 
   --sm-space-x: 1rem;
   --md-space-x: 1.25rem;
@@ -170,7 +177,7 @@
 
   p {
     font-size: 1.1rem;
-    line-height: 1.3rem;
+    line-height: 1.4rem;
     color: var(--default-text);
     font-weight: 500;
   }
@@ -181,6 +188,7 @@
   :root {
     --page-width: min(calc(100vw - 4rem), 44rem);
     --banner-height: 35rem;
+    --arrow-button-size: 2.5rem;
 
     --sm-space-x: 1rem;
     --md-space-x: 1.5rem;
@@ -238,7 +246,7 @@
 
     p {
       font-size: 1.2rem;
-      line-height: 1.55rem;
+      line-height: 1.6rem;
       color: var(--default-text);
       font-weight: 500;
     }
@@ -251,6 +259,7 @@
     --page-width: min(calc(100vw - 6rem), 58rem);
     --navbar-height: 4rem;
     --banner-height: 45rem;
+    --arrow-button-size: 2.75rem;
 
     --sm-space-x: 1rem;
     --md-space-x: 1.5rem;
@@ -308,7 +317,7 @@
 
     p {
       font-size: 1.3rem;
-      line-height: 1.65rem;
+      line-height: 1.7rem;
       color: var(--default-text);
       font-weight: 500;
     }
@@ -319,6 +328,7 @@
 @media (min-width: 1280px) {
   :root {
     --page-width: min(calc(100vw - 8rem), 72rem);
+    --arrow-button-size: 3rem;
 
     --sm-space-x: 1rem;
     --md-space-x: 1.75rem;
@@ -376,7 +386,7 @@
 
     p {
       font-size: 1.5rem;
-      line-height: 1.85rem;
+      line-height: 1.9rem;
       color: var(--default-text);
       font-weight: 500;
     }
@@ -387,14 +397,7 @@
 @media (min-width: 1536px) {
   :root {
     --page-width: min(calc(100vw - 8rem), 88rem);
-
-    --small-spacing-x: 2rem;
-    --medium-spacing-x: 4rem;
-    --large-spacing-x: 6rem;
-
-    --small-spacing-y: 1.5rem;
-    --medium-spacing-y: 2.5rem;
-    --large-spacing-y: 5rem;
+    --arrow-button-size: 3.5rem;
 
     h1 {
       font-size: 4rem;
@@ -440,7 +443,7 @@
 
     p {
       font-size: 1.5rem;
-      line-height: 1.85rem;
+      line-height: 1.9rem;
       color: var(--default-text);
       font-weight: 500;
     }

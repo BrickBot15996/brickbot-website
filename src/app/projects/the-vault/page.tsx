@@ -1,11 +1,14 @@
 import ComingSoon from "../../components/coming-soon";
+import { theVault } from "../projects-data";
 
 export default function TheVault() {
   return (
     <section>
       <ComingSoon
-        pageName="The Vault"
-        pageDescription="Portfolio Library Project"
+        pageName={theVault.name}
+        pageDescription={theVault.subtitle}
+        textColor={theVault.textColor}
+        gradientColor={theVault.gradientColor}
       />
     </section>
   );

@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Anek_Latin } from "next/font/google";
-import { PageLoadProvider } from "./page-load-context";
 import ClientLayout from "./client-layout";
 
 const inter = Inter({
@@ -32,9 +31,7 @@ export default function RootLayout({
       <body
         className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
       >
-        <PageLoadProvider>
-          <ClientLayout>{children}</ClientLayout>
-        </PageLoadProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

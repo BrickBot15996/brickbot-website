@@ -1,146 +1,155 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import ImageCarousel from "@/app/components/image-carousel";
+import ImageCarousel, { CarouselItem } from "@/app/components/image-carousel";
 import ProjectTitle from "../components/project-title";
-import Button from "@/app/components/brick-button";
+import { checkpoint, ProjectProps } from "../projects-data";
+import { motion } from "framer-motion";
+import { defaultFadeIn } from "@/app/components/animations";
 
 export default function Checkpoint() {
-  const router = useRouter();
+  const project: ProjectProps = checkpoint;
   return (
     <section className="flex flex-col items-center">
-      <ProjectTitle
-        gradientColor="#031E19"
-        textColor="var(--checkpoint-text)"
-        title="Checkpoint"
-        subtitle="Outreach, Events & Activities"
-        description="A log of our most important outreach events and activities within the local community to show our presence and impact."
-        logoPath="/projects/checkpoint-logo.svg"
-      />
+      <ProjectTitle project={project} />
       <section className="w-[var(--page-width)] flex flex-col items-center justify-center">
-        <div className="w-full mt-[var(--2xl-space-y)]">
+        <motion.div
+          variants={defaultFadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+          className="w-full mt-[var(--2xl-space-y)]"
+        >
           <h2 style={{ color: "var(--checkpoint-text)" }}>
-            Interacting With Students
+            BrickBot in Schools
           </h2>
           <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--sm-space-y)] mb-[var(--md-space-y)]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            velit quaerat doloribus sunt qui, praesentium vero autem excepturi
-            voluptates provident ipsum voluptate temporibus! Deserunt nobis
-            blanditiis maiores doloribus! Numquam, dolores?
+            Middle school students from local schools explored robotics through
+            our presentations and this year’s game. As part of the BrickBot
+            Caravan, they operated the robot, learned about its design and
+            programming, and discovered the value of teamwork.
           </p>
           <ImageCarousel
-            buttonAccentColor="#30CAAE"
-            buttonGradientLight="#306256"
-            buttonGradientDark="#1a302e"
-            buttonLitUpLight="#3f7365"
-            buttonLitUpDark="#2a3f3e"
-            content={[
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-            ]}
+            buttonAccentColor={project.buttonColor}
+            buttonGradientLight={project.buttonGradientLight}
+            buttonGradientDark={project.buttonGradientDark}
+            buttonLitUpLight={project.buttonLitUpLight}
+            buttonLitUpDark={project.buttonLitUpDark}
+            content={brickbotInSchools}
           />
-        </div>
-        <div className="w-full mt-[var(--2xl-space-y)]">
+        </motion.div>
+        <motion.div
+          variants={defaultFadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+          className="w-full my-[var(--2xl-space-y)]"
+        >
           <h2 style={{ color: "var(--checkpoint-text)" }}>
             Interacting With The Public
           </h2>
           <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--sm-space-y)] mb-[var(--md-space-y)]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            velit quaerat doloribus sunt qui, praesentium vero autem excepturi
-            voluptates provident ipsum voluptate temporibus! Deserunt nobis
-            blanditiis maiores doloribus! Numquam, dolores?
+            Engaging with the local community through showcases, humanitarian
+            efforts, and outreach initiatives to inspire a love for robotics and
+            create meaningful impact.
           </p>
           <ImageCarousel
-            buttonAccentColor="#30CAAE"
-            buttonGradientLight="#306256"
-            buttonGradientDark="#1a302e"
-            buttonLitUpLight="#3f7365"
-            buttonLitUpDark="#2a3f3e"
-            content={[
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-              {
-                imageSrc: "/random.jpg",
-                alt: "Random",
-                aspectRatio: "16/9",
-              },
-            ]}
+            buttonAccentColor={project.buttonColor}
+            buttonGradientLight={project.buttonGradientLight}
+            buttonGradientDark={project.buttonGradientDark}
+            buttonLitUpLight={project.buttonLitUpLight}
+            buttonLitUpDark={project.buttonLitUpDark}
+            content={publicInteractions}
           />
-        </div>
-        <div className="mt-[var(--2xl-space-y)] mb-[var(--2xl-space-y)]">
-          <Button
-            text="EXPLORE ALL PROJECTS"
-            accentColor="var(--default-yellow)"
-            arrow={true}
-            gradientColorLight="var(--yellow-gradient-light)"
-            gradientColorDark="var(--yellow-gradient-dark)"
-            action={() => {
-              router.push("/projects");
-            }}
-          />
-        </div>
+        </motion.div>
       </section>
     </section>
   );
 }
+
+const brickbotInSchools: CarouselItem[] = [
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis1.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis2.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis3.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis4.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis5.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis6.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis7.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+  {
+    imageSrc: "/projects/checkpoint/brickbot-in-schools/bis8.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+  },
+];
+
+const publicInteractions: CarouselItem[] = [
+  {
+    imageSrc:
+      "/projects/checkpoint/interacting-with-the-public/open-doors-day.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+    description: "Open Doors Day",
+  },
+  {
+    imageSrc:
+      "/projects/checkpoint/interacting-with-the-public/micromet-meeting.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+    description: "Exchange Event with our main sponsor, Micromet",
+  },
+  {
+    imageSrc:
+      "/projects/checkpoint/interacting-with-the-public/joy-in-motion.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+    description: "Joy In Motion",
+  },
+  {
+    imageSrc:
+      "/projects/checkpoint/interacting-with-the-public/christmas-2024.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+    description: "Christmas 2024 Humanitarian event",
+  },
+  {
+    imageSrc:
+      "/projects/checkpoint/interacting-with-the-public/christmas-2023.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+    description: "Christmas 2023 Humanitarian event",
+  },
+  {
+    imageSrc:
+      "/projects/checkpoint/interacting-with-the-public/meet-keynote.webp",
+    alt: "BrickBot presentation in school",
+    aspectRatio: "16/9",
+    description: "Meet Robotics Keynote",
+  },
+];

@@ -8,6 +8,8 @@ import { RiInstagramLine, RiLinkedinFill, RiMailFill } from "react-icons/ri";
 import { RiTiktokFill } from "react-icons/ri";
 import { RiFacebookFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { opacityFadeIn } from "@/app/components/animations";
 
 export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
@@ -19,9 +21,13 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer
+    <motion.footer
+      variants={opacityFadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-10%" }}
       ref={ref}
-      className="bg-[var(--footer)] h-auto w-full inline-flex items-center"
+      className="bg-[var(--footer)] h-auto w-full inline-flex items-center mt-[var(--2xl-space-y)]"
     >
       <span className="h-auto w-auto ml-[var(--lg-space-x)] mt-[var(--lg-space-y)]">
         <Link
@@ -75,6 +81,6 @@ export default function Footer() {
           </Link>
         </div>
       </span>
-    </footer>
+    </motion.footer>
   );
 }

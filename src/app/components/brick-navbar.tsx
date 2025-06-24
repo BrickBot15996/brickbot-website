@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
@@ -6,13 +7,32 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Hamburger from "hamburger-react";
+import { useGlobalContext } from "../global-context";
+import { motion } from "framer-motion";
+import { opacityFadeIn } from "@/app/components/animations";
 
 export default function Navbar() {
+  const { navbarAnimation } = useGlobalContext();
+
   const [isOpen, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  const { setNavbarAnimation } = useGlobalContext();
+
+  useEffect(() => {
+    const changeNavbar = () => {
+      if (pathname.startsWith("/projects") && pathname !== "/projects") return;
+      setNavbarAnimation({
+        color: `var(--default-yellow)`,
+        colorLight: `var(--yellow-gradient-light)`,
+      });
+    };
+
+    changeNavbar();
+  }, [pathname, setNavbarAnimation]);
 
   const handleClose = () => {
     setIsClosing(true);
@@ -59,7 +79,12 @@ export default function Navbar() {
   }, [isOpen, isMobile]);
 
   return (
-    <>
+    <motion.div
+      variants={opacityFadeIn}
+      initial="hidden"
+      animate="visible"
+      style={{ zIndex: 10000 }}
+    >
       <header
         className="fixed top-0 h-[var(--navbar-height)] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-10000 flex justify-center items-center select-none transition-all duration-300 backdrop-blur"
         style={{
@@ -72,11 +97,13 @@ export default function Navbar() {
             text="BRICKLOG"
             action={() => router.push("/blog")}
             isActive={pathname.startsWith("/blog")}
+            navbarAnimation={navbarAnimation}
           />
           <NavbarButton
             text="OUR TEAM"
             action={() => router.push("/our-team")}
             isActive={pathname.startsWith("/our-team")}
+            navbarAnimation={navbarAnimation}
           />
           <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-110 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
             <Link href="/home">
@@ -94,11 +121,13 @@ export default function Navbar() {
             text="PROJECTS"
             action={() => router.push("/projects")}
             isActive={pathname.startsWith("/projects")}
+            navbarAnimation={navbarAnimation}
           />
           <NavbarButton
             text="SUPPORT US"
             action={() => router.push("/support-us")}
             isActive={pathname.startsWith("/support-us")}
+            navbarAnimation={navbarAnimation}
           />
         </ul>
 
@@ -214,7 +243,7 @@ export default function Navbar() {
           }
         `}</style>
       </header>
-    </>
+    </motion.div>
   );
 }
 
@@ -222,28 +251,46 @@ type NavButtonProps = {
   text: string;
   action: () => void;
   isActive?: boolean;
+  navbarAnimation?: {
+    color: string;
+    colorLight: string;
+  };
 };
 
-function NavbarButton({ text, action, isActive = false }: NavButtonProps) {
+function NavbarButton({
+  text,
+  action,
+  isActive = false,
+  navbarAnimation = {
+    color: "var(--default-yellow)",
+    colorLight: "var(--yellow-gradient-light)",
+  },
+}: NavButtonProps) {
   return (
     <li
       className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
       onClick={action}
     >
-      <div className="group absolute w-full h-full overflow-visible flex flex-col items-center justify-end">
+      <div className="group absolute w-full h-[calc(100%+0.1rem)] overflow-visible flex flex-col items-center justify-end">
         <div
-          className={`relative h-[0rem] group-hover:h-full w-full bg-[linear-gradient(0deg,_var(--default-yellow)_0%,_transparent_100%)] transition-all duration-300 opacity-20 ${
+          className={`relative h-[0rem] w-[0rem] group-hover:h-full group-hover:w-full transition-all duration-300 opacity-20 ${
             isActive
-              ? "h-full opacity-30"
-              : "h-[0rem] group-hover:h-full opacity-20"
+              ? "w-full h-full opacity-30"
+              : "w-[0rem] h-[0rem] group-hover:h-full opacity-20"
           }`}
+          style={{
+            background: `linear-gradient(0deg, ${navbarAnimation.color} 0%, transparent 100%)`,
+          }}
         />
         <div
-          className={`relative w-[0rem] group-hover:w-full h-[0.1rem] bg-[linear-gradient(90deg,_var(--yellow-gradient-light)_0%,_var(--default-yellow)_50%,_var(--yellow-gradient-light)_100%)] transition-all group-hover:duration-300 duration-600 opacity-75 ${
+          className={`relative w-[0rem] group-hover:w-full h-[0.1rem] transition-all group-hover:duration-300 duration-600 opacity-75 ${
             isActive
               ? "w-full opacity-90"
               : "w-[0rem] group-hover:w-full opacity-75"
           }`}
+          style={{
+            background: `linear-gradient(90deg, ${navbarAnimation.colorLight} 0%, ${navbarAnimation.color} 50%, ${navbarAnimation.colorLight} 100%)`,
+          }}
         />
       </div>
       <h5>{text}</h5>
