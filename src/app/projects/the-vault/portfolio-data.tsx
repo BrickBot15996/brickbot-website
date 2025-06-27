@@ -31,23 +31,7 @@ export const brickbotPortfolioList: PortfolioProps[] = [
     event: "Regionals",
     award: "Motivate 2",
     portfolioPath: "/the-vault/portfolios/brickbot-into-the-deep.pdf",
-    thumbnailPath: "/the-vault/thumbnails/brickbot-into-the-deep.pdf",
-  },
-  {
-    team: brickbot,
-    season: powerplay,
-    event: "Nationals",
-    award: " ",
-    portfolioPath: "/the-vault/portfolios/brickbot-powerplay.pdf",
-    thumbnailPath: "/the-vault/thumbnails/brickbot-powerplay.pdf",
-  },
-  {
-    team: brickbot,
-    season: freightFrenzy,
-    event: "Nationals",
-    award: " ",
-    portfolioPath: "/the-vault/portfolios/brickbot-freight-frenzy.pdf",
-    thumbnailPath: "/the-vault/thumbnails/brickbot-freight-frenzy.pdf",
+    thumbnailPath: "/the-vault/thumbnails/brickbot-into-the-deep.jpg",
   },
   {
     team: brickbot,
@@ -55,7 +39,23 @@ export const brickbotPortfolioList: PortfolioProps[] = [
     event: "Regionals",
     award: "Think 3",
     portfolioPath: "/the-vault/portfolios/brickbot-centerstage.pdf",
-    thumbnailPath: "/the-vault/thumbnails/brickbot-centerstage.pdf",
+    thumbnailPath: "/the-vault/thumbnails/brickbot-centerstage.jpg",
+  },
+  {
+    team: brickbot,
+    season: powerplay,
+    event: "Nationals",
+    award: " ",
+    portfolioPath: "/the-vault/portfolios/brickbot-powerplay.pdf",
+    thumbnailPath: "/the-vault/thumbnails/brickbot-powerplay.jpg",
+  },
+  {
+    team: brickbot,
+    season: freightFrenzy,
+    event: "Nationals",
+    award: " ",
+    portfolioPath: "/the-vault/portfolios/brickbot-freight-frenzy.pdf",
+    thumbnailPath: "/the-vault/thumbnails/brickbot-freight-frenzy.jpg",
   },
 ];
 
@@ -66,7 +66,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Nationals",
     award: " ",
     portfolioPath: "/the-vault/portfolios/perpetuum-powerplay.pdf",
-    thumbnailPath: "/the-vault/thumbnails/perpetuum-powerplay.pdf",
+    thumbnailPath: "/the-vault/thumbnails/perpetuum-powerplay.jpg",
   },
   {
     team: perpetuum,
@@ -74,7 +74,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Regionals",
     award: " ",
     portfolioPath: "/the-vault/portfolios/perpetuum-centerstage.pdf",
-    thumbnailPath: "/the-vault/thumbnails/perpetuum-centerstage.pdf",
+    thumbnailPath: "/the-vault/thumbnails/perpetuum-centerstage.jpg",
   },
   {
     team: infinityedge,
@@ -82,7 +82,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Regionals",
     award: "Connect 3",
     portfolioPath: "/the-vault/portfolios/infinity-ultimate-goal.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-ultimate-goal.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinity-ultimate-goal.jpg",
   },
   {
     team: infinityedge,
@@ -90,7 +90,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Nationals",
     award: "Motivate 3",
     portfolioPath: "/the-vault/portfolios/infinity-freight-frenzy.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-freight-frenzy.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinity-freight-frenzy.jpg",
   },
   {
     team: infinityedge,
@@ -98,7 +98,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Regionals",
     award: " ",
     portfolioPath: "/the-vault/portfolios/infinity-powerplay.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-powerplay.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinity-powerplay.jpg",
   },
   {
     team: infinityedge,
@@ -106,7 +106,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Regionals",
     award: "Motivate 3",
     portfolioPath: "/the-vault/portfolios/infinity-centerstage.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-centerstage.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinity-centerstage.jpg",
   },
   {
     team: alphabit,
@@ -114,7 +114,7 @@ export const porfolioList: PortfolioProps[] = [
     event: "Nationals",
     award: " ",
     portfolioPath: "/the-vault/portfolios/alphabit-powerplay.pdf",
-    thumbnailPath: "/the-vault/thumbnails/alphabit-powerplay.pdf",
+    thumbnailPath: "/the-vault/thumbnails/alphabit-powerplay.jpg",
   },
   {
     team: snaketech,
@@ -122,6 +122,6 @@ export const porfolioList: PortfolioProps[] = [
     event: "Nationals",
     award: " ",
     portfolioPath: "/the-vault/portfolios/snake-tech-centerstage.pdf",
-    thumbnailPath: "/the-vault/thumbnails/snake-tech-centerstage.pdf",
+    thumbnailPath: "/the-vault/thumbnails/snake-tech-centerstage.jpg",
   },
 ];

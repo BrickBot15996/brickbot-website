@@ -10,6 +10,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import ArrowButton from "@/app/components/arrow-button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const project = theVault;
 
@@ -105,7 +106,14 @@ function ExpandedPortfolio({ portfolio }: ExpandedPortfolioProps) {
       ref={containerRef}
       className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start"
     >
-      <div className="flex-[0_0_50%] aspect-[1/1.414] bg-[linear-gradient(0deg,_#FF0022,_#9D247D)] rounded-[1.5rem] overflow-hidden" />
+      <div className="relative flex-[0_0_50%] aspect-[1/1.414] bg-[linear-gradient(0deg,_#FF0022,_#9D247D)] rounded-[1.5rem] overflow-hidden">
+        <Image
+          src={portfolio.thumbnailPath}
+          alt={portfolio.team.name + " portfolio in " + portfolio.season.name}
+          fill
+          className="object-cover h-full w-auto"
+        />
+      </div>
 
       <div className="flex flex-col flex-1 min-h-full">
         <h4
@@ -137,7 +145,7 @@ function ExpandedPortfolio({ portfolio }: ExpandedPortfolioProps) {
             gradientColorLight={project.buttonGradientLight}
             gradientColorDark={project.buttonGradientDark}
             action={() => {
-              router.push(portfolio.filePath);
+              router.push(portfolio.portfolioPath);
             }}
           />
         </div>

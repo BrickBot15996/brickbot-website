@@ -4,12 +4,10 @@ import Button from "@/app/components/brick-button";
 import SimpleBox from "@/app/components/simple-box";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { LiaDonateSolid } from "react-icons/lia";
-import { RiContractLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { defaultFadeIn } from "@/app/components/animations";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function HowToHelpSection() {
   return (
@@ -62,7 +60,14 @@ function RedirectTax() {
       className="group cursor-pointer"
     >
       <SimpleBox className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]">
-        <LiaDonateSolid className="h-[4rem] w-auto mb-[var(--sm-space-y)]" />
+        <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
+          <Image
+            src="/support-us/230.svg"
+            alt="230 Form Icon"
+            fill
+            className="object-contain"
+          />
+        </div>
         <h3
           className="group-hover:underline mb-[var(--sm-space-y)]"
           style={{ fontWeight: 700 }}
@@ -87,7 +92,14 @@ function Donate() {
       className="group cursor-pointer"
     >
       <SimpleBox className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]">
-        <LiaDonateSolid className="h-[4rem] w-auto mb-[var(--sm-space-y)]" />
+        <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
+          <Image
+            src="/support-us/donate.svg"
+            alt="Donate Icon"
+            fill
+            className="object-contain"
+          />
+        </div>
         <h3
           className="group-hover:underline mb-[var(--sm-space-y)]"
           style={{ fontWeight: 700 }}
@@ -106,7 +118,6 @@ function Donate() {
 
 function Contract() {
   const [buttonsCol, setButtonsCol] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const handleResize = () => {
@@ -123,7 +134,14 @@ function Contract() {
           buttonsCol ? "mb-[var(--md-space-y)] md:mb-[0rem]" : ""
         }`}
       >
-        <RiContractLine className="h-[4rem] w-auto mb-[var(--sm-space-y)]" />
+        <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
+          <Image
+            src="/support-us/contract.svg"
+            alt="Contract Icon"
+            fill
+            className="object-contain"
+          />
+        </div>
         <h3
           className="mb-[var(--sm-space-y)]"
           style={{ fontWeight: 700 }}
@@ -147,18 +165,12 @@ function Contract() {
       >
         <Button
           text="View Sample"
-          action={() => {
-            router.push(
-              "https://static.wikia.nocookie.net/4188b765-79b7-4a09-a471-f55fb174dcc6/scale-to-width/755"
-            );
-          }}
+          action={() => {}}
           style={{ width: "full" }}
         />
         <Button
           text="Contact Us"
-          action={() => {
-            router.push("https://www.youtube.com/watch?v=NT4eF9YsYnM");
-          }}
+          action={() => {}}
           style={{ width: "full" }}
         />
       </div>
