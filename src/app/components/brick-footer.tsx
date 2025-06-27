@@ -8,8 +8,6 @@ import { RiInstagramLine, RiLinkedinFill, RiMailFill } from "react-icons/ri";
 import { RiTiktokFill } from "react-icons/ri";
 import { RiFacebookFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
-import { motion } from "framer-motion";
-import { opacityFadeIn } from "@/app/components/animations";
 
 export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
@@ -21,15 +19,11 @@ export default function Footer() {
   }, []);
 
   return (
-    <motion.footer
-      variants={opacityFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
+    <footer
       ref={ref}
-      className="bg-[var(--footer)] h-auto w-full inline-flex items-center mt-[var(--2xl-space-y)]"
+      className="bg-[var(--footer)] h-auto w-full flex flex-row items-center mt-[var(--2xl-space-y)] py-[var(--xl-space-y)] px-[calc((100vw-var(--page-width))/2)]"
     >
-      <span className="h-auto w-auto ml-[var(--lg-space-x)] mt-[var(--lg-space-y)]">
+      <span className="h-auto w-auto mr-auto">
         <Link
           href="https://www.datahost.ro/"
           className="hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
@@ -37,11 +31,9 @@ export default function Footer() {
         >
           <p style={{ color: "var(--alternate-text)" }}>Powered by DataHost</p>
         </Link>
-        <p className="pb-[1.5rem] md:pb-[2rem] lg:pb-[2.5rem] mt-[0.5rem]">
-          Brickbot © {year}
-        </p>
+        <p className="mt-[0.5rem]">Brickbot © {year}</p>
       </span>
-      <span className="relative h-auto ml-auto mr-[var(--lg-space-x)] w-fit select-none">
+      <span className="relative h-auto ml-auto w-fit select-none">
         <div className="grid grid-rows-2 grid-cols-3 items-start gap-x-[1rem] md:gap-x-[1.5rem] gap-y-[0.8rem] md:gap-y-[1rem] pt-[0.25rem]">
           <Link
             href="https://www.instagram.com/brickbotcnu/"
@@ -81,6 +73,6 @@ export default function Footer() {
           </Link>
         </div>
       </span>
-    </motion.footer>
+    </footer>
   );
 }

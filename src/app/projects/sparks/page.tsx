@@ -3,23 +3,15 @@
 import ProjectTitle from "../components/project-title";
 import ImageCarousel, { CarouselItem } from "@/app/components/image-carousel";
 import { ProjectProps, sparks } from "../projects-data";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
 
 export default function Sparks() {
   const project: ProjectProps = sparks;
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="outer-content">
       <ProjectTitle project={project} />
-      <section className="w-[var(--page-width)] my-[var(--2xl-space-y)] flex flex-col items-center justify-center">
-        <motion.div
-          variants={defaultFadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
-          className="w-full"
-        >
+      <section className="inner-content">
+        <div className="w-full">
           <h2 style={{ color: "var(--sparks-text)" }}>
             Sparks I (with SIRIUS SOCRATE)
           </h2>
@@ -37,7 +29,7 @@ export default function Sparks() {
             buttonLitUpDark={project.buttonLitUpDark}
             content={sparks1}
           />
-        </motion.div>
+        </div>
       </section>
     </section>
   );

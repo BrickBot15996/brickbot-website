@@ -4,6 +4,8 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
 import ArrowButton from "./arrow-button";
+import { motion } from "framer-motion";
+import { opacityFadeIn } from "./animations";
 
 export type CarouselItem = {
   imageSrc: string;
@@ -83,7 +85,11 @@ export default function ImageCarousel({
           <div className="embla__container grid grid-flow-col auto-cols-[clamp(0rem,_calc(calc(100vw-3rem)),_25rem)] md:auto-cols-[30rem] lg:auto-cols-[35rem] xl:auto-cols-[40rem] gap-x-[var(--sm-space-x)]">
             {content.map((item, index) => {
               return (
-                <div
+                <motion.div
+                  variants={opacityFadeIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-10%" }}
                   key={index}
                   className="embla__slide rounded-[1rem] relative flex flex-col"
                   style={{
@@ -113,7 +119,7 @@ export default function ImageCarousel({
                       {item.description}
                     </p>
                   )}
-                </div>
+                </motion.div>
               );
             })}
           </div>

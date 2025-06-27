@@ -7,9 +7,9 @@ import Projects from "./components/home-projects";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center">
+    <section className="outer-content">
       <Banner />
-      <section className="flex flex-col space-y-[var(--2xl-space-y)] my-[var(--2xl-space-y)] w-[var(--page-width)]">
+      <section className="inner-content">
         <AboutUs />
         <Projects />
       </section>

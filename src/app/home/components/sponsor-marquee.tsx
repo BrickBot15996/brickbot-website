@@ -6,25 +6,21 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 import Button from "../../components/brick-button";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
-import { sponsorList } from "../sponsor-data";
+import { SponsorData, sponsorList } from "../sponsor-data";
+import { diamond, ultimate } from "@/app/support-us/sponsor-tiers-data";
 
 export default function SponsorMarquee() {
   const router = useRouter();
+  const marqueeSponsors: SponsorData[] = sponsorList.filter((sponsor) => {
+    return sponsor.tier === ultimate || sponsor.tier === diamond;
+  });
 
   return (
-    <motion.section
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-      className="h-full w-auto overflow-visible"
-    >
-      <h2 className="ml-[calc((100vw-var(--page-width))/2)] mb-[var(--xl-space-y)]">
+    <section className="h-full w-auto overflow-visible">
+      <h2 className="ml-[calc((100vw-var(--page-width))/2)] mb-[var(--2xl-space-y)]">
         Sponsors
       </h2>
-      <div className="w-[100vw] mb-[var(--xl-space-y)] h-full">
+      <div className="w-[100vw] mb-[var(--2xl-space-y)] h-full">
         {/* Desktop Marquee */}
         <Marquee
           pauseOnHover={true}
@@ -35,16 +31,16 @@ export default function SponsorMarquee() {
           gradientColor="var(--default-dark)"
           className="h-[0rem] lg:h-[5rem] select-none hidden"
         >
-          {sponsorList.map((SponsorData, index) => (
+          {marqueeSponsors.map((sponsor, index) => (
             <Link
-              href={SponsorData.websiteLink}
+              href={sponsor.websiteLink}
               target="_blank"
               key={index}
               className="cursor-pointer hover:opacity-50 items-center"
             >
               <Image
                 key={index}
-                src={SponsorData.logoPath}
+                src={sponsor.logoPath}
                 alt={`Item ${index}`}
                 height={100}
                 width={100}
@@ -62,20 +58,20 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none mb-[var(--xl-space-y)] lg:mb-[0rem]"
+          className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none mb-[var(--2xl-space-y)] lg:mb-[0rem]"
         >
-          {sponsorList
-            .slice(0, sponsorList.length / 2 + 1)
-            .map((SponsorData, index) => (
+          {marqueeSponsors
+            .slice(0, marqueeSponsors.length / 2 + 1)
+            .map((sponsor, index) => (
               <Link
-                href={SponsorData.websiteLink}
+                href={sponsor.websiteLink}
                 target="_blank"
                 key={index}
                 className="cursor-pointer hover:opacity-50 items-center"
               >
                 <Image
                   key={index}
-                  src={SponsorData.logoPath}
+                  src={sponsor.logoPath}
                   alt={`Item ${index}`}
                   height={100}
                   width={100}
@@ -94,18 +90,18 @@ export default function SponsorMarquee() {
           gradientColor="var(--default-dark)"
           className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none"
         >
-          {sponsorList
-            .slice(sponsorList.length / 2 + 1, sponsorList.length)
-            .map((SponsorData, index) => (
+          {marqueeSponsors
+            .slice(marqueeSponsors.length / 2 + 1, marqueeSponsors.length)
+            .map((sponsor, index) => (
               <Link
-                href={SponsorData.websiteLink}
+                href={sponsor.websiteLink}
                 target="_blank"
                 key={index}
                 className="cursor-pointer hover:opacity-50 items-center"
               >
                 <Image
                   key={index}
-                  src={SponsorData.logoPath}
+                  src={sponsor.logoPath}
                   alt={`Item ${index}`}
                   height={100}
                   width={100}
@@ -126,6 +122,6 @@ export default function SponsorMarquee() {
           action={() => router.push("/support-us")}
         />
       </div>
-    </motion.section>
+    </section>
   );
 }

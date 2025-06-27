@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
 
 type ComingSoonProps = {
   pageName: string;
@@ -18,11 +16,7 @@ export default function ComingSoon({
   gradientColor = "#1E1703",
 }: ComingSoonProps) {
   return (
-    <motion.section
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
+    <section
       className="flex items-center justify-center min-h-[calc(100vh-var(--navbar-height))] w-full select-none"
       style={{
         background: `linear-gradient(0deg, ${gradientColor}, var(--default-dark) 98%)`,
@@ -43,6 +37,6 @@ export default function ComingSoon({
           />
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

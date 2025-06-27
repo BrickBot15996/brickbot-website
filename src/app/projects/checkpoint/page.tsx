@@ -3,22 +3,14 @@
 import ImageCarousel, { CarouselItem } from "@/app/components/image-carousel";
 import ProjectTitle from "../components/project-title";
 import { checkpoint, ProjectProps } from "../projects-data";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
 
 export default function Checkpoint() {
   const project: ProjectProps = checkpoint;
   return (
-    <section className="flex flex-col items-center">
+    <section className="outer-content">
       <ProjectTitle project={project} />
-      <section className="w-[var(--page-width)] flex flex-col items-center justify-center">
-        <motion.div
-          variants={defaultFadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
-          className="w-full mt-[var(--2xl-space-y)]"
-        >
+      <section className="inner-content">
+        <div className="w-full mt-[var(--2xl-space-y)]">
           <h2 style={{ color: "var(--checkpoint-text)" }}>
             BrickBot in Schools
           </h2>
@@ -36,14 +28,8 @@ export default function Checkpoint() {
             buttonLitUpDark={project.buttonLitUpDark}
             content={brickbotInSchools}
           />
-        </motion.div>
-        <motion.div
-          variants={defaultFadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
-          className="w-full my-[var(--2xl-space-y)]"
-        >
+        </div>
+        <div className="w-full my-[var(--2xl-space-y)]">
           <h2 style={{ color: "var(--checkpoint-text)" }}>
             Interacting With The Public
           </h2>
@@ -60,7 +46,7 @@ export default function Checkpoint() {
             buttonLitUpDark={project.buttonLitUpDark}
             content={publicInteractions}
           />
-        </motion.div>
+        </div>
       </section>
     </section>
   );

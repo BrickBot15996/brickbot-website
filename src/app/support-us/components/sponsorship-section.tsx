@@ -2,8 +2,8 @@ import ArrowButton from "@/app/components/arrow-button";
 import { useEffect, useState } from "react";
 import { SponsorshipTierDesktop, SponsorshipTierMobile } from "./sponsor-tiers";
 import { tierList, TierProps } from "../sponsor-tiers-data";
-import { motion } from "framer-motion";
 import { defaultFadeIn } from "@/app/components/animations";
+import { motion } from "framer-motion";
 
 export default function SponsorshipSection() {
   const [isMobile, setIsMobile] = useState(false);
@@ -37,32 +37,36 @@ function TierSectionMobile() {
   }
 
   return (
-    <motion.section
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-      className="relative"
-    >
+    <section className="relative">
       <h2 className="mb-[var(--lg-space-y)]">Sponsorship Tiers</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--md-space-y)] items-start">
         {tiers.map((tier, index) => {
           return (
-            <div
+            <motion.div
               key={index}
+              variants={defaultFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
               className="self-start"
             >
               <SponsorshipTierMobile tier={tier} />
-            </div>
+            </motion.div>
           );
         })}
         {tiers.length != tierList.length && (
-          <div className="lg:col-span-2 lg:px-[25%]">
+          <motion.div
+            variants={defaultFadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            className="lg:col-span-2 lg:px-[25%]"
+          >
             <SponsorshipTierMobile tier={tierList.at(tierList.length - 1)!} />
-          </div>
+          </motion.div>
         )}
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -70,13 +74,7 @@ function TierSectionDesktop() {
   const [isExpanded, setExpanded] = useState(false);
 
   return (
-    <motion.section
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-      className="relative"
-    >
+    <section className="relative">
       <h2 className="mb-[var(--xl-space-y)]">Sponsorship Tiers</h2>
       <div
         className="w-full overflow-hidden transition-all duration-400 flex flex-row"
@@ -118,6 +116,6 @@ function TierSectionDesktop() {
           height: isExpanded ? "0rem" : "10rem",
         }}
       />
-    </motion.section>
+    </section>
   );
 }

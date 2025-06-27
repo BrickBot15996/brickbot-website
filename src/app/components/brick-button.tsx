@@ -1,29 +1,34 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 type ButtonParams = {
   text: string;
-  arrow: boolean;
-  accentColor: string;
-  gradientColorLight: string;
-  gradientColorDark: string;
+  arrow?: boolean;
+  accentColor?: string;
+  gradientColorLight?: string;
+  gradientColorDark?: string;
   action?: () => void;
+  className?: string;
+  style?: CSSProperties;
 };
 
 export default function Button({
   text,
   arrow = false,
-  accentColor,
-  gradientColorLight,
-  gradientColorDark,
-  action,
+  accentColor = "var(--default-yellow)",
+  gradientColorLight = "var(--yellow-gradient-light)",
+  gradientColorDark = "var(--yellow-gradient-dark)",
+  action = () => {},
+  className = "",
+  style = {},
 }: ButtonParams) {
   return (
     <button
-      className="group inline-flex justify-center items-center space-x-[0.15rem] md:space-x-[0.2rem] lg:space-x-[0.25rem] px-[1.2rem] md:px-[1.5rem] lg:px-[1.75rem] py-[0.25rem] md:py-[0.35rem] lg:py-[0.4rem] rounded-[1.1rem] md:rounded-[1.3rem] lg:rounded-[1.5rem] border-[0.13rem] md:border-[0.15rem] lg:border-[0.17rem] hover:scale-93 lg:hover:brightness-75 lg:hover:scale-107 active:brightness-100 active:scale-93 transition-transform duration-150 cursor-pointer select-none w-fit"
+      className={`group inline-flex justify-center items-center space-x-[0.15rem] md:space-x-[0.2rem] lg:space-x-[0.25rem] px-[1.2rem] md:px-[1.5rem] lg:px-[1.75rem] py-[0.25rem] md:py-[0.35rem] lg:py-[0.4rem] rounded-[1.1rem] md:rounded-[1.3rem] lg:rounded-[1.5rem] border-[0.13rem] md:border-[0.15rem] lg:border-[0.17rem] hover:scale-93 lg:hover:brightness-75 lg:hover:scale-107 active:brightness-100 active:scale-93 transition-transform duration-150 cursor-pointer select-none w-fit ${className}`}
       style={{
         borderColor: accentColor,
         backgroundImage: `linear-gradient(180deg, ${gradientColorLight}, ${gradientColorDark})`,
+        ...style,
       }}
       onClick={action}
     >
@@ -32,7 +37,7 @@ export default function Button({
           className="py-[0.35rem]"
           style={{ color: accentColor }}
         >
-          {text}
+          {text.toUpperCase()}
         </h4>
         {arrow && (
           <HiArrowNarrowRight

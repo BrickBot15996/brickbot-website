@@ -75,16 +75,18 @@ export function SponsorshipTierMobile({ tier }: SponsorshipTierMobileProps) {
           setExpanded(!isExpanded);
         }}
       >
-        <div className="flex flex-row items-center justify-center w-full">
+        <div className="relative flex flex-row items-center justify-center w-full">
           <h5
             className="mr-auto"
             style={{ color: tier.textColor }}
           >
             {tier.name}
           </h5>
-
-          <h5 style={{ color: tier.textColor }}>≥ {tier.priceThreshold} EUR</h5>
-
+          <div className="absolute left-auto right-auto w-[8rem] flex justify-end">
+            <h5 style={{ color: tier.textColor }}>
+              ≥ {tier.priceThreshold} EUR
+            </h5>
+          </div>
           <motion.div
             animate={{ rotate: isExpanded ? 180 : 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}

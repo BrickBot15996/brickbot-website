@@ -1,18 +1,10 @@
 import Link from "next/link";
 
 import ImageCarousel from "../../components/image-carousel";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
 
 export default function AboutUs() {
   return (
-    <motion.section
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-      className="flex flex-col h-auto w-full"
-    >
+    <section className="flex flex-col h-auto w-full">
       <h2 className="mb-[var(--md-space-y)]">About Us</h2>
       <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--xl-space-y)]">
         We are team #15996, BrickBot, from{" "}
@@ -79,6 +71,6 @@ export default function AboutUs() {
         buttonLitUpLight="var(--lit-up-yellow-gradient-light)"
         buttonLitUpDark="var(--lit-up-yellow-gradient-dark)"
       />
-    </motion.section>
+    </section>
   );
 }

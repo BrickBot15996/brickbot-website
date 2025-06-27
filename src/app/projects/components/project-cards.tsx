@@ -32,7 +32,7 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
             className="object-contain w-[70%] h-auto"
           />
         </div>
-        <div className="absolute bottom-[1.2rem] md:bottom-[1rem] lg:bottom-[1rem] xl:bottom-[0.9rem] 2xl:bottom-[0.95rem] left-[1.6rem] w-[70%] pointer-events-none">
+        <div className="absolute bottom-[1.4rem] md:bottom-[1.2rem] lg:bottom-[1.2rem] xl:bottom-[1.1rem] 2xl:bottom-[1.15rem] left-[1.2rem] w-[70%] pointer-events-none">
           <h3
             className=""
             style={{ color: project.textColor }}
@@ -40,8 +40,8 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
             {project.extendedName}
           </h3>
         </div>
-        <div className="absolute bottom-[1rem] left-[85%] w-full pointer-events-none">
-          <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] mr-[-0.5rem] h-auto w-[10%] fill-white" />
+        <div className="absolute bottom-[1.2rem] left-[85%] w-full pointer-events-none">
+          <HiArrowNarrowRight className="z-[10] mb-[-0.25rem] h-auto w-[10%] fill-white" />
         </div>
       </Box>
     </div>

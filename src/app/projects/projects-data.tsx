@@ -110,8 +110,8 @@ export const simplicityFTC: ProjectProps = {
 
 export const projectList: ProjectProps[] = [
   theVault,
-  brickDocs,
-  sparks,
   checkpoint,
+  sparks,
+  brickDocs,
   simplicityFTC,
 ];

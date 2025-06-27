@@ -11,11 +11,11 @@ import { motion } from "framer-motion";
 type ArrowButtonProps = {
   action: () => void;
   ariaLabel: string;
-  color: string;
-  gradientLight: string;
-  gradientDark: string;
-  litUpGradientLight: string;
-  litUpGradientDark: string;
+  color?: string;
+  gradientLight?: string;
+  gradientDark?: string;
+  litUpGradientLight?: string;
+  litUpGradientDark?: string;
   arrowDirection: string;
   toggleDirection?: boolean;
   disabled?: boolean;
@@ -26,11 +26,11 @@ type ArrowButtonProps = {
 export default function ArrowButton({
   action,
   ariaLabel,
-  color,
-  gradientLight,
-  gradientDark,
-  litUpGradientLight,
-  litUpGradientDark,
+  color = "var(--default-yellow)",
+  gradientLight = "var(--yellow-gradient-light)",
+  gradientDark = "var(--yellow-gradient-dark)",
+  litUpGradientLight = "var(--lit-up-yellow-gradient-light)",
+  litUpGradientDark = "var(--lit-up-yellow-gradient-dark)",
   arrowDirection,
   toggleDirection = false,
   disabled = false,

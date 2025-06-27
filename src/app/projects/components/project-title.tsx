@@ -6,8 +6,6 @@ import { ProjectProps } from "../projects-data";
 import ArrowButton from "@/app/components/arrow-button";
 import { useRouter } from "next/navigation";
 import { useGlobalContext } from "@/app/global-context";
-import { motion } from "framer-motion";
-import { defaultFadeIn, opacityFadeIn } from "@/app/components/animations";
 
 type ProjectTitleProps = {
   project: ProjectProps;
@@ -38,13 +36,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
 
   return (
     <section className="relative flex flex-col">
-      <motion.div
-        variants={defaultFadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-10%" }}
-        className="absolute top-[var(--sm-space-y)] sm:top-[var(--md-space-y)] lg:top-[var(--lg-space-y)] left-[calc((100vw-var(--page-width))/2)] z-10"
-      >
+      <div className="absolute top-[calc((var(--2xl-space-y)-var(--arrow-button-size)*0.9)/2)] left-[calc((100vw-var(--page-width))/2)] z-10 scale-90">
         <ArrowButton
           action={() => {
             router.push("/projects");
@@ -57,24 +49,14 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
           litUpGradientDark={project.buttonLitUpDark}
           arrowDirection="left"
         />
-      </motion.div>
-      <motion.div
-        variants={opacityFadeIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-10%" }}
-        className="relative h-[20rem] md:h-[22rem] lg:h-[32rem] w-[100vw] flex flex-col items-center justify-center overflow-hidden"
+      </div>
+      <div
+        className="relative w-[100vw] flex flex-col items-center justify-center overflow-hidden"
         style={{
           background: `linear-gradient(0deg, ${project.gradientColor}, var(--default-dark) 98%)`,
         }}
       >
-        <motion.div
-          variants={defaultFadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
-          className="flex flex-row items-center justify-center w-[var(--page-width)] h-full"
-        >
+        <div className="flex flex-row items-center justify-center w-[var(--page-width)] h-full my-[var(--2xl-space-y)]">
           <div className="flex flex-col items-start justify-center">
             <div className="flex flex-row space-x-[var(--md-space-x)] items-center mb-[var(--md-space-y)] h-fit">
               <h1 style={{ color: project.textColor }}>{project.name}</h1>
@@ -84,12 +66,6 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
                 </div>
               )}
             </div>
-            <h4
-              className="mb-[var(--lg-space-y)]"
-              style={{ color: project.textColor, fontWeight: 600 }}
-            >
-              {project.subtitle.toUpperCase()}
-            </h4>
             <p
               className="w-[100%] md:w-[90%] lg:w-[65%]"
               style={{ color: "var(--alternate-text)" }}
@@ -106,8 +82,8 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
               className="w-full h-auto"
             />
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
       <div
         className="h-[var(--separator-thickness)]"
         style={{

@@ -8,8 +8,6 @@ import Link from "next/link";
 
 import Hamburger from "hamburger-react";
 import { useGlobalContext } from "../global-context";
-import { motion } from "framer-motion";
-import { opacityFadeIn } from "@/app/components/animations";
 
 export default function Navbar() {
   const { navbarAnimation } = useGlobalContext();
@@ -79,12 +77,7 @@ export default function Navbar() {
   }, [isOpen, isMobile]);
 
   return (
-    <motion.div
-      variants={opacityFadeIn}
-      initial="hidden"
-      animate="visible"
-      style={{ zIndex: 10000 }}
-    >
+    <div>
       <header
         className="fixed top-0 h-[var(--navbar-height)] w-full bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-10000 flex justify-center items-center select-none transition-all duration-300 backdrop-blur"
         style={{
@@ -105,7 +98,7 @@ export default function Navbar() {
             isActive={pathname.startsWith("/our-team")}
             navbarAnimation={navbarAnimation}
           />
-          <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-110 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.2rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
+          <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-115 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.275rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
             <Link href="/home">
               <Image
                 src="/brick-yellow.svg"
@@ -243,7 +236,7 @@ export default function Navbar() {
           }
         `}</style>
       </header>
-    </motion.div>
+    </div>
   );
 }
 
@@ -266,24 +259,30 @@ function NavbarButton({
     colorLight: "var(--yellow-gradient-light)",
   },
 }: NavButtonProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <li
       className="relative w-[10rem] lg:w-[12rem] h-full flex items-center justify-center cursor-pointer"
       onClick={action}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
     >
       <div className="group absolute w-full h-[calc(100%+0.1rem)] overflow-visible flex flex-col items-center justify-end">
         <div
-          className={`relative h-[0rem] w-[0rem] group-hover:h-full group-hover:w-full transition-all duration-300 opacity-20 ${
-            isActive
-              ? "w-full h-full opacity-30"
-              : "w-[0rem] h-[0rem] group-hover:h-full opacity-20"
+          className={`relative h-[0rem] group-hover:h-full w-full transition-all duration-300 ${
+            isActive ? "h-full opacity-20" : "h-[0rem] opacity-15"
           }`}
           style={{
-            background: `linear-gradient(0deg, ${navbarAnimation.color} 0%, transparent 100%)`,
+            background: `linear-gradient(0deg, ${navbarAnimation.color} 0%, transparent 60%)`,
           }}
         />
         <div
-          className={`relative w-[0rem] group-hover:w-full h-[0.1rem] transition-all group-hover:duration-300 duration-600 opacity-75 ${
+          className={`relative w-[0rem] group-hover:w-full h-[0.1rem] transition-all group-hover:duration-300 duration-600 ${
             isActive
               ? "w-full opacity-90"
               : "w-[0rem] group-hover:w-full opacity-75"
@@ -293,7 +292,16 @@ function NavbarButton({
           }}
         />
       </div>
-      <h5>{text}</h5>
+      <h5
+        style={{
+          color:
+            isActive || isHovered
+              ? navbarAnimation.color
+              : "var(--alternate-text)",
+        }}
+      >
+        {text}
+      </h5>
     </li>
   );
 }

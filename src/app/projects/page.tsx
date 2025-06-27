@@ -6,9 +6,9 @@ import { projectList } from "./projects-data";
 
 export default function Projects() {
   return (
-    <section className="flex flex-col items-center">
+    <section className="outer-content">
       <PageTitle title="PROJECTS" />
-      <section className="flex flex-col my-[var(--2xl-space-y)] w-[var(--page-width)]">
+      <section className="inner-content">
         <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row items-stretch gap-x-[var(--xl-space-x)] gap-y-[var(--2xl-space-y)]">
           {projectList.map((project, index) => {
             return (

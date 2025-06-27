@@ -7,6 +7,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { GlobalProvider } from "./global-context";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { opacityFadeIn } from "./components/animations";
+import { motion } from "framer-motion";
 
 export default function ClientLayout({
   children,
@@ -30,14 +32,18 @@ export default function ClientLayout({
   return (
     <GlobalProvider>
       {!(pathname.length == 0 || pathname.startsWith("/apply")) && (
-        <>
+        <motion.div
+          variants={opacityFadeIn}
+          initial="hidden"
+          animate="visible"
+        >
           <Navbar />
           <main className="mt-[var(--navbar-height)]">
             {children}
             <Analytics />
           </main>
           <Footer />
-        </>
+        </motion.div>
       )}
       {(pathname.length == 0 || pathname.startsWith("/apply")) && (
         <main className="mt-[var(--navbar-height)]">

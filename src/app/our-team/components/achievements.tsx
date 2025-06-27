@@ -6,8 +6,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Box from "../../components/brick-box";
 import ArrowButton from "../../components/arrow-button";
 import { SeasonProps, seasonList } from "../seasons-data";
-import { defaultFadeIn } from "@/app/components/animations";
-import { motion } from "framer-motion";
 
 export default function Achievements() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -51,12 +49,7 @@ export default function Achievements() {
   }, [emblaApi]);
 
   return (
-    <motion.section
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-    >
+    <section>
       <h2 className="mb-[var(--xl-space-y)]">Achievements</h2>
       <section className="select-none">
         <div className="relative w-full flex flex-col">
@@ -111,7 +104,7 @@ export default function Achievements() {
           />
         </div>
       </section>
-    </motion.section>
+    </section>
   );
 }
 
