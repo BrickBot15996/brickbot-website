@@ -19,8 +19,6 @@ type CarouselProps = {
   buttonAccentColor: string;
   buttonGradientLight: string;
   buttonGradientDark: string;
-  buttonLitUpLight: string;
-  buttonLitUpDark: string;
 };
 
 export default function ImageCarousel({
@@ -28,8 +26,6 @@ export default function ImageCarousel({
   buttonAccentColor,
   buttonGradientLight,
   buttonGradientDark,
-  buttonLitUpLight,
-  buttonLitUpDark,
 }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
@@ -128,23 +124,17 @@ export default function ImageCarousel({
       <div className="flex flex-row justify-end space-x-[var(--sm-space-x)] mt-[var(--md-space-y)]">
         <ArrowButton
           action={scrollPrev}
-          ariaLabel="Previous slide button"
           color={`${buttonAccentColor}`}
           gradientLight={`${buttonGradientLight}`}
           gradientDark={`${buttonGradientDark}`}
-          litUpGradientLight={`${buttonLitUpLight}`}
-          litUpGradientDark={`${buttonLitUpDark}`}
           arrowDirection="left"
           disabled={isBeginning}
         />
         <ArrowButton
           action={scrollNext}
-          ariaLabel="Next slide button"
           color={`${buttonAccentColor}`}
           gradientLight={`${buttonGradientLight}`}
           gradientDark={`${buttonGradientDark}`}
-          litUpGradientLight={`${buttonLitUpLight}`}
-          litUpGradientDark={`${buttonLitUpDark}`}
           arrowDirection="right"
           disabled={isEnd}
         />

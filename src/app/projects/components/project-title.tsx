@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ProjectProps } from "../projects-data";
-import ArrowButton from "@/app/components/arrow-button";
-import { useRouter } from "next/navigation";
 import { useGlobalContext } from "@/app/global-context";
 
 type ProjectTitleProps = {
@@ -14,7 +12,6 @@ type ProjectTitleProps = {
 export default function ProjectTitle({ project }: ProjectTitleProps) {
   const [showProjectBadge, setShowProjectBadge] = useState(false);
   const { setNavbarAnimation } = useGlobalContext();
-  const router = useRouter();
 
   useEffect(() => {
     const changeNavbar = () => {
@@ -36,20 +33,6 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
 
   return (
     <section className="relative flex flex-col">
-      <div className="absolute top-[calc((var(--2xl-space-y)-var(--arrow-button-size)*0.9)/2)] left-[calc((100vw-var(--page-width))/2)] z-10 scale-90">
-        <ArrowButton
-          action={() => {
-            router.push("/projects");
-          }}
-          ariaLabel="Go Back to Projects"
-          color={project.buttonColor}
-          gradientLight={project.buttonGradientLight}
-          gradientDark={project.buttonGradientDark}
-          litUpGradientLight={project.buttonLitUpLight}
-          litUpGradientDark={project.buttonLitUpDark}
-          arrowDirection="left"
-        />
-      </div>
       <div
         className="relative w-[100vw] flex flex-col items-center justify-center overflow-hidden"
         style={{
@@ -57,7 +40,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
         }}
       >
         <div className="flex flex-row items-center justify-center w-[var(--page-width)] h-full my-[var(--2xl-space-y)]">
-          <div className="flex flex-col items-start justify-center">
+          <div className="flex flex-col items-start justify-start">
             <div className="flex flex-row space-x-[var(--md-space-x)] items-center mb-[var(--md-space-y)] h-fit">
               <h1 style={{ color: project.textColor }}>{project.name}</h1>
               {showProjectBadge && (
@@ -73,7 +56,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
               {project.description}
             </p>
           </div>
-          <div className="w-[0rem] md:w-[40rem] h-auto ml-auto opacity-10">
+          <div className="w-[0rem] md:w-[30rem] h-auto ml-auto opacity-10">
             <Image
               src={project.logoPath}
               alt={project.name + " logo"}

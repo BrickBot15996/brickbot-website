@@ -82,23 +82,11 @@ export default function Achievements() {
         <div className="flex flex-row justify-end space-x-[var(--sm-space-x)] mt-[var(--md-space-y)]">
           <ArrowButton
             action={scrollPrev}
-            ariaLabel="Previous slide button"
-            color="var(--default-yellow)"
-            gradientLight="var(--yellow-gradient-light)"
-            gradientDark="var(--yellow-gradient-dark)"
-            litUpGradientLight="var(--lit-up-yellow-gradient-light)"
-            litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
             arrowDirection="left"
             disabled={isBeginning}
           />
           <ArrowButton
             action={scrollNext}
-            ariaLabel="Next slide button"
-            color="var(--default-yellow)"
-            gradientLight="var(--yellow-gradient-light)"
-            gradientDark="var(--yellow-gradient-dark)"
-            litUpGradientLight="var(--lit-up-yellow-gradient-light)"
-            litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
             arrowDirection="right"
             disabled={isEnd}
           />

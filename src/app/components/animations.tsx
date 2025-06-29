@@ -27,3 +27,75 @@ export const opacityFadeIn: Variants = {
     },
   },
 };
+
+export const buttonOverlayAnimation: Variants = {
+  default: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    opacity: 0.1,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    opacity: 0.2,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const arrowButtonScaleAnimation: Variants = {
+  default: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    scale: 0.9,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const brickButtonScaleAnimation: Variants = {
+  default: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    scale: 0.93,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};

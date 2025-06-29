@@ -5,8 +5,6 @@ import Image from "next/image";
 import Box from "../../components/brick-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { ProjectProps } from "../projects-data";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
 
 export function SmallProjectCard({ project }: SmallProjectCardProps) {
   const router = useRouter();
@@ -56,11 +54,7 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
   const router = useRouter();
 
   return (
-    <motion.div
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
+    <div
       onClick={() => {
         router.push(project.pagePath);
       }}
@@ -92,7 +86,7 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
       <p className="w-full h-full mt-[var(--sm-space-y)]">
         {project.description}
       </p>
-    </motion.div>
+    </div>
   );
 }
 

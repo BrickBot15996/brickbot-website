@@ -1,4 +1,5 @@
 import {
+  AwardProps,
   centerstage,
   freightFrenzy,
   intoTheDeep,
@@ -18,8 +19,7 @@ import {
 export type PortfolioProps = {
   team: TeamProps;
   season: SeasonProps;
-  event: string;
-  award: string;
+  awards: AwardProps[];
   portfolioPath: string;
   thumbnailPath: string;
 };
@@ -28,99 +28,110 @@ export const brickbotPortfolioList: PortfolioProps[] = [
   {
     team: brickbot,
     season: intoTheDeep,
-    event: "Regionals",
-    award: "Motivate 2",
+    awards: intoTheDeep.awards,
     portfolioPath: "/the-vault/portfolios/brickbot-into-the-deep.pdf",
     thumbnailPath: "/the-vault/thumbnails/brickbot-into-the-deep.jpg",
   },
   {
     team: brickbot,
     season: centerstage,
-    event: "Regionals",
-    award: "Think 3",
+    awards: centerstage.awards,
     portfolioPath: "/the-vault/portfolios/brickbot-centerstage.pdf",
     thumbnailPath: "/the-vault/thumbnails/brickbot-centerstage.jpg",
   },
   {
     team: brickbot,
     season: powerplay,
-    event: "Nationals",
-    award: " ",
+    awards: powerplay.awards,
     portfolioPath: "/the-vault/portfolios/brickbot-powerplay.pdf",
     thumbnailPath: "/the-vault/thumbnails/brickbot-powerplay.jpg",
   },
   {
     team: brickbot,
     season: freightFrenzy,
-    event: "Nationals",
-    award: " ",
+    awards: freightFrenzy.awards,
     portfolioPath: "/the-vault/portfolios/brickbot-freight-frenzy.pdf",
     thumbnailPath: "/the-vault/thumbnails/brickbot-freight-frenzy.jpg",
   },
 ];
 
-export const porfolioList: PortfolioProps[] = [
-  {
-    team: perpetuum,
-    season: powerplay,
-    event: "Nationals",
-    award: " ",
-    portfolioPath: "/the-vault/portfolios/perpetuum-powerplay.pdf",
-    thumbnailPath: "/the-vault/thumbnails/perpetuum-powerplay.jpg",
-  },
+export const portfolioList: PortfolioProps[] = [
   {
     team: perpetuum,
     season: centerstage,
-    event: "Regionals",
-    award: " ",
+    awards: [],
     portfolioPath: "/the-vault/portfolios/perpetuum-centerstage.pdf",
     thumbnailPath: "/the-vault/thumbnails/perpetuum-centerstage.jpg",
   },
   {
-    team: infinityedge,
-    season: ultimateGoal,
-    event: "Regionals",
-    award: "Connect 3",
-    portfolioPath: "/the-vault/portfolios/infinity-ultimate-goal.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-ultimate-goal.jpg",
-  },
-  {
-    team: infinityedge,
-    season: freightFrenzy,
-    event: "Nationals",
-    award: "Motivate 3",
-    portfolioPath: "/the-vault/portfolios/infinity-freight-frenzy.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-freight-frenzy.jpg",
-  },
-  {
-    team: infinityedge,
+    team: perpetuum,
     season: powerplay,
-    event: "Regionals",
-    award: " ",
-    portfolioPath: "/the-vault/portfolios/infinity-powerplay.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-powerplay.jpg",
+    awards: [],
+    portfolioPath: "/the-vault/portfolios/perpetuum-powerplay.pdf",
+    thumbnailPath: "/the-vault/thumbnails/perpetuum-powerplay.jpg",
   },
   {
     team: infinityedge,
     season: centerstage,
-    event: "Regionals",
-    award: "Motivate 3",
-    portfolioPath: "/the-vault/portfolios/infinity-centerstage.pdf",
-    thumbnailPath: "/the-vault/thumbnails/infinity-centerstage.jpg",
+    awards: [
+      {
+        event: "Romania East Championship",
+        awardName: "Motivate Award 3rd Place",
+      },
+    ],
+    portfolioPath: "/the-vault/portfolios/infinityedge-centerstage.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinityedge-centerstage.jpg",
+  },
+  {
+    team: infinityedge,
+    season: powerplay,
+    awards: [],
+    portfolioPath: "/the-vault/portfolios/infinityedge-powerplay.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinityedge-powerplay.jpg",
+  },
+  {
+    team: infinityedge,
+    season: freightFrenzy,
+    awards: [
+      { event: "Romanian Regional #3", awardName: "Control Award 2nd Place" },
+      {
+        event: "Romanian National Championship",
+        awardName: "Motivate Award 3rd Place",
+      },
+    ],
+    portfolioPath: "/the-vault/portfolios/infinityedge-freight-frenzy.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinityedge-freight-frenzy.jpg",
+  },
+  {
+    team: infinityedge,
+    season: ultimateGoal,
+    awards: [
+      {
+        event: "Romania Qualifying Tournament #3",
+        awardName: "Connect Award 3rd Place",
+      },
+    ],
+    portfolioPath: "/the-vault/portfolios/infinityedge-ultimate-goal.pdf",
+    thumbnailPath: "/the-vault/thumbnails/infinityedge-ultimate-goal.jpg",
   },
   {
     team: alphabit,
     season: powerplay,
-    event: "Nationals",
-    award: " ",
+    awards: [
+      { event: "Qualifying Tournament", awardName: "Connect Award 3rd Place" },
+    ],
     portfolioPath: "/the-vault/portfolios/alphabit-powerplay.pdf",
     thumbnailPath: "/the-vault/thumbnails/alphabit-powerplay.jpg",
   },
   {
     team: snaketech,
     season: centerstage,
-    event: "Nationals",
-    award: " ",
+    awards: [
+      {
+        event: "Romania East Championship",
+        awardName: "Design Award 3rd Place",
+      },
+    ],
     portfolioPath: "/the-vault/portfolios/snake-tech-centerstage.pdf",
     thumbnailPath: "/the-vault/thumbnails/snake-tech-centerstage.jpg",
   },

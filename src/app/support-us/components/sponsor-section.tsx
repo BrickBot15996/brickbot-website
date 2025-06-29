@@ -3,8 +3,10 @@ import { sponsorList } from "@/app/home/sponsor-data";
 import { motion } from "framer-motion";
 import { bronze } from "../sponsor-tiers-data";
 import SponsorLogo from "@/app/components/sponsor-logo";
+import { usePathname } from "next/navigation";
 
 export default function SponsorSection() {
+  const isActivePage = usePathname() == "/support-us";
   return (
     <section className="flex flex-col items-start justify-center">
       <h2>Sponsors</h2>
@@ -19,8 +21,8 @@ export default function SponsorSection() {
                 key={indexS}
                 variants={defaultFadeIn}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-10%" }}
+                whileInView={isActivePage ? "visible" : "hidden"}
+                viewport={{ once: false, margin: "-10%" }}
               >
                 <SponsorLogo sponsor={sponsor} />
               </motion.div>

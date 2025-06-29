@@ -1,9 +1,10 @@
+import React from "react";
 import { useRouter } from "next/navigation";
-
 import Image from "next/image";
 import Link from "next/link";
 
 import Marquee from "react-fast-marquee";
+import { Tooltip } from "react-tooltip";
 
 import Button from "../../components/brick-button";
 import { SponsorData, sponsorList } from "../sponsor-data";
@@ -11,16 +12,17 @@ import { diamond, ultimate } from "@/app/support-us/sponsor-tiers-data";
 
 export default function SponsorMarquee() {
   const router = useRouter();
-  const marqueeSponsors: SponsorData[] = sponsorList.filter((sponsor) => {
-    return sponsor.tier === ultimate || sponsor.tier === diamond;
-  });
+  const marqueeSponsors: SponsorData[] = sponsorList.filter(
+    (sponsor) => sponsor.tier === ultimate || sponsor.tier === diamond
+  );
 
   return (
-    <section className="h-full w-auto overflow-visible">
+    <section className="h-full w-auto overflow-visible relative">
       <h2 className="ml-[calc((100vw-var(--page-width))/2)] mb-[var(--2xl-space-y)]">
         Sponsors
       </h2>
-      <div className="w-[100vw] mb-[var(--2xl-space-y)] h-full">
+
+      <div className="w-[100vw] mb-[var(--2xl-space-y)] h-full overflow-visible">
         {/* Desktop Marquee */}
         <Marquee
           pauseOnHover={true}
@@ -29,28 +31,43 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[0rem] lg:h-[5rem] select-none hidden"
+          className="h-[0rem] lg:h-[5rem] select-none hidden lg:flex overflow-visible"
+          style={{ overflow: "visible" }}
         >
           {marqueeSponsors.map((sponsor, index) => (
-            <Link
-              href={sponsor.websiteLink}
-              target="_blank"
-              key={index}
-              className="cursor-pointer hover:opacity-50 items-center"
-            >
-              <Image
-                key={index}
-                src={sponsor.logoPath}
-                alt={`Item ${index}`}
-                height={100}
-                width={100}
-                className="h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
+            <React.Fragment key={index}>
+              <Link
+                href={sponsor.websiteLink}
+                target="_blank"
+                className="cursor-pointer hover:opacity-50 items-center"
+              >
+                <Image
+                  src={sponsor.logoPath}
+                  alt={sponsor.name}
+                  height={100}
+                  width={100}
+                  className="h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
+                  data-tooltip-id={`desktop-${sponsor.name}`}
+                  data-tooltip-content={sponsor.name}
+                  data-tooltip-place="top"
+                />
+              </Link>
+              <Tooltip
+                id={`desktop-${sponsor.name}`}
+                place="top"
+                noArrow={false}
+                style={{
+                  position: "absolute",
+                  zIndex: 9999,
+                }}
+                offset={15}
+                opacity={1}
               />
-            </Link>
+            </React.Fragment>
           ))}
         </Marquee>
 
-        {/* Mobile Marquee */}
+        {/* Mobile Marquee (no tooltip) */}
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
@@ -61,18 +78,17 @@ export default function SponsorMarquee() {
           className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none mb-[var(--2xl-space-y)] lg:mb-[0rem]"
         >
           {marqueeSponsors
-            .slice(0, marqueeSponsors.length / 2 + 1)
-            .map((sponsor, index) => (
+            .slice(0, Math.ceil(marqueeSponsors.length / 2))
+            .map((sponsor) => (
               <Link
                 href={sponsor.websiteLink}
                 target="_blank"
-                key={index}
+                key={sponsor.name}
                 className="cursor-pointer hover:opacity-50 items-center"
               >
                 <Image
-                  key={index}
                   src={sponsor.logoPath}
-                  alt={`Item ${index}`}
+                  alt={sponsor.name}
                   height={100}
                   width={100}
                   className="h-[3rem] md:h-[4rem] w-auto px-[2.5rem]"
@@ -80,6 +96,7 @@ export default function SponsorMarquee() {
               </Link>
             ))}
         </Marquee>
+
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
@@ -91,18 +108,17 @@ export default function SponsorMarquee() {
           className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none"
         >
           {marqueeSponsors
-            .slice(marqueeSponsors.length / 2 + 1, marqueeSponsors.length)
-            .map((sponsor, index) => (
+            .slice(Math.ceil(marqueeSponsors.length / 2))
+            .map((sponsor) => (
               <Link
                 href={sponsor.websiteLink}
                 target="_blank"
-                key={index}
+                key={sponsor.name}
                 className="cursor-pointer hover:opacity-50 items-center"
               >
                 <Image
-                  key={index}
                   src={sponsor.logoPath}
-                  alt={`Item ${index}`}
+                  alt={sponsor.name}
                   height={100}
                   width={100}
                   className="h-[3rem] md:h-[4rem] w-auto px-[2.5rem]"
@@ -111,15 +127,14 @@ export default function SponsorMarquee() {
             ))}
         </Marquee>
       </div>
+
       {/* Sponsor Button */}
       <div className="flex justify-center mb-[var(--2xl-space-y)]">
         <Button
           text="BECOME OUR NEXT SPONSOR"
           arrow={false}
-          accentColor="var(--default-yellow)"
-          gradientColorLight="var(--yellow-gradient-light)"
-          gradientColorDark="var(--yellow-gradient-dark)"
           action={() => router.push("/support-us")}
+          className="px-[2rem]"
         />
       </div>
     </section>

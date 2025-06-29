@@ -99,12 +99,9 @@ function TierSectionDesktop() {
             action={() => {
               setExpanded(!isExpanded);
             }}
-            ariaLabel="Sponsorship Tiers expand or retract"
             color="var(--default-yellow)"
             gradientLight="var(--yellow-gradient-light)"
-            gradientDark="var(--yellow-gradient-dark) "
-            litUpGradientLight="var(--lit-up-yellow-gradient-light)"
-            litUpGradientDark="var(--lit-up-yellow-gradient-dark)"
+            gradientDark="var(--yellow-gradient-dark)"
             arrowDirection="down"
             toggleDirection={true}
           />

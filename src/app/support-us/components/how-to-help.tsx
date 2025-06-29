@@ -59,7 +59,10 @@ function RedirectTax() {
       target="_blank"
       className="group cursor-pointer"
     >
-      <SimpleBox className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]">
+      <SimpleBox
+        clickEffect={true}
+        className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]"
+      >
         <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
           <Image
             src="/support-us/230.svg"
@@ -76,8 +79,8 @@ function RedirectTax() {
           <HiArrowNarrowRight className="h-auto w-auto fill-[var(--default-yellow)] inline ml-[0.5rem] group-hover:translate-x-[1rem] transition-all duration-200" />
         </h3>
         <p>
-          Romanian citizens can support BrickBot by redirecting 3.5% of income
-          tax through Form 230.
+          Romanian citizens can help BrickBot by redirecting 3.5% of income tax
+          through Form 230.
         </p>
       </SimpleBox>
     </Link>
@@ -91,7 +94,10 @@ function Donate() {
       target="_blank"
       className="group cursor-pointer"
     >
-      <SimpleBox className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]">
+      <SimpleBox
+        clickEffect={true}
+        className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]"
+      >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <Image
             src="/support-us/donate.svg"
@@ -121,7 +127,7 @@ function Contract() {
 
   useEffect(() => {
     const handleResize = () => {
-      setButtonsCol(window.innerWidth <= 440 || window.innerWidth >= 1024);
+      setButtonsCol(window.innerWidth <= 500 || window.innerWidth >= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -149,9 +155,9 @@ function Contract() {
           Sponsorship Contracts
         </h3>
         <p>
-          Companies can support our initiative through financial contributions
-          and services. The partnership will be formalized via a contract
-          between your business and our organization.
+          You can support our initiative through financial contributions and
+          services. The partnership will be formalized via a contract between
+          your business and our organization.
         </p>
       </div>
       <div
@@ -167,11 +173,13 @@ function Contract() {
           text="View Sample"
           action={() => {}}
           style={{ width: "full" }}
+          className="px-[1.82rem]"
         />
         <Button
           text="Contact Us"
           action={() => {}}
           style={{ width: "full" }}
+          className="px-[2.35rem]"
         />
       </div>
     </SimpleBox>

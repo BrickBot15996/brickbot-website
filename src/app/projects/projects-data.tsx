@@ -92,7 +92,7 @@ export const checkpoint: ProjectProps = {
 
 export const simplicityFTC: ProjectProps = {
   name: "SimplicityFTC",
-  extendedName: "SimplicityFTC: Software Library",
+  extendedName: "SimplicityFTC: Coding Library",
   subtitle: "Open-Source Programming Library",
   description: "Programming library designed to simplify coding for FTC teams.",
   logoPath: "/projects/simplicityftc-logo.svg",

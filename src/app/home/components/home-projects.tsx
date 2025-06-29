@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <section className="flex flex-col items-center justify-center w-full h-fit">
       <h2 className="mr-auto mb-[var(--xl-space-y)]">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch px-[var(--xl-space-y)] md:px-[0rem] gap-y-[var(--lg-space-y)] gap-x-[var(--lg-space-x)] xl:gap-x-[var(--md-space-x)] mb-[var(--xl-space-y)] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch px-[var(--xl-space-x)] sm:px-[var(--2xl-space-x)] md:px-[0rem] gap-y-[var(--lg-space-y)] gap-x-[var(--lg-space-x)] xl:gap-x-[var(--md-space-x)] mb-[var(--xl-space-y)] w-full">
         {projectList.slice(0, 4).map((project, index) => {
           return (
             <motion.div
@@ -33,10 +33,8 @@ export default function Projects() {
         <Button
           text="SEE ALL"
           arrow={false}
-          accentColor="var(--default-yellow)"
-          gradientColorLight="var(--yellow-gradient-light)"
-          gradientColorDark="var(--yellow-gradient-dark)"
           action={() => router.push("/projects")}
+          className="px-[1.5rem]"
         />
       </div>
     </section>

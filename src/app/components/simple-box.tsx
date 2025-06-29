@@ -1,13 +1,15 @@
 "use client";
 
-import { ReactNode, useState, CSSProperties } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 type SimpleBoxProps = {
   action?: () => void;
   children?: ReactNode;
-  borderRadius?: string;
-  borderThickness?: string;
-  hoverEffect?: boolean;
+  width?: string;
+  height?: string;
+  borderRadius?: number;
+  borderThickness?: number;
+  clickEffect?: boolean;
   className?: string;
   style?: CSSProperties;
 };
@@ -15,33 +17,42 @@ type SimpleBoxProps = {
 export default function SimpleBox({
   action = () => {},
   children,
-  borderRadius = "1.5rem",
-  borderThickness = "0.2rem",
-  hoverEffect = false,
+  width = "full",
+  height = "full",
+  borderRadius = 1.5,
+  borderThickness = 0.2,
+  clickEffect = false,
   className = "",
   style = {},
 }: SimpleBoxProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
-      className={`relative h-full w-full`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`group relative`}
       onClick={action}
       style={{
+        width: width,
+        height: height,
         ...style,
       }}
     >
       <div
         className="absolute inset-0 transition-opacity duration-200 bg-[#1A1A1A] border-[#363636]"
         style={{
-          opacity: hoverEffect ? (isHovered ? "1.0" : "0.0") : "1.0",
-          borderWidth: `${borderThickness}`,
-          borderRadius: `${borderRadius}`,
-          padding: `${borderThickness}`,
+          borderWidth: `${borderThickness}rem`,
+          borderRadius: `${borderRadius}rem`,
         }}
-      />
+      >
+        <div
+          className={`w-full h-full bg-[#ffffff] ${
+            clickEffect
+              ? "opacity-0 group-hover:opacity-2.5 group-active:opacity-5"
+              : "opacity-0"
+          }`}
+          style={{
+            borderRadius: `${borderRadius - borderThickness}rem`,
+          }}
+        />
+      </div>
 
       <div className={`relative z-2 h-full w-full ${className}`}>
         {children}

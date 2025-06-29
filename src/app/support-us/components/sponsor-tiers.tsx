@@ -13,40 +13,47 @@ export function SponsorshipTierDesktop({
   expansionState,
 }: SponsorshipTierDesktopProps) {
   return (
-    <Box
-      gradient={true}
-      color={tier.gradientColor}
-      borderRadius="2rem"
-      className={`flex flex-col h-auto w-auto py-[var(--sm-space-y)] select-none ${className}`}
+    <motion.div
+      variants={defaultFadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-10%" }}
     >
-      <h5
-        className="px-[1.25rem]"
-        style={{
-          color: tier.textColor,
-        }}
+      <Box
+        gradient={true}
+        color={tier.gradientColor}
+        borderRadius="2rem"
+        className={`flex flex-col h-auto w-auto py-[var(--sm-space-y)] select-none ${className}`}
       >
-        {tier.name}
-        <br />≥ {tier.priceThreshold} EUR
-      </h5>
-      <ul
-        className="mt-[1rem] list-none transition-all duration-300 font-medium text-[1.25rem] mb-[var(--md-space-y)]"
-        style={{
-          opacity: expansionState ? "100" : "0",
-          translate: expansionState ? "0 0" : "0 -1.5rem",
-        }}
-      >
-        {tier.benefits.map((benefit, index) => {
-          return (
-            <li
-              key={index}
-              className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]"
-            >
-              {benefit}
-            </li>
-          );
-        })}
-      </ul>
-    </Box>
+        <h5
+          className="px-[1.25rem]"
+          style={{
+            color: tier.textColor,
+          }}
+        >
+          {tier.name}
+          <br />≥ {tier.priceThreshold} EUR
+        </h5>
+        <ul
+          className="mt-[1rem] list-none transition-all duration-300 font-medium text-[1.25rem] mb-[var(--md-space-y)]"
+          style={{
+            opacity: expansionState ? "100" : "0",
+            translate: expansionState ? "0 0" : "0 -1.5rem",
+          }}
+        >
+          {tier.benefits.map((benefit, index) => {
+            return (
+              <li
+                key={index}
+                className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]"
+              >
+                {benefit}
+              </li>
+            );
+          })}
+        </ul>
+      </Box>
+    </motion.div>
   );
 }
 

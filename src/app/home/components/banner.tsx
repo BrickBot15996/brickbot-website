@@ -11,7 +11,7 @@ export default function Banner() {
   return (
     <section className="relative w-full h-fit flex flex-col">
       <div className="flex flex-row h-[var(--banner-height)] w-full">
-        <div className="flex flex-[0_0_90%] items-center mr-auto h-full w-full bg-[linear-gradient(70deg,_var(--default-dark)_35%,_transparent)] z-2">
+        <div className="flex flex-[0_0_100%] items-center mr-auto h-full w-[100vw] bg-[linear-gradient(70deg,_var(--default-dark)_35%,_transparent)] z-2">
           <div className="flex flex-col ml-[var(--lg-space-x)] space-y-[var(--md-space-y)]">
             <h2>
               We build our future
@@ -21,18 +21,15 @@ export default function Banner() {
             <Button
               text="BECOME A SPONSOR"
               arrow={true}
-              accentColor="var(--default-yellow)"
-              gradientColorLight="var(--yellow-gradient-light)"
-              gradientColorDark="var(--yellow-gradient-dark)"
               action={() => router.push("/support-us")}
+              className="px-[1.35rem] md:px-[1.55rem] lg:px-[1.75rem]"
             />
           </div>
         </div>
         <motion.div
           variants={opacityFadeIn}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-10%" }}
+          animate="visible"
           className="w-full h-full z-[-1]"
         >
           <Image

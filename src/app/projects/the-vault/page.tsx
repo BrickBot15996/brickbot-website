@@ -1,16 +1,19 @@
 "use client";
 
-import Button from "@/app/components/brick-button";
 import ProjectTitle from "../components/project-title";
 import { theVault } from "../projects-data";
-import { brickbotPortfolioList, PortfolioProps } from "./portfolio-data";
-import Box from "@/app/components/brick-box";
-
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import ArrowButton from "@/app/components/arrow-button";
-import { useRouter } from "next/navigation";
+import {
+  brickbotPortfolioList,
+  portfolioList,
+  PortfolioProps,
+} from "./portfolio-data";
 import Image from "next/image";
+import SimpleBox from "@/app/components/simple-box";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { teamList, TeamProps } from "./team-data";
+import { motion } from "framer-motion";
+import { defaultFadeIn } from "@/app/components/animations";
+import { useEffect, useState } from "react";
 
 const project = theVault;
 
@@ -20,136 +23,208 @@ export default function TheVault() {
       <ProjectTitle project={project} />
       <section className="inner-content">
         <BrickBotPortfolios />
+        <OtherTeamPortfolios />
       </section>
     </section>
   );
 }
 
 function BrickBotPortfolios() {
-  const [isExpanded, setExpanded] = useState(false);
-
   return (
-    <section className="relative">
+    <section>
       <h2
         className="mb-[var(--xl-space-y)]"
         style={{ color: project.textColor }}
       >
-        Collections
-      </h2>
-      <h3
-        className="mb-[var(--md-space-y)]"
-        style={{ color: "var(--alternate-text)", fontWeight: 700 }}
-      >
         #15996 BrickBot
-      </h3>
-      <div className="px-[0rem] sm:px-[2rem] md:px-[4rem] lg:px-[8rem] xl:px-[0rem]">
-        <Box className="relative flex flex-col w-full select-none px-[1rem] py-[1rem] overflow-hidden">
-          <motion.div
-            initial={false}
-            animate={{
-              height: isExpanded ? "65rem" : "35rem",
-            }}
-            transition={{
-              duration: 0.3,
-              ease: "easeInOut",
-              opacity: {
-                duration: isExpanded ? 0.3 : 0.3,
-              },
-            }}
-            className="relative px-[var(--md-space-x)] py-[var(--md-space-y)] gap-x-[var(--lg-space-x)] gap-y-[var(--lg-space-y)] overflow-hidden grid grid-cols-1 xl:grid-cols-2 items-stretch grid-flow-row"
-          >
-            {brickbotPortfolioList.map((portfolio, index) => {
-              return (
-                <ExpandedPortfolio
-                  key={index}
-                  portfolio={portfolio}
-                />
-              );
-            })}
-            <ArrowButton
-              action={() => {
-                setExpanded(!isExpanded);
-              }}
-              ariaLabel="Expand or retract BrickBot portfolio display"
-              arrowDirection="down"
-              toggleDirection={true}
-              color={project.buttonColor}
-              gradientLight={project.buttonGradientLight}
-              gradientDark={project.buttonGradientDark}
-              litUpGradientLight={project.buttonLitUpLight}
-              litUpGradientDark={project.buttonLitUpDark}
-              className="absolute right-[1rem] bottom-[1rem]"
+      </h2>
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-[var(--md-space-x)] gap-y-[var(--md-space-y)]">
+        {brickbotPortfolioList.map((portfolio, index) => {
+          return (
+            <Portfolio
+              key={index}
+              portfolio={portfolio}
             />
-          </motion.div>
-          <div
-            className="absolute bottom-[0.2rem] left-[0.2rem] rounded-bl-[1.5rem] bg-[linear-gradient(0deg,_var(--default-dark),_transparent)] w-[93%] transition-all duration-400 delay-50 z-100"
-            style={{
-              height: isExpanded ? "0rem" : "6rem",
-            }}
-          />
-        </Box>
+          );
+        })}
       </div>
     </section>
   );
 }
 
-type ExpandedPortfolioProps = {
+function OtherTeamPortfolios() {
+  return (
+    <section>
+      <h2
+        className="mb-[var(--xl-space-y)]"
+        style={{ color: project.textColor }}
+      >
+        Other Teams
+      </h2>
+      <div className="flex flex-col w-full space-y-[var(--2xl-space-y)]">
+        {teamList.map((team, index) => {
+          return (
+            <TeamPortfolios
+              key={index}
+              team={team}
+            />
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+type TeamPortfoliosProps = {
+  team: TeamProps;
+};
+
+function TeamPortfolios({ team }: TeamPortfoliosProps) {
+  return (
+    <section>
+      <h3
+        className="mb-[var(--lg-space-y)]"
+        style={{ color: project.textColor }}
+      >
+        #{team.number + " " + team.name}
+      </h3>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[var(--md-space-x)] gap-y-[var(--md-space-y)]">
+        {portfolioList
+          .filter((portfolio) => {
+            return portfolio.team == team;
+          })
+          .map((portfolio, index) => {
+            return (
+              <Portfolio
+                key={index}
+                portfolio={portfolio}
+              />
+            );
+          })}
+      </div>
+    </section>
+  );
+}
+
+type PortfolioDisplayProps = {
   portfolio: PortfolioProps;
 };
 
-function ExpandedPortfolio({ portfolio }: ExpandedPortfolioProps) {
-  const router = useRouter();
+function Portfolio({ portfolio }: PortfolioDisplayProps) {
+  const [isMobile, setIsMobile] = useState(false);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setIsMobile]);
+
   return (
-    <section
-      ref={containerRef}
-      className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start"
+    <motion.div
+      variants={defaultFadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-10%" }}
+      className="select-none"
     >
-      <div className="relative flex-[0_0_50%] aspect-[1/1.414] bg-[linear-gradient(0deg,_#FF0022,_#9D247D)] rounded-[1.5rem] overflow-hidden">
-        <Image
-          src={portfolio.thumbnailPath}
-          alt={portfolio.team.name + " portfolio in " + portfolio.season.name}
-          fill
-          className="object-cover h-full w-auto"
-        />
-      </div>
-
-      <div className="flex flex-col flex-1 min-h-full">
-        <h4
-          className="mb-[var(--md-space-y)]"
-          style={{ color: "var(--alternate-text)" }}
+      {!isMobile && (
+        <SimpleBox
+          width="fit"
+          height="fit"
+          borderRadius={2}
+          clickEffect={true}
+          action={() => {
+            window.open(portfolio.portfolioPath, "_blank");
+          }}
+          className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start p-[1rem] lg:p-[2rem] cursor-pointer group"
         >
-          {portfolio.season.name.toUpperCase()}
-        </h4>
-
-        {portfolio.season.awards.map((award, index) => (
-          <div
-            key={index}
-            className="h-fit w-full flex flex-col"
-          >
-            <h5>{award.event}</h5>
-            <h6
-              style={{ color: "var(--default-text)" }}
-              className="mb-[var(--sm-space-y)]"
-            >
-              {award.awardName}
-            </h6>
+          <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] bg-[linear-gradient(0deg,_var(--the-vault),_#9D247D)] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden">
+            <Image
+              src={portfolio.thumbnailPath}
+              alt={
+                portfolio.team.name + " portfolio in " + portfolio.season.name
+              }
+              fill
+              className="object-cover h-full w-auto"
+            />
           </div>
-        ))}
+          <div className="flex flex-col flex-1 h-full">
+            <h4
+              className="mb-[var(--md-space-y)] group-hover:underline"
+              style={{ color: project.textColor }}
+            >
+              {portfolio.season.name.toUpperCase()}
+              <HiArrowNarrowRight className="inline-flex h-auto w-auto ml-[0.5rem] mt-[-0.17rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-transform duration-200" />
+            </h4>
 
-        <div className="mt-auto w-full">
-          <Button
-            text="view"
-            accentColor={project.buttonColor}
-            gradientColorLight={project.buttonGradientLight}
-            gradientColorDark={project.buttonGradientDark}
-            action={() => {
-              router.push(portfolio.portfolioPath);
-            }}
-          />
-        </div>
-      </div>
-    </section>
+            {portfolio.awards.map((award, index) => (
+              <div
+                key={index}
+                className="h-fit w-full flex flex-col"
+              >
+                <h5>{award.event}</h5>
+                <h6
+                  style={{ color: "var(--default-text)" }}
+                  className="mb-[var(--sm-space-y)]"
+                >
+                  {award.awardName}
+                </h6>
+              </div>
+            ))}
+          </div>
+        </SimpleBox>
+      )}
+      {isMobile && (
+        <SimpleBox
+          width="fit"
+          height="fit"
+          borderRadius={2}
+          clickEffect={true}
+          action={() => {
+            window.open(portfolio.portfolioPath, "_blank");
+          }}
+          className="flex flex-col items-stretch justify-start space-y-[var(--md-space-y)] self-start p-[1rem] cursor-pointer group"
+        >
+          <h4
+            className="group-hover:underline pl-[1rem] pt-[1rem]"
+            style={{ color: project.textColor }}
+          >
+            {portfolio.season.name.toUpperCase()}
+            <HiArrowNarrowRight className="inline-flex h-auto w-auto ml-[0.5rem] mt-[-0.17rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-transform duration-200" />
+          </h4>
+          <div className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start pl-[1rem] pb-[1rem] cursor-pointer group">
+            <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] bg-[linear-gradient(0deg,_var(--the-vault),_var(--default-yellow))] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden">
+              <Image
+                src={portfolio.thumbnailPath}
+                alt={
+                  portfolio.team.name + " portfolio in " + portfolio.season.name
+                }
+                fill
+                className="object-cover h-full w-auto"
+              />
+            </div>
+            <div className="flex flex-col flex-1 h-full">
+              {portfolio.awards.map((award, index) => (
+                <div
+                  key={index}
+                  className="h-fit w-full flex flex-col"
+                >
+                  <h5>{award.event}</h5>
+                  <h6
+                    style={{ color: "var(--default-text)" }}
+                    className="mb-[var(--sm-space-y)]"
+                  >
+                    {award.awardName}
+                  </h6>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SimpleBox>
+      )}
+    </motion.div>
   );
 }

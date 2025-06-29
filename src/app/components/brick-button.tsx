@@ -1,12 +1,17 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useState, useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { motion } from "framer-motion";
+import {
+  buttonOverlayAnimation,
+  brickButtonScaleAnimation,
+} from "./animations";
 
 type ButtonParams = {
   text: string;
   arrow?: boolean;
-  accentColor?: string;
-  gradientColorLight?: string;
-  gradientColorDark?: string;
+  color?: string;
+  gradientLight?: string;
+  gradientDark?: string;
   action?: () => void;
   className?: string;
   style?: CSSProperties;
@@ -15,37 +20,92 @@ type ButtonParams = {
 export default function Button({
   text,
   arrow = false,
-  accentColor = "var(--default-yellow)",
-  gradientColorLight = "var(--yellow-gradient-light)",
-  gradientColorDark = "var(--yellow-gradient-dark)",
+  color = "var(--default-yellow)",
+  gradientLight = "var(--yellow-gradient-light)",
+  gradientDark = "var(--yellow-gradient-dark)",
   action = () => {},
-  className = "",
+  className = "px-[1rem] md:px-[1.3rem] lg:px-[1.5rem]",
   style = {},
 }: ButtonParams) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isTouchScreen, setIsTouchScreen] = useState(false);
+
+  const getAnimationState = () => {
+    if (isTouchScreen) return isClicked ? "clicked" : "default";
+    else return isClicked ? "clicked" : isHovered ? "hovered" : "default";
+  };
+
+  useEffect(() => {
+    if (!isClicked) return;
+
+    const handleRelease = () => {
+      setIsClicked(false);
+    };
+
+    window.addEventListener("mouseup", handleRelease);
+    window.addEventListener("touchend", handleRelease);
+    return () => {
+      window.removeEventListener("mouseup", handleRelease);
+    };
+  }, [isClicked]);
+
   return (
-    <button
-      className={`group inline-flex justify-center items-center space-x-[0.15rem] md:space-x-[0.2rem] lg:space-x-[0.25rem] px-[1.2rem] md:px-[1.5rem] lg:px-[1.75rem] py-[0.25rem] md:py-[0.35rem] lg:py-[0.4rem] rounded-[1.1rem] md:rounded-[1.3rem] lg:rounded-[1.5rem] border-[0.13rem] md:border-[0.15rem] lg:border-[0.17rem] hover:scale-93 lg:hover:brightness-75 lg:hover:scale-107 active:brightness-100 active:scale-93 transition-transform duration-150 cursor-pointer select-none w-fit ${className}`}
-      style={{
-        borderColor: accentColor,
-        backgroundImage: `linear-gradient(180deg, ${gradientColorLight}, ${gradientColorDark})`,
-        ...style,
+    <div
+      className={`relative w-fit h-fit rounded-[1.5rem] select-none `}
+      onMouseEnter={() => {
+        setIsHovered(true);
       }}
-      onClick={action}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
+      onMouseDown={() => {
+        setIsClicked(true);
+        setIsTouchScreen(false);
+      }}
+      onTouchStart={() => {
+        setIsClicked(true);
+        setIsTouchScreen(true);
+      }}
+      onClick={() => {
+        action();
+      }}
+      style={{
+        cursor: "pointer",
+      }}
     >
-      <div className="inline-flex space-x-[0.8rem] items-center">
-        <h4
-          className="py-[0.35rem]"
-          style={{ color: accentColor }}
-        >
-          {text.toUpperCase()}
-        </h4>
-        {arrow && (
-          <HiArrowNarrowRight
-            className=" mr-[-0.4rem] mt-[0.05rem] h-[1.2rem] md:h-[1.5rem] lg:h-[1.7rem] w-auto"
-            style={{ color: accentColor }}
-          />
-        )}
-      </div>
-    </button>
+      <motion.div
+        variants={brickButtonScaleAnimation}
+        initial="default"
+        animate={getAnimationState()}
+        className={`w-fit h-fit rounded-[1.5rem] border-[0.15rem] ${className}`}
+        style={{
+          borderColor: color,
+          background: `linear-gradient(to bottom, ${gradientLight}, ${gradientDark})`,
+          ...style,
+        }}
+      >
+        <div className="inline-flex space-x-[0.6rem] items-center">
+          <h4
+            className="py-[0.5rem] md:py-[0.6rem] lg:py-[0.75rem]"
+            style={{ color: color }}
+          >
+            {text.toUpperCase()}
+          </h4>
+          {arrow && (
+            <HiArrowNarrowRight
+              className="mr-[-0.3rem] mt-[0.03rem] h-[1.4rem] lg:h-[1.6rem] w-auto"
+              style={{ color: color }}
+            />
+          )}
+        </div>
+        <motion.div
+          variants={buttonOverlayAnimation}
+          initial="default"
+          animate={getAnimationState()}
+          className="absolute inset-0 w-full h-full rounded-[1.5rem] border-[0.15rem] bg-white opacity-0"
+        />
+      </motion.div>
+    </div>
   );
 }

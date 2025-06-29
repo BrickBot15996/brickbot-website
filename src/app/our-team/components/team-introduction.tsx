@@ -32,8 +32,6 @@ export default function Introduction() {
         buttonAccentColor="var(--default-yellow)"
         buttonGradientLight="var(--yellow-gradient-light)"
         buttonGradientDark="var(--yellow-gradient-dark)"
-        buttonLitUpLight="var(--lit-up-yellow-gradient-light)"
-        buttonLitUpDark="var(--lit-up-yellow-gradient-dark)"
       />
     </section>
   );
