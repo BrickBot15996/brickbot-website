@@ -6,11 +6,7 @@ import {
   HiArrowNarrowUp,
   HiArrowNarrowDown,
 } from "react-icons/hi";
-import { motion } from "framer-motion";
-import {
-  buttonOverlayAnimation,
-  arrowButtonScaleAnimation,
-} from "./animations";
+import { motion, Variants } from "framer-motion";
 
 type ArrowButtonProps = {
   action?: () => void;
@@ -132,7 +128,7 @@ export default function ArrowButton({
           )}
         </motion.div>
         <motion.div
-          variants={buttonOverlayAnimation}
+          variants={arrowButtonOverlayAnimation}
           initial="default"
           animate={getAnimationState()}
           className="absolute inset-0 w-full h-auto aspect-square rounded-full bg-white opacity-0"
@@ -142,99 +138,50 @@ export default function ArrowButton({
   );
 }
 
-// export default function ArrowButton({
-//   action = () => {},
-//   color = "var(--default-yellow)",
-//   gradientLight = "var(--yellow-gradient-light)",
-//   gradientDark = "var(--yellow-gradient-dark)",
-//   arrowDirection = "right",
-//   toggleDirection = false,
-//   disabled = false,
-//   style = {},
-//   className = "",
-// }: ArrowButtonProps) {
-//   const [isToggled, setIsToggled] = useState(false);
-//   const [isHovered, setIsHovered] = useState(false);
-//   const [isPressed, setIsPressed] = useState(false);
+export const arrowButtonOverlayAnimation: Variants = {
+  default: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    opacity: 0.1,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    opacity: 0.2,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};
 
-//   return (
-//     <div className="relative inline-block">
-//       {/* Interaction Layer */}
-//       <div
-//         className="absolute inset-0 w-full h-full z-20 rounded-full touch-manipulation"
-//         style={{
-//           cursor: disabled ? "default" : "pointer",
-//           pointerEvents: disabled ? "none" : "auto",
-//         }}
-//         tabIndex={disabled ? -1 : 0}
-//         aria-disabled={disabled}
-//       />
-
-//       {/* Visual Layer */}
-//       <motion.div
-//         animate={{
-//           scale: isPressed && !disabled ? 0.9 : 1.0,
-//         }}
-//         transition={{
-//           duration: isPressed ? 0.1 : 0.2,
-//           ease: "easeOut",
-//         }}
-//         className={`relative rounded-full border-[0.15rem] inline-flex items-center justify-center ${className}`}
-//         style={{
-//           borderColor: color,
-//           background: `linear-gradient(to bottom, ${gradientLight}, ${gradientDark})`,
-//           filter: disabled ? "brightness(0.75)" : "brightness(1.0)",
-//           pointerEvents: "none",
-//           ...style,
-//         }}
-//       >
-//         {/* Highlight Layer */}
-//         <motion.div
-//           animate={{
-//             opacity: disabled ? 0 : isPressed ? 0.3 : isHovered ? 0.15 : 0, // Increased opacity for better visibility
-//           }}
-//           transition={{
-//             duration: 0.15, // Faster transition
-//             ease: "easeOut",
-//           }}
-//           className="absolute inset-0 w-full h-full bg-white rounded-full pointer-events-none"
-//         />
-
-//         {/* Arrow Icon with toggle rotation */}
-//         <motion.div
-//           animate={{ rotate: isToggled && toggleDirection ? 180 : 0 }}
-//           transition={{ duration: 0.3, ease: "easeInOut" }}
-//           className="inline-flex items-center justify-center w-full h-full"
-//           style={{
-//             padding: `calc(0.75 * ${buttonSize} / 3.5)`,
-//           }}
-//         >
-//           {arrowDirection === "left" && (
-//             <HiArrowNarrowLeft
-//               className="w-full h-auto"
-//               style={{ fill: color }}
-//             />
-//           )}
-//           {arrowDirection === "right" && (
-//             <HiArrowNarrowRight
-//               className="w-full h-auto"
-//               style={{ fill: color }}
-//             />
-//           )}
-//           {arrowDirection === "up" && (
-//             <HiArrowNarrowUp
-//               className="w-full h-auto"
-//               style={{ fill: color }}
-//             />
-//           )}
-//           {arrowDirection === "down" && (
-//             <HiArrowNarrowDown
-//               className="w-full h-auto"
-//               style={{ fill: color }}
-//             />
-//           )}
-//         </motion.div>
-//       </motion.div>
-//     </div>
-//   );
-// }
+export const arrowButtonScaleAnimation: Variants = {
+  default: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    scale: 0.9,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};

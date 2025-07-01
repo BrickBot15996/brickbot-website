@@ -10,7 +10,7 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
   const router = useRouter();
 
   return (
-    <div className="aspect-3/4 w-auto lg:hover:brightness-75 hover:scale-95 lg:hover:scale-103 xl:hover:scale-105 active:brightness-100 active:scale-95 lg:active:scale-97 xl:active:scale-95 transition-transform duration-150 cursor-pointer select-none">
+    <div className="aspect-3/4 w-auto cursor-pointer select-none">
       <Box
         action={() => {
           router.push(project.pagePath);
@@ -60,7 +60,7 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
       }}
       className="group flex flex-col items-center justify-center cursor-pointer select-none"
     >
-      <div className="group-hover:scale-95 lg:group-hover:brightness-90 lg:group-hover:scale-105 group-active:scale-95 group-active:brightness-100 transition-all duration-200 w-full h-full">
+      <div className="w-full h-full">
         <Box
           color={project.color}
           gradient={true}

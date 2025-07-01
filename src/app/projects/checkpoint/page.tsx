@@ -65,7 +65,7 @@ function BrickbotInSchools() {
   return (
     <div className="w-full">
       <h2 style={{ color: "var(--checkpoint-text)" }}>BrickBot in Schools</h2>
-      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--sm-space-y)] mb-[var(--md-space-y)]">
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--lg-space-y)]">
         Middle school students from local schools explored robotics through our
         presentations and this year’s game. As part of the BrickBot Caravan,
         they operated the robot, learned about its design and programming, and
@@ -132,7 +132,7 @@ function PublicInteractions() {
       <h2 style={{ color: "var(--checkpoint-text)" }}>
         Interacting With The Public
       </h2>
-      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--sm-space-y)] mb-[var(--md-space-y)]">
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--lg-space-y)]">
         Engaging with the local community through showcases, humanitarian
         efforts, and outreach initiatives to inspire a love for robotics and
         create meaningful impact.

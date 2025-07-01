@@ -4,8 +4,10 @@ import Button from "@/app/components/brick-button";
 import SimpleBox from "@/app/components/simple-box";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/components/animations";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -18,34 +20,27 @@ export default function HowToHelpSection() {
           BrickBot operates with the support of sponsors (companies, businesses,
           individuals). There are three ways to support us:
         </p>
-        <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 grid-flow-row items-stretch gap-x-[var(--md-space-x)] gap-y-[var(--md-space-y)]">
-          <motion.div
+        <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 items-stretch gap-x-[var(--md-space-x)] gap-y-[var(--md-space-y)] auto-rows-[1fr]">
+          <AnimationWhenInView
             variants={defaultFadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
+            className="h-full"
           >
             <RedirectTax />
-          </motion.div>
+          </AnimationWhenInView>
 
-          <motion.div
+          <AnimationWhenInView
             variants={defaultFadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
+            className="h-full"
           >
             <Donate />
-          </motion.div>
+          </AnimationWhenInView>
 
-          <motion.div
+          <AnimationWhenInView
             variants={defaultFadeIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-10%" }}
-            className="col-span-1 sm:col-span-2"
+            className="col-span-1 sm:col-span-2 h-full"
           >
             <Contract />
-          </motion.div>
+          </AnimationWhenInView>
         </div>
       </div>
     </section>
@@ -57,11 +52,12 @@ function RedirectTax() {
     <Link
       href="https://formular230.ro/"
       target="_blank"
-      className="group cursor-pointer"
+      className="group cursor-pointer h-full"
     >
       <SimpleBox
         clickEffect={true}
         className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]"
+        style={{ height: "100%" }}
       >
         <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
           <Image
@@ -92,11 +88,12 @@ function Donate() {
     <Link
       href="https://support.stripe.com/questions/how-to-accept-donations-through-stripe"
       target="_blank"
-      className="group cursor-pointer"
+      className="group cursor-pointer h-full"
     >
       <SimpleBox
         clickEffect={true}
         className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]"
+        style={{ height: "100%" }}
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <Image
@@ -134,7 +131,10 @@ function Contract() {
     return () => window.removeEventListener("resize", handleResize);
   }, [buttonsCol]);
   return (
-    <SimpleBox className="flex flex-col lg:flex-row items-start justify-start px-[1.5rem] py-[2rem] space-x-[var(--sm-space-x)]">
+    <SimpleBox
+      className="flex flex-col lg:flex-row items-start justify-start px-[1.5rem] py-[2rem] space-x-[var(--sm-space-x)]"
+      style={{ height: "100%" }}
+    >
       <div
         className={`flex flex-col items-start md:flex-[0_0_75%] 2xl:flex-[0_0_65%] mr-auto ${
           buttonsCol ? "mb-[var(--md-space-y)] md:mb-[0rem]" : ""

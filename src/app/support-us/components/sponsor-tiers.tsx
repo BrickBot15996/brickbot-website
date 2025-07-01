@@ -5,7 +5,10 @@ import { useState } from "react";
 import Box from "@/app/components/brick-box";
 import { TierProps } from "../sponsor-tiers-data";
 import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/components/animations";
 
 export function SponsorshipTierDesktop({
   tier,
@@ -13,12 +16,7 @@ export function SponsorshipTierDesktop({
   expansionState,
 }: SponsorshipTierDesktopProps) {
   return (
-    <motion.div
-      variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
-    >
+    <AnimationWhenInView variants={defaultFadeIn}>
       <Box
         gradient={true}
         color={tier.gradientColor}
@@ -53,7 +51,7 @@ export function SponsorshipTierDesktop({
           })}
         </ul>
       </Box>
-    </motion.div>
+    </AnimationWhenInView>
   );
 }
 

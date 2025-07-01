@@ -134,4 +134,22 @@ export const sponsorList: SponsorData[] = [
     websiteLink: "https://www.hyperclinicadentexcel.ro/",
     tier: silver,
   },
+  {
+    name: "Dentrust",
+    logoPath: "/sponsors/dentrust.webp",
+    websiteLink: "https://dentrust.ro/",
+    tier: silver,
+  },
+  {
+    name: "Edil Dan Construct",
+    logoPath: "/sponsors/edil-dan-construct.webp",
+    websiteLink: "https://g.co/kgs/RJKxLfy",
+    tier: silver,
+  },
+  {
+    name: "Ceproinv",
+    logoPath: "/sponsors/ceproinv.webp",
+    websiteLink: "https://www.ceproinv.ro/",
+    tier: silver,
+  },
 ];

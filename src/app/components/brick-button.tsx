@@ -1,10 +1,6 @@
 import React, { CSSProperties, useState, useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import {
-  buttonOverlayAnimation,
-  brickButtonScaleAnimation,
-} from "./animations";
+import { motion, Variants } from "framer-motion";
 
 type ButtonParams = {
   text: string;
@@ -52,7 +48,7 @@ export default function Button({
 
   return (
     <div
-      className={`relative w-fit h-fit rounded-[1.5rem] select-none `}
+      className={`relative w-fit h-fit rounded-[1.5rem] select-none cursor-pointer`}
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -69,9 +65,6 @@ export default function Button({
       }}
       onClick={() => {
         action();
-      }}
-      style={{
-        cursor: "pointer",
       }}
     >
       <motion.div
@@ -100,7 +93,7 @@ export default function Button({
           )}
         </div>
         <motion.div
-          variants={buttonOverlayAnimation}
+          variants={brickButtonOverlayAnimation}
           initial="default"
           animate={getAnimationState()}
           className="absolute inset-0 w-full h-full rounded-[1.5rem] border-[0.15rem] bg-white opacity-0"
@@ -109,3 +102,51 @@ export default function Button({
     </div>
   );
 }
+
+export const brickButtonScaleAnimation: Variants = {
+  default: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    scale: 0.93,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const brickButtonOverlayAnimation: Variants = {
+  default: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    opacity: 0.1,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    opacity: 0.2,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};

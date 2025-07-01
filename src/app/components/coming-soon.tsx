@@ -17,7 +17,7 @@ export default function ComingSoon({
 }: ComingSoonProps) {
   return (
     <section
-      className="flex items-center justify-center min-h-[calc(100vh-var(--navbar-height))] w-full select-none"
+      className="flex items-center justify-center min-h-[calc(100vh-var(--navbar-height))] w-full select-none mb-[calc(0rem-var(--2xl-space-y))]"
       style={{
         background: `linear-gradient(0deg, ${gradientColor}, var(--default-dark) 98%)`,
       }}

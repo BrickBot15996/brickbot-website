@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 import Button from "../../components/brick-button";
 import { projectList } from "@/app/projects/projects-data";
 import { SmallProjectCard } from "@/app/projects/components/project-cards";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/components/animations";
 
 export default function Projects() {
   const router = useRouter();
@@ -17,15 +19,12 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch px-[var(--xl-space-x)] sm:px-[var(--2xl-space-x)] md:px-[0rem] gap-y-[var(--lg-space-y)] gap-x-[var(--lg-space-x)] xl:gap-x-[var(--md-space-x)] mb-[var(--xl-space-y)] w-full">
         {projectList.slice(0, 4).map((project, index) => {
           return (
-            <motion.div
-              variants={defaultFadeIn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-10%" }}
+            <AnimationWhenInView
               key={index}
+              variants={defaultFadeIn}
             >
               <SmallProjectCard project={project} />
-            </motion.div>
+            </AnimationWhenInView>
           );
         })}
       </div>

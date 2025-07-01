@@ -9,6 +9,10 @@ import { Tooltip } from "react-tooltip";
 import Button from "../../components/brick-button";
 import { SponsorData, sponsorList } from "../sponsor-data";
 import { diamond, ultimate } from "@/app/support-us/sponsor-tiers-data";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/components/animations";
 
 export default function SponsorMarquee() {
   const router = useRouter();
@@ -22,7 +26,10 @@ export default function SponsorMarquee() {
         Sponsors
       </h2>
 
-      <div className="w-[100vw] mb-[var(--2xl-space-y)] h-full overflow-visible">
+      <AnimationWhenInView
+        variants={defaultFadeIn}
+        className="w-[100vw] mb-[var(--2xl-space-y)] h-full overflow-visible"
+      >
         {/* Desktop Marquee */}
         <Marquee
           pauseOnHover={true}
@@ -46,7 +53,7 @@ export default function SponsorMarquee() {
                   alt={sponsor.name}
                   height={100}
                   width={100}
-                  className="h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
+                  className="h-[0rem] lg:h-[5rem] w-auto px-[3.5rem] lg:px-[4.5rem]"
                   data-tooltip-id={`desktop-${sponsor.name}`}
                   data-tooltip-content={sponsor.name}
                   data-tooltip-place="top"
@@ -126,7 +133,7 @@ export default function SponsorMarquee() {
               </Link>
             ))}
         </Marquee>
-      </div>
+      </AnimationWhenInView>
 
       {/* Sponsor Button */}
       <div className="flex justify-center mb-[var(--2xl-space-y)]">

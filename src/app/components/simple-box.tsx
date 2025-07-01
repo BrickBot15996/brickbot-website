@@ -17,8 +17,8 @@ type SimpleBoxProps = {
 export default function SimpleBox({
   action = () => {},
   children,
-  width = "full",
-  height = "full",
+  width,
+  height,
   borderRadius = 1.5,
   borderThickness = 0.2,
   clickEffect = false,
@@ -30,8 +30,8 @@ export default function SimpleBox({
       className={`group relative`}
       onClick={action}
       style={{
-        width: width,
-        height: height,
+        ...(width && { width: width }),
+        ...(height && { height: height }),
         ...style,
       }}
     >

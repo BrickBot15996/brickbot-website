@@ -1,13 +1,14 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import Hamburger from "hamburger-react";
 import { useGlobalContext } from "../global-context";
+import { motion, Variants } from "framer-motion";
 
 export default function Navbar() {
   const { navbarAnimation } = useGlobalContext();
@@ -157,14 +158,14 @@ export default function Navbar() {
         >
           {isOpen && (
             <div
-              className={`w-full h-full px-[var(--sm-space-x)] text-[var(--alternate-text)] flex flex-col ${
+              className={`w-full h-full px-[var(--sm-space-x)] text-[var(--alternate-text)] flex flex-col space-y-[var(--sm-space-y)] ${
                 isClosing
                   ? "animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]"
                   : "opacity-0 animate-[fadeInDelay_0.2s_ease-in-out_0.1s_forwards]"
               }`}
             >
               <h1
-                className="my-[var(--sm-space-y)] px-[var(--sm-space-x)]"
+                className="mt-[var(--sm-space-y)] mb-[var(--md-space-y)] px-[var(--sm-space-x)]"
                 style={{ color: "var(--alternate-text)" }}
               >
                 Menu
@@ -307,74 +308,133 @@ function NavbarButton({
 }
 
 function SidebarButton({ text, action, isActive = false }: NavButtonProps) {
-  const [isHovered, setHovered] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isTouchScreen, setIsTouchScreen] = useState(false);
+
+  const getAnimationState = () => {
+    if (isTouchScreen)
+      return isActive ? "clicked" : isClicked ? "clicked" : "default";
+    else
+      return isActive
+        ? "clicked"
+        : isClicked
+        ? "clicked"
+        : isHovered
+        ? "hovered"
+        : "default";
+  };
 
   useEffect(() => {
-    const handleTouchOutside = (e: TouchEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setHovered(false);
-      }
+    if (!isClicked) return;
+
+    const handleRelease = () => {
+      setIsClicked(false);
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setHovered(false);
-      }
-    };
-
-    document.addEventListener("touchstart", handleTouchOutside);
-    document.addEventListener("mousedown", handleClickOutside);
-
+    window.addEventListener("mouseup", handleRelease);
+    window.addEventListener("touchend", handleRelease);
     return () => {
-      document.removeEventListener("touchstart", handleTouchOutside);
-      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("mouseup", handleRelease);
     };
-  }, []);
-
-  const shouldShowActiveStyle = isActive || isHovered;
+  }, [isClicked]);
 
   return (
     <div
-      ref={ref}
+      className="relative w-full h-auto cursor-pointer"
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
+      onMouseDown={() => {
+        setIsClicked(true);
+        setIsTouchScreen(false);
+      }}
+      onTouchStart={() => {
+        setIsClicked(true);
+        setIsTouchScreen(true);
+      }}
       onClick={() => {
-        setHovered(false);
         action();
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onTouchStart={() => setHovered(true)}
-      className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150 cursor-pointer"
-      style={{
-        color: shouldShowActiveStyle
-          ? "var(--default-yellow)"
-          : "var(--alternate-text)",
-      }}
     >
-      <div
-        className="rounded-[1.5rem] h-full w-full p-[0.15rem]"
-        style={{
-          background: isHovered
-            ? "linear-gradient(180deg, var(--box-gradient-light), var(--box-gradient-dark))"
-            : "transparent",
-        }}
+      <motion.div
+        variants={sidebarButtonBackgroundAnimation}
+        initial="default"
+        animate={getAnimationState()}
+        className="relative bg-[var(--default-dark)] rounded-full border-[0.1rem]"
       >
-        <div
-          className="h-full rounded-[1.4rem]"
-          style={{
-            backgroundColor: isHovered ? "var(--default-dark)" : "transparent",
-          }}
+        <motion.div
+          initial={{ color: "var(--alternate-text)" }}
+          animate={
+            getAnimationState() == "clicked" || getAnimationState() == "hovered"
+              ? { color: "var(--default-yellow)" }
+              : { color: "var(--alternate-text)" }
+          }
+          className="text-[1.5rem]/[2.5rem] font-bold transition-transform duration-150 cursor-pointer px-[1.15rem] py-[0.25rem]"
         >
-          <div
-            className="rounded-[1.4rem] px-[1rem] py-[0.25rem] h-full"
-            style={{
-              backgroundColor: isHovered ? "#1e1e1e" : "transparent",
-            }}
-          >
-            {text}
-          </div>
-        </div>
-      </div>
+          {text}
+        </motion.div>
+        <motion.div
+          variants={sidebarButtonOverlayAnimation}
+          initial="default"
+          animate={getAnimationState()}
+          className="absolute inset-0 w-full h-full rounded-full bg-white outline-[0.1rem] outline-white"
+        />
+      </motion.div>
     </div>
   );
 }
+
+export const sidebarButtonBackgroundAnimation: Variants = {
+  default: {
+    background: "transparent",
+    borderColor: "transparent",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    background: "#121212",
+    borderColor: "#121212",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    background: "#121212",
+    borderColor: "#333333",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const sidebarButtonOverlayAnimation: Variants = {
+  default: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    opacity: 0.035,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    opacity: 0.07,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};

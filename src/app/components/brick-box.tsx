@@ -1,7 +1,8 @@
 // Box.tsx
 "use client";
 
-import { ReactNode, useState, CSSProperties } from "react";
+import { ReactNode, useState, CSSProperties, useEffect } from "react";
+import { motion, Variants } from "framer-motion";
 
 type BoxProps = {
   color?: string;
@@ -27,6 +28,27 @@ export default function Box({
   style = {},
 }: BoxProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const [isTouchScreen, setIsTouchScreen] = useState(false);
+
+  const getAnimationState = () => {
+    if (isTouchScreen) return isClicked ? "clicked" : "default";
+    else return isClicked ? "clicked" : isHovered ? "hovered" : "default";
+  };
+
+  useEffect(() => {
+    if (!isClicked) return;
+
+    const handleRelease = () => {
+      setIsClicked(false);
+    };
+
+    window.addEventListener("mouseup", handleRelease);
+    window.addEventListener("touchend", handleRelease);
+    return () => {
+      window.removeEventListener("mouseup", handleRelease);
+    };
+  }, [isClicked]);
 
   const getBackgroundWithOpacity = () => {
     if (color === "var(--box-gradient-light)") {
@@ -42,16 +64,33 @@ export default function Box({
   return (
     <div
       className={`relative h-full w-full`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={action}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
+      onMouseDown={() => {
+        setIsClicked(true);
+        setIsTouchScreen(false);
+      }}
+      onTouchStart={() => {
+        setIsClicked(true);
+        setIsTouchScreen(true);
+      }}
+      onClick={() => {
+        action();
+      }}
       style={{
         ...style,
       }}
     >
       {gradient && (
-        <div
-          className="absolute inset-0 w-full h-full z-10 transition-opacity duration-300"
+        <motion.div
+          variants={boxScaleAnimation}
+          initial="default"
+          animate={getAnimationState()}
+          className="absolute inset-0 w-full h-full z-10"
           style={{
             background: `linear-gradient(180deg, ${color}, var(--accents-dark-transparent))`,
             opacity: hoverEffect ? (isHovered ? 0.08 : 0) : 0.08,
@@ -60,10 +99,21 @@ export default function Box({
         />
       )}
 
-      <div
-        className={`absolute inset-0 transition-opacity duration-200 ${
-          hoverEffect && !isHovered ? "opacity-0" : "opacity-100"
-        }`}
+      <motion.div
+        variants={boxOverlayAnimation}
+        initial="default"
+        animate={getAnimationState()}
+        className="absolute inset-0 w-full h-full z-10 bg-white"
+        style={{
+          borderRadius: `${borderRadius}`,
+        }}
+      />
+
+      <motion.div
+        className={`absolute inset-0`}
+        variants={boxScaleAnimation}
+        initial="default"
+        animate={getAnimationState()}
         style={{
           background: getBackgroundWithOpacity(),
           borderRadius: `${borderRadius}`,
@@ -83,11 +133,67 @@ export default function Box({
             }}
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className={`relative z-20 h-full w-full ${className}`}>
+      <motion.div
+        variants={boxScaleAnimation}
+        initial="default"
+        animate={getAnimationState()}
+        className={`relative z-20 h-full w-full ${className}`}
+      >
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 }
+
+export const boxOverlayAnimation: Variants = {
+  default: {
+    opacity: 0,
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    opacity: 0.05,
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    scale: 0.93,
+    opacity: 0.1,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const boxScaleAnimation: Variants = {
+  default: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  hovered: {
+    scale: 1.0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  clicked: {
+    scale: 0.93,
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+};

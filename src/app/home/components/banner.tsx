@@ -2,8 +2,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import Button from "../../components/brick-button";
-import { motion } from "framer-motion";
 import { opacityFadeIn } from "@/app/components/animations";
+import { motion } from "framer-motion";
 
 export default function Banner() {
   const router = useRouter();

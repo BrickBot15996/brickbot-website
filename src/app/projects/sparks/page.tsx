@@ -51,7 +51,7 @@ function Sparks1() {
       <h2 style={{ color: "var(--sparks-text)" }}>
         Sparks I (with SIRIUS SOCRATE)
       </h2>
-      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--xl-space-y)]">
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--lg-space-y)]">
         An online meeting for new FTC teams from Romania and the Republic of
         Moldova sharing lessons from challenges and memorable moments in past
         competitions. Organized in collaboration with SIRIUS, the team we mentor

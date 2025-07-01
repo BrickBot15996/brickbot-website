@@ -11,8 +11,10 @@ import Image from "next/image";
 import SimpleBox from "@/app/components/simple-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { teamList, TeamProps } from "./team-data";
-import { motion } from "framer-motion";
-import { defaultFadeIn } from "@/app/components/animations";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/components/animations";
 import { useEffect, useState } from "react";
 
 const project = theVault;
@@ -123,11 +125,8 @@ function Portfolio({ portfolio }: PortfolioDisplayProps) {
   }, [setIsMobile]);
 
   return (
-    <motion.div
+    <AnimationWhenInView
       variants={defaultFadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-10%" }}
       className="select-none"
     >
       {!isMobile && (
@@ -225,6 +224,6 @@ function Portfolio({ portfolio }: PortfolioDisplayProps) {
           </div>
         </SimpleBox>
       )}
-    </motion.div>
+    </AnimationWhenInView>
   );
 }

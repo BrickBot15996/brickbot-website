@@ -127,6 +127,17 @@
     width: var(--page-width);
   }
 
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  html,
+  body {
+    overscroll-behavior-y: contain;
+    overscroll-behavior-x: none;
+  }
+
   scrollbar-color: rgb(47, 47, 47) rgb(27, 27, 27);
   scrollbar-width: thin;
 }

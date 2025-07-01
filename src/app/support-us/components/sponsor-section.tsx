@@ -1,12 +1,12 @@
-import { defaultFadeIn } from "@/app/components/animations";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/components/animations";
 import { sponsorList } from "@/app/home/sponsor-data";
-import { motion } from "framer-motion";
 import { bronze } from "../sponsor-tiers-data";
 import SponsorLogo from "@/app/components/sponsor-logo";
-import { usePathname } from "next/navigation";
 
 export default function SponsorSection() {
-  const isActivePage = usePathname() == "/support-us";
   return (
     <section className="flex flex-col items-start justify-center">
       <h2>Sponsors</h2>
@@ -17,15 +17,12 @@ export default function SponsorSection() {
           })
           .map((sponsor, indexS) => {
             return (
-              <motion.div
+              <AnimationWhenInView
                 key={indexS}
                 variants={defaultFadeIn}
-                initial="hidden"
-                whileInView={isActivePage ? "visible" : "hidden"}
-                viewport={{ once: false, margin: "-10%" }}
               >
                 <SponsorLogo sponsor={sponsor} />
-              </motion.div>
+              </AnimationWhenInView>
             );
           })}
       </div>
