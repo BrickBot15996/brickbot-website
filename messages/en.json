@@ -1,0 +1,371 @@
+{
+  "Nav": {
+    "desktopButtons": [
+      { "name": "BRICKLOG" },
+      { "name": "OUR TEAM" },
+      { "name": "PROJECTS" },
+      { "name": "SUPPORT US" }
+    ],
+    "mobileButtons": [
+      { "name": "HOME" },
+      { "name": "BRICKLOG" },
+      { "name": "OUR TEAM" },
+      { "name": "PROJECTS" },
+      { "name": "SUPPORT US" }
+    ]
+  },
+
+  "Home": {
+    "Banner": {
+      "title": "We build our future\nBrick by Brick!",
+      "buttonText": "BECOME A SPONSOR"
+    },
+    "AboutUs": {
+      "title": "About Us",
+      "text": "We are team #15996, BrickBot, from <cnu>\"Unirea\" National College, Focșani, Romania</cnu>. Since 2016, we have been competing in <ftc>FIRST Tech Challenge</ftc>. Beyond building robots, we love spreading the STEAM spirit in both the local and FTC communities.",
+      "Carousel": {
+        "Caravan2025": "BrickBot In Schools, May 2025",
+        "Italy2025": "Italy Championship, Feb 2025",
+        "Regionals2025": "Romania East Championship, Jan 2025",
+        "FocsaniMeet2025": "DIVE Into Innovation League Meet, Jan 2025",
+        "BTC2024": "Bucharest Twin Cup, Aug 2024",
+        "Regionals2023": "Romania Qualifying Tournament, Feb 2023"
+      }
+    },
+    "Projects": {
+      "title": "Projects",
+      "buttonText": "SEE ALL"
+    },
+    "Sponsors": {
+      "title": "Sponsors",
+      "buttonText": "BECOME OUR NEXT SPONSOR"
+    }
+  },
+
+  "BrickLog": {
+    "description": "BrickBot Team's Official Blog"
+  },
+
+  "OurTeam": {
+    "title": "Our Team",
+    "Introduction": {
+      "title": "Introduction",
+      "text": "We are team #15996, BrickBot, from <cnu>“Unirea” National College, Focșani, Romania</cnu>. Since 2016, we have taken part in the <ftc>FIRST Tech Challenge</ftc>, working hard to build competitive robots. We are passionate about promoting STEAM education and creating opportunities for learning and growth in both our local community and the wider FTC network.",
+      "Carousel": {
+        "2024-25": "BrickBot in 2024-25",
+        "2023-24": "BrickBot in 2023-24",
+        "2022-23": "BrickBot in 2022-23",
+        "2021-22": "BrickBot in 2021-22",
+        "2020-21": "BrickBot in 2020-21",
+        "2019-20": "BrickBot in 2019-20",
+        "2018-19": "BrickBot in 2018-19",
+        "2017-18": "BrickBot in 2017-18",
+        "2016-17": "BrickBot in 2016-17"
+      }
+    },
+    "Achievements": {
+      "title": "Achievements"
+    },
+    "JoinBrickBot": {
+      "title": "Join Brickbot",
+      "text": "Passionate about robotics? Fill out the form to show your interest in joining our team.",
+      "buttonText": "APPLY"
+    }
+  },
+
+  "Projects": {
+    "title": "Projects",
+    "tag": "Project",
+    "TheVault": {
+      "otherTeams": "Other Teams"
+    },
+    "Checkpoint": {
+      "BrickBotInSchools": {
+        "title": "BrickBot in Schools",
+        "text": "Middle school students from local schools explored robotics through our presentations and this year’s game. As part of the BrickBot Caravan, they operated the robot, learned about its design and programming, and discovered the value of teamwork."
+      },
+      "InteractingWithThePublic": {
+        "title": "Interacting with the Public",
+        "text": "Engaging with the local community through showcases, humanitarian efforts, and outreach initiatives to inspire a love for robotics and create meaningful impact.",
+        "Carousel": {
+          "OpenDoorsDay": "Open Doors Day",
+          "MicrometEvent": "Exchange Event with our Main Sponsor, Micromet",
+          "JoyInMotion": "Joy in Motion",
+          "Christmas2024": "Christmas Humanitarian Event, 2024",
+          "Christmas2023": "Christmas Humanitarian Event, 2023",
+          "MeetRobotics": "Focșani FIRST Robotics Presentation"
+        }
+      }
+    },
+    "Sparks": {
+      "Sparks1": {
+        "title": "Sparks I (with SIRIUS SOCRATE)",
+        "text": "An online meeting for new FTC teams from Romania and the Republic of Moldova sharing lessons from challenges and memorable moments in past competitions. Organized in collaboration with SIRIUS, the team we mentor and work closely with."
+      }
+    }
+  },
+
+  "SupportUs": {
+    "title": "Support Us",
+    "HowToHelp": {
+      "title": "How to Help",
+      "text": "BrickBot operates with the support of sponsors (companies, businesses, individuals). There are three ways to support us:",
+      "Redirect": {
+        "title": "Redirect 3.5%",
+        "text": "Romanian citizens can help BrickBot by redirecting 3.5% of income tax through Form 230."
+      },
+      "Donate": {
+        "title": "Donate",
+        "text": "Anyone can support the BrickBot Association by making a secure donation through Stripe."
+      },
+      "Contracts": {
+        "title": "Sponsorship Contracts",
+        "text": "You can support our initiative through financial contributions and/or services. The partnership will be formalized via a contract between your business and our organization.",
+        "sampleButton": "VIEW SAMPLE",
+        "contactButton": "CONTACT US"
+      }
+    },
+    "SponsorshipTiers": {
+      "title": "Sponsorship Tiers"
+    },
+    "Sponsors": {
+      "title": "Sponsors"
+    }
+  },
+
+  "ProjectData": {
+    "TheVault": {
+      "name": "The Vault",
+      "extendedName": "The Vault: Portfolio Library",
+      "subtitle": "Portfolio Library",
+      "description": "An online library of FTC portfolios to help new teams."
+    },
+    "Checkpoint": {
+      "name": "Checkpoint",
+      "extendedName": "Checkpoint: Outreach Events",
+      "subtitle": "Outreach, Events & Activities",
+      "description": "Key outreach events and activities in the local community that highlight impact and involvement."
+    },
+    "Sparks": {
+      "name": "Sparks",
+      "extendedName": "Sparks: Connecting FTC Teams",
+      "subtitle": "Connecting FTC Teams",
+      "description": "Meetings, events, and activities we've done with other FTC teams to stay connected."
+    },
+    "BrickDocs": {
+      "name": "BrickDocs",
+      "extendedName": "BrickDocs: Team Guide",
+      "subtitle": "Guide & Documentation",
+      "description": "Public documentation we use to train new BrickBot members."
+    },
+    "SimplicityFTC": {
+      "name": "SimplicityFTC",
+      "extendedName": "SimplicityFTC: Programming Library",
+      "subtitle": "Open-Source Programming Library",
+      "description": "Programming library designed to simplify coding for FTC teams."
+    }
+  },
+
+  "SeasonData": {
+    "Decode": {
+      "awards": {
+        "0": {
+          "event": "Season starting on",
+          "awardName": "September 6th 2025"
+        }
+      }
+    },
+    "IntoTheDeep": {
+      "awards": {
+        "0": {
+          "event": "Romania East Championship",
+          "awardName": "Motivate Award 2nd Place"
+        },
+        "1": {
+          "event": "Italy Championship",
+          "awardName": "Innovate Award 2nd Place"
+        }
+      }
+    },
+    "Centerstage": {
+      "awards": {
+        "0": {
+          "event": "Romania East Championship",
+          "awardName": "Think Award 3rd Place"
+        },
+        "1": {
+          "event": "Bucharest Twin Cup",
+          "awardName": "8th Place"
+        }
+      }
+    },
+    "Powerplay": {
+      "awards": {
+        "0": {
+          "event": "Qualifying Tournament",
+          "awardName": "Innovate Award 1st Place"
+        },
+        "1": {
+          "event": "Dean's List",
+          "awardName": "Finalist"
+        },
+        "2": {
+          "event": "Quantum League",
+          "awardName": "Winners"
+        }
+      }
+    },
+    "FreightFrenzy": {
+      "awards": {
+        "0": {
+          "event": "Romania Regional #3",
+          "awardName": "Design Award Winners"
+        }
+      }
+    },
+    "UltimateGoal": {
+      "awards": {
+        "0": {
+          "event": "Romania Qualifying Tournament #3",
+          "awardName": "Inspire Award Winners"
+        },
+        "1": {
+          "event": "Romania National Championship",
+          "awardName": "Innovate Award 2nd place"
+        }
+      }
+    },
+    "Skystone": {
+      "awards": {
+        "0": {
+          "event": "Romania Moldova Regional",
+          "awardName": "Think Award 2nd Place"
+        }
+      }
+    },
+    "RoverRuckus": {
+      "awards": {
+        "0": {
+          "event": "Romania Moldova Regional",
+          "awardName": "Winners"
+        },
+        "1": {
+          "event": "Romania Moldova Regional",
+          "awardName": "Control Award Winners"
+        },
+        "2": {
+          "event": "Romania National Championship",
+          "awardName": "Finalists"
+        },
+        "3": {
+          "event": "Dean's List",
+          "awardName": "Finalist"
+        }
+      }
+    },
+    "RelicRecovery": {
+      "awards": {
+        "0": {
+          "event": "Placeholder event",
+          "awardName": "Placeholder award"
+        },
+        "1": {
+          "event": "Placeholder event",
+          "awardName": "Placeholder award"
+        }
+      }
+    },
+    "VelocityVortex": {
+      "awards": {
+        "0": {
+          "event": "Placeholder event",
+          "awardName": "Placeholder award"
+        },
+        "1": {
+          "event": "Placeholder event",
+          "awardName": "Placeholder award"
+        }
+      }
+    }
+  },
+
+  "PortfolioData": {
+    "Perpetuum": {
+      "Centerstage": {
+        "awards": {}
+      },
+      "Powerplay": {
+        "awards": {}
+      }
+    },
+    "InfinityEdge": {
+      "Centerstage": {
+        "awards": {
+          "0": {
+            "event": "Romania East Championship",
+            "awardName": "Motivate Award 3rd Place"
+          }
+        }
+      },
+      "Powerplay": {
+        "awards": {}
+      },
+      "FreightFrenzy": {
+        "awards": {
+          "0": {
+            "event": "Romania Regional #3",
+            "awardName": "Control Award 2nd Place"
+          },
+          "1": {
+            "event": "Romania National Championship",
+            "awardName": "Motivate Award 3rd Place"
+          }
+        }
+      },
+      "UltimateGoal": {
+        "awards": {
+          "0": {
+            "event": "Romania Qualifying Tournament #3",
+            "awardName": "Connect Award 3rd Place"
+          }
+        }
+      }
+    },
+    "Alphabit": {
+      "Powerplay": {
+        "awards": {
+          "0": {
+            "event": "Qualifying Tournament",
+            "awardName": "Connect Award 3rd Place"
+          }
+        }
+      }
+    },
+    "SnakeTech": {
+      "Centerstage": {
+        "awards": {
+          "0": {
+            "event": "Romania East Championship",
+            "awardName": "Design Award 3rd Place"
+          }
+        }
+      }
+    }
+  },
+
+  "SponsorshipTierData": {
+    "Currency": "EUR",
+    "Benefits": {
+      "Benefit1": "Social Media Mentions",
+      "Benefit2": "Logo on Robot",
+      "Benefit3": "Logo on Website",
+      "Benefit4": "Logo on Roll-Up",
+      "Benefit5": "Merch with your Logo",
+      "Benefit6": "Social Media Campaign"
+    }
+  },
+
+  "ComingSoon": {
+    "ComingSoon": "COMING SOON"
+  }
+}

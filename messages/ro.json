@@ -1,0 +1,334 @@
+{
+  "Nav": {
+    "desktopButtons": [
+      { "name": "BRICKLOG" },
+      { "name": "DESPRE NOI" },
+      { "name": "PROIECTE" },
+      { "name": "SUSȚINE-NE" }
+    ],
+    "mobileButtons": [
+      { "name": "ACASĂ" },
+      { "name": "BRICKLOG" },
+      { "name": "DESPRE NOI" },
+      { "name": "PROIECTE" },
+      { "name": "SUSȚINE-NE" }
+    ]
+  },
+  "Home": {
+    "Banner": {
+      "title": "We build our future\nBrick by Brick!",
+      "buttonText": "SUSȚINE-NE"
+    },
+    "AboutUs": {
+      "title": "Despre noi",
+      "text": "Noi suntem echipa #15996, BrickBot, de la <cnu>Colegiul Național „Unirea”, Focșani, România</cnu>. Din 2016, participăm la competiția internațională <ftc>FIRST Tech Challenge</ftc>. Dincolo de construirea roboților, ne face plăcere să promovăm spiritul STEAM în comunitatea locală și în cea a FTC.",
+      "Carousel": {
+        "Caravan2025": "Caravana BrickBot, mai 2025",
+        "Italy2025": "Campionatul din Italia, februarie 2025",
+        "Regionals2025": "Regionala Est, ianuarie 2025",
+        "FocsaniMeet2025": "League Meet în Focșani, ianuarie 2025",
+        "BTC2024": "Bucharest Twin Cup, august 2024",
+        "Regionals2023": "Turneul de calificare, februarie 2023"
+      }
+    },
+    "Projects": {
+      "title": "Proiecte",
+      "buttonText": "VEZI TOT"
+    },
+    "Sponsors": {
+      "title": "Sponsori",
+      "buttonText": "DEVINO PARTENER"
+    }
+  },
+
+  "BrickLog": {
+    "description": "Blogul oficial al echipei BrickBot"
+  },
+
+  "OurTeam": {
+    "title": "Despre noi",
+    "Introduction": {
+      "title": "Introducere",
+      "text": "Noi suntem echipa #15996, BrickBot, de la <cnu>Colegiul Național „Unirea”, Focșani, România</cnu>. Din 2016, participăm la competiția internațională <ftc>FIRST Tech Challenge</ftc>, muncind din greu pentru a construi roboți competitivi. Suntem pasionați de promovarea educației STEAM și crearea oportunităților pentru învățare și dezvoltare în comunitatea locală și cea a FTC.",
+      "Carousel": {
+        "2024-25": "BrickBot în 2024-25",
+        "2023-24": "BrickBot în 2023-24",
+        "2022-23": "BrickBot în 2022-23",
+        "2021-22": "BrickBot în 2021-22",
+        "2020-21": "BrickBot în 2020-21",
+        "2019-20": "BrickBot în 2019-20",
+        "2018-19": "BrickBot în 2018-19",
+        "2017-18": "BrickBot în 2017-18",
+        "2016-17": "BrickBot în 2016-17"
+      }
+    },
+    "Achievements": {
+      "title": "Realizări"
+    },
+    "JoinBrickBot": {
+      "title": "Alătură-te BrickBot",
+      "text": "Vrei să faci parte din echipa noastră de robotică? Arată-ți interesul completând acest formular.",
+      "buttonText": "ÎNSCRIE-TE"
+    }
+  },
+  "Projects": {
+    "title": "Proiecte",
+    "tag": "Proiect",
+    "TheVault": {
+      "otherTeams": "Alte Echipe"
+    },
+    "Checkpoint": {
+      "BrickBotInSchools": {
+        "title": "Caravana BrickBot",
+        "text": "Elevii școlilor primare și gimnaziale din orașul nostru au explorat domeniul roboticii prin intermediul prezentărilor noastre. Parte din proiectul „Caravana BrickBot”, au controlat robotul, au învățat modul în care a fost proiectat și programat și au descoperit valoarea lucrului în echipă."
+      },
+      "InteractingWithThePublic": {
+        "title": "Interacțiuni cu publicul",
+        "text": "Ne implicăm în comunitatea locală prin demonstrații, acțiuni umanitare și inițiative de promovare, pentru a inspira pasiunea pentru robotică și a crea un impact real.",
+        "Carousel": {
+          "OpenDoorsDay": "Ziua Porților Deschise",
+          "MicrometEvent": "Schimb de experiență cu sponsorul nostru principal, Micromet",
+          "JoyInMotion": "Bucurie în Mișcare",
+          "Christmas2024": "Eveniment umanitar de Crăciun, 2024",
+          "Christmas2023": "Eveniment umanitar de Crăciun, 2023",
+          "MeetRobotics": "Prezentarea programului FIRST în Focșani"
+        }
+      }
+    },
+    "Sparks": {
+      "Sparks1": {
+        "title": "Sparks I (cu SIRIUS SOCRATE)",
+        "text": "O întâlnire online dedicată noilor echipe FTC din România și Republica Moldova, în care am împărtășit lecții învățate din provocările și momentele memorabile ale competițiilor anterioare. Eveniment organizat în colaborare cu SIRIUS, echipa pe care o mentorăm și alături de care lucrăm îndeaproape."
+      }
+    }
+  },
+  "SupportUs": {
+    "title": "Susține-ne",
+    "HowToHelp": {
+      "title": "Cum puteți ajuta",
+      "text": "BrickBot funcționează cu ajutorul sponsorilor (companii, afaceri, persoane). Ne puteți susține în trei moduri:",
+      "Redirect": {
+        "title": "Redirecționează 3.5%",
+        "text": "Cetățenii români pot ajuta BrickBot donând 3.5% din impozitul pe venit prin Formularul 230."
+      },
+      "Donate": {
+        "title": "Donează",
+        "text": "Oricine poate susține Asociația BrickBot prin donații sigure prin intermediul platformei Stripe."
+      },
+      "Contracts": {
+        "title": "Contracte de sponsorizare",
+        "text": "Ne poți susține inițiativa prin contribuții financiare și/sau servicii. Colaborarea va fi formalizată printr-un contract între afacerea ta și organizația noastră.",
+        "sampleButton": "VEZI MODEL",
+        "contactButton": "CONTACTEAZĂ-NE"
+      }
+    },
+    "SponsorshipTiers": {
+      "title": "Pachete de sponsorizare"
+    },
+    "Sponsors": {
+      "title": "Sponsori"
+    }
+  },
+  "ProjectData": {
+    "TheVault": {
+      "name": "The Vault",
+      "extendedName": "The Vault: Bibliotecă de portofolii",
+      "subtitle": "Bibliotecă de portofolii",
+      "description": "O colecție online de portofolii menită să ajute echipele noi."
+    },
+    "Checkpoint": {
+      "name": "Checkpoint",
+      "extendedName": "Checkpoint: Evenimente de implicare",
+      "subtitle": "Implicare, evenimente și activități",
+      "description": "Evenimente și activități importante în comunitatea locală care evidențiază impactul și implicarea echipei."
+    },
+    "Sparks": {
+      "name": "Sparks",
+      "extendedName": "Sparks: Conectarea echipelor FTC",
+      "subtitle": "Conectarea echipelor FTC",
+      "description": "Întâlniri, evenimente și activități desfășurate alături de alte echipe FTC pentru a rămâne conectați."
+    },
+
+    "BrickDocs": {
+      "name": "BrickDocs",
+      "extendedName": "BrickDocs: Ghidul Echipei",
+      "subtitle": "Ghid și Documentație",
+      "description": "Documentație publică pe care o folosim pentru a pregăti noii membri ai echipei BrickBot."
+    },
+    "SimplicityFTC": {
+      "name": "SimplicityFTC",
+      "extendedName": "SimplicityFTC: Bibliotecă de Programare",
+      "subtitle": "Bibliotecă de programare open-source",
+      "description": "Bibliotecă software ce are ca scop simplificarea programării pentru echipele FTC."
+    }
+  },
+  "SeasonData": {
+    "Decode": {
+      "awards": [
+        {
+          "event": "Sezonul începe pe",
+          "awardName": "6 septembrie 2025"
+        }
+      ]
+    },
+    "IntoTheDeep": {
+      "awards": [
+        {
+          "event": "Regionala Est",
+          "awardName": "Locul 2 Motivate Award"
+        },
+        {
+          "event": "Campionatul din Italia",
+          "awardName": "Locul 2 Innovate Award"
+        }
+      ]
+    },
+    "Centerstage": {
+      "awards": [
+        {
+          "event": "Regionala Est",
+          "awardName": "Locul 3 Think Award"
+        },
+        { "event": "Bucharest Twin Cup", "awardName": "Locul 8" }
+      ]
+    },
+    "Powerplay": {
+      "awards": [
+        {
+          "event": "Turneu de calificare",
+          "awardName": "Câștigători Innovate Award"
+        },
+        { "event": "Dean's List", "awardName": "Finalist" },
+        { "event": "Quantum League", "awardName": "Câștigători" }
+      ]
+    },
+    "FreightFrenzy": {
+      "awards": [
+        { "event": "Regionala #3", "awardName": "Câștigători Design Award" }
+      ]
+    },
+    "UltimateGoal": {
+      "awards": [
+        {
+          "event": "Turneu de calificare #3",
+          "awardName": "Câștigători Inspire Award"
+        },
+        {
+          "event": "Campionatul Național",
+          "awardName": "Locul 2 Innovate Award"
+        }
+      ]
+    },
+    "Skystone": {
+      "awards": [
+        {
+          "event": "Regionala Moldova",
+          "awardName": "Locul 2 Think Award"
+        }
+      ]
+    },
+    "RoverRuckus": {
+      "awards": [
+        { "event": "Regionala Moldova", "awardName": "Câștigători" },
+        {
+          "event": "Regionala Moldova",
+          "awardName": "Câștigători Control Award"
+        },
+        { "event": "Campionatul Național", "awardName": "Finaliști" },
+        { "event": "Dean's List", "awardName": "Finalist" }
+      ]
+    },
+    "RelicRecovery": {
+      "awards": [
+        { "event": "Eveniment temporar", "awardName": "Premiu temporar" },
+        { "event": "Eveniment temporar", "awardName": "Premiu temporar" }
+      ]
+    },
+    "VelocityVortex": {
+      "awards": [
+        { "event": "Eveniment temporar", "awardName": "Premiu temporar" },
+        { "event": "Eveniment temporar", "awardName": "Premiu temporar" }
+      ]
+    }
+  },
+
+  "PortfolioData": {
+    "Perpetuum": {
+      "Centerstage": {
+        "awards": {}
+      },
+      "Powerplay": {
+        "awards": {}
+      }
+    },
+    "InfinityEdge": {
+      "Centerstage": {
+        "awards": {
+          "0": {
+            "event": "Regionala Est",
+            "awardName": "Locul 3 Motivate Award"
+          }
+        }
+      },
+      "Powerplay": {
+        "awards": {}
+      },
+      "FreightFrenzy": {
+        "awards": {
+          "0": {
+            "event": "Regionala #3",
+            "awardName": "Locul 2 Control Award"
+          },
+          "1": {
+            "event": "Campionatul Național",
+            "awardName": "Locul 3 Motivate Award"
+          }
+        }
+      },
+      "UltimateGoal": {
+        "awards": {
+          "0": {
+            "event": "Turneu de calificare #3",
+            "awardName": "Locul 3 Connect Award"
+          }
+        }
+      }
+    },
+    "Alphabit": {
+      "Powerplay": {
+        "awards": {
+          "0": {
+            "event": "Turneu de calificare",
+            "awardName": "Locul 3 Connect Award"
+          }
+        }
+      }
+    },
+    "SnakeTech": {
+      "Centerstage": {
+        "awards": {
+          "0": {
+            "event": "Regionala Est",
+            "awardName": "Locul 3 Design Award"
+          }
+        }
+      }
+    }
+  },
+
+  "SponsorshipTierData": {
+    "Currency": "RON",
+    "Benefits": {
+      "Benefit1": "Menționare pe social media",
+      "Benefit2": "Logo pe robot",
+      "Benefit3": "Logo pe website",
+      "Benefit4": "Logo pe roll-up",
+      "Benefit5": "Merch cu firma ta",
+      "Benefit6": "Campanie pe social media"
+    }
+  },
+
+  "ComingSoon": {
+    "ComingSoon": "ÎN CURÂND"
+  }
+}
