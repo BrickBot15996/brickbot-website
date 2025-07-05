@@ -6,6 +6,7 @@ type ButtonParams = {
   text: string;
   arrow?: boolean;
   color?: string;
+  width?: string;
   gradientLight?: string;
   gradientDark?: string;
   action?: () => void;
@@ -17,6 +18,7 @@ export default function Button({
   text,
   arrow = false,
   color = "var(--default-yellow)",
+  width = "fit-content",
   gradientLight = "var(--yellow-gradient-light)",
   gradientDark = "var(--yellow-gradient-dark)",
   action = () => {},
@@ -48,7 +50,10 @@ export default function Button({
 
   return (
     <div
-      className={`relative w-fit h-fit rounded-[1.5rem] select-none cursor-pointer`}
+      className={`relative rounded-[1.5rem] h-fit select-none cursor-pointer`}
+      style={{
+        width: width,
+      }}
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -71,14 +76,15 @@ export default function Button({
         variants={brickButtonScaleAnimation}
         initial="default"
         animate={getAnimationState()}
-        className={`w-fit h-fit rounded-[1.5rem] border-[0.15rem] ${className}`}
+        className={`h-fit rounded-[1.5rem] border-[0.15rem] ${className}`}
         style={{
+          width: width,
           borderColor: color,
           background: `linear-gradient(to bottom, ${gradientLight}, ${gradientDark})`,
           ...style,
         }}
       >
-        <div className="inline-flex space-x-[0.6rem] items-center">
+        <div className="flex flex-row space-x-[0.6rem] items-center justify-center">
           <h4
             className="py-[0.5rem] md:py-[0.6rem] lg:py-[0.75rem]"
             style={{ color: color }}

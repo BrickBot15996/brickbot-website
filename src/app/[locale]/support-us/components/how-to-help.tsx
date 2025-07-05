@@ -58,7 +58,7 @@ function RedirectTax() {
       className="group cursor-pointer h-full"
     >
       <SimpleBox
-        clickEffect={true}
+        hoverEffect={true}
         className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]"
         style={{ height: "100%" }}
       >
@@ -74,8 +74,11 @@ function RedirectTax() {
           className="group-hover:underline mb-[var(--sm-space-y)]"
           style={{ fontWeight: 700 }}
         >
-          {t("title")}
-          <HiArrowNarrowRight className="h-auto w-auto fill-[var(--default-yellow)] inline ml-[0.5rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-all duration-200" />
+          {t("title").split(" ").slice(0, -1).join(" ")}{" "}
+          <span className="inline-flex whitespace-nowrap items-center group-hover:underline">
+            {t("title").split(" ").slice(-1)}
+            <HiArrowNarrowRight className="h-auto w-auto fill-[var(--default-yellow)] inline ml-[0.5rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-all duration-200" />
+          </span>
         </h3>
         <p>{t("text")}</p>
       </SimpleBox>
@@ -92,7 +95,7 @@ function Donate() {
       className="group cursor-pointer h-full"
     >
       <SimpleBox
-        clickEffect={true}
+        hoverEffect={true}
         className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem]"
         style={{ height: "100%" }}
       >
@@ -123,7 +126,7 @@ function Contract() {
 
   useEffect(() => {
     const handleResize = () => {
-      setButtonsCol(window.innerWidth <= 500 || window.innerWidth >= 1024);
+      setButtonsCol(window.innerWidth <= 520 || window.innerWidth >= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -135,7 +138,7 @@ function Contract() {
       style={{ height: "100%" }}
     >
       <div
-        className={`flex flex-col items-start md:flex-[0_0_75%] 2xl:flex-[0_0_65%] mr-auto ${
+        className={`flex flex-col items-start md:flex-[0_0_68%] 2xl:flex-[0_0_58%] mr-auto ${
           buttonsCol ? "mb-[var(--md-space-y)] md:mb-[0rem]" : ""
         }`}
       >
@@ -156,25 +159,25 @@ function Contract() {
         <p>{t("text")}</p>
       </div>
       <div
-        className={`w-full lg:w-auto md:flex-[0_0_25%] 2xl:flex-[0_0_33%] flex items-center justify-center
+        className={`w-full lg:w-auto lg:flex-[0_0_30%] 2xl:flex-[0_0_40%] flex items-center justify-center
     ${
       buttonsCol
-        ? "flex-col space-y-[var(--sm-space-y)]"
+        ? "flex-col space-y-[var(--sm-space-y)] ml-auto mr-auto lg:mr-0 max-w-[15rem] lg:max-w-full"
         : "flex-row space-x-[var(--sm-space-x)] mt-[var(--md-space-y)]"
     }
     lg:space-x-[0rem] lg:ml-auto lg:mt-auto`}
       >
         <Button
           text={t("sampleButton")}
-          action={() => {}}
-          style={{ width: "full" }}
-          className="px-[1.82rem]"
+          action={() => {
+            window.open("/contract-brickbot.pdf", "_blank");
+          }}
+          width="100%"
         />
         <Button
           text={t("contactButton")}
           action={() => {}}
-          style={{ width: "full" }}
-          className="px-[2.35rem]"
+          width="100%"
         />
       </div>
     </SimpleBox>

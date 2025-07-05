@@ -1,19 +1,21 @@
 {
   "Nav": {
-    "desktopButtons": [
-      { "name": "BRICKLOG" },
-      { "name": "DESPRE NOI" },
-      { "name": "PROIECTE" },
-      { "name": "SUSȚINE-NE" }
-    ],
-    "mobileButtons": [
-      { "name": "ACASĂ" },
-      { "name": "BRICKLOG" },
-      { "name": "DESPRE NOI" },
-      { "name": "PROIECTE" },
-      { "name": "SUSȚINE-NE" }
-    ]
+    "title": "Meniu",
+    "DesktopButtons": {
+      "BrickLog": "BRICKLOG",
+      "OurTeam": "DESPRE NOI",
+      "Projects": "PROIECTE",
+      "SupportUs": "SUSȚINE-NE"
+    },
+    "MobileButtons": {
+      "Home": "ACASĂ",
+      "BrickLog": "BRICKLOG",
+      "OurTeam": "DESPRE NOI",
+      "Projects": "PROIECTE",
+      "SupportUs": "SUSȚINE-NE"
+    }
   },
+
   "Home": {
     "Banner": {
       "title": "We build our future\nBrick by Brick!",
@@ -71,6 +73,7 @@
       "buttonText": "ÎNSCRIE-TE"
     }
   },
+
   "Projects": {
     "title": "Proiecte",
     "tag": "Proiect",

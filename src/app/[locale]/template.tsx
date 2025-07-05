@@ -4,7 +4,7 @@
 
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import Navbar from "./components/brick-navbar";
+import Nav from "./components/brick-nav";
 import Footer from "./components/brick-footer";
 import { Analytics } from "@vercel/analytics/next";
 import { useEffect } from "react";
@@ -70,7 +70,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       >
         {!isApplyPage ? (
           <>
-            <Navbar />
+            <Nav />
             <main className="mt-[var(--navbar-height)]">
               {children}
               <Analytics />

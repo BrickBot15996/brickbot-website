@@ -144,7 +144,7 @@ function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
           width="fit"
           height="fit"
           borderRadius={2}
-          clickEffect={true}
+          hoverEffect={true}
           action={() => {
             window.open(portfolio.portfolioPath, "_blank");
           }}
@@ -191,7 +191,7 @@ function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
           width="fit"
           height="fit"
           borderRadius={2}
-          clickEffect={true}
+          hoverEffect={true}
           action={() => {
             window.open(portfolio.portfolioPath, "_blank");
           }}

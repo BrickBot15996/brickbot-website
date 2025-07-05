@@ -1,18 +1,19 @@
 {
   "Nav": {
-    "desktopButtons": [
-      { "name": "BRICKLOG" },
-      { "name": "OUR TEAM" },
-      { "name": "PROJECTS" },
-      { "name": "SUPPORT US" }
-    ],
-    "mobileButtons": [
-      { "name": "HOME" },
-      { "name": "BRICKLOG" },
-      { "name": "OUR TEAM" },
-      { "name": "PROJECTS" },
-      { "name": "SUPPORT US" }
-    ]
+    "title": "Menu",
+    "DesktopButtons": {
+      "BrickLog": "BRICKLOG",
+      "OurTeam": "OUR TEAM",
+      "Projects": "PROJECTS",
+      "SupportUs": "SUPPORT US"
+    },
+    "MobileButtons": {
+      "Home": "HOME",
+      "BrickLog": "BRICKLOG",
+      "OurTeam": "OUR TEAM",
+      "Projects": "PROJECTS",
+      "SupportUs": "SUPPORT US"
+    }
   },
 
   "Home": {

@@ -33,6 +33,12 @@ export const useSponsorList = (): SponsorData[] => {
       tier: ultimate,
     },
     {
+      name: "Rikora",
+      logoPath: "/sponsors/rikora.webp",
+      websiteLink: "https://rikora.net/",
+      tier: ultimate,
+    },
+    {
       name: "Autovip",
       logoPath: "/sponsors/autovip.webp",
       websiteLink: "https://autoviptransfer.ro/",
@@ -96,12 +102,6 @@ export const useSponsorList = (): SponsorData[] => {
       name: "Idna Power",
       logoPath: "/sponsors/idna_power.webp",
       websiteLink: "https://idnasolarpower.ro/",
-      tier: gold,
-    },
-    {
-      name: "Rikora",
-      logoPath: "/sponsors/rikora.webp",
-      websiteLink: "https://rikora.net/",
       tier: gold,
     },
     {

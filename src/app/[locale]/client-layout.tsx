@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "./components/brick-navbar";
+import Nav from "./components/brick-nav";
 import Footer from "./components/brick-footer";
 import { Analytics } from "@vercel/analytics/next";
 import { GlobalProvider } from "./global-context";
@@ -19,7 +19,7 @@ export default function ClientLayout({
       <FrozenRoute>
         {!(pathname.length == 0 || pathname.startsWith("/apply")) && (
           <>
-            <Navbar />
+            <Nav />
             <main className="mt-[var(--navbar-height)]">
               {children}
               <Analytics />

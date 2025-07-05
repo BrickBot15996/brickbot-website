@@ -12,7 +12,7 @@ export default function Banner() {
   const t = useTranslations("Home.Banner");
 
   return (
-    <section className="relative w-full h-fit flex flex-col">
+    <section className="relative w-full h-fit flex flex-col overflow-visible">
       <div className="flex flex-row h-[var(--banner-height)] w-full">
         <div className="flex flex-[0_0_100%] items-center mr-auto h-full w-[100vw] bg-[linear-gradient(70deg,_var(--default-dark)_35%,_transparent)] z-2">
           <div className="flex flex-col ml-[var(--lg-space-x)] space-y-[var(--md-space-y)]">
@@ -49,7 +49,7 @@ export default function Banner() {
           />
         </motion.div>
       </div>
-      <div className="w-full h-[var(--separator-thickness)] bg-[linear-gradient(90deg,_var(--default-dark)_10%,_var(--default-yellow)_35%,_var(--default-dark)_85%)] brightness-70" />
+      <div className="absolute left-0 bottom-[calc(0rem-var(--separator-thickness))] w-full h-[var(--separator-thickness)] bg-[linear-gradient(90deg,_transparent_10%,_var(--default-yellow)_35%,_transparent_85%)] brightness-70 z-10" />
     </section>
   );
 }

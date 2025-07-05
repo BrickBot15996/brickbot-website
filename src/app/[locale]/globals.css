@@ -29,24 +29,24 @@
 
   /* Projects */
 
-  --the-vault: rgb(255, 183, 0);
-  --the-vault-gradient: rgb(32, 22, 0);
+  --the-vault: #ffb700;
+  --the-vault-gradient: #201600;
   --the-vault-text: var(--the-vault);
 
-  --brickdocs: rgb(255, 103, 80);
-  --brickdocs-gradient: rgb(32, 22, 20);
+  --brickdocs: #ff6750;
+  --brickdocs-gradient: #201614;
   --brickdocs-text: var(--brickdocs);
 
-  --sparks: rgb(158, 80, 255);
-  --sparks-gradient: rgb(15, 3, 30);
-  --sparks-text: rgb(211, 211, 255);
+  --sparks: #9e50ff;
+  --sparks-gradient: #0f031e;
+  --sparks-text: #d3d3ff;
 
-  --checkpoint: rgb(48, 202, 174);
-  --checkpoint-gradient: rgb(3, 30, 25);
+  --checkpoint: #30caae;
+  --checkpoint-gradient: #031e19;
   --checkpoint-text: var(--checkpoint);
 
-  --simplicityftc: rgb(170, 227, 72);
-  --simplicityftc-gradient: rgb(28, 32, 20);
+  --simplicityftc: #aae348;
+  --simplicityftc-gradient: #1c2014;
   --simplicityftc-text: var(--simplicityftc);
 
   /* Sponsorship tiers */
@@ -107,6 +107,7 @@
   --xl-space-y: 3rem;
   --2xl-space-y: 5rem;
 
+  --navbar-height: 4rem;
   --separator-thickness: 0.1rem;
   --arrow-button-size: 2.5rem;
 
@@ -145,7 +146,6 @@
 /* sm */
 :root {
   --page-width: min(calc(100vw - 3rem), 37rem);
-  --navbar-height: 3.5rem;
   --banner-height: 30rem;
   --arrow-button-size: 2.5rem;
 
@@ -285,7 +285,6 @@
 @media (min-width: 1024px) {
   :root {
     --page-width: min(calc(100vw - 6rem), 58rem);
-    --navbar-height: 4rem;
     --banner-height: 45rem;
     --arrow-button-size: 2.75rem;
 
@@ -500,7 +499,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(18, 18, 18);
+    --background: var(--default-dark);
     --foreground: rgb(237, 237, 237);
   }
 }

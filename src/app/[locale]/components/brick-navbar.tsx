@@ -23,7 +23,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const changeNavbar = () => {
-      if (pathname.startsWith("/projects") && pathname !== "/projects") return;
+      if (pathname.includes("/projects") && !pathname.endsWith("/projects"))
+        return;
       setNavbarAnimation({
         color: `var(--default-yellow)`,
         colorLight: `var(--yellow-gradient-light)`,
@@ -90,13 +91,13 @@ export default function Navbar() {
           <NavbarButton
             text="BRICKLOG"
             action={() => router.push("/blog")}
-            isActive={pathname.startsWith("/blog")}
+            isActive={pathname.includes("/blog")}
             navbarAnimation={navbarAnimation}
           />
           <NavbarButton
             text="OUR TEAM"
             action={() => router.push("/our-team")}
-            isActive={pathname.startsWith("/our-team")}
+            isActive={pathname.includes("/our-team")}
             navbarAnimation={navbarAnimation}
           />
           <li className="mx-[1.5rem] lg:mx-[2rem] hover:opacity-75 hover:scale-115 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.275rem] active:opacity-100 active:scale-95 active:translate-y-[-0.10rem] active:lg:translate-y-[-0.2rem]">
@@ -114,13 +115,13 @@ export default function Navbar() {
           <NavbarButton
             text="PROJECTS"
             action={() => router.push("/projects")}
-            isActive={pathname.startsWith("/projects")}
+            isActive={pathname.includes("/projects")}
             navbarAnimation={navbarAnimation}
           />
           <NavbarButton
             text="SUPPORT US"
             action={() => router.push("/support-us")}
-            isActive={pathname.startsWith("/support-us")}
+            isActive={pathname.includes("/support-us")}
             navbarAnimation={navbarAnimation}
           />
         </ul>
@@ -176,7 +177,7 @@ export default function Navbar() {
                   router.push("/home");
                   handleClose();
                 }}
-                isActive={pathname.startsWith("/home")}
+                isActive={pathname.includes("/home")}
               />
               <SidebarButton
                 text="Bricklog"
@@ -184,7 +185,7 @@ export default function Navbar() {
                   router.push("/blog");
                   handleClose();
                 }}
-                isActive={pathname.startsWith("/blog")}
+                isActive={pathname.includes("/blog")}
               />
               <SidebarButton
                 text="Our Team"
@@ -192,7 +193,7 @@ export default function Navbar() {
                   router.push("/our-team");
                   handleClose();
                 }}
-                isActive={pathname.startsWith("/our-team")}
+                isActive={pathname.includes("/our-team")}
               />
               <SidebarButton
                 text="Projects"
@@ -200,7 +201,7 @@ export default function Navbar() {
                   router.push("/projects");
                   handleClose();
                 }}
-                isActive={pathname.startsWith("/projects")}
+                isActive={pathname.includes("/projects")}
               />
               <SidebarButton
                 text="Support Us"
@@ -208,7 +209,7 @@ export default function Navbar() {
                   router.push("/support-us");
                   handleClose();
                 }}
-                isActive={pathname.startsWith("/support-us")}
+                isActive={pathname.includes("/support-us")}
               />
             </div>
           )}

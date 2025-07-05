@@ -9,7 +9,7 @@ type SimpleBoxProps = {
   height?: string;
   borderRadius?: number;
   borderThickness?: number;
-  clickEffect?: boolean;
+  hoverEffect?: boolean;
   className?: string;
   style?: CSSProperties;
 };
@@ -21,7 +21,7 @@ export default function SimpleBox({
   height,
   borderRadius = 1.5,
   borderThickness = 0.2,
-  clickEffect = false,
+  hoverEffect = false,
   className = "",
   style = {},
 }: SimpleBoxProps) {
@@ -44,7 +44,7 @@ export default function SimpleBox({
       >
         <div
           className={`w-full h-full bg-[#ffffff] ${
-            clickEffect
+            hoverEffect
               ? "opacity-0 group-hover:opacity-2.5 group-active:opacity-5"
               : "opacity-0"
           }`}
