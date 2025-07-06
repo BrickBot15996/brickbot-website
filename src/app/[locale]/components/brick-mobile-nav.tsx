@@ -6,6 +6,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import DefaultMenu from "./menus/default-menu";
 import ProjectMenu from "./menus/project-menu";
+import { useProjectList } from "../projects/projects-data";
 
 export default function MobileNav({
   isOpen,
@@ -16,6 +17,8 @@ export default function MobileNav({
 }) {
   const [skipInitialAnimation, setSkipInitialAnimation] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string>("default");
+
+  const projectList = useProjectList();
 
   useEffect(() => {
     if (!isOpen) {
@@ -40,7 +43,7 @@ export default function MobileNav({
             className="h-[2rem] w-auto object-contain inline-block mr-[0.5rem] mt-[calc((var(--navbar-height)-2rem)/2)]"
           />
         </Link>
-        <div className="relative ml-auto mr-[0.1rem] mt-[0.5rem] cursor-pointer fill-[var(--default-yellow)] h-full hover:opacity-75 active:opacity-100 transition-transform duration-150">
+        <div className="relative ml-auto mr-[0.1rem] mt-[0.45rem] cursor-pointer fill-[var(--default-yellow)] h-full hover:opacity-75 active:opacity-100 transition-transform duration-150">
           <Hamburger
             toggled={isOpen}
             toggle={setIsOpen}
@@ -48,7 +51,7 @@ export default function MobileNav({
               setSkipInitialAnimation(false);
             }}
             color="var(--default-yellow)"
-            size={24}
+            size={32}
           />
         </div>
       </div>
@@ -98,6 +101,15 @@ export default function MobileNav({
             />
           </motion.div>
         )}
+        {projectList.map((project) => (
+          <img
+            key={project.iconPath}
+            src={project.iconPath}
+            style={{ display: "none" }}
+            alt=""
+            loading="eager"
+          />
+        ))}
       </AnimatePresence>
     </div>
   );
@@ -236,7 +248,7 @@ export function MobileButton({
         </motion.div>
         {extraAction && (
           <MdKeyboardArrowRight
-            className="h-auto w-10 ml-auto mr-[0.1rem] aspect-square"
+            className="h-auto w-10 ml-auto mr-[0.4rem] aspect-square"
             style={
               getAnimationState() == "clicked" ||
               getAnimationState() == "hovered"

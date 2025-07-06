@@ -8,6 +8,7 @@ import Nav from "./components/brick-nav";
 import Footer from "./components/brick-footer";
 import { Analytics } from "@vercel/analytics/next";
 import { useEffect } from "react";
+import { useProjectList } from "./projects/projects-data";
 
 const pageVariants: Variants = {
   hidden: {
@@ -16,14 +17,14 @@ const pageVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.3,
       ease: "easeInOut",
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.3,
       ease: "easeInOut",
     },
   },
@@ -33,6 +34,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   const isApplyPage = pathname.startsWith("/apply") || pathname == "";
+
+  const projectList = useProjectList();
 
   useEffect(() => {
     let startY = 0;
@@ -83,6 +86,15 @@ export default function Template({ children }: { children: React.ReactNode }) {
             <Analytics />
           </main>
         )}
+        {projectList.map((project) => (
+          <img
+            key={project.iconPath}
+            src={project.iconPath}
+            style={{ display: "none" }}
+            alt=""
+            loading="eager"
+          />
+        ))}
       </motion.div>
     </AnimatePresence>
   );

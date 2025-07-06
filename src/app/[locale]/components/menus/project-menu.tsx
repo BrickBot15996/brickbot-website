@@ -40,7 +40,7 @@ export default function ProjectMenu({
                 transition: { duration: 0.05, ease: "easeInOut" },
               }}
               transition={{ duration: 0.1, ease: "easeInOut" }}
-              className="relative flex flex-row w-full h-auto px-[var(--sm-space-x)] mb-[var(--md-space-y)]"
+              className="relative flex flex-row items-center w-full h-auto px-[var(--sm-space-x)] mb-[var(--md-space-y)]"
             >
               <MdKeyboardArrowLeft
                 onClick={() => {
@@ -58,10 +58,10 @@ export default function ProjectMenu({
                 <LanguageToggle />
               </div>
             </motion.div>
-            <div className="flex flex-col items-start w-full justify-center space-y-[var(--sm-space-y)] px-[var(--sm-space-x)]">
+            <div className="flex flex-col items-start w-full justify-center space-y-[var(--md-space-y)] px-[var(--sm-space-x)]">
               {projectList.map((project, index) => {
                 return (
-                  <ProjectButton
+                  <MobileProjectButton
                     key={project.name}
                     skipInitialAnimation={skipInitialAnimation}
                     translateY={30 * (index + 2)}
@@ -77,13 +77,13 @@ export default function ProjectMenu({
   );
 }
 
-function ProjectButton({
+function MobileProjectButton({
   project,
-  skipInitialAnimation,
+  skipInitialAnimation = false,
   translateY = 30,
 }: {
   project: ProjectProps;
-  skipInitialAnimation: boolean;
+  skipInitialAnimation?: boolean;
   translateY: number;
 }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -161,14 +161,14 @@ function ProjectButton({
         router.push(project.pagePath);
       }}
     >
-      <div className="relative h-[3rem] w-auto aspect-square">
+      <div className="relative h-[3rem] w-auto aspect-square p-[0.3rem]">
         <div
-          className="w-full h-full"
+          className="w-full h-full transition-colors duration-200"
           style={{
             backgroundColor:
               getAnimationState() == "clicked" ||
               getAnimationState() == "hovered"
-                ? project.color
+                ? project.textColor
                 : "white",
             mask: `url(${project.iconPath}) no-repeat center`,
             maskSize: "contain",
@@ -177,26 +177,28 @@ function ProjectButton({
           }}
         />
       </div>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col items-start justify-center h-full">
         <h5
+          className="transition-colors duration-200"
           style={{
             color:
               getAnimationState() == "clicked" ||
               getAnimationState() == "hovered"
-                ? project.color
+                ? project.textColor
                 : "var(--alternate-text)",
           }}
         >
           {project.name}
         </h5>
         <h5
+          className="transition-colors duration-200"
           style={{
             fontWeight: 500,
             color:
               getAnimationState() == "clicked" ||
               getAnimationState() == "hovered"
-                ? project.color
-                : "var(--alternate-text)",
+                ? project.textColor
+                : "var(--default-text)",
           }}
         >
           {project.subtitle}

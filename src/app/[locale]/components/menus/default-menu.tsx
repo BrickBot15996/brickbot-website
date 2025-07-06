@@ -27,11 +27,18 @@ export default function DefaultMenu({
           <>
             <motion.div
               key="menu-header"
-              initial={{
-                opacity: 0,
-                translateY: -30,
-                transition: { duration: 0.05, ease: "easeInOut" },
-              }}
+              initial={
+                skipInitialAnimation
+                  ? {
+                      opacity: 1,
+                      translateY: 0,
+                    }
+                  : {
+                      opacity: 0,
+                      translateY: -30,
+                      transition: { duration: 0.05, ease: "easeInOut" },
+                    }
+              }
               animate={{ opacity: 1, translateY: 0 }}
               exit={{
                 opacity: 0,
