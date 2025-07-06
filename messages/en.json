@@ -23,7 +23,11 @@
     },
     "AboutUs": {
       "title": "About Us",
-      "text": "We are team #15996, BrickBot, from <cnu>\"Unirea\" National College, Focșani, Romania</cnu>. Since 2016, we have been competing in <ftc>FIRST Tech Challenge</ftc>. Beyond building robots, we love spreading the STEAM spirit in both the local and FTC communities.",
+      "text": {
+        "paragraph0": "We are team #15996, BrickBot, from <cnu>\"Unirea\" National College, Focșani, Romania</cnu>.",
+        "paragraph1": "We are proud to be the first robotics team in our county to take part in the international competition <ftc>FIRST Tech Challenge</ftc>.",
+        "paragraph2": "We dedicate ourselves with a passion for building robots and promoting STEAM education within our community."
+      },
       "Carousel": {
         "Caravan2025": "BrickBot In Schools, May 2025",
         "Italy2025": "Italy Championship, Feb 2025",
@@ -40,6 +44,38 @@
     "Sponsors": {
       "title": "Sponsors",
       "buttonText": "BECOME OUR NEXT SPONSOR"
+    },
+    "FAQ": {
+      "0": {
+        "Question": "What is FIRST?",
+        "Answer": {
+          "paragraph0": "FIRST (For Inspiration and Recognition of Science and Technology) is an organization that encourages young people to study STEAM subjects through robotics competitions.",
+          "paragraph1": "Within <ftc>FIRST Tech Challenge (FTC)</ftc>, teams of primary school and high school build and program robots every year, to fulfill a series of dynamic tasks.",
+          "paragraph2": "The competition was brought to Romania by <natie>Nație Prin Educație</natie>, partnering with <brd>BRD</brd>."
+        }
+      },
+      "1": {
+        "Question": "What fields does the team work in?",
+        "Answer": {
+          "paragraph0": "Our team combines technical skills with non-technical ones, both branches working together frequently.",
+          "paragraph1": "The technical side consists of the assembly, 3D design and programming departments, while the non-tehcnical side takes on the mission of promoting the team and its social media pages (PR), graphic design, photography and attracting new sponsors."
+        }
+      },
+      "2": {
+        "Question": "How can I join BrickBot?",
+        "Answer": {
+          "paragraph0": "To join the team you have to be a student of <cnu>\"Unirea\" National College of Focșani</cnu> and to be over 13 years old.",
+          "paragraph1": "You don't need to have prior experience within your desired department. You will start off as a recruit and, with our help, you will be brought up to speed with all aspects of your chosen branch.",
+          "paragraph2": "Complete the application form by clicking <apply>here</apply>."
+        }
+      },
+      "3": {
+        "Question": "How can I help BrickBot?",
+        "Answer": {
+          "paragraph0": "You can support us through sponsorships or donations, receiving appropriate benefit according to our sponsorship packages. Likewise, we are open to attending or organizing events alongside companies or institutions.",
+          "paragraph1": "You can find more details <supportUs>here</supportUs>."
+        }
+      }
     }
   },
 
@@ -51,7 +87,10 @@
     "title": "Our Team",
     "Introduction": {
       "title": "Introduction",
-      "text": "We are team #15996, BrickBot, from <cnu>“Unirea” National College, Focșani, Romania</cnu>. Since 2016, we have taken part in the <ftc>FIRST Tech Challenge</ftc>, working hard to build competitive robots. We are passionate about promoting STEAM education and creating opportunities for learning and growth in both our local community and the wider FTC network.",
+      "text": {
+        "paragraph0": "Since 2016, season after season, we've been building robots for the <ftc>FIRST Tech Challenge</ftc> and we live by the values that represent us: outreach, creativity, ambition and team spirit.",
+        "paragraph1": "Every step, from the first sketch to the final tests, reflects steady progress, built brick by brick. This is how we’ve shaped our team's identity and contributed to making STEAM education more accessible to young people."
+      },
       "Carousel": {
         "2024-25": "BrickBot in 2024-25",
         "2023-24": "BrickBot in 2023-24",
@@ -83,11 +122,14 @@
     "Checkpoint": {
       "BrickBotInSchools": {
         "title": "BrickBot in Schools",
-        "text": "Middle school students from local schools explored robotics through our presentations and this year’s game. As part of the BrickBot Caravan, they operated the robot, learned about its design and programming, and discovered the value of teamwork."
+        "text": {
+          "paragraph0": "Every year, student from more and more primary schools in our town discover robotics through our interactive presentations.",
+          "paragraph1": "After they learn more things about us and the competitions we take part in, they get the chance to drive our robot and ask us any questions they might have."
+        }
       },
       "InteractingWithThePublic": {
         "title": "Interacting with the Public",
-        "text": "Engaging with the local community through showcases, humanitarian efforts, and outreach initiatives to inspire a love for robotics and create meaningful impact.",
+        "text": "We get involved in our local community through presentations at different events, humanitarian activites, partnerships with businesses to spread our passion for robotics with as large a public as possible.",
         "Carousel": {
           "OpenDoorsDay": "Open Doors Day",
           "MicrometEvent": "Exchange Event with our Main Sponsor, Micromet",
@@ -101,7 +143,10 @@
     "Sparks": {
       "Sparks1": {
         "title": "Sparks I (with SIRIUS SOCRATE)",
-        "text": "An online meeting for new FTC teams from Romania and the Republic of Moldova sharing lessons from challenges and memorable moments in past competitions. Organized in collaboration with SIRIUS, the team we mentor and work closely with."
+        "text": {
+          "paragraph0": "An online meeting dedicated to the new FTC teams in Romania and the Moldovan Republic. We shared lessons we learned from our challenges and memorable moments of past competitions.",
+          "paragraph1": "This event was organized in collaboration with team #25482 SIRIUS, which we are mentoring."
+        }
       }
     }
   },
@@ -145,13 +190,13 @@
       "name": "Checkpoint",
       "extendedName": "Checkpoint: Outreach Events",
       "subtitle": "Outreach, Events & Activities",
-      "description": "Key outreach events and activities in the local community that highlight impact and involvement."
+      "description": "Events and activities in the local community or within FIRST that we have been involved in."
     },
     "Sparks": {
       "name": "Sparks",
       "extendedName": "Sparks: Connecting FTC Teams",
       "subtitle": "Connecting FTC Teams",
-      "description": "Meetings, events, and activities we've done with other FTC teams to stay connected."
+      "description": "Meeting and activities organized alongside other FTC teams to keep in touch."
     },
     "BrickDocs": {
       "name": "BrickDocs",

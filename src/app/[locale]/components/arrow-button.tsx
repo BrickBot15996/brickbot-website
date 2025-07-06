@@ -58,7 +58,7 @@ export default function ArrowButton({
 
   return (
     <div
-      className={`relative w-[var(--arrow-button-size)] h-auto aspect-square rounded-full select-none ${className}`}
+      className={`relative w-[var(--arrow-button-size)] h-[var(--arrow-button-size)] rounded-full select-none ${className}`}
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -86,7 +86,7 @@ export default function ArrowButton({
         variants={arrowButtonScaleAnimation}
         initial="default"
         animate={getAnimationState()}
-        className="w-full h-auto aspect-square rounded-full border-[0.15rem]"
+        className="w-full h-full rounded-full border-[0.15rem]"
         style={{
           filter: disabled ? "brightness(0.75)" : "brightness(1)",
           borderColor: color,
@@ -131,7 +131,7 @@ export default function ArrowButton({
           variants={arrowButtonOverlayAnimation}
           initial="default"
           animate={getAnimationState()}
-          className="absolute inset-0 w-full h-auto aspect-square rounded-full bg-white opacity-0"
+          className="absolute inset-0 w-full h-full rounded-full bg-white opacity-0"
         />
       </motion.div>
     </div>

@@ -68,8 +68,11 @@ function BrickbotInSchools(project: ProjectProps) {
   return (
     <div className="w-full">
       <h2 style={{ color: "var(--checkpoint-text)" }}>{t("title")}</h2>
-      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--lg-space-y)]">
-        {t("text")}
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mt-[var(--md-space-y)] mb-[var(--sm-space-y)]">
+        {t("text.paragraph0")}
+      </p>
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--lg-space-y)]">
+        {t("text.paragraph1")}
       </p>
       <ImageCarousel
         buttonAccentColor={project.buttonColor}

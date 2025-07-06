@@ -4,6 +4,7 @@ import SponsorMarquee from "./components/sponsor-marquee";
 import Banner from "./components/banner";
 import AboutUs from "./components/about-us";
 import Projects from "./components/home-projects";
+import FAQ from "./components/faq";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
         <Projects />
       </section>
       <SponsorMarquee />
+      <section className="inner-content">
+        <FAQ />
+      </section>
     </section>
   );
 }

@@ -509,10 +509,13 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  width: 100%;
 }
 
 body {
-  background: var(--background);
+  background: var(--background, #121212);
+  background-color: var(--background, #121212);
   color: var(--foreground);
   font-family: var(--font-anek-latin), var(--font-inter), sans-serif;
 }

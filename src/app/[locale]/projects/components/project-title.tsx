@@ -41,7 +41,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
           background: `linear-gradient(0deg, ${project.gradientColor}, var(--default-dark) 98%)`,
         }}
       >
-        <div className="flex flex-row items-center justify-center w-[var(--page-width)] h-full my-[var(--2xl-space-y)]">
+        <div className="flex flex-row items-center justify-center w-[var(--page-width)] space-x-[var(--md-space-x)] h-full my-[var(--2xl-space-y)]">
           <div className="flex flex-col items-start justify-start">
             <div className="flex flex-row space-x-[var(--md-space-x)] items-center mb-[var(--md-space-y)] h-fit">
               <h1 style={{ color: project.textColor }}>{project.name}</h1>
@@ -58,7 +58,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
               {project.description}
             </p>
           </div>
-          <div className="w-[0rem] md:w-[30rem] h-auto ml-auto opacity-10">
+          <div className="w-[0rem] sm:w-[15rem] md:w-[25rem] lg:w-[30rem] h-auto ml-auto opacity-10">
             <Image
               src={project.logoPath}
               alt={project.name + " logo"}

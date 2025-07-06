@@ -13,7 +13,7 @@ export default function Projects() {
     <section className="outer-content">
       <PageTitle title={t("title")} />
       <section className="inner-content">
-        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 grid-flow-row items-stretch gap-x-[var(--xl-space-x)] gap-y-[var(--2xl-space-y)]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 grid-flow-row items-stretch gap-x-[var(--xl-space-x)] gap-y-[var(--2xl-space-y)]">
           {projectList.map((project, index) => {
             return (
               <AnimationWhenInView

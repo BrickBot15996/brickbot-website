@@ -39,37 +39,37 @@ export default function Footer() {
             href="https://www.instagram.com/brickbotcnu/"
             target="_blank"
           >
-            <RiInstagramLine className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150" />
+            <RiInstagramLine className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
           <Link
             href="https://www.tiktok.com/@brickbotcnu"
             target="_blank"
           >
-            <RiTiktokFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150" />
+            <RiTiktokFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
           <Link
             href="https://www.facebook.com/brickbotcnu/"
             target="_blank"
           >
-            <RiFacebookFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150" />
+            <RiFacebookFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
           <Link
             href="https://www.youtube.com/channel/UCRpA5UNXSZDl2GmPt_E91ew"
             target="_blank"
           >
-            <RiYoutubeFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150" />
+            <RiYoutubeFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
           <Link
             href="https://www.linkedin.com/company/brickbot/"
             target="_blank"
           >
-            <RiLinkedinFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150" />
+            <RiLinkedinFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
           <Link
             href="mailto:brickbot@liceulunirea.ro"
             target="_blank"
           >
-            <RiMailFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150" />
+            <RiMailFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
         </div>
       </span>

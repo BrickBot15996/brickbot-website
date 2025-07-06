@@ -23,7 +23,11 @@
     },
     "AboutUs": {
       "title": "Despre noi",
-      "text": "Noi suntem echipa #15996, BrickBot, de la <cnu>Colegiul Național „Unirea”, Focșani, România</cnu>. Din 2016, participăm la competiția internațională <ftc>FIRST Tech Challenge</ftc>. Dincolo de construirea roboților, ne face plăcere să promovăm spiritul STEAM în comunitatea locală și în cea a FTC.",
+      "text": {
+        "paragraph0": "Noi suntem echipa #15996, BrickBot, de la <cnu>Colegiul Național „Unirea”, Focșani, România</cnu>.",
+        "paragraph1": "Suntem mândri să fim prima echipă de robotică din județul nostru care participă la competiția internațională <ftc>FIRST Tech Challenge</ftc>.",
+        "paragraph2": "Ne dedicăm cu pasiune construirii de roboți și promovării educației STEAM în comunitatea noastră."
+      },
       "Carousel": {
         "Caravan2025": "Caravana BrickBot, mai 2025",
         "Italy2025": "Campionatul din Italia, februarie 2025",
@@ -40,6 +44,38 @@
     "Sponsors": {
       "title": "Sponsori",
       "buttonText": "DEVINO PARTENER"
+    },
+    "FAQ": {
+      "0": {
+        "Question": "Ce este FIRST?",
+        "Answer": {
+          "paragraph0": "FIRST (For Inspiration and Recognition of Science and Technology) este o organizație care încurajează tinerii să studieze domeniile STEAM prin competiții de robotică.",
+          "paragraph1": "În cadrul <ftc>FIRST Tech Challenge (FTC)</ftc>, elevi la nivel de gimnaziu și liceu construiesc și programează roboți în fiecare an, conform unei teme dinamice.",
+          "paragraph2": "Competiția a fost adusă în România de organizația <natie>Nație Prin Educație</natie>, în parteneriat cu <brd>BRD</brd>."
+        }
+      },
+      "1": {
+        "Question": "Ce domenii acoperă activitatea echipei?",
+        "Answer": {
+          "paragraph0": "Echipa noastră îmbină competențele tehnice cu cele non-tehnice, cele două secțiuni colaborând frecvent.",
+          "paragraph1": "Zona tehnică cuprinde departamentele mecanică și proiectare 3D și programare, iar cea non-tehnică se ocupă de promovarea echipei și social media (PR), design grafic, fotografie și atragerea sponsorilor."
+        }
+      },
+      "2": {
+        "Question": "Cum pot face parte din echipa BrickBot?",
+        "Answer": {
+          "paragraph0": "Pentru a intra în echipă trebuie să fii elev al <cnu>Colegiului Național „Unirea” din Focșani</cnu> și să ai peste 13 ani.",
+          "paragraph1": "Nu ai nevoie de experiență anterioară. Vei începe ca recrut și, alături de noi, vei învăța pas cu pas toate aspectele departamentului ales.",
+          "paragraph2": "Completează formularul de înscriere <apply>aici</apply>."
+        }
+      },
+      "3": {
+        "Question": "Cum pot ajuta BrickBot?",
+        "Answer": {
+          "paragraph0": "Ne puteți susține prin sponsorizări sau donații, beneficiind de promovare conform pachetelor noastre de sponsorizare. De asemenea, suntem deschiși la organizarea de evenimente și activități alături de companii sau instituții.",
+          "paragraph1": "Puteți vedea mai multe detalii <supportUs>aici</supportUs>."
+        }
+      }
     }
   },
 
@@ -51,7 +87,10 @@
     "title": "Despre noi",
     "Introduction": {
       "title": "Introducere",
-      "text": "Noi suntem echipa #15996, BrickBot, de la <cnu>Colegiul Național „Unirea”, Focșani, România</cnu>. Din 2016, participăm la competiția internațională <ftc>FIRST Tech Challenge</ftc>, muncind din greu pentru a construi roboți competitivi. Suntem pasionați de promovarea educației STEAM și crearea oportunităților pentru învățare și dezvoltare în comunitatea locală și cea a FTC.",
+      "text": {
+        "paragraph0": "Din 2016, în fiecare sezon, creăm roboți pentru <ftc>FIRST Tech Challenge</ftc> și cultivăm valorile care ne descriu: implicare, creativitate, ambiție și spirit de echipă.",
+        "paragraph1": "Fiecare etapă, de la prima schiță până la ultimele teste, reprezintă un progres clădit pas cu pas, cărămidă cu cărămidă. Așa ne-am consolidat identitatea echipei și am început proiecte care fac educația STEAM mai accesibilă pentru tineri."
+      },
       "Carousel": {
         "2024-25": "BrickBot în 2024-25",
         "2023-24": "BrickBot în 2023-24",
@@ -83,11 +122,14 @@
     "Checkpoint": {
       "BrickBotInSchools": {
         "title": "Caravana BrickBot",
-        "text": "Elevii școlilor primare și gimnaziale din orașul nostru au explorat domeniul roboticii prin intermediul prezentărilor noastre. Parte din proiectul „Caravana BrickBot”, au controlat robotul, au învățat modul în care a fost proiectat și programat și au descoperit valoarea lucrului în echipă."
+        "text": {
+          "paragraph0": "În fiecare an, elevii mai multor școli gimnaziale din orașul nostru explorează domeniul roboticii prin intermediul unor prezentări interactive.",
+          "paragraph1": "După ce află câteva lucruri despre noi și competiția la care luăm parte, au parte de experiența de a controla robotul și de a ne pune întrebări."
+        }
       },
       "InteractingWithThePublic": {
         "title": "Interacțiuni cu publicul",
-        "text": "Ne implicăm în comunitatea locală prin demonstrații, acțiuni umanitare și inițiative de promovare, pentru a inspira pasiunea pentru robotică și a crea un impact real.",
+        "text": "Ne implicăm regulat în comunitatea locală prin demonstrații la diferite evenimente, acțiuni umanitare, parteneriate cu firme pentru a inspira pasiunea pentru robotică unui public cât mai larg.",
         "Carousel": {
           "OpenDoorsDay": "Ziua Porților Deschise",
           "MicrometEvent": "Schimb de experiență cu sponsorul nostru principal, Micromet",
@@ -101,7 +143,10 @@
     "Sparks": {
       "Sparks1": {
         "title": "Sparks I (cu SIRIUS SOCRATE)",
-        "text": "O întâlnire online dedicată noilor echipe FTC din România și Republica Moldova, în care am împărtășit lecții învățate din provocările și momentele memorabile ale competițiilor anterioare. Eveniment organizat în colaborare cu SIRIUS, echipa pe care o mentorăm și alături de care lucrăm îndeaproape."
+        "text": {
+          "paragraph0": "O întâlnire online dedicată noilor echipe FTC din România și Republica Moldova.",
+          "paragraph1": "Am împărtășit lecții învățate din provocările și momentele memorabile ale competițiilor anterioare. Eveniment organizat în colaborare cu echipa #25482 SIRIUS, pe care o mentorăm."
+        }
       }
     }
   },
@@ -109,7 +154,7 @@
     "title": "Susține-ne",
     "HowToHelp": {
       "title": "Cum puteți ajuta",
-      "text": "BrickBot funcționează cu ajutorul sponsorilor (companii, afaceri, persoane). Ne puteți susține în trei moduri:",
+      "text": "BrickBot funcționează cu ajutorul sponsorilor (companii, persoane fizice). Ne poți susține în trei moduri:",
       "Redirect": {
         "title": "Redirecționează 3.5%",
         "text": "Cetățenii români pot ajuta BrickBot donând 3.5% din impozitul pe venit prin Formularul 230."
@@ -120,7 +165,7 @@
       },
       "Contracts": {
         "title": "Contracte de sponsorizare",
-        "text": "Ne poți susține inițiativa prin contribuții financiare și/sau servicii. Colaborarea va fi formalizată printr-un contract între afacerea ta și organizația noastră.",
+        "text": "Ne poți susține prin contribuții financiare și/sau servicii. Colaborarea va fi formalizată printr-un contract între afacerea ta și asociația noastră.",
         "sampleButton": "VEZI MODEL",
         "contactButton": "CONTACTEAZĂ-NE"
       }
@@ -143,13 +188,13 @@
       "name": "Checkpoint",
       "extendedName": "Checkpoint: Evenimente de implicare",
       "subtitle": "Implicare, evenimente și activități",
-      "description": "Evenimente și activități importante în comunitatea locală care evidențiază impactul și implicarea echipei."
+      "description": "Evenimente și activități în comunitatea locală sau FIRST în care ne-am implicat."
     },
     "Sparks": {
       "name": "Sparks",
       "extendedName": "Sparks: Conectarea echipelor FTC",
       "subtitle": "Conectarea echipelor FTC",
-      "description": "Întâlniri, evenimente și activități desfășurate alături de alte echipe FTC pentru a rămâne conectați."
+      "description": "Întâlniri și activități desfășurate alături de alte echipe FTC pentru a rămâne conectați."
     },
 
     "BrickDocs": {

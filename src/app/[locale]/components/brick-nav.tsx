@@ -5,12 +5,15 @@ import { motion } from "framer-motion";
 import DesktopNav from "./brick-desktop-nav";
 import MobileNav from "./brick-mobile-nav";
 import { useLocale } from "next-intl";
+import { useScrollLock } from "../hooks/lock-scroll";
 
 export default function Nav() {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { setNavbarAnimation } = useGlobalContext();
+
+  useScrollLock(isOpen && isMobile);
 
   useEffect(() => {
     const changeNavbar = () => {
@@ -37,28 +40,6 @@ export default function Nav() {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => {
-    const body = document.body;
-    const html = document.documentElement;
-    const nextDiv = document.getElementById("__next");
-
-    if (isOpen && isMobile) {
-      body.style.overflowY = "hidden";
-      html.style.overflowY = "hidden";
-      if (nextDiv) {
-        nextDiv.style.overflowY = "hidden";
-      }
-    }
-
-    return () => {
-      body.style.overflowY = "unset";
-      html.style.overflowY = "unset";
-      if (nextDiv) {
-        nextDiv.style.overflowY = "unset";
-      }
-    };
-  }, [isOpen, isMobile]);
 
   return (
     <motion.div

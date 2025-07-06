@@ -1,5 +1,3 @@
-// app/template.tsx
-
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -36,6 +34,21 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const isApplyPage = pathname.startsWith("/apply") || pathname == "";
 
   const projectList = useProjectList();
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      "scrollRestoration" in window.history
+    ) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname]);
 
   useEffect(() => {
     let startY = 0;

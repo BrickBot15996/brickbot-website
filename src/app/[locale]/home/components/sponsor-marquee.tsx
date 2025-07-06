@@ -147,7 +147,7 @@ export default function SponsorMarquee() {
       </AnimationWhenInView>
 
       {/* Sponsor Button */}
-      <div className="flex justify-center mb-[var(--2xl-space-y)]">
+      <div className="flex justify-center">
         <Button
           text={t("buttonText")}
           arrow={false}

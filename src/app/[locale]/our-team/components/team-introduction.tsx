@@ -64,17 +64,8 @@ export default function Introduction() {
   return (
     <section>
       <h2 className="mb-[var(--md-space-y)]">{t("title")}</h2>
-      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--xl-space-y)]">
-        {t.rich("text", {
-          cnu: (chunks) => (
-            <Link
-              href="https://maps.app.goo.gl/dDSZJpAszXq8b3nJA"
-              target="_blank"
-              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
-            >
-              {chunks}
-            </Link>
-          ),
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--sm-space-y)]">
+        {t.rich("text.paragraph0", {
           ftc: (chunks) => (
             <Link
               href="https://www.firstinspires.org/robotics/ftc"
@@ -85,6 +76,9 @@ export default function Introduction() {
             </Link>
           ),
         })}
+      </p>
+      <p className="w-[100%] lg:w-[90%] xl:w-[85%] 2xl:w-[75%] mb-[var(--xl-space-y)]">
+        {t("text.paragraph1")}
       </p>
       <ImageCarousel
         content={ourTeamImages}
