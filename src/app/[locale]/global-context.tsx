@@ -9,6 +9,8 @@ export type NavBarAnimationProps = {
 type GlobalContextType = {
   navbarAnimation: NavBarAnimationProps;
   setNavbarAnimation: (value: NavBarAnimationProps) => void;
+  hideNavbar: boolean;
+  setHideNavbar: (value: boolean) => void;
 };
 
 const defaultValue: GlobalContextType = {
@@ -17,6 +19,8 @@ const defaultValue: GlobalContextType = {
     colorLight: "var(--yellow-gradient-light)",
   },
   setNavbarAnimation: () => {},
+  hideNavbar: false,
+  setHideNavbar: () => {},
 };
 
 const GlobalContext = createContext<GlobalContextType>(defaultValue);
@@ -26,8 +30,12 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     defaultValue.navbarAnimation
   );
 
+  const [hideNavbar, setHideNavbar] = useState(defaultValue.hideNavbar);
+
   return (
-    <GlobalContext.Provider value={{ navbarAnimation, setNavbarAnimation }}>
+    <GlobalContext.Provider
+      value={{ navbarAnimation, setNavbarAnimation, hideNavbar, setHideNavbar }}
+    >
       {children}
     </GlobalContext.Provider>
   );

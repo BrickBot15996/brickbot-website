@@ -16,7 +16,13 @@ export default function DesktopNav() {
   const { navbarAnimation } = useGlobalContext();
 
   return (
-    <div className="flex flex-row items-center justify-center h-full w-full overflow-visible">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="flex flex-row items-center justify-center h-full w-full overflow-visible"
+    >
       <DesktopButton
         textTag="BrickLog"
         isActive={pathname.includes("/blog")}
@@ -66,7 +72,7 @@ export default function DesktopNav() {
       <div className="absolute right-[var(--sm-space-x)]">
         <LanguageToggle />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,10 +1,10 @@
 import { useCallback, useState, useEffect } from "react";
 
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
 import ArrowButton from "./arrow-button";
 import { AnimationWhenInView, opacityFadeIn } from "./animations";
+import ExpandableImage from "./expandable-image";
 
 export type CarouselItem = {
   imageSrc: string;
@@ -90,11 +90,10 @@ export default function ImageCarousel({
                 >
                   <div className="bg-[linear-gradient(180deg,_var(--carousel-gradient-light),_var(--carousel-gradient-dark))] w-full h-full p-[0.25rem] rounded-[1rem]">
                     <div className="relative w-full h-full overflow-hidden">
-                      <Image
+                      <ExpandableImage
                         src={item.imageSrc}
                         alt={item.alt}
-                        fill
-                        priority
+                        aspectRatio={item.aspectRatio}
                         className="object-cover rounded-[0.75rem] contain-content"
                       />
                     </div>

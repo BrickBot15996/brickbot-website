@@ -28,7 +28,13 @@ export default function MobileNav({
   }, [isOpen]);
 
   return (
-    <div className="flex flex-col items-center justify-start w-full h-full">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="flex flex-col items-center justify-start w-full h-full"
+    >
       <div className="flex flex-row items-start justify-center w-full h-auto">
         <Link
           href="/home"
@@ -111,7 +117,7 @@ export default function MobileNav({
           />
         ))}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 

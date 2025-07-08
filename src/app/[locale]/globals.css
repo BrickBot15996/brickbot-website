@@ -141,6 +141,10 @@
 
   scrollbar-color: rgb(47, 47, 47) rgb(27, 27, 27);
   scrollbar-width: thin;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 /* sm */

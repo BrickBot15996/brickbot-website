@@ -5,7 +5,6 @@ import Nav from "./components/brick-nav";
 import Footer from "./components/brick-footer";
 import { Analytics } from "@vercel/analytics/next";
 import { GlobalProvider } from "./global-context";
-import FrozenRoute from "./frozen-route";
 
 export default function ClientLayout({
   children,
@@ -16,24 +15,22 @@ export default function ClientLayout({
 
   return (
     <GlobalProvider>
-      <FrozenRoute>
-        {!(pathname.length == 0 || pathname.startsWith("/apply")) && (
-          <>
-            <Nav />
-            <main className="mt-[var(--navbar-height)]">
-              {children}
-              <Analytics />
-            </main>
-            <Footer />
-          </>
-        )}
-        {(pathname.length == 0 || pathname.startsWith("/apply")) && (
+      {!(pathname.length == 0 || pathname.startsWith("/apply")) && (
+        <>
+          <Nav />
           <main className="mt-[var(--navbar-height)]">
             {children}
             <Analytics />
           </main>
-        )}
-      </FrozenRoute>
+          <Footer />
+        </>
+      )}
+      {(pathname.length == 0 || pathname.startsWith("/apply")) && (
+        <main className="mt-[var(--navbar-height)]">
+          {children}
+          <Analytics />
+        </main>
+      )}
     </GlobalProvider>
   );
 }

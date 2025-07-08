@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, CSSProperties } from "react";
+import { ReactNode, CSSProperties, useState } from "react";
 
 type SimpleBoxProps = {
   action?: () => void;
@@ -25,10 +25,28 @@ export default function SimpleBox({
   className = "",
   style = {},
 }: SimpleBoxProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
     <div
-      className={`group relative`}
-      onClick={action}
+      className={`relative`}
+      onClick={() => {
+        action();
+      }}
+      onMouseUp={() => {
+        setIsClicked(false);
+      }}
+      onMouseDown={() => {
+        setIsClicked(true);
+      }}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setIsClicked(false);
+      }}
       style={{
         ...(width && { width: width }),
         ...(height && { height: height }),
@@ -43,12 +61,15 @@ export default function SimpleBox({
         }}
       >
         <div
-          className={`w-full h-full bg-[#ffffff] ${
-            hoverEffect
-              ? "opacity-0 group-hover:opacity-2.5 group-active:opacity-5"
-              : "opacity-0"
-          }`}
+          className="w-full h-full bg-[#ffffff]"
           style={{
+            opacity: hoverEffect
+              ? isClicked
+                ? "0.05"
+                : isHovered
+                ? "0.025"
+                : "0"
+              : "0",
             borderRadius: `${borderRadius - borderThickness}rem`,
           }}
         />

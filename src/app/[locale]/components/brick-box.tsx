@@ -139,7 +139,7 @@ export default function Box({
         variants={boxScaleAnimation}
         initial="default"
         animate={getAnimationState()}
-        className={`relative z-20 h-full w-full ${className}`}
+        className={`relative z-11 h-full w-full ${className}`}
       >
         {children}
       </motion.div>

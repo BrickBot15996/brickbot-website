@@ -1,7 +1,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useGlobalContext } from "../global-context";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import DesktopNav from "./brick-desktop-nav";
 import MobileNav from "./brick-mobile-nav";
 import { useLocale } from "next-intl";
@@ -11,7 +11,7 @@ export default function Nav() {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const { setNavbarAnimation } = useGlobalContext();
+  const { hideNavbar, setNavbarAnimation } = useGlobalContext();
 
   useScrollLock(isOpen && isMobile);
 
@@ -42,26 +42,37 @@ export default function Nav() {
   }, []);
 
   return (
-    <motion.div
-      initial={{
-        height: "var(--navbar-height)",
-        transition: { duration: 0.4, ease: "easeInOut" },
-      }}
-      animate={
-        isOpen && isMobile
-          ? { height: "100vh" }
-          : { height: "var(--navbar-height)" }
-      }
-      className="fixed top-0 w-full h-[var(--navbar-height)] bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-10000 flex justify-center items-center select-none backdrop-blur overflow-visible"
-    >
-      {isMobile && (
-        <MobileNav
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-        />
+    <AnimatePresence>
+      {!hideNavbar && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <motion.div
+            initial={{
+              height: "var(--navbar-height)",
+              transition: { duration: 0.4, ease: "easeInOut" },
+            }}
+            animate={
+              isOpen && isMobile
+                ? { height: "100vh" }
+                : { height: "var(--navbar-height)" }
+            }
+            className="fixed top-0 w-full h-[var(--navbar-height)] bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-10000 flex justify-center items-center select-none backdrop-blur overflow-visible"
+          >
+            {isMobile && (
+              <MobileNav
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+              />
+            )}
+            {!isMobile && <DesktopNav />}
+          </motion.div>
+        </motion.div>
       )}
-      {!isMobile && <DesktopNav />}
-    </motion.div>
+    </AnimatePresence>
   );
 }
 
