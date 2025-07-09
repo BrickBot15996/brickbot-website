@@ -26,7 +26,7 @@
       "text": {
         "paragraph0": "Noi suntem echipa #15996, BrickBot, de la <cnu>Colegiul Național „Unirea”, Focșani, România</cnu>.",
         "paragraph1": "Suntem mândri să fim prima echipă de robotică din județul nostru care participă la competiția internațională <ftc>FIRST Tech Challenge</ftc>.",
-        "paragraph2": "Ne dedicăm cu pasiune construirii de roboți și promovării educației STEAM în comunitatea noastră."
+        "paragraph2": "Ne dedicăm cu pasiune construirii de roboți și promovării educației ȘTIAM în comunitatea noastră."
       },
       "Carousel": {
         "Caravan2025": "Caravana BrickBot, mai 2025",
@@ -49,7 +49,7 @@
       "0": {
         "Question": "Ce este FIRST?",
         "Answer": {
-          "paragraph0": "FIRST (For Inspiration and Recognition of Science and Technology) este o organizație care încurajează tinerii să studieze domeniile STEAM prin competiții de robotică.",
+          "paragraph0": "FIRST (For Inspiration and Recognition of Science and Technology) este o organizație care încurajează tinerii să studieze domeniile ȘTIAM prin competiții de robotică.",
           "paragraph1": "În cadrul <ftc>FIRST Tech Challenge (FTC)</ftc>, elevi la nivel de gimnaziu și liceu construiesc și programează roboți în fiecare an, conform unei teme dinamice.",
           "paragraph2": "Competiția a fost adusă în România de organizația <natie>Nație Prin Educație</natie>, în parteneriat cu <brd>BRD</brd>."
         }
@@ -89,7 +89,7 @@
       "title": "Introducere",
       "text": {
         "paragraph0": "Din 2016, în fiecare sezon, creăm roboți pentru <ftc>FIRST Tech Challenge</ftc> și cultivăm valorile care ne descriu: implicare, creativitate, ambiție și spirit de echipă.",
-        "paragraph1": "Fiecare etapă, de la prima schiță până la ultimele teste, reprezintă un progres clădit pas cu pas, cărămidă cu cărămidă. Așa ne-am consolidat identitatea echipei și am început proiecte care fac educația STEAM mai accesibilă pentru tineri."
+        "paragraph1": "Fiecare etapă, de la prima schiță până la ultimele teste, reprezintă un progres clădit pas cu pas, cărămidă cu cărămidă. Așa ne-am consolidat identitatea echipei și am început proiecte care fac educația ȘTIAM mai accesibilă pentru tineri."
       },
       "Carousel": {
         "2024-25": "BrickBot în 2024-25",

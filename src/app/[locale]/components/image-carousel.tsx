@@ -94,6 +94,11 @@ export default function ImageCarousel({
                         src={item.imageSrc}
                         alt={item.alt}
                         aspectRatio={item.aspectRatio}
+                        buttonProps={{
+                          color: buttonAccentColor,
+                          gradientLight: buttonGradientLight,
+                          gradientDark: buttonGradientDark,
+                        }}
                         className="object-cover rounded-[0.75rem] contain-content"
                       />
                     </div>

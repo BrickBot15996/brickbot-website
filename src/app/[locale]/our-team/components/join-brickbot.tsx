@@ -14,7 +14,10 @@ export default function JoinBrickBot() {
           text={t("buttonText")}
           arrow={false}
           action={() => {
-            window.open("/apply", "_blank");
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSdhuVfh2RyC0MiKmwmsHwoun3WSluxmfESnBfrRO5NKK9T28Q/viewform",
+              "_blank"
+            );
           }}
         />
       </div>

@@ -101,7 +101,7 @@ export default function FAQ() {
             {t.rich("2.Answer.paragraph2", {
               apply: (chunks) => (
                 <Link
-                  href="/apply"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdhuVfh2RyC0MiKmwmsHwoun3WSluxmfESnBfrRO5NKK9T28Q/viewform"
                   target="_blank"
                   className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
                   onClick={(e) => e.stopPropagation()}

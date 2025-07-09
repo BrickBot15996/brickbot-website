@@ -76,39 +76,41 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={pathname}
-        variants={pageVariants}
-        initial="hidden"
-        animate="visible"
-        //exit="exit"
-      >
-        {!isApplyPage ? (
-          <>
-            <Nav />
-            <main className="mt-[var(--navbar-height)]">
+    <>
+      {projectList.map((project) => (
+        <img
+          key={project.iconPath}
+          src={project.iconPath}
+          style={{ display: "none" }}
+          alt=""
+          loading="eager"
+        />
+      ))}
+      {!isApplyPage && <Nav />}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={pathname}
+          variants={pageVariants}
+          initial="hidden"
+          animate="visible"
+          //exit="exit"
+        >
+          {!isApplyPage ? (
+            <>
+              <main className="mt-[var(--navbar-height)]">
+                {children}
+                <Analytics />
+              </main>
+              <Footer />
+            </>
+          ) : (
+            <main>
               {children}
               <Analytics />
             </main>
-            <Footer />
-          </>
-        ) : (
-          <main>
-            {children}
-            <Analytics />
-          </main>
-        )}
-        {projectList.map((project) => (
-          <img
-            key={project.iconPath}
-            src={project.iconPath}
-            style={{ display: "none" }}
-            alt=""
-            loading="eager"
-          />
-        ))}
-      </motion.div>
-    </AnimatePresence>
+          )}
+        </motion.div>
+      </AnimatePresence>
+    </>
   );
 }

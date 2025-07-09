@@ -88,7 +88,7 @@ export default function ExpandableImage({
                     fill
                     className="object-cover rounded-[1.5rem] lg:rounded-[3rem]"
                   />
-                  <div className="absolute top-[calc(0rem-var(--arrow-button-size)-1rem)] right-0">
+                  <div className="absolute top-[1rem] right-[1rem] opacity-50%">
                     <CloseButton
                       action={() => {
                         setIsExpanded(false);

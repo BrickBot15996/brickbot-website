@@ -17,7 +17,7 @@ export default function DesktopNav() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -144,7 +144,7 @@ function DesktopButton({
               }
             : {
                 width: "0rem",
-                transition: { duration: 0.5, ease: "easeIn" },
+                transition: { duration: 0.4, ease: "easeIn" },
               }
         }
         className="absolute bottom-[calc(0rem-0.1rem)] h-[0.1rem] pointer-events-none"
