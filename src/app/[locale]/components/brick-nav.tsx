@@ -9,11 +9,11 @@ import { useScrollLock } from "../hooks/lock-scroll";
 
 export default function Nav() {
   const pathname = usePathname();
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const { hideNavbar, setNavbarAnimation } = useGlobalContext();
 
-  useScrollLock(isOpen && isMobile);
+  useScrollLock(isOpen && isMobile!);
 
   useEffect(() => {
     const changeNavbar = () => {
@@ -29,17 +29,22 @@ export default function Nav() {
   }, [pathname, setNavbarAnimation]);
 
   useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth < 880;
-      setIsMobile(mobile);
-      if (!mobile) setIsOpen(false);
+      setIsMobile(window.innerWidth < 800);
+      if (!isMobile) setIsOpen(false);
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile == null) return null;
 
   return (
     <AnimatePresence>
@@ -63,13 +68,14 @@ export default function Nav() {
             }
             className="fixed top-0 w-full h-[var(--navbar-height)] bg-[linear-gradient(180deg,_var(--dark-transparent)_30%,_var(--accents-dark-transparent))] z-10000 flex justify-center items-center select-none backdrop-blur overflow-visible"
           >
-            {isMobile && (
+            {isMobile ? (
               <MobileNav
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
               />
+            ) : (
+              <DesktopNav />
             )}
-            {!isMobile && <DesktopNav />}
           </motion.div>
         </motion.div>
       )}

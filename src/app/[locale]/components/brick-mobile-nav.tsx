@@ -7,6 +7,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import DefaultMenu from "./menus/default-menu";
 import ProjectMenu from "./menus/project-menu";
 import { useProjectList } from "../projects/projects-data";
+import { usePathname } from "next/navigation";
 
 export default function MobileNav({
   isOpen,
@@ -17,6 +18,7 @@ export default function MobileNav({
 }) {
   const [skipInitialAnimation, setSkipInitialAnimation] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string>("default");
+  const pathname = usePathname();
 
   const projectList = useProjectList();
 
@@ -26,6 +28,10 @@ export default function MobileNav({
       setActiveMenu("default");
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <motion.div

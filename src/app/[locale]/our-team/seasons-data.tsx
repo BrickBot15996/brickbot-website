@@ -183,44 +183,24 @@ export const useRoverRuckus = (): SeasonProps => {
 };
 
 export const useRelicRecovery = (): SeasonProps => {
-  const t = useTranslations("SeasonData.RelicRecovery.awards");
   return {
     name: "Relic Recovery",
     years: "2017-2018",
     textColor: "var(--relic-recovery-text)",
     gradientColor: "var(--relic-recovery-gradient)",
     logoPath: "/seasons/relic-recovery-logo.png",
-    awards: [
-      {
-        event: t("0.event"),
-        awardName: t("0.awardName"),
-      },
-      {
-        event: t("1.event"),
-        awardName: t("1.awardName"),
-      },
-    ],
+    awards: [],
   };
 };
 
 export const useVelocityVortex = (): SeasonProps => {
-  const t = useTranslations("SeasonData.VelocityVortex.awards");
   return {
     name: "Velocity Vortex",
     years: "2016-2017",
     textColor: "var(--velocity-vortex-text)",
     gradientColor: "var(--velocity-vortex-gradient)",
     logoPath: "/seasons/velocity-vortex-logo.png",
-    awards: [
-      {
-        event: t("0.event"),
-        awardName: t("0.awardName"),
-      },
-      {
-        event: t("1.event"),
-        awardName: t("1.awardName"),
-      },
-    ],
+    awards: [],
   };
 };
 

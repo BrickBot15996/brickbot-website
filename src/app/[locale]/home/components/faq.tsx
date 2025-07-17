@@ -179,7 +179,7 @@ function Question({
           borderRadius={borderRadius}
           className="flex flex-col items-start justify-start w-full h-full px-[var(--md-space-x)] lg:px-[var(--sm-space-y)] space-x-[var(--sm-space-x)]"
         >
-          <div className="flex flex-row w-full my-[var(--md-space-y)] lg:my-[var(--sm-space-y)] items-center justify-center">
+          <div className="flex flex-row w-full my-[var(--md-space-y)] lg:my-[var(--sm-space-y)] items-center justify-center space-x-[var(--sm-space-x)]">
             <h3
               className="mr-auto"
               style={{ color: "var(--alternate-text)" }}

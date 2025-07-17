@@ -5,8 +5,9 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import Nav from "./components/brick-nav";
 import Footer from "./components/brick-footer";
 import { Analytics } from "@vercel/analytics/next";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useProjectList } from "./projects/projects-data";
+import { useLocale } from "next-intl";
 
 const pageVariants: Variants = {
   hidden: {
@@ -31,9 +32,15 @@ const pageVariants: Variants = {
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const isApplyPage = pathname.startsWith("/apply") || pathname == "";
+  const [showNav, setShowNav] = useState(true);
+  const locale = useLocale();
 
   const projectList = useProjectList();
+
+  useEffect(() => {
+    if (pathname.startsWith("/" + locale)) setShowNav(true);
+    else setShowNav(false);
+  }, [pathname, setShowNav, locale]);
 
   useEffect(() => {
     if (
@@ -45,9 +52,17 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    // Add a small delay to ensure scroll lock cleanup happens first
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    // Use requestAnimationFrame to ensure this runs after any scroll lock cleanup
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToTop);
+    });
   }, [pathname]);
 
   useEffect(() => {
@@ -86,7 +101,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           loading="eager"
         />
       ))}
-      {!isApplyPage && <Nav />}
+      {showNav && <Nav />}
       <AnimatePresence mode="wait">
         <motion.div
           key={pathname}
@@ -95,7 +110,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           animate="visible"
           //exit="exit"
         >
-          {!isApplyPage ? (
+          {showNav ? (
             <>
               <main className="mt-[var(--navbar-height)]">
                 {children}

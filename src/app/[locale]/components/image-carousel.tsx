@@ -89,7 +89,7 @@ export default function ImageCarousel({
                   }}
                 >
                   <div className="bg-[linear-gradient(180deg,_var(--carousel-gradient-light),_var(--carousel-gradient-dark))] w-full h-full p-[0.25rem] rounded-[1rem]">
-                    <div className="relative w-full h-full overflow-hidden">
+                    <div className="relative w-full h-full overflow-hidden rounded-[0.75rem]">
                       <ExpandableImage
                         src={item.imageSrc}
                         alt={item.alt}
