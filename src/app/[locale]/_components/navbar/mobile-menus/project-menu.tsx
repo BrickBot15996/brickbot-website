@@ -3,7 +3,7 @@ import { LanguageToggle } from "../brick-nav";
 import { usePathname, useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ProjectProps, useProjectList } from "../../projects/projects-data";
+import { ProjectProps, useProjectList } from "../../../_data/projects-data";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
 export default function ProjectMenu({

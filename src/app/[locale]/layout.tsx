@@ -5,6 +5,7 @@ import { GlobalProvider } from "./global-context";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Nav from "./_components/navbar/brick-nav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,7 +46,10 @@ export default async function RootLayout({
         className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
       >
         <NextIntlClientProvider>
-          <GlobalProvider>{children}</GlobalProvider>
+          <GlobalProvider>
+            <Nav />
+            {children}
+          </GlobalProvider>
         </NextIntlClientProvider>
       </body>
     </html>

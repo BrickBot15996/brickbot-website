@@ -2,9 +2,9 @@
 
 import ImageCarousel, {
   CarouselItem,
-} from "@/app/[locale]/components/image-carousel";
+} from "@/app/[locale]/_components/image-carousel";
 import ProjectTitle from "../components/project-title";
-import { useCheckpoint, ProjectProps } from "../projects-data";
+import { useCheckpoint, ProjectProps } from "../../_data/projects-data";
 import { useTranslations } from "next-intl";
 
 export default function Checkpoint() {

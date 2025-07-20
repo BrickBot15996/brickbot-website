@@ -6,7 +6,7 @@ import {
   usePowerplay,
   SeasonProps,
   useUltimateGoal,
-} from "@/app/[locale]/our-team/seasons-data";
+} from "@/app/[locale]/_data/seasons-data";
 import {
   alphabit,
   brickbot,

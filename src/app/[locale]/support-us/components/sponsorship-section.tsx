@@ -1,8 +1,8 @@
-import ArrowButton from "@/app/[locale]/components/arrow-button";
+import ArrowButton from "@/app/[locale]/_components/arrow-button";
 import { useEffect, useState } from "react";
 import { SponsorshipTierDesktop, SponsorshipTierMobile } from "./sponsor-tiers";
-import { useTierList, TierProps } from "../sponsor-tiers-data";
-import { defaultFadeIn } from "@/app/[locale]/components/animations";
+import { useTierList, TierProps } from "../../_data/sponsor-tiers-data";
+import { defaultFadeIn } from "@/app/[locale]/_components/animations";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 

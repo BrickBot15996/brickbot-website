@@ -2,9 +2,9 @@ import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 
-import Box from "../../components/brick-box";
+import Box from "../../_components/brick-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { ProjectProps } from "../projects-data";
+import { ProjectProps } from "../../_data/projects-data";
 
 export function SmallProjectCard({ project }: SmallProjectCardProps) {
   const router = useRouter();

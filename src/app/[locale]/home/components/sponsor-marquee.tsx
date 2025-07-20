@@ -6,16 +6,16 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { Tooltip } from "react-tooltip";
 
-import Button from "../../components/brick-button";
-import { SponsorData, useSponsorList } from "../sponsor-data";
+import Button from "../../_components/brick-button";
+import { SponsorData, useSponsorList } from "../../_data/sponsor-data";
 import {
   useDiamond,
   useUltimate,
-} from "@/app/[locale]/support-us/sponsor-tiers-data";
+} from "@/app/[locale]/_data/sponsor-tiers-data";
 import {
   AnimationWhenInView,
   defaultFadeIn,
-} from "@/app/[locale]/components/animations";
+} from "@/app/[locale]/_components/animations";
 import { useTranslations } from "next-intl";
 
 export default function SponsorMarquee() {

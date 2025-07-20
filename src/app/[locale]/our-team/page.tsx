@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import PageTitle from "../components/page-title";
+import PageTitle from "../_components/page-title";
 import Achievements from "./components/achievements";
 import JoinBrickBot from "./components/join-brickbot";
 import Introduction from "./components/team-introduction";

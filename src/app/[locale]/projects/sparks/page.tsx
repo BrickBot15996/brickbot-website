@@ -3,8 +3,8 @@
 import ProjectTitle from "../components/project-title";
 import ImageCarousel, {
   CarouselItem,
-} from "@/app/[locale]/components/image-carousel";
-import { ProjectProps, useSparks } from "../projects-data";
+} from "@/app/[locale]/_components/image-carousel";
+import { ProjectProps, useSparks } from "../../_data/projects-data";
 import { useTranslations } from "next-intl";
 
 export default function Sparks() {

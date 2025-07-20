@@ -2,13 +2,13 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import { useState } from "react";
 
-import Box from "@/app/[locale]/components/brick-box";
-import { TierProps } from "../sponsor-tiers-data";
+import Box from "@/app/[locale]/_components/brick-box";
+import { TierProps } from "../../_data/sponsor-tiers-data";
 import { motion } from "framer-motion";
 import {
   AnimationWhenInView,
   defaultFadeIn,
-} from "@/app/[locale]/components/animations";
+} from "@/app/[locale]/_components/animations";
 import { useTranslations } from "next-intl";
 
 export function SponsorshipTierDesktop({

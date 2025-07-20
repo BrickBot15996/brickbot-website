@@ -3,11 +3,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 import { useTranslations } from "use-intl";
-import { useGlobalContext } from "../global-context";
+import { useGlobalContext } from "../../global-context";
 import { AnimatePresence, motion } from "framer-motion";
 import { LanguageToggle } from "./brick-nav";
-import Box from "./brick-box";
-import { ProjectProps, useProjectList } from "../projects/projects-data";
+import Box from "../brick-box";
+import { ProjectProps, useProjectList } from "../../_data/projects-data";
 import { useRouter } from "next/navigation";
 
 export default function DesktopNav() {
@@ -93,8 +93,14 @@ function DesktopButton({
   };
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [wasClicked, setWasClicked] = useState(false);
+  const pathname = usePathname();
 
   const t = useTranslations("Nav.DesktopButtons");
+
+  useEffect(() => {
+    setWasClicked(false);
+  }, [pathname]);
 
   return (
     <div
@@ -107,6 +113,7 @@ function DesktopButton({
       }}
       onClick={() => {
         action();
+        setWasClicked(true);
       }}
     >
       <motion.div
@@ -115,7 +122,7 @@ function DesktopButton({
           transition: { duration: 0.3, ease: "easeOut" },
         }}
         animate={
-          isActive || isHovered
+          isActive || isHovered || wasClicked
             ? {
                 height: "100%",
                 transition: { duration: 0.3, ease: "easeIn" },
@@ -125,7 +132,7 @@ function DesktopButton({
                 transition: { duration: 0.3, ease: "easeOut" },
               }
         }
-        className="absolute bottom-0 left-0 w-full cursor-pointer"
+        className="absolute bottom-0 left-0 w-full cursor-pointer transition-opacity duration-200"
         style={{
           background: `linear-gradient(0deg, ${navbarAnimation.color} 0%, transparent 60%)`,
           opacity: isActive ? "0.2" : "0.15",
@@ -137,7 +144,7 @@ function DesktopButton({
           transition: { duration: 0.3, ease: "easeOut" },
         }}
         animate={
-          isActive || isHovered
+          isActive || isHovered || wasClicked
             ? {
                 width: "100%",
                 transition: { duration: 0.3, ease: "easeOut" },
@@ -147,7 +154,7 @@ function DesktopButton({
                 transition: { duration: 0.4, ease: "easeIn" },
               }
         }
-        className="absolute bottom-[calc(0rem-0.1rem)] h-[0.1rem] pointer-events-none"
+        className="absolute bottom-[calc(0rem-0.1rem)] h-[0.1rem] pointer-events-none transition-opacity duration-200"
         style={{
           background: `linear-gradient(90deg, ${navbarAnimation.colorLight} 0%, ${navbarAnimation.color} 50%, ${navbarAnimation.colorLight} 100%)`,
           opacity: isActive ? "0.9" : "0.75",
@@ -157,7 +164,7 @@ function DesktopButton({
         className="cursor-pointer"
         style={{
           color:
-            isActive || isHovered
+            isActive || isHovered || wasClicked
               ? navbarAnimation.color
               : "var(--alternate-text)",
         }}

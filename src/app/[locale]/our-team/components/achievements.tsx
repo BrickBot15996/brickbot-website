@@ -3,9 +3,9 @@ import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
-import Box from "../../components/brick-box";
-import ArrowButton from "../../components/arrow-button";
-import { SeasonProps, useSeasonList } from "../seasons-data";
+import Box from "../../_components/brick-box";
+import ArrowButton from "../../_components/arrow-button";
+import { SeasonProps, useSeasonList } from "../../_data/seasons-data";
 import { useTranslations } from "next-intl";
 
 export default function Achievements() {

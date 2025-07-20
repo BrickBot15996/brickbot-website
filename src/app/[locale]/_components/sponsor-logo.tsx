@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SponsorData } from "../home/sponsor-data";
+import { SponsorData } from "../_data/sponsor-data";
 import Image from "next/image";
 import { Tooltip } from "react-tooltip";
 

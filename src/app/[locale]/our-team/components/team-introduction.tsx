@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import ImageCarousel, { CarouselItem } from "../../components/image-carousel";
+import ImageCarousel, { CarouselItem } from "../../_components/image-carousel";
 import { useTranslations } from "next-intl";
 
 export default function Introduction() {

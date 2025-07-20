@@ -4,9 +4,9 @@ import Link from "next/link";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import DefaultMenu from "./menus/default-menu";
-import ProjectMenu from "./menus/project-menu";
-import { useProjectList } from "../projects/projects-data";
+import DefaultMenu from "./mobile-menus/default-menu";
+import ProjectMenu from "./mobile-menus/project-menu";
+import { useProjectList } from "../../_data/projects-data";
 import { usePathname } from "next/navigation";
 
 export default function MobileNav({

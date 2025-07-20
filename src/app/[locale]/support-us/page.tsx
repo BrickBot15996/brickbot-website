@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import PageTitle from "../components/page-title";
+import PageTitle from "../_components/page-title";
 import HowToHelpSection from "./components/how-to-help";
 import SponsorSection from "./components/sponsor-section";
 import SponsorshipSection from "./components/sponsorship-section";

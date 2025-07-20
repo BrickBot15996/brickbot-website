@@ -4,7 +4,7 @@ import {
   useGold,
   useSilver,
   useUltimate,
-} from "../support-us/sponsor-tiers-data";
+} from "./sponsor-tiers-data";
 
 export type SponsorData = {
   name: string;

@@ -1,9 +1,9 @@
 "use client";
 
-import { AnimationWhenInView, defaultFadeIn } from "../components/animations";
-import PageTitle from "../components/page-title";
+import { AnimationWhenInView, defaultFadeIn } from "../_components/animations";
+import PageTitle from "../_components/page-title";
 import { LargeProjectCard } from "./components/project-cards";
-import { useProjectList } from "./projects-data";
+import { useProjectList } from "../_data/projects-data";
 import { useTranslations } from "use-intl";
 
 export default function Projects() {

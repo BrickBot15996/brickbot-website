@@ -1,20 +1,20 @@
 "use client";
 
 import ProjectTitle from "../components/project-title";
-import { ProjectProps, useTheVault } from "../projects-data";
+import { ProjectProps, useTheVault } from "../../_data/projects-data";
 import {
   useBrickbotPortfolioList,
   usePortfolioList,
   PortfolioProps,
-} from "./portfolio-data";
+} from "../../_data/portfolio-data";
 import Image from "next/image";
-import SimpleBox from "@/app/[locale]/components/simple-box";
+import SimpleBox from "@/app/[locale]/_components/simple-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { teamList, TeamProps } from "./team-data";
+import { teamList, TeamProps } from "../../_data/team-data";
 import {
   AnimationWhenInView,
   defaultFadeIn,
-} from "@/app/[locale]/components/animations";
+} from "@/app/[locale]/_components/animations";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 

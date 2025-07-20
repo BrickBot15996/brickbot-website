@@ -2,12 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import Nav from "./components/brick-nav";
-import Footer from "./components/brick-footer";
-import { Analytics } from "@vercel/analytics/next";
-import { useEffect, useState } from "react";
-import { useProjectList } from "./projects/projects-data";
-import { useLocale } from "next-intl";
+import Footer from "./_components/brick-footer";
+import { useEffect } from "react";
 
 const pageVariants: Variants = {
   hidden: {
@@ -32,16 +28,6 @@ const pageVariants: Variants = {
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const [showNav, setShowNav] = useState(true);
-  const locale = useLocale();
-
-  const projectList = useProjectList();
-
-  useEffect(() => {
-    if (pathname.startsWith("/" + locale)) setShowNav(true);
-    else setShowNav(false);
-  }, [pathname, setShowNav, locale]);
-
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
@@ -52,14 +38,12 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    // Add a small delay to ensure scroll lock cleanup happens first
     const scrollToTop = () => {
       window.scrollTo(0, 0);
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
     };
 
-    // Use requestAnimationFrame to ensure this runs after any scroll lock cleanup
     requestAnimationFrame(() => {
       requestAnimationFrame(scrollToTop);
     });
@@ -92,16 +76,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {projectList.map((project) => (
-        <img
-          key={project.iconPath}
-          src={project.iconPath}
-          style={{ display: "none" }}
-          alt=""
-          loading="eager"
-        />
-      ))}
-      {showNav && <Nav />}
       <AnimatePresence mode="wait">
         <motion.div
           key={pathname}
@@ -110,20 +84,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
           animate="visible"
           //exit="exit"
         >
-          {showNav ? (
-            <>
-              <main className="mt-[var(--navbar-height)]">
-                {children}
-                <Analytics />
-              </main>
-              <Footer />
-            </>
-          ) : (
-            <main>
-              {children}
-              <Analytics />
-            </main>
-          )}
+          <main className="mt-[var(--navbar-height)]">{children}</main>
+          <Footer />
         </motion.div>
       </AnimatePresence>
     </>

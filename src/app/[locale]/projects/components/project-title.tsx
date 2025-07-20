@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ProjectProps } from "../projects-data";
+import { ProjectProps } from "../../_data/projects-data";
 import { useGlobalContext } from "@/app/[locale]/global-context";
 import { useTranslations } from "next-intl";
 

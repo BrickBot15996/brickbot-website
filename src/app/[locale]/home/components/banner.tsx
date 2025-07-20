@@ -1,8 +1,8 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import Button from "../../components/brick-button";
-import { opacityFadeIn } from "@/app/[locale]/components/animations";
+import Button from "../../_components/brick-button";
+import { opacityFadeIn } from "@/app/[locale]/_components/animations";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import React from "react";

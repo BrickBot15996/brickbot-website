@@ -1,13 +1,13 @@
 "use client";
 
-import Button from "@/app/[locale]/components/brick-button";
-import SimpleBox from "@/app/[locale]/components/simple-box";
+import Button from "@/app/[locale]/_components/brick-button";
+import SimpleBox from "@/app/[locale]/_components/simple-box";
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import {
   AnimationWhenInView,
   defaultFadeIn,
-} from "@/app/[locale]/components/animations";
+} from "@/app/[locale]/_components/animations";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";

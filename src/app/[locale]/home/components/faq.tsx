@@ -3,7 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import {
   AnimationWhenInView,
   defaultFadeIn,
-} from "../../components/animations";
+} from "../../_components/animations";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import {
@@ -13,7 +13,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import Box from "../../components/brick-box";
+import Box from "../../_components/brick-box";
 
 export default function FAQ() {
   const t = useTranslations("Home.FAQ");

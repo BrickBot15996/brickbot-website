@@ -1,10 +1,10 @@
 import {
   AnimationWhenInView,
   defaultFadeIn,
-} from "@/app/[locale]/components/animations";
-import { useSponsorList } from "@/app/[locale]/home/sponsor-data";
-import { useBronze } from "../sponsor-tiers-data";
-import SponsorLogo from "@/app/[locale]/components/sponsor-logo";
+} from "@/app/[locale]/_components/animations";
+import { useSponsorList } from "@/app/[locale]/_data/sponsor-data";
+import { useBronze } from "../../_data/sponsor-tiers-data";
+import SponsorLogo from "@/app/[locale]/_components/sponsor-logo";
 import { useTranslations } from "next-intl";
 
 export default function SponsorSection() {

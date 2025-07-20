@@ -10,6 +10,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { useGlobalContext } from "../global-context";
+import { useScrollLock } from "../_hooks/lock-scroll";
 
 interface ExpandableImageProps {
   src: string;
@@ -33,6 +34,8 @@ export default function ExpandableImage({
   const [isExpanded, setIsExpanded] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { setHideNavbar } = useGlobalContext();
+
+  useScrollLock(isExpanded);
 
   useEffect(() => {
     setMounted(true);
@@ -67,17 +70,15 @@ export default function ExpandableImage({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+                className="fixed inset-0 z-10001 flex items-center justify-center bg-black/70"
                 onClick={() => {
                   setIsExpanded(false);
                   setHideNavbar(false);
                 }}
               >
                 <div
-                  className="relative"
+                  className="relative w-[100vw] md:w-[var(--page-width)]"
                   style={{
-                    width: "var(--page-width)",
-                    maxWidth: "100vw",
                     aspectRatio: aspectRatio,
                   }}
                   onClick={(e) => e.stopPropagation()}

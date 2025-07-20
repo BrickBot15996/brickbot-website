@@ -1,4 +1,4 @@
-import Button from "@/app/[locale]/components/brick-button";
+import Button from "@/app/[locale]/_components/brick-button";
 import { useTranslations } from "next-intl";
 
 export default function JoinBrickBot() {
