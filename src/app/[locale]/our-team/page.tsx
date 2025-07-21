@@ -2,9 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import PageTitle from "../_components/page-title";
-import Achievements from "./components/achievements";
-import JoinBrickBot from "./components/join-brickbot";
-import Introduction from "./components/team-introduction";
+import Achievements from "./sections/achievements";
+import JoinBrickBot from "./sections/join-brickbot";
+import Introduction from "./sections/team-introduction";
 
 export default function OurTeam() {
   const t = useTranslations("OurTeam");

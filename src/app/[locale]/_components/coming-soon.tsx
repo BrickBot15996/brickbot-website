@@ -19,7 +19,7 @@ export default function ComingSoon({
 
   return (
     <section
-      className="flex items-center justify-center min-h-[calc(100vh-var(--navbar-height))] w-full select-none mb-[calc(0rem-var(--2xl-space-y))]"
+      className="flex items-center justify-center min-h-[calc(100vh-var(--navbar-height))] w-full mb-[calc(0rem-var(--2xl-space-y))]"
       style={{
         background: `linear-gradient(0deg, ${gradientColor}, var(--default-dark) 98%)`,
       }}

@@ -3,7 +3,7 @@
 import ImageCarousel, {
   CarouselItem,
 } from "@/app/[locale]/_components/image-carousel";
-import ProjectTitle from "../components/project-title";
+import ProjectTitle from "../sections/project-title";
 import { useCheckpoint, ProjectProps } from "../../_data/projects-data";
 import { useTranslations } from "next-intl";
 

@@ -23,7 +23,7 @@ export function SponsorshipTierDesktop({
         gradient={true}
         color={tier.gradientColor}
         borderRadius="2rem"
-        className={`flex flex-col h-auto w-auto py-[var(--sm-space-y)] select-none ${className}`}
+        className={`flex flex-col h-auto w-auto py-[var(--sm-space-y)] ${className}`}
       >
         <h5
           className="px-[1.25rem]"
@@ -81,7 +81,7 @@ export function SponsorshipTierMobile({ tier }: SponsorshipTierMobileProps) {
         gradient={true}
         color={tier.gradientColor}
         borderRadius="1.3rem"
-        className="flex flex-col w-full select-none px-[1rem] py-[1rem] cursor-pointer overflow-hidden"
+        className="flex flex-col w-full px-[1rem] py-[1rem] cursor-pointer overflow-hidden"
         action={() => {
           setExpanded(!isExpanded);
         }}

@@ -21,12 +21,7 @@ export default function SponsorshipSection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <section>
-      {!isMobile && <TierSectionDesktop />}
-      {isMobile && <TierSectionMobile />}
-    </section>
-  );
+  return isMobile ? <TierSectionMobile /> : <TierSectionDesktop />;
 }
 
 function TierSectionMobile() {

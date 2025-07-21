@@ -60,14 +60,14 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
       onClick={() => {
         router.push(project.pagePath);
       }}
-      className="group flex flex-col items-center justify-center cursor-pointer select-none"
+      className="group flex flex-col items-center justify-center cursor-pointer"
     >
       <div className="w-full h-full">
         <Box
           color={project.color}
           gradient={true}
           borderRadius="1.5rem"
-          className="w-[80%] aspect-[2/1] inline-flex items-center justify-center mr-auto"
+          className="w-[80%] aspect-[2/1] inline-flex items-center justify-center mr-auto select-none"
           hoverEffect={true}
         >
           <Image

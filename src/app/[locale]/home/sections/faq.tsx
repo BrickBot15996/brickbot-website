@@ -166,7 +166,7 @@ function Question({
   return (
     <AnimationWhenInView
       variants={defaultFadeIn}
-      className="w-full h-auto select-none"
+      className="w-full h-auto"
     >
       <div
         className="w-full cursor-pointer"

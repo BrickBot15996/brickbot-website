@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 import Button from "../../_components/brick-button";
 import { useProjectList } from "@/app/[locale]/_data/projects-data";
-import { SmallProjectCard } from "@/app/[locale]/projects/components/project-cards";
+import { SmallProjectCard } from "@/app/[locale]/projects/sections/project-cards";
 import {
   AnimationWhenInView,
   defaultFadeIn,

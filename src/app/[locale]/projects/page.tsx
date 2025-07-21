@@ -2,7 +2,7 @@
 
 import { AnimationWhenInView, defaultFadeIn } from "../_components/animations";
 import PageTitle from "../_components/page-title";
-import { LargeProjectCard } from "./components/project-cards";
+import { LargeProjectCard } from "./sections/project-cards";
 import { useProjectList } from "../_data/projects-data";
 import { useTranslations } from "use-intl";
 

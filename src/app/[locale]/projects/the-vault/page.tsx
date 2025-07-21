@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectTitle from "../components/project-title";
+import ProjectTitle from "../sections/project-title";
 import { ProjectProps, useTheVault } from "../../_data/projects-data";
 import {
   useBrickbotPortfolioList,
@@ -135,10 +135,7 @@ function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
   }, [setIsMobile]);
 
   return (
-    <AnimationWhenInView
-      variants={defaultFadeIn}
-      className="select-none"
-    >
+    <AnimationWhenInView variants={defaultFadeIn}>
       {!isMobile && (
         <SimpleBox
           width="fit"
@@ -150,7 +147,7 @@ function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
           }}
           className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start p-[1rem] lg:p-[2rem] cursor-pointer group"
         >
-          <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden">
+          <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden select-none">
             <Image
               src={portfolio.thumbnailPath}
               alt={

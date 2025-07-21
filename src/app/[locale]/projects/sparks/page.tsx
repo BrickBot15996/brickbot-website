@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectTitle from "../components/project-title";
+import ProjectTitle from "../sections/project-title";
 import ImageCarousel, {
   CarouselItem,
 } from "@/app/[locale]/_components/image-carousel";

@@ -2,9 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import PageTitle from "../_components/page-title";
-import HowToHelpSection from "./components/how-to-help";
-import SponsorSection from "./components/sponsor-section";
-import SponsorshipSection from "./components/sponsorship-section";
+import HowToHelpSection from "./sections/how-to-help";
+import SponsorSection from "./sections/sponsor-section";
+import SponsorshipSection from "./sections/sponsorship-section";
 
 export default function SupportUs() {
   const t = useTranslations("SupportUs");

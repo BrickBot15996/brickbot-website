@@ -138,11 +138,10 @@ export function Contract() {
   const t = useTranslations("SupportUs.HowToHelp.Contracts");
   const [mounted, setMounted] = useState(false);
 
-  // Predefined popup dimensions for different breakpoints
   const popupDimensions = {
-    sm: { width: 320 }, // Mobile
-    md: { width: 300 }, // Tablet
-    lg: { width: 400 }, // Desktop
+    sm: { width: 320 },
+    md: { width: 300 },
+    lg: { width: 400 },
   };
 
   const getCurrentBreakpoint = (): "sm" | "md" | "lg" => {
@@ -171,7 +170,6 @@ export function Contract() {
         const buttonRect = buttonRef.current.getBoundingClientRect();
         const buttonCenterX = buttonRect.left + buttonRect.width / 2;
 
-        // Use predefined popup width for centering calculation
         const popupWidth = popupDimensions[currentBreakpoint].width;
 
         setPopupPosition({
@@ -180,7 +178,6 @@ export function Contract() {
         });
       };
 
-      // Calculate position immediately when popup opens
       calculatePosition();
 
       window.addEventListener("resize", calculatePosition);
