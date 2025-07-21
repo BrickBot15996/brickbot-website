@@ -1,4 +1,8 @@
 {
+  "Root": {
+    "SE_Title": "BrickBot",
+    "SE_Description": "Official Website of FTC Team #15996 BrickBot."
+  },
   "Nav": {
     "title": "Menu",
     "DesktopButtons": {
@@ -79,8 +83,8 @@
     }
   },
 
-  "BrickLog": {
-    "description": "BrickBot Team's Official Blog"
+  "Blog": {
+    "description": "Official Team Blog"
   },
 
   "OurTeam": {

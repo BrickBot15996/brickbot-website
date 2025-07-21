@@ -1,4 +1,6 @@
 import { useTranslations } from "next-intl";
+import { useLocale } from "../_hooks/use-locale";
+import { i18nPath } from "../_utils/redirectPath";
 
 export type ProjectProps = {
   name: string;
@@ -20,6 +22,7 @@ export type ProjectProps = {
 
 export const useTheVault = (): ProjectProps => {
   const t = useTranslations("ProjectData.TheVault");
+  const locale = useLocale();
   return {
     name: t("name"),
     extendedName: t("extendedName"),
@@ -27,7 +30,7 @@ export const useTheVault = (): ProjectProps => {
     description: t("description"),
     logoPath: "/projects/the-vault-logo.svg",
     iconPath: "/projects/the-vault-icon.svg",
-    pagePath: "/projects/the-vault",
+    pagePath: i18nPath(locale, "theVault"),
     color: "#ffb700",
     textColor: "var(--the-vault-text)",
     gradientColor: "var(--the-vault-gradient)",
@@ -41,6 +44,7 @@ export const useTheVault = (): ProjectProps => {
 
 export const useCheckpoint = (): ProjectProps => {
   const t = useTranslations("ProjectData.Checkpoint");
+  const locale = useLocale();
   return {
     name: t("name"),
     extendedName: t("extendedName"),
@@ -48,7 +52,7 @@ export const useCheckpoint = (): ProjectProps => {
     description: t("description"),
     logoPath: "/projects/checkpoint-logo.svg",
     iconPath: "/projects/checkpoint-icon.svg",
-    pagePath: "/projects/checkpoint",
+    pagePath: i18nPath(locale, "checkpoint"),
     color: "#30caae",
     textColor: "var(--checkpoint-text)",
     gradientColor: "var(--checkpoint-gradient)",
@@ -62,6 +66,7 @@ export const useCheckpoint = (): ProjectProps => {
 
 export const useSparks = (): ProjectProps => {
   const t = useTranslations("ProjectData.Sparks");
+  const locale = useLocale();
   return {
     name: t("name"),
     extendedName: t("extendedName"),
@@ -69,7 +74,7 @@ export const useSparks = (): ProjectProps => {
     description: t("description"),
     logoPath: "/projects/sparks-logo.svg",
     iconPath: "/projects/sparks-icon.svg",
-    pagePath: "/projects/sparks",
+    pagePath: i18nPath(locale, "sparks"),
     color: "#9e50ff",
     textColor: "var(--sparks-text)",
     gradientColor: "var(--sparks-gradient)",

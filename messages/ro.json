@@ -1,4 +1,8 @@
 {
+  "Root": {
+    "SE_Title": "BrickBot",
+    "SE_Description": "Website-ul oficial al echipei FTC #15996 BrickBot."
+  },
   "Nav": {
     "title": "Meniu",
     "DesktopButtons": {
@@ -17,6 +21,8 @@
   },
 
   "Home": {
+    "SE_Title": "Acasă - BrickBot",
+    "SE_Description": "",
     "Banner": {
       "title": "We build our future\nBrick by Brick!",
       "buttonText": "SUSȚINE-NE"
@@ -79,7 +85,9 @@
     }
   },
 
-  "BrickLog": {
+  "Blog": {
+    "SE_Title": "Blogul Echipei - BrickBot",
+    "SE_Description": "",
     "description": "Blogul oficial al echipei BrickBot"
   },
 
@@ -114,12 +122,18 @@
   },
 
   "Projects": {
+    "SE_Title": "Proiecte - BrickBot",
+    "SE_Description": "",
     "title": "Proiecte",
     "tag": "Proiect",
     "TheVault": {
+      "SE_Title": "The Vault - BrickBot",
+      "SE_Description": "",
       "otherTeams": "Alte Echipe"
     },
     "Checkpoint": {
+      "SE_Title": "Checkpoint - BrickBot",
+      "SE_Description": "",
       "BrickBotInSchools": {
         "title": "Caravana BrickBot",
         "text": {
@@ -141,6 +155,8 @@
       }
     },
     "Sparks": {
+      "SE_Title": "Sparks - BrickBot",
+      "SE_Description": "",
       "Sparks1": {
         "title": "Sparks I (cu SIRIUS SOCRATE)",
         "text": {
@@ -151,6 +167,8 @@
     }
   },
   "SupportUs": {
+    "SE_Title": "Susține-ne - BrickBot",
+    "SE_Description": "",
     "title": "Susține-ne",
     "HowToHelp": {
       "title": "Cum puteți ajuta",

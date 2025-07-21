@@ -1,14 +1,16 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useGlobalContext } from "../../global-context";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import DesktopNav from "./brick-desktop-nav";
 import MobileNav from "./brick-mobile-nav";
-import { useLocale } from "next-intl";
+import { useLocale as useNextIntlLocale } from "next-intl";
 import { useScrollLock } from "../../_hooks/lock-scroll";
 import { useProjectList } from "../../_data/projects-data";
+import { useLocaleTogglePath } from "../../_hooks/toggle-locale";
+import { useRouter } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -88,19 +90,19 @@ export default function Nav() {
 
 export function LanguageToggle() {
   const router = useRouter();
-  const pathname = usePathname();
-  const locale = useLocale();
+  const locale = useNextIntlLocale();
+  const toggleLocale = useLocaleTogglePath();
 
-  const handleLanguageToggle = () => {
-    const newLocale = locale === "en" ? "ro" : "en";
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
-    router.replace(newPath);
+  const handleLocaleToggle = () => {
+    if (toggleLocale) {
+      router.push(toggleLocale);
+    }
   };
 
   return (
     <div
       className="group relative w-full h-full cursor-pointer"
-      onClick={handleLanguageToggle}
+      onClick={handleLocaleToggle}
     >
       <div className="absolute inset-0 transition-opacity duration-200 bg-[#1A1A1A] border-[#5d5d5d] rounded-full border-[0.15rem]">
         <div className="w-full h-full bg-[#ffffff] opacity-0 group-hover:opacity-5 group-active:opacity-10 rounded-full" />
@@ -110,7 +112,7 @@ export function LanguageToggle() {
         className="relative z-2 h-full w-full px-[1.2rem] text-[#5D5D5D] py-[0.1rem] font-semibold"
         style={{ fontSize: "1.4rem" }}
       >
-        {locale == "en" ? "RO" : "EN"}
+        {locale === "en" ? "RO" : "EN"}
       </div>
     </div>
   );

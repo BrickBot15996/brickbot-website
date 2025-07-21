@@ -31,7 +31,7 @@ export default function MobileNav({
 
   useEffect(() => {
     setIsOpen(false);
-  }, [pathname]);
+  }, [pathname, setIsOpen]);
 
   return (
     <motion.div

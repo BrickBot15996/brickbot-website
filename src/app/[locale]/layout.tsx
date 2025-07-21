@@ -18,10 +18,25 @@ const anekLatin = Anek_Latin({
 });
 
 export const metadata: Metadata = {
-  title: "BrickBot",
-  description: "Website of team 15996 BrickBot",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    url: "https://brickbot.ro/",
+    siteName: "BrickBot",
+    images: [
+      {
+        url: "https://brickbot.vercel.app/embed-icon.png",
+        width: 256,
+        height: 256,
+        alt: "BrickBot Icon",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://brickbot.vercel.app/embed-icon.png"],
   },
 };
 

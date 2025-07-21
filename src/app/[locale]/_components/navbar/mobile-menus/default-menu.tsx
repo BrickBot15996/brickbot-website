@@ -4,6 +4,8 @@ import { Dispatch, SetStateAction } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { LanguageToggle } from "../brick-nav";
 import { MobileButton } from "../brick-mobile-nav";
+import { useLocale } from "@/app/[locale]/_hooks/use-locale";
+import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
 
 export default function DefaultMenu({
   isOpen,
@@ -17,6 +19,7 @@ export default function DefaultMenu({
   setSkipInitialAnimation?: Dispatch<SetStateAction<boolean>>;
 }) {
   const router = useRouter();
+  const locale = useLocale();
   const pathname = usePathname();
   const t = useTranslations("Nav");
 
@@ -61,34 +64,34 @@ export default function DefaultMenu({
             <MobileButton
               text={t("MobileButtons.Home")}
               action={() => {
-                router.push("/home");
+                router.push(i18nPath(locale, "home"));
               }}
               skipInitialAnimation={skipInitialAnimation}
-              isActive={pathname.includes("/home")}
+              isActive={pathname.includes(i18nPath(locale, "home"))}
               translateY={60}
             />
             <MobileButton
               text={t("MobileButtons.BrickLog")}
               action={() => {
-                router.push("/blog");
+                router.push(i18nPath(locale, "blog"));
               }}
               skipInitialAnimation={skipInitialAnimation}
-              isActive={pathname.includes("/blog")}
+              isActive={pathname.includes(i18nPath(locale, "blog"))}
               translateY={90}
             />
             <MobileButton
               text={t("MobileButtons.OurTeam")}
               action={() => {
-                router.push("/our-team");
+                router.push(i18nPath(locale, "ourTeam"));
               }}
               skipInitialAnimation={skipInitialAnimation}
-              isActive={pathname.includes("/our-team")}
+              isActive={pathname.includes(i18nPath(locale, "ourTeam"))}
               translateY={120}
             />
             <MobileButton
               text={t("MobileButtons.Projects")}
               action={() => {
-                router.push("/projects");
+                router.push(i18nPath(locale, "projects"));
               }}
               extraAction={() => {
                 if (setActiveMenu) setActiveMenu("projects");
@@ -96,16 +99,16 @@ export default function DefaultMenu({
               }}
               skipInitialAnimation={skipInitialAnimation}
               setSkipInitialAnimation={setSkipInitialAnimation!}
-              isActive={pathname.includes("/projects")}
+              isActive={pathname.includes(i18nPath(locale, "projects"))}
               translateY={150}
             />
             <MobileButton
               text={t("MobileButtons.SupportUs")}
               action={() => {
-                router.push("/support-us");
+                router.push(i18nPath(locale, "supportUs"));
               }}
               skipInitialAnimation={skipInitialAnimation}
-              isActive={pathname.includes("/support-us")}
+              isActive={pathname.includes(i18nPath(locale, "supportUs"))}
               translateY={180}
             />
           </>

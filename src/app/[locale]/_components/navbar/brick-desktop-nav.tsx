@@ -1,4 +1,3 @@
-import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
@@ -9,9 +8,12 @@ import { LanguageToggle } from "./brick-nav";
 import Box from "../brick-box";
 import { ProjectProps, useProjectList } from "../../_data/projects-data";
 import { useRouter } from "next/navigation";
+import { i18nPath } from "../../_utils/redirectPath";
+import { useLocale } from "../../_hooks/use-locale";
 
 export default function DesktopNav() {
   const router = useRouter();
+  const locale = useLocale();
   const pathname = usePathname();
   const { navbarAnimation } = useGlobalContext();
 
@@ -25,22 +27,24 @@ export default function DesktopNav() {
     >
       <DesktopButton
         textTag="BrickLog"
-        isActive={pathname.includes("/blog")}
+        isActive={pathname.includes(i18nPath(locale, "blog"))}
         action={() => {
-          router.push("/blog");
+          router.push(i18nPath(locale, "blog"));
         }}
         navbarAnimation={navbarAnimation}
       />
       <DesktopButton
         textTag="OurTeam"
-        isActive={pathname.includes("/our-team")}
+        isActive={pathname.includes(i18nPath(locale, "ourTeam"))}
         action={() => {
-          router.push("/our-team");
+          router.push(i18nPath(locale, "ourTeam"));
         }}
         navbarAnimation={navbarAnimation}
       />
-      <Link
-        href="/home"
+      <div
+        onClick={() => {
+          router.push(i18nPath(locale, "home"));
+        }}
         className="mx-[0.5rem] xl:mx-[1rem] hover:opacity-75 hover:scale-115 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.275rem] active:opacity-100 active:scale-95 active:translate-y-[-0.8rem] active:lg:translate-y-[-0.12rem]"
       >
         <Image
@@ -51,21 +55,21 @@ export default function DesktopNav() {
           height={502}
           className="h-[4rem] lg:h-[5rem] w-auto object-contain mt-[0.8rem] lg:mt-[1rem]"
         />
-      </Link>
+      </div>
       <DesktopButton
         textTag="Projects"
-        isActive={pathname.includes("/projects")}
+        isActive={pathname.includes(i18nPath(locale, "projects"))}
         action={() => {
-          router.push("/projects");
+          router.push(i18nPath(locale, "projects"));
         }}
         navbarAnimation={navbarAnimation}
         popUp={<ProjectsPopUp />}
       />
       <DesktopButton
         textTag="SupportUs"
-        isActive={pathname.includes("/support-us")}
+        isActive={pathname.includes(i18nPath(locale, "supportUs"))}
         action={() => {
-          router.push("/support-us");
+          router.push(i18nPath(locale, "supportUs"));
         }}
         navbarAnimation={navbarAnimation}
       />
