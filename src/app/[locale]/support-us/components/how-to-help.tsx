@@ -56,7 +56,7 @@ function RedirectTax() {
   const t = useTranslations("SupportUs.HowToHelp.Redirect");
   return (
     <Link
-      href="https://formular230.ro/"
+      href="https://formular230.ro/asociatia-brickbot"
       target="_blank"
       className="group cursor-pointer h-full"
     >
@@ -130,15 +130,33 @@ export function Contract() {
     top: number;
     left: number;
   } | null>(null);
+  const [currentBreakpoint, setCurrentBreakpoint] = useState<
+    "sm" | "md" | "lg"
+  >("md");
   const buttonRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("SupportUs.HowToHelp.Contracts");
   const [mounted, setMounted] = useState(false);
 
+  // Predefined popup dimensions for different breakpoints
+  const popupDimensions = {
+    sm: { width: 320 }, // Mobile
+    md: { width: 300 }, // Tablet
+    lg: { width: 400 }, // Desktop
+  };
+
+  const getCurrentBreakpoint = (): "sm" | "md" | "lg" => {
+    const width = window.innerWidth;
+    if (width < 640) return "sm";
+    if (width < 1024) return "md";
+    return "lg";
+  };
+
   useEffect(() => {
     setMounted(true);
     const handleResize = () => {
-      setButtonsCol(window.innerWidth <= 520 || window.innerWidth >= 1024);
+      setButtonsCol(window.innerWidth <= 580 || window.innerWidth >= 1024);
+      setCurrentBreakpoint(getCurrentBreakpoint());
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -148,15 +166,21 @@ export function Contract() {
   useEffect(() => {
     if (isPopUpOpen) {
       const calculatePosition = () => {
-        if (!buttonRef.current || !popupRef.current) return;
+        if (!buttonRef.current) return;
+
         const buttonRect = buttonRef.current.getBoundingClientRect();
-        const popupRect = popupRef.current.getBoundingClientRect();
         const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+
+        // Use predefined popup width for centering calculation
+        const popupWidth = popupDimensions[currentBreakpoint].width;
+
         setPopupPosition({
           top: buttonRect.bottom + window.scrollY + 8,
-          left: buttonCenterX - popupRect.width / 2 + window.scrollX,
+          left: buttonCenterX - popupWidth / 2 + window.scrollX,
         });
       };
+
+      // Calculate position immediately when popup opens
       calculatePosition();
 
       window.addEventListener("resize", calculatePosition);
@@ -166,7 +190,7 @@ export function Contract() {
         window.removeEventListener("scroll", calculatePosition);
       };
     }
-  }, [isPopUpOpen]);
+  }, [isPopUpOpen, currentBreakpoint]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -236,7 +260,6 @@ export function Contract() {
             if (isPopUpOpen) {
               setIsPopUpOpen(false);
             } else {
-              setPopupPosition(null);
               setIsPopUpOpen(true);
             }
           }}
@@ -252,8 +275,8 @@ export function Contract() {
                 ref={popupRef}
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{
-                  scale: popupPosition ? 1 : 0.95,
-                  opacity: popupPosition ? 1 : 0,
+                  scale: 1,
+                  opacity: 1,
                 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.15, ease: "easeOut" }}
@@ -261,7 +284,7 @@ export function Contract() {
                 style={{
                   top: popupPosition?.top ?? 0,
                   left: popupPosition?.left ?? 0,
-                  visibility: popupPosition ? "visible" : "hidden",
+                  width: `${popupDimensions[currentBreakpoint].width}px`,
                   zIndex: 9999,
                 }}
                 onClick={(e: React.MouseEvent) => e.stopPropagation()}
@@ -286,15 +309,15 @@ function ContactUsPopUp() {
   };
 
   return (
-    <SimpleBox className="relative flex flex-col items-center justify-start py-[var(--sm-space-y)] px-[var(--md-space-x)] space-y-[var(--sm-space-y)] select-none">
+    <SimpleBox className="relative flex flex-col items-center justify-start py-[var(--sm-space-y)] px-[var(--sm-space-x)] space-y-[var(--sm-space-y)] select-none w-full">
       <SimpleBox
         width="100%"
         className="group relative flex flex-row flex-1 w-full items-center justify-start space-x-[var(--sm-space-x)] px-[var(--sm-space-x)] py-[calc(var(--sm-space-y)/2)] cursor-pointer"
         hoverEffect={true}
         action={handleCopy}
       >
-        <RiMailFill className="w-[2rem] h-[2rem]" />
-        <div className="flex flex-col pr-[var(--lg-space-x)]">
+        <RiMailFill className="w-[2rem] h-[2rem] fill-[var(--alternate-text)]" />
+        <div className="flex flex-col">
           <h6
             className="group-hover:underline"
             style={{ color: "var(--default-text)", fontWeight: 500 }}
@@ -303,8 +326,12 @@ function ContactUsPopUp() {
           </h6>
         </div>
         <h6
-          className="pointer-events-none absolute top-[-3rem] left-1/2 -translate-x-1/2 bg-[var(--default-dark)] text-white text-sm px-3 py-1 rounded-md shadow z-10 whitespace-nowrap transition-opacity duration-300"
-          style={{ fontWeight: 500, opacity: showTooltip ? "1" : "0" }}
+          className="pointer-events-none absolute top-[-3rem] left-1/2 -translate-x-1/2 bg-[var(--default-dark)] text-sm px-3 py-1 rounded-md shadow z-10 whitespace-nowrap transition-opacity duration-300"
+          style={{
+            fontWeight: 500,
+            opacity: showTooltip ? "1" : "0",
+            color: "var(--default-text)",
+          }}
         >
           Copied!
         </h6>
