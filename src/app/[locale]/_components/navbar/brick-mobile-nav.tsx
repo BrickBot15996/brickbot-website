@@ -47,7 +47,7 @@ export default function MobileNav({
           className="relative ml-[var(--sm-space-x)] mr-auto hover:opacity-75 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           <Image
-            src="/brick-mobile-logo.svg"
+            src="/assets/brick-mobile-logo.svg"
             alt="BrickBot Logo"
             priority
             width={1325}

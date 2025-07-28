@@ -44,7 +44,7 @@ export default function Banner() {
           className="w-full h-full z-[-1]"
         >
           <Image
-            src="/banner.webp"
+            src="/assets/curr-banner.webp"
             alt="BrickBot Group Photo"
             fill
             priority

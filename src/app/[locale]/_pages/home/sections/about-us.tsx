@@ -40,37 +40,37 @@ export default function AboutUs() {
       <ImageCarousel
         content={[
           {
-            imageSrc: "/about-us/caravan-2025.webp",
+            imageSrc: "/assets/home/about-us/caravan-2025.webp",
             alt: t("Carousel.Caravan2025"),
             aspectRatio: "16/9",
             description: t("Carousel.Caravan2025"),
           },
           {
-            imageSrc: "/about-us/italy-2025.webp",
+            imageSrc: "/assets/home/about-us/italy-2025.webp",
             alt: t("Carousel.Italy2025"),
             aspectRatio: "16/9",
             description: t("Carousel.Italy2025"),
           },
           {
-            imageSrc: "/about-us/regionals-2025.webp",
+            imageSrc: "/assets/home/about-us/regionals-2025.webp",
             alt: t("Carousel.Regionals2025"),
             aspectRatio: "16/9",
             description: t("Carousel.Regionals2025"),
           },
           {
-            imageSrc: "/about-us/focsani-meet-2025.webp",
+            imageSrc: "/assets/home/about-us/focsani-meet-2025.webp",
             alt: t("Carousel.FocsaniMeet2025"),
             aspectRatio: "16/9",
             description: t("Carousel.FocsaniMeet2025"),
           },
           {
-            imageSrc: "/about-us/btc-2024.webp",
+            imageSrc: "/assets/home/about-us/btc-2024.webp",
             alt: t("Carousel.BTC2024"),
             aspectRatio: "16/9",
             description: t("Carousel.BTC2024"),
           },
           {
-            imageSrc: "/about-us/regionals-2023.webp",
+            imageSrc: "/assets/home/about-us/regionals-2023.webp",
             alt: t("Carousel.Regionals2023"),
             aspectRatio: "16/9",
             description: t("Carousel.Regionals2023"),

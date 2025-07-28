@@ -36,29 +36,37 @@ export const useBrickbotPortfolioList = (): PortfolioProps[] => {
       team: brickbot,
       season: intoTheDeep,
       awards: intoTheDeep.awards,
-      portfolioPath: "/the-vault/portfolios/brickbot-into-the-deep.pdf",
-      thumbnailPath: "/the-vault/thumbnails/brickbot-into-the-deep.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/brickbot-into-the-deep.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/brickbot-into-the-deep.jpg",
     },
     {
       team: brickbot,
       season: centerstage,
       awards: centerstage.awards,
-      portfolioPath: "/the-vault/portfolios/brickbot-centerstage.pdf",
-      thumbnailPath: "/the-vault/thumbnails/brickbot-centerstage.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/brickbot-centerstage.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/brickbot-centerstage.jpg",
     },
     {
       team: brickbot,
       season: powerplay,
       awards: powerplay.awards,
-      portfolioPath: "/the-vault/portfolios/brickbot-powerplay.pdf",
-      thumbnailPath: "/the-vault/thumbnails/brickbot-powerplay.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/brickbot-powerplay.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/brickbot-powerplay.jpg",
     },
     {
       team: brickbot,
       season: freightFrenzy,
       awards: freightFrenzy.awards,
-      portfolioPath: "/the-vault/portfolios/brickbot-freight-frenzy.pdf",
-      thumbnailPath: "/the-vault/thumbnails/brickbot-freight-frenzy.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/brickbot-freight-frenzy.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/brickbot-freight-frenzy.jpg",
     },
   ];
 };
@@ -75,15 +83,19 @@ export const usePortfolioList = (): PortfolioProps[] => {
       team: perpetuum,
       season: centerstage,
       awards: [],
-      portfolioPath: "/the-vault/portfolios/perpetuum-centerstage.pdf",
-      thumbnailPath: "/the-vault/thumbnails/perpetuum-centerstage.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/perpetuum-centerstage.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/perpetuum-centerstage.jpg",
     },
     {
       team: perpetuum,
       season: powerplay,
       awards: [],
-      portfolioPath: "/the-vault/portfolios/perpetuum-powerplay.pdf",
-      thumbnailPath: "/the-vault/thumbnails/perpetuum-powerplay.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/perpetuum-powerplay.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/perpetuum-powerplay.jpg",
     },
     {
       team: infinityedge,
@@ -94,15 +106,19 @@ export const usePortfolioList = (): PortfolioProps[] => {
           awardName: t("InfinityEdge.Centerstage.awards.0.awardName"),
         },
       ],
-      portfolioPath: "/the-vault/portfolios/infinityedge-centerstage.pdf",
-      thumbnailPath: "/the-vault/thumbnails/infinityedge-centerstage.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/infinityedge-centerstage.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/infinityedge-centerstage.jpg",
     },
     {
       team: infinityedge,
       season: powerplay,
       awards: [],
-      portfolioPath: "/the-vault/portfolios/infinityedge-powerplay.pdf",
-      thumbnailPath: "/the-vault/thumbnails/infinityedge-powerplay.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/infinityedge-powerplay.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/infinityedge-powerplay.jpg",
     },
     {
       team: infinityedge,
@@ -117,8 +133,10 @@ export const usePortfolioList = (): PortfolioProps[] => {
           awardName: t("InfinityEdge.FreightFrenzy.awards.1.awardName"),
         },
       ],
-      portfolioPath: "/the-vault/portfolios/infinityedge-freight-frenzy.pdf",
-      thumbnailPath: "/the-vault/thumbnails/infinityedge-freight-frenzy.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/infinityedge-freight-frenzy.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/infinityedge-freight-frenzy.jpg",
     },
     {
       team: infinityedge,
@@ -129,8 +147,10 @@ export const usePortfolioList = (): PortfolioProps[] => {
           awardName: t("InfinityEdge.UltimateGoal.awards.0.awardName"),
         },
       ],
-      portfolioPath: "/the-vault/portfolios/infinityedge-ultimate-goal.pdf",
-      thumbnailPath: "/the-vault/thumbnails/infinityedge-ultimate-goal.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/infinityedge-ultimate-goal.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/infinityedge-ultimate-goal.jpg",
     },
     {
       team: alphabit,
@@ -141,8 +161,10 @@ export const usePortfolioList = (): PortfolioProps[] => {
           awardName: t("Alphabit.Powerplay.awards.0.awardName"),
         },
       ],
-      portfolioPath: "/the-vault/portfolios/alphabit-powerplay.pdf",
-      thumbnailPath: "/the-vault/thumbnails/alphabit-powerplay.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/alphabit-powerplay.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/alphabit-powerplay.jpg",
     },
     {
       team: snaketech,
@@ -153,8 +175,10 @@ export const usePortfolioList = (): PortfolioProps[] => {
           awardName: t("SnakeTech.Centerstage.awards.0.awardName"),
         },
       ],
-      portfolioPath: "/the-vault/portfolios/snake-tech-centerstage.pdf",
-      thumbnailPath: "/the-vault/thumbnails/snake-tech-centerstage.jpg",
+      portfolioPath:
+        "/assets/projects/the-vault/portfolios/snake-tech-centerstage.pdf",
+      thumbnailPath:
+        "/assets/projects/the-vault/thumbnails/snake-tech-centerstage.jpg",
     },
   ];
 };

@@ -67,7 +67,7 @@ function RedirectTax() {
       >
         <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
           <Image
-            src="/support-us/230.svg"
+            src="/assets/support-us/230.svg"
             alt="230 Form Icon"
             fill
             className="object-contain"
@@ -104,7 +104,7 @@ function Donate() {
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <Image
-            src="/support-us/donate.svg"
+            src="/assets/support-us/donate.svg"
             alt="Donate Icon"
             fill
             className="object-contain"
@@ -219,7 +219,7 @@ export function Contract() {
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <Image
-            src="/support-us/contract.svg"
+            src="/assets/support-us/contract.svg"
             alt="Contract Icon"
             fill
             className="object-contain"

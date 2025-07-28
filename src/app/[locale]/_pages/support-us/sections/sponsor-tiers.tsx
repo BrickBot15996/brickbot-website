@@ -49,7 +49,7 @@ export function SponsorshipTierDesktop({
             return (
               <li
                 key={index}
-                className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]"
+                className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/assets/support-us/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]"
               >
                 {benefit}
               </li>
@@ -135,7 +135,7 @@ export function SponsorshipTierMobile({ tier }: SponsorshipTierMobileProps) {
             {tier.benefits.map((benefit, index) => (
               <li
                 key={index}
-                className="mb-[0.25rem] last:mb-0 flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[1rem] before:flex-shrink-0 before:mt-[0.15rem]"
+                className="mb-[0.25rem] last:mb-0 flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/assets/support-us/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[1rem] before:flex-shrink-0 before:mt-[0.15rem]"
               >
                 {benefit}
               </li>
