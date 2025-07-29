@@ -15,44 +15,39 @@ export default function Banner() {
   const t = useTranslations("Home.Banner");
 
   return (
-    <section className="relative w-full h-fit flex flex-col overflow-visible">
-      <div className="flex flex-row h-[var(--banner-height)] w-full">
-        <div className="flex flex-[0_0_100%] items-center mr-auto h-full w-[100vw] bg-[linear-gradient(70deg,_var(--default-dark)_35%,_transparent)] z-2">
-          <div className="flex flex-col ml-[var(--lg-space-x)] space-y-[var(--md-space-y)]">
-            <h2>
-              {t("title")
-                .split("\n")
-                .map((line, index) => (
-                  <React.Fragment key={index}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
-            </h2>
-            <Button
-              text={t("buttonText")}
-              arrow={true}
-              action={() => router.push(i18nPath(locale, "supportUs"))}
-              className="px-[1.35rem] md:px-[1.55rem] lg:px-[1.75rem]"
-            />
-          </div>
-        </div>
-        <motion.div
-          variants={opacityFadeIn}
-          initial="hidden"
-          animate="visible"
-          className="w-full h-full z-[-1]"
-        >
+    <section className="relative w-full h-[30rem] md:h-[40rem] lg:h-[calc(100vh-var(--navbar-height))]">
+      <div className="absolute inset-0 w-full h-full bg-[linear-gradient(0deg,_var(--default-dark)_5%,_transparent)] z-2" />
+      <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-3">
+        <div className="relative h-[5rem] w-[30rem] md:h-[7rem] md:w-[40rem] lg:h-[10rem] lg:w-[50rem] max-w-[80vw]">
           <Image
-            src="/assets/curr-banner.webp"
-            alt="BrickBot Group Photo"
+            src="/assets/banner-text.svg"
+            alt="We build our future brick by brick!"
             fill
             priority
-            className="object-cover translate-x-[22.5%] select-none aspect-16/9 brightness-85"
+            className="object-contain select-none opacity-100 h-full w-full"
           />
-        </motion.div>
+        </div>
+        <Button
+          text={t("buttonText")}
+          arrow={true}
+          action={() => router.push(i18nPath(locale, "supportUs"))}
+          className="px-[1.35rem] md:px-[1.55rem] lg:px-[1.75rem] mt-[var(--2xl-space-y)]"
+        />
       </div>
-      <div className="absolute left-0 bottom-[calc(0rem-var(--separator-thickness))] w-full h-[var(--separator-thickness)] bg-[linear-gradient(90deg,_transparent_10%,_var(--default-yellow)_35%,_transparent_85%)] brightness-70 z-10" />
+      <motion.div
+        variants={opacityFadeIn}
+        initial="hidden"
+        animate="visible"
+        className="w-full h-full relative z-1"
+      >
+        <Image
+          src="/assets/new-banner.jpg"
+          alt="BrickBot Website Banner"
+          fill
+          priority
+          className="object-cover select-none opacity-10"
+        />
+      </motion.div>
     </section>
   );
 }
