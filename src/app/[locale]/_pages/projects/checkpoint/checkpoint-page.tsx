@@ -89,6 +89,13 @@ function PublicInteractions(project: ProjectProps) {
   const publicInteractions: CarouselItem[] = [
     {
       imageSrc:
+        "/assets/projects/checkpoint/interacting-with-the-public/behind-the-screws.jpg",
+      alt: t("Carousel.BehindTheScrews"),
+      aspectRatio: "16/9",
+      description: t("Carousel.BehindTheScrews"),
+    },
+    {
+      imageSrc:
         "/assets/projects/checkpoint/interacting-with-the-public/open-doors-day.webp",
       alt: t("Carousel.OpenDoorsDay"),
       aspectRatio: "16/9",
