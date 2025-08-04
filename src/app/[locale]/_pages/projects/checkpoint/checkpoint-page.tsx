@@ -89,7 +89,7 @@ function PublicInteractions(project: ProjectProps) {
   const publicInteractions: CarouselItem[] = [
     {
       imageSrc:
-        "/assets/projects/checkpoint/interacting-with-the-public/behind-the-screws.jpg",
+        "/assets/projects/checkpoint/interacting-with-the-public/behind-the-screws.webp",
       alt: t("Carousel.BehindTheScrews"),
       aspectRatio: "16/9",
       description: t("Carousel.BehindTheScrews"),
