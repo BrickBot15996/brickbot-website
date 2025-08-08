@@ -4,51 +4,51 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <url>
-        <loc>https://brickbot.vercel.app/en/home</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/home"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/acasa"/>
+        <loc>https://brickbot.ro/en/home</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/home"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/acasa"/>
     </url>
 
     <url>
-        <loc>https://brickbot.vercel.app/en/blog</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/blog"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/blog"/>
+        <loc>https://brickbot.ro/en/blog</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/blog"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/blog"/>
     </url>
 
     <url>
-        <loc>https://brickbot.vercel.app/en/our-team</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/our-team"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/despre-noi"/>
+        <loc>https://brickbot.ro/en/our-team</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/our-team"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/despre-noi"/>
     </url>
 
     <url>
-        <loc>https://brickbot.vercel.app/en/projects</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/projects"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/proiecte"/>
+        <loc>https://brickbot.ro/en/projects</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/projects"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/proiecte"/>
     </url>
 
     <url>
-        <loc>https://brickbot.vercel.app/en/projects/the-vault</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/projects/the-vault"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/proiecte/the-vault"/>
+        <loc>https://brickbot.ro/en/projects/the-vault</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/projects/the-vault"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/proiecte/the-vault"/>
     </url>
 
     <url>
-        <loc>https://brickbot.vercel.app/en/projects/checkpoint</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/projects/checkpoint"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/proiecte/checkpoint"/>
+        <loc>https://brickbot.ro/en/projects/checkpoint</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/projects/checkpoint"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/proiecte/checkpoint"/>
     </url>
 
     <url>
-        <loc>https://brickbot.vercel.app/en/projects/sparks</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/projects/sparks"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/proiecte/sparks"/>
+        <loc>https://brickbot.ro/en/projects/sparks</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/projects/sparks"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/proiecte/sparks"/>
     </url>
     
     <url>
-        <loc>https://brickbot.vercel.app/en/support-us</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.vercel.app/en/support-us"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.vercel.app/ro/sustine-ne"/>
+        <loc>https://brickbot.ro/en/support-us</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/support-us"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/sustine-ne"/>
     </url>
 
 </urlset>

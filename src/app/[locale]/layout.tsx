@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "BrickBot",
     images: [
       {
-        url: "https://brickbot.vercel.app/embed-icon.png",
+        url: "https://brickbot.ro/embed-icon.png",
         width: 256,
         height: 256,
         alt: "BrickBot Icon",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://brickbot.vercel.app/embed-icon.png"],
+    images: ["https://brickbot.ro/embed-icon.png"],
   },
 };
 
