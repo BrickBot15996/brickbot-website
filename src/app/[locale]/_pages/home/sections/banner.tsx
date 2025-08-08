@@ -44,7 +44,7 @@ export default function Banner() {
           alt="BrickBot Website Banner"
           fill
           priority
-          className="object-cover select-none opacity-10"
+          className="object-cover select-none opacity-25"
         />
       </motion.div>
     </section>

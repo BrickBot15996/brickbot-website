@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Anek_Latin } from "next/font/google";
 import { GlobalProvider } from "./global-context";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/next";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Nav from "./_components/navbar/brick-nav";
@@ -64,6 +65,7 @@ export default async function RootLayout({
           <GlobalProvider>
             <Nav />
             {children}
+            <Analytics />
           </GlobalProvider>
         </NextIntlClientProvider>
       </body>
