@@ -235,6 +235,10 @@
         "1": {
           "event": "Italy Championship",
           "awardName": "Innovate Award 2nd Place"
+        },
+        "2": {
+          "event": "SparkHope Robotics Cup",
+          "awardName": "Winners"
         }
       }
     },

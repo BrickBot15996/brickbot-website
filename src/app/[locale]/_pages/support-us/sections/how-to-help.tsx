@@ -93,7 +93,7 @@ function Donate() {
   const t = useTranslations("SupportUs.HowToHelp.Donate");
   return (
     <Link
-      href="https://support.stripe.com/questions/how-to-accept-donations-through-stripe"
+      href=""
       target="_blank"
       className="group cursor-pointer h-full"
     >

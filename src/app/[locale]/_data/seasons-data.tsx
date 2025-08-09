@@ -48,6 +48,10 @@ export const useIntoTheDeep = (): SeasonProps => {
         event: t("1.event"),
         awardName: t("1.awardName"),
       },
+      {
+        event: t("2.event"),
+        awardName: t("2.awardName"),
+      },
     ],
   };
 };

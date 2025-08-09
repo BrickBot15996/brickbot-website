@@ -3,6 +3,7 @@
     "SE_Title": "BrickBot",
     "SE_Description": "Website-ul oficial al echipei FTC #15996 BrickBot."
   },
+
   "Nav": {
     "title": "Meniu",
     "DesktopButtons": {
@@ -167,6 +168,7 @@
       }
     }
   },
+
   "SupportUs": {
     "SE_Title": "Susține-ne - BrickBot",
     "SE_Description": "",
@@ -247,6 +249,10 @@
         {
           "event": "Campionatul din Italia",
           "awardName": "Locul 2 Innovate Award"
+        },
+        {
+          "event": "SparkHope Robotics Cup",
+          "awardName": "Câștigători"
         }
       ]
     },
