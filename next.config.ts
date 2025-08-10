@@ -12,6 +12,25 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/docs",
+        destination: "https://brickbot15996.github.io/brickbot-docs/",
+        permanent: true,
+      },
+      {
+        source: "/apply",
+        destination: "https://forms.gle/yBG1R8YJoQaGmYez7",
+        permanent: true,
+      },
+      {
+        source: "/",
+        destination: "/en/home",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

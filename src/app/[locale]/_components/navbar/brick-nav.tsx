@@ -11,6 +11,7 @@ import { useScrollLock } from "../../_hooks/lock-scroll";
 import { useProjectList } from "../../_data/projects-data";
 import { useLocaleTogglePath } from "../../_hooks/toggle-locale";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -76,12 +77,14 @@ export default function Nav() {
         )}
       </motion.div>
       {projectList.map((project) => (
-        <img
+        <Image
           key={project.iconPath}
           src={project.iconPath}
-          style={{ display: "none" }}
           alt=""
-          loading="eager"
+          height={0}
+          width={0}
+          priority
+          style={{ display: "none" }}
         />
       ))}
     </div>
@@ -102,6 +105,7 @@ export function LanguageToggle() {
   return (
     <div
       className="group relative w-full h-full cursor-pointer"
+      aria-label="Toggle language"
       onClick={handleLocaleToggle}
     >
       <div className="absolute inset-0 transition-opacity duration-200 bg-[#1A1A1A] border-[#5d5d5d] rounded-full border-[0.15rem]">

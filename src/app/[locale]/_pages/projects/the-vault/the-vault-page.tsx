@@ -7,7 +7,6 @@ import {
   usePortfolioList,
   PortfolioProps,
 } from "../../../_data/portfolio-data";
-import Image from "next/image";
 import SimpleBox from "@/app/[locale]/_components/simple-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { teamList, TeamProps } from "../../../_data/team-data";
@@ -17,6 +16,7 @@ import {
 } from "@/app/[locale]/_components/animations";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 export function TheVaultPage() {
   const project: ProjectProps = useTheVault();
@@ -148,7 +148,7 @@ function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
           className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start p-[1rem] lg:p-[2rem] cursor-pointer group"
         >
           <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden select-none">
-            <Image
+            <LoadFadeImage
               src={portfolio.thumbnailPath}
               alt={
                 portfolio.team.name + " portfolio in " + portfolio.season.name
@@ -202,7 +202,7 @@ function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
           </h4>
           <div className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start pl-[1rem] pb-[1rem] cursor-pointer group">
             <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] bg-[linear-gradient(0deg,_var(--the-vault),_var(--default-yellow))] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden">
-              <Image
+              <LoadFadeImage
                 src={portfolio.thumbnailPath}
                 alt={
                   portfolio.team.name + " portfolio in " + portfolio.season.name

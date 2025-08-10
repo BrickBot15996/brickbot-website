@@ -1,10 +1,9 @@
 import { useRouter } from "next/navigation";
 
-import Image from "next/image";
-
 import Box from "../../../_components/brick-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { ProjectProps } from "../../../_data/projects-data";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 export function SmallProjectCard({ project }: SmallProjectCardProps) {
   const router = useRouter();
@@ -22,7 +21,7 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
         hoverEffect={true}
       >
         <div className="absolute top-auto bottom-auto flex items-center justify-center w-full pointer-events-none translate-y-[-2rem]">
-          <Image
+          <LoadFadeImage
             src={project.logoPath}
             alt={project.name + "Logo"}
             width={275}
@@ -70,7 +69,7 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
           className="w-[80%] aspect-[2/1] inline-flex items-center justify-center mr-auto select-none"
           hoverEffect={true}
         >
-          <Image
+          <LoadFadeImage
             src={project.logoPath}
             alt={project.extendedName + " logo"}
             height={200}

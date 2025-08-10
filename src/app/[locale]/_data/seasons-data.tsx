@@ -16,6 +16,7 @@ export type SeasonProps = {
 
 export const useDecode = (): SeasonProps => {
   const t = useTranslations("SeasonData.Decode.awards");
+
   return {
     name: "Decode",
     years: "2025-2026",

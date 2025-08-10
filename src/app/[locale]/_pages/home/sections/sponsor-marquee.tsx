@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 
 import Marquee from "react-fast-marquee";
@@ -19,6 +18,7 @@ import {
 import { useTranslations } from "next-intl";
 import { useLocale } from "@/app/[locale]/_hooks/use-locale";
 import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 export default function SponsorMarquee() {
   const router = useRouter();
@@ -62,7 +62,7 @@ export default function SponsorMarquee() {
                 target="_blank"
                 className="cursor-pointer hover:opacity-50 items-center"
               >
-                <Image
+                <LoadFadeImage
                   src={sponsor.logoPath}
                   alt={sponsor.name}
                   height={100}
@@ -107,7 +107,7 @@ export default function SponsorMarquee() {
                 key={sponsor.name}
                 className="cursor-pointer hover:opacity-50 items-center"
               >
-                <Image
+                <LoadFadeImage
                   src={sponsor.logoPath}
                   alt={sponsor.name}
                   height={100}
@@ -137,7 +137,7 @@ export default function SponsorMarquee() {
                 key={sponsor.name}
                 className="cursor-pointer hover:opacity-50 items-center"
               >
-                <Image
+                <LoadFadeImage
                   src={sponsor.logoPath}
                   alt={sponsor.name}
                   height={100}

@@ -40,6 +40,12 @@ export default function AboutUs() {
       <ImageCarousel
         content={[
           {
+            imageSrc: "/assets/home/about-us/sparkhope-2025.webp",
+            alt: t("Carousel.SparkHope2025"),
+            aspectRatio: "16/9",
+            description: t("Carousel.SparkHope2025"),
+          },
+          {
             imageSrc: "/assets/home/about-us/caravan-2025.webp",
             alt: t("Carousel.Caravan2025"),
             aspectRatio: "16/9",

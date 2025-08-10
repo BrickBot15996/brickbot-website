@@ -1,12 +1,12 @@
 import { useCallback, useState, useEffect } from "react";
 
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
 import Box from "../../../_components/brick-box";
 import ArrowButton from "../../../_components/arrow-button";
 import { SeasonProps, useSeasonList } from "../../../_data/seasons-data";
 import { useTranslations } from "next-intl";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 export default function Achievements() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -118,7 +118,7 @@ function SeasonAchievements({
         gradient={true}
       >
         <div className="relative h-[4.5rem] md:h-[6.5rem] lg:h-[7rem] xl:h-[8rem] w-full overflow-hidden flex flex-col items-center justify-center my-[var(--md-space-y)]">
-          <Image
+          <LoadFadeImage
             src={season.logoPath}
             alt={season.name + " season logo"}
             width={200}

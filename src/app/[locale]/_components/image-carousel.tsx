@@ -88,21 +88,33 @@ export default function ImageCarousel({
                     aspectRatio: `${item.aspectRatio}`,
                   }}
                 >
-                  <div className="bg-[linear-gradient(180deg,_var(--carousel-gradient-light),_var(--carousel-gradient-dark))] w-full h-full p-[0.25rem] rounded-[1rem]">
-                    <div className="relative w-full h-full overflow-hidden rounded-[0.75rem]">
-                      <ExpandableImage
-                        src={item.imageSrc}
-                        alt={item.alt}
-                        aspectRatio={item.aspectRatio}
-                        buttonProps={{
-                          color: buttonAccentColor,
-                          gradientLight: buttonGradientLight,
-                          gradientDark: buttonGradientDark,
-                        }}
-                        className="object-cover rounded-[0.75rem] contain-content"
-                      />
-                    </div>
+                  {/* <div className="bg-[linear-gradient(180deg,_var(--carousel-gradient-light),_var(--carousel-gradient-dark))] w-full h-full p-[0.25rem] rounded-[1rem]"> */}
+                  <div className="relative w-full h-full overflow-hidden rounded-[1rem]">
+                    <ExpandableImage
+                      src={item.imageSrc}
+                      alt={item.alt}
+                      aspectRatio={item.aspectRatio}
+                      buttonProps={{
+                        color: buttonAccentColor,
+                        gradientLight: buttonGradientLight,
+                        gradientDark: buttonGradientDark,
+                      }}
+                      className="object-cover rounded-[1rem] contain-content"
+                    />
+                    <div
+                      className="absolute inset-0 rounded-[1rem] w-full h-full z-10 pointer-events-none"
+                      style={{
+                        background: "#6767677F",
+                        mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                        maskComposite: "xor",
+                        WebkitMask:
+                          "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                        WebkitMaskComposite: "xor",
+                        padding: "0.1875rem",
+                      }}
+                    />
                   </div>
+                  {/* </div> */}
                   {item.description && (
                     <p
                       className="mt-[var(--sm-space-y)] transition-colors duration-300"

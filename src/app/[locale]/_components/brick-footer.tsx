@@ -8,7 +8,7 @@ import { RiInstagramLine, RiLinkedinFill, RiMailFill } from "react-icons/ri";
 import { RiTiktokFill } from "react-icons/ri";
 import { RiFacebookFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
-import Image from "next/image";
+import LoadFadeImage from "./fade-in-on-load-image";
 
 export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
@@ -27,12 +27,12 @@ export default function Footer() {
       <section className="h-auto w-full flex flex-row items-center">
         <span className="h-auto w-auto mr-auto">
           <Link
-            href="https://www.datahost.ro/"
+            href="https://www.linkedin.com/in/marius-baican/"
             className="hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
             target="_blank"
           >
             <p style={{ color: "var(--alternate-text)" }}>
-              Powered by DataHost
+              Built by Marius Baican
             </p>
           </Link>
           <p className="mt-[0.5rem]">Brickbot © {year}</p>
@@ -41,36 +41,42 @@ export default function Footer() {
           <div className="grid grid-rows-2 grid-cols-3 items-start gap-x-[1rem] md:gap-x-[1.5rem] gap-y-[0.8rem] md:gap-y-[1rem] pt-[0.25rem]">
             <Link
               href="https://www.instagram.com/brickbotcnu/"
+              aria-label="BrickBot Instagram Page"
               target="_blank"
             >
               <RiInstagramLine className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
             </Link>
             <Link
               href="https://www.tiktok.com/@brickbotcnu"
+              aria-label="BrickBot TikTok Page"
               target="_blank"
             >
               <RiTiktokFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
             </Link>
             <Link
               href="https://www.facebook.com/brickbotcnu/"
+              aria-label="BrickBot Facebook Page"
               target="_blank"
             >
               <RiFacebookFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
             </Link>
             <Link
               href="https://www.youtube.com/channel/UCRpA5UNXSZDl2GmPt_E91ew"
+              aria-label="BrickBot YouTube Channel"
               target="_blank"
             >
               <RiYoutubeFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
             </Link>
             <Link
               href="https://www.linkedin.com/company/brickbot/"
+              aria-label="BrickBot LinkedIn Page"
               target="_blank"
             >
               <RiLinkedinFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
             </Link>
             <Link
               href="mailto:brickbot@liceulunirea.ro"
+              aria-label="BrickBot Email"
               target="_blank"
             >
               <RiMailFill className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[1.5rem] md:h-[2rem] lg:h-[2.5rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
@@ -81,9 +87,10 @@ export default function Footer() {
       <section className="flex flex-row w-full h-auto mt-[var(--lg-space-y)] space-x-[var(--md-space-x)] items-center justify-center">
         <Link
           href="https://anpc.ro/ce-este-sal/"
+          aria-label="ANPC – Soluționarea alternativă a litigiilor"
           className="cursor-pointer hover:brightness-85"
         >
-          <Image
+          <LoadFadeImage
             src="/assets/anpc/anpc-sal.webp"
             alt="ANPC – Soluționarea alternativă a litigiilor"
             width={250}
@@ -92,9 +99,10 @@ export default function Footer() {
         </Link>
         <Link
           href="https://ec.europa.eu/consumers/odr"
+          aria-label="ANPC – Soluționarea online a litigiilor"
           className="cursor-pointer hover:brightness-85"
         >
-          <Image
+          <LoadFadeImage
             src="/assets/anpc/anpc-sol.webp"
             alt="ANPC – Soluționarea online a litigiilor"
             width={250}

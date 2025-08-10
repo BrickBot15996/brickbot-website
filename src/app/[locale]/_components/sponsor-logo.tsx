@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SponsorData } from "../_data/sponsor-data";
-import Image from "next/image";
 import { Tooltip } from "react-tooltip";
+import LoadFadeImage from "./fade-in-on-load-image";
 
 export type SponsorLogoProps = {
   sponsor: SponsorData;
@@ -15,7 +15,7 @@ export default function SponsorLogo({ sponsor }: SponsorLogoProps) {
         target="_blank"
         className="flex cursor-pointer hover:opacity-50 items-center justify-center relative h-[3rem] md:h-[4rem] lg:h-[5rem]"
       >
-        <Image
+        <LoadFadeImage
           src={sponsor.logoPath}
           alt={sponsor.name}
           fill

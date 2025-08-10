@@ -84,7 +84,6 @@ export async function generateMetadata({
   const { locale, segments = [] } = await params;
 
   const match = findRouteMatch(segments, locale);
-  console.log(match);
 
   if (!match) {
     return {

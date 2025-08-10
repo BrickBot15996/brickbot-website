@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { ProjectProps } from "../../../_data/projects-data";
 import { useGlobalContext } from "@/app/[locale]/global-context";
 import { useTranslations } from "next-intl";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 type ProjectTitleProps = {
   project: ProjectProps;
@@ -59,7 +59,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
             </p>
           </div>
           <div className="w-[0rem] sm:w-[15rem] md:w-[25rem] lg:w-[30rem] h-auto ml-auto opacity-10">
-            <Image
+            <LoadFadeImage
               src={project.logoPath}
               alt={project.name + " logo"}
               width={200}

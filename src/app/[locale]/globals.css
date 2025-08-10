@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-slideshow-image/dist/styles.css";
 
 :root {
   --default-dark: rgba(18, 18, 18, 1);

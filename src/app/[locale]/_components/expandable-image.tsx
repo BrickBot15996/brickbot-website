@@ -1,7 +1,6 @@
 "useClient";
 
 import { CSSProperties, useEffect, useState } from "react";
-import Image from "next/image";
 import { createPortal } from "react-dom";
 import {
   arrowButtonOverlayAnimation,
@@ -11,6 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { useGlobalContext } from "../global-context";
 import { useScrollLock } from "../_hooks/lock-scroll";
+import LoadFadeImage from "./fade-in-on-load-image";
 
 interface ExpandableImageProps {
   src: string;
@@ -51,7 +51,7 @@ export default function ExpandableImage({
         }}
         className="cursor-zoom-in"
       >
-        <Image
+        <LoadFadeImage
           src={src}
           alt={alt}
           className={className}
@@ -83,7 +83,7 @@ export default function ExpandableImage({
                   }}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Image
+                  <LoadFadeImage
                     src={src}
                     alt={alt}
                     fill

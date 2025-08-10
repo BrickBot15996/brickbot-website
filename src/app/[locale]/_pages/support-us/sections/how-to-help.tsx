@@ -9,11 +9,11 @@ import {
   defaultFadeIn,
 } from "@/app/[locale]/_components/animations";
 import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { RiFacebookFill, RiInstagramLine, RiMailFill } from "react-icons/ri";
 import { createPortal } from "react-dom";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 export default function HowToHelpSection() {
   const t = useTranslations("SupportUs.HowToHelp");
@@ -66,7 +66,7 @@ function RedirectTax() {
         style={{ height: "100%" }}
       >
         <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
-          <Image
+          <LoadFadeImage
             src="/assets/support-us/230.svg"
             alt="230 Form Icon"
             fill
@@ -103,7 +103,7 @@ function Donate() {
         style={{ height: "100%" }}
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
-          <Image
+          <LoadFadeImage
             src="/assets/support-us/donate.svg"
             alt="Donate Icon"
             fill
@@ -218,7 +218,7 @@ export function Contract() {
         }`}
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
-          <Image
+          <LoadFadeImage
             src="/assets/support-us/contract.svg"
             alt="Contract Icon"
             fill

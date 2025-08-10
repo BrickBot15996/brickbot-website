@@ -6,7 +6,6 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import DefaultMenu from "./mobile-menus/default-menu";
 import ProjectMenu from "./mobile-menus/project-menu";
-import { useProjectList } from "../../_data/projects-data";
 import { usePathname } from "next/navigation";
 
 export default function MobileNav({
@@ -19,8 +18,6 @@ export default function MobileNav({
   const [skipInitialAnimation, setSkipInitialAnimation] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string>("default");
   const pathname = usePathname();
-
-  const projectList = useProjectList();
 
   useEffect(() => {
     if (!isOpen) {
@@ -113,15 +110,6 @@ export default function MobileNav({
             />
           </motion.div>
         )}
-        {projectList.map((project) => (
-          <img
-            key={project.iconPath}
-            src={project.iconPath}
-            style={{ display: "none" }}
-            alt=""
-            loading="eager"
-          />
-        ))}
       </AnimatePresence>
     </motion.div>
   );
