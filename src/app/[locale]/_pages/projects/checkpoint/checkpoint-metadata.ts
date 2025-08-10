@@ -1,11 +1,12 @@
 export const checkpointMetadata = {
   en: {
     title: "Checkpoint - BrickBot",
-    description: "Checkpoint - Outreach events project by BrickBot.",
+    description:
+      "Checkpoint is BrickBot's outreach initiative, creating events that connect communities, inspire STEM learning, and promote robotics worldwide.",
   },
   ro: {
     title: "Checkpoint - BrickBot",
     description:
-      "Checkpoint - Proiectul de activități de implicare al echipei BrickBot.",
+      "Checkpoint este inițiativa de implicare a echipei BrickBot, organizând evenimente care conectează comunități, inspiră interesul pentru STEM și promovează robotica la nivel global.",
   },
 };

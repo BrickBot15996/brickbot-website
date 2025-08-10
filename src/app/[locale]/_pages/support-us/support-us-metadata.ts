@@ -2,11 +2,11 @@ export const supportUsMetadata = {
   en: {
     title: "Support Us - BrickBot",
     description:
-      "Presentation of ways to sponsor BrickBot and the benefits you may receive.",
+      "Learn how to sponsor BrickBot, support youth robotics, and enjoy exclusive benefits while empowering the next generation of innovators.",
   },
   ro: {
     title: "Susține-ne - BrickBot",
     description:
-      "Prezentarea modurilor de a sponsoriza BrickBot și beneficiile pe care le poți primi.",
+      "Află cum poți sponsoriza BrickBot, sprijini tinerii pasionați de robotică și beneficia de avantaje exclusive, susținând viitoarea generație de inovatori.",
   },
 };
