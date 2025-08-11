@@ -1,10 +1,8 @@
-"use client";
-
-import SponsorMarquee from "./sections/sponsor-marquee";
 import Banner from "./sections/banner";
 import AboutUs from "./sections/about-us";
 import Projects from "./sections/home-projects";
-import FAQ from "./sections/faq";
+import SponsorMarqueeClient from "./sections/sponsor-marquee-client";
+import FAQClient from "./sections/faq-client";
 
 export function HomePage() {
   return (
@@ -14,9 +12,9 @@ export function HomePage() {
         <AboutUs />
         <Projects />
       </section>
-      <SponsorMarquee />
+      <SponsorMarqueeClient />
       <section className="inner-content">
-        <FAQ />
+        <FAQClient />
       </section>
     </section>
   );

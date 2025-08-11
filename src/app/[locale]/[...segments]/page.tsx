@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { routeMap, RouteKey, RedirectKey } from "@/i18n/routing";
+import { routeMap, RouteKey } from "@/i18n/routing";
 import { Metadata } from "next";
 
 import { HomePage } from "../_pages/home/home-page";
@@ -41,11 +41,6 @@ const componentMap: Record<RouteKey, React.ComponentType> = {
   checkpoint: CheckpointPage,
   sparks: SparksPage,
   supportUs: SupportUsPage,
-};
-
-const redirectMap: Record<RedirectKey, string> = {
-  apply: "https://forms.gle/yBG1R8YJoQaGmYez7",
-  docs: "https://brickbot15996.github.io/brickbot-docs/",
 };
 
 function findRouteMatch(segments: string[], locale?: string) {
@@ -97,16 +92,6 @@ export async function generateMetadata({
 
   const { key } = match;
 
-  if (key in redirectMap) {
-    return {
-      title: locale === "en" ? "Redirecting..." : "Redirecționare...",
-      description:
-        locale === "en"
-          ? "Redirecting to external resource."
-          : "Ești redirecționat către o resursă externă",
-    };
-  }
-
   const pageMeta = metadataMap[key as RouteKey];
 
   return (
@@ -138,10 +123,6 @@ export default async function Page({
   if (detectedLocale !== locale) {
     const correctPath = `/${detectedLocale}/${segments.join("/")}`;
     redirect(correctPath);
-  }
-
-  if (key in redirectMap) {
-    redirect(redirectMap[key as RedirectKey]);
   }
 
   const Component = componentMap[key as RouteKey];

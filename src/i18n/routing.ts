@@ -8,8 +8,6 @@ export const routing = defineRouting({
 
 export type Locale = "en" | "ro";
 
-export type RedirectKey = "apply" | "docs";
-
 export type RouteKey =
   | "home"
   | "blog"
@@ -20,21 +18,10 @@ export type RouteKey =
   | "sparks"
   | "supportUs";
 
-export const routeMap: Record<
-  RouteKey | RedirectKey,
-  Record<Locale, string[]>
-> = {
+export const routeMap: Record<RouteKey, Record<Locale, string[]>> = {
   home: {
     en: ["home"],
     ro: ["acasa"],
-  },
-  apply: {
-    en: ["apply"],
-    ro: ["aplica"],
-  },
-  docs: {
-    en: ["docs"],
-    ro: ["documentatie"],
   },
   blog: {
     en: ["blog"],

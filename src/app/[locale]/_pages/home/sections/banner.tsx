@@ -1,18 +1,12 @@
+"use client";
 import Image from "next/image";
 
-import Button from "../../../_components/brick-button";
-import { opacityFadeIn } from "@/app/[locale]/_components/animations";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
-import { useLocale } from "@/app/[locale]/_hooks/use-locale";
-import { useRouter } from "next/navigation";
 import { Fade } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
+import Button from "@/app/[locale]/_components/brick-button";
+import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 
 export default function Banner() {
-  const locale = useLocale();
-  const router = useRouter();
   const t = useTranslations("Home");
 
   const bannerImages = [
@@ -52,46 +46,43 @@ export default function Banner() {
             alt="We build our future brick by brick!"
             fill
             priority
+            fetchPriority="high"
             className="object-contain select-none opacity-100 h-full w-full"
           />
         </div>
         <Button
           text={t("Banner.buttonText")}
           arrow={true}
-          action={() => router.push(i18nPath(locale, "supportUs"))}
+          path={"supportUs"}
           className="px-[1.35rem] md:px-[1.55rem] lg:px-[1.75rem]"
         />
       </div>
-      <motion.div
-        variants={opacityFadeIn}
-        initial="hidden"
-        animate="visible"
-        className="slide-container w-full h-full z-1"
-      >
+      <div className="slide-container w-full h-full z-1">
         <Fade
           duration={5000}
           transitionDuration={500}
           infinite={true}
           arrows={false}
         >
-          {bannerImages.map((image) => {
+          {bannerImages.map((image, index) => {
             return (
               <div
                 key={image.alt}
                 className="relative w-full h-[30rem] md:h-[40rem] lg:h-[calc(100vh-var(--navbar-height))]"
               >
-                <Image
+                <LoadFadeImage
                   src={image.src}
                   alt={image.alt}
                   fill
-                  priority
+                  priority={index === 0}
+                  fetchPriority={index === 0 ? "high" : "low"}
                   className="object-cover w-full h-full opacity-25"
                 />
               </div>
             );
           })}
         </Fade>
-      </motion.div>
+      </div>
     </section>
   );
 }

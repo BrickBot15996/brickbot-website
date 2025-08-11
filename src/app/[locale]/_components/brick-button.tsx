@@ -1,8 +1,12 @@
 import React, { CSSProperties, useState, useEffect, forwardRef } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion, Variants } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { RouteKey } from "@/i18n/routing";
+import { useLocale } from "../_hooks/use-locale";
+import { i18nPath } from "../_utils/redirectPath";
 
-type ButtonParams = {
+export type ButtonProps = {
   text: string;
   arrow?: boolean;
   color?: string;
@@ -10,11 +14,12 @@ type ButtonParams = {
   gradientLight?: string;
   gradientDark?: string;
   action?: () => void;
+  path?: RouteKey;
   className?: string;
   style?: CSSProperties;
 };
 
-const Button = forwardRef<HTMLDivElement, ButtonParams>(
+const Button = forwardRef<HTMLDivElement, ButtonProps>(
   (
     {
       text,
@@ -23,7 +28,8 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
       width = "fit-content",
       gradientLight = "var(--yellow-gradient-light)",
       gradientDark = "var(--yellow-gradient-dark)",
-      action = () => {},
+      action,
+      path,
       className = "px-[1rem] md:px-[1.3rem] lg:px-[1.5rem]",
       style = {},
     },
@@ -32,6 +38,8 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
     const [isHovered, setIsHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [isTouchScreen, setIsTouchScreen] = useState(false);
+    const router = useRouter();
+    const locale = useLocale();
 
     const getAnimationState = () => {
       if (isTouchScreen) return isClicked ? "clicked" : "default";
@@ -66,7 +74,10 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
           setIsClicked(true);
           setIsTouchScreen(true);
         }}
-        onClick={action}
+        onClick={() => {
+          if (action) action();
+          if (path) router.push(i18nPath(locale, path));
+        }}
       >
         <motion.div
           variants={brickButtonScaleAnimation}
@@ -80,16 +91,11 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
             ...style,
           }}
         >
-          <div className="flex flex-row space-x-[0.6rem] items-center justify-center">
-            <h4
-              className="py-[0.5rem] md:py-[0.6rem] lg:py-[0.75rem]"
-              style={{ color }}
-            >
-              {text.toUpperCase()}
-            </h4>
+          <div className="flex flex-row items-center justify-center py-[0.5rem] md:py-[0.6rem] lg:py-[0.675rem] text-[var(--default-yellow)] font-extrabold text-[1.3rem]/[1.3rem] md:text-[1.3rem]/[1.3rem] lg:text-[1.4rem]/[1.4rem] xl:text-[1.5rem]/[1.5rem]">
+            {text.toUpperCase()}
             {arrow && (
               <HiArrowNarrowRight
-                className="mr-[-0.3rem] mt-[0.03rem] h-[1.4rem] lg:h-[1.6rem] w-auto"
+                className="mr-[-0.3rem] mt-[0.03rem] ml-[0.6rem] h-[1.4rem] lg:h-[1.6rem] w-auto"
                 style={{ color }}
               />
             )}

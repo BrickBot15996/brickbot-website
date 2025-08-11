@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 
-import Button from "../../../_components/brick-button";
 import { useProjectList } from "@/app/[locale]/_data/projects-data";
 import { SmallProjectCard } from "@/app/[locale]/_pages/projects/sections/project-cards";
 import {
@@ -12,6 +11,7 @@ import {
 import { useTranslations } from "next-intl";
 import { useLocale } from "@/app/[locale]/_hooks/use-locale";
 import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
+import Button from "@/app/[locale]/_components/brick-button";
 
 export default function Projects() {
   const locale = useLocale();

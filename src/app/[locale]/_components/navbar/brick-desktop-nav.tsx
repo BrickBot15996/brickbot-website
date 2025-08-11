@@ -51,6 +51,7 @@ export default function DesktopNav() {
           src="/assets/brick-yellow.svg"
           alt="BrickBot Logo"
           priority
+          fetchPriority="high"
           width={928}
           height={502}
           className="h-[4rem] lg:h-[5rem] w-auto object-contain mt-[0.8rem] lg:mt-[1rem]"

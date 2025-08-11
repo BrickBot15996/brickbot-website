@@ -522,5 +522,5 @@ body {
   background: var(--background, #121212);
   background-color: var(--background, #121212);
   color: var(--foreground);
-  font-family: var(--font-anek-latin), var(--font-inter), sans-serif;
+  font-family: var(--font-anek-latin), sans-serif;
 }

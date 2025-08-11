@@ -2,9 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
-import { motion, AnimatePresence, Variants } from "framer-motion";
 import Footer from "./_components/brick-footer";
 import { useEffect } from "react";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 const pageVariants: Variants = {
   hidden: {

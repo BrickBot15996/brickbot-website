@@ -47,6 +47,7 @@ export default function MobileNav({
             src="/assets/brick-mobile-logo.svg"
             alt="BrickBot Logo"
             priority
+            fetchPriority="high"
             width={1325}
             height={151}
             className="h-[2rem] w-auto object-contain inline-block mr-[0.5rem] mt-[calc((var(--navbar-height)-2rem)/2)]"
@@ -54,6 +55,7 @@ export default function MobileNav({
         </Link>
         <div className="relative ml-auto mr-[0.1rem] mt-[0.45rem] cursor-pointer fill-[var(--default-yellow)] h-full hover:opacity-75 active:opacity-100 transition-transform duration-150">
           <Hamburger
+            label="Expand navigation menu"
             toggled={isOpen}
             toggle={setIsOpen}
             onToggle={() => {
