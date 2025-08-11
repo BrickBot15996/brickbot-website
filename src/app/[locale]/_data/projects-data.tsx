@@ -95,7 +95,7 @@ export const useBrickDocs = (): ProjectProps => {
     description: t("description"),
     logoPath: "/assets/projects/brickdocs-logo.svg",
     iconPath: "/assets/projects/brickdocs-icon.svg",
-    pagePath: "https://brickbot15996.github.io/brickbot-docs/",
+    pagePath: "https://docs.brickbot.ro",
     color: "#ff6750",
     textColor: "var(--brickdocs-text)",
     gradientColor: "var(--brickdocs-gradient)",

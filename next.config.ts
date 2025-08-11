@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/docs",
-        destination: "https://brickbot15996.github.io/brickbot-docs/",
+        destination: "https://docs.brickbot.ro",
         permanent: true,
       },
       {
