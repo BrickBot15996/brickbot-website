@@ -52,7 +52,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[0rem] lg:h-[5rem] select-none hidden lg:flex overflow-visible"
+          className="h-[0rem] lg:h-[6rem] select-none hidden lg:flex overflow-visible"
           style={{ overflow: "visible" }}
         >
           {marqueeSponsors.map((sponsor, index) => (

@@ -70,6 +70,7 @@ function RedirectTax() {
             src="/assets/support-us/230.svg"
             alt="230 Form Icon"
             fill
+            priority
             className="object-contain"
           />
         </div>
@@ -107,6 +108,7 @@ function Donate() {
             src="/assets/support-us/donate.svg"
             alt="Donate Icon"
             fill
+            priority
             className="object-contain"
           />
         </div>
@@ -222,6 +224,7 @@ export function Contract() {
             src="/assets/support-us/contract.svg"
             alt="Contract Icon"
             fill
+            priority
             className="object-contain"
           />
         </div>
@@ -246,7 +249,7 @@ export function Contract() {
         <Button
           text={t("sampleButton")}
           action={() => {
-            window.open("/contract-brickbot.pdf", "_blank");
+            window.open("/assets/contract-brickbot.pdf", "_blank");
           }}
           width="100%"
         />
