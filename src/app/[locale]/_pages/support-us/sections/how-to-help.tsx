@@ -25,24 +25,24 @@ export default function HowToHelpSection() {
         <p className="w-[100%] lg:w-[70%] mb-[var(--xl-space-y)]">
           {t("text")}
         </p>
-        <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-x-[var(--md-space-x)] gap-y-[var(--md-space-y)]">
+        <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-19 gap-x-[var(--md-space-x)] gap-y-[var(--md-space-y)]">
           <AnimationWhenInView
             variants={defaultFadeIn}
-            className=""
+            className="2xl:col-span-5"
           >
             <RedirectTax />
           </AnimationWhenInView>
 
           <AnimationWhenInView
             variants={defaultFadeIn}
-            className=""
+            className="2xl:col-span-5"
           >
             <Donate />
           </AnimationWhenInView>
 
           <AnimationWhenInView
             variants={defaultFadeIn}
-            className="col-span-1 sm:col-span-2"
+            className="col-span-1 sm:col-span-2 2xl:col-span-9"
           >
             <Contract />
           </AnimationWhenInView>
@@ -84,7 +84,7 @@ function RedirectTax() {
             <HiArrowNarrowRight className="h-auto w-auto fill-[var(--default-yellow)] inline ml-[0.5rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-all duration-200" />
           </span>
         </h3>
-        <p>{t("text")}</p>
+        <p className="support-us-card-text">{t("text")}</p>
       </SimpleBox>
     </Link>
   );
@@ -119,7 +119,7 @@ function Donate() {
           {t("title")}
           <HiArrowNarrowRight className="h-auto w-auto fill-[var(--default-yellow)] inline ml-[0.5rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-all duration-200" />
         </h3>
-        <p>{t("text")}</p>
+        <p className="support-us-card-text">{t("text")}</p>
       </SimpleBox>
     </Link>
   );
@@ -156,7 +156,7 @@ export function Contract() {
   useEffect(() => {
     setMounted(true);
     const handleResize = () => {
-      setButtonsCol(window.innerWidth <= 580 || window.innerWidth >= 1024);
+      setButtonsCol(window.innerWidth <= 530);
       setCurrentBreakpoint(getCurrentBreakpoint());
     };
     handleResize();
@@ -211,7 +211,7 @@ export function Contract() {
 
   return (
     <SimpleBox
-      className="flex flex-col lg:flex-row items-start justify-start px-[1.5rem] py-[2rem] space-x-[var(--sm-space-x)]"
+      className="flex flex-col items-start justify-start px-[1.5rem] py-[2rem] space-x-[var(--sm-space-x)]"
       style={{ height: "100%" }}
     >
       <div
@@ -234,24 +234,23 @@ export function Contract() {
         >
           {t("title")}
         </h3>
-        <p className="mt-auto">{t("text")}</p>
+        <p className="support-us-card-text mt-auto">{t("text")}</p>
       </div>
 
       <div
-        className={`w-full lg:w-auto lg:flex-[0_0_30%] 2xl:flex-[0_0_40%] flex items-center justify-center
+        className={`w-full flex items-center justify-center mr-auto
         ${
           buttonsCol
-            ? "flex-col space-y-[var(--sm-space-y)] ml-auto mr-auto lg:mr-0 max-w-[15rem] lg:max-w-full"
-            : "flex-row space-x-[var(--sm-space-x)] mt-[var(--md-space-y)]"
-        }
-        lg:space-x-[0rem] lg:ml-auto lg:mt-auto`}
+            ? "flex-col space-y-[var(--sm-space-y)] ml-auto mr-auto justify-center"
+            : "flex-row space-x-[var(--md-space-x)] justify-start mt-[var(--sm-space-y)]"
+        }`}
       >
         <Button
           text={t("sampleButton")}
           action={() => {
             window.open("/assets/contract-brickbot.pdf", "_blank");
           }}
-          width="100%"
+          className="px-[2rem]"
         />
         <Button
           ref={buttonRef}
@@ -263,7 +262,7 @@ export function Contract() {
               setIsPopUpOpen(true);
             }
           }}
-          width="100%"
+          className="px-[1rem] sm:px-[2rem]"
         />
       </div>
 

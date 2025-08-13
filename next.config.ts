@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/submit-portfolio",
+        destination: "https://forms.gle/YGcVdcwkANbtqKNs5",
+        permanent: true,
+      },
+      {
         source: "/",
         destination: "/en/home",
         permanent: true,

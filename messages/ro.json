@@ -1,9 +1,4 @@
 {
-  "Root": {
-    "SE_Title": "BrickBot",
-    "SE_Description": "Website-ul oficial al echipei FTC #15996 BrickBot."
-  },
-
   "Nav": {
     "title": "Meniu",
     "DesktopButtons": {
@@ -22,8 +17,6 @@
   },
 
   "Home": {
-    "SE_Title": "Acasă - BrickBot",
-    "SE_Description": "",
     "Banner": {
       "title": "We build our future\nBrick by Brick!",
       "buttonText": "SUSȚINE-NE"
@@ -88,8 +81,6 @@
   },
 
   "Blog": {
-    "SE_Title": "Blogul Echipei - BrickBot",
-    "SE_Description": "",
     "description": "Blogul oficial al echipei BrickBot"
   },
 
@@ -124,18 +115,15 @@
   },
 
   "Projects": {
-    "SE_Title": "Proiecte - BrickBot",
-    "SE_Description": "",
     "title": "Proiecte",
     "tag": "Proiect",
     "TheVault": {
-      "SE_Title": "The Vault - BrickBot",
-      "SE_Description": "",
+      "submitTitle": "Trimite-ți Portofoliul Inginerului",
+      "submitText": "Inspiră comunitatea FTC cu munca ta.",
+      "submitButton": "Trimite",
       "otherTeams": "Alte Echipe"
     },
     "Checkpoint": {
-      "SE_Title": "Checkpoint - BrickBot",
-      "SE_Description": "",
       "BrickBotInSchools": {
         "title": "Caravana BrickBot",
         "text": {
@@ -158,8 +146,6 @@
       }
     },
     "Sparks": {
-      "SE_Title": "Sparks - BrickBot",
-      "SE_Description": "",
       "Sparks1": {
         "title": "Sparks I (cu SIRIUS SOCRATE)",
         "text": {
@@ -171,8 +157,6 @@
   },
 
   "SupportUs": {
-    "SE_Title": "Susține-ne - BrickBot",
-    "SE_Description": "",
     "title": "Susține-ne",
     "HowToHelp": {
       "title": "Cum puteți ajuta",
@@ -183,7 +167,7 @@
       },
       "Donate": {
         "title": "Donează",
-        "text": "Oricine poate susține Asociația BrickBot printr-o donație sigură de pănâ la 500 RON prin intermediul platformei Stripe."
+        "text": "În curând, oricine va putea susține Asociația BrickBot printr-o donație sigură de pănâ la 500 RON prin intermediul platformei Stripe."
       },
       "Contracts": {
         "title": "Contracte de sponsorizare",

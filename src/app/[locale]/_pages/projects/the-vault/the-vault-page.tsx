@@ -17,6 +17,7 @@ import {
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
+import Button from "@/app/[locale]/_components/brick-button";
 
 export function TheVaultPage() {
   const project: ProjectProps = useTheVault();
@@ -25,6 +26,7 @@ export function TheVaultPage() {
       <ProjectTitle project={project} />
       <section className="inner-content">
         <BrickBotPortfolios {...project} />
+        <SubmitPortfolio {...project} />
         <OtherTeamPortfolios {...project} />
       </section>
     </section>
@@ -53,6 +55,27 @@ function BrickBotPortfolios(project: ProjectProps) {
           );
         })}
       </div>
+    </section>
+  );
+}
+
+function SubmitPortfolio(project: ProjectProps) {
+  const t = useTranslations("Projects.TheVault");
+
+  return (
+    <section className="flex flex-col items-center justify-center space-y-[var(--md-space-y)]">
+      <h2 style={{ color: project.textColor }}>{t("submitTitle")}</h2>
+      <p>{t("submitText")}</p>
+      <Button
+        text={t("submitButton")}
+        action={() => {
+          window.open("/submit-portfolio", "_blank");
+        }}
+        color={project.color}
+        gradientLight={project.buttonGradientLight}
+        gradientDark={project.buttonGradientDark}
+        className="px-[3rem]"
+      />
     </section>
   );
 }

@@ -158,5 +158,11 @@ export const useSponsorList = (): SponsorData[] => {
       websiteLink: "https://www.ceproinv.ro/",
       tier: silver,
     },
+    {
+      name: "DataHost",
+      logoPath: "/assets/support-us/sponsors/datahost.webp",
+      websiteLink: "https://www.datahost.ro/",
+      tier: silver,
+    },
   ];
 };

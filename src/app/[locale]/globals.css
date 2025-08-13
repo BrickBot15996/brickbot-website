@@ -214,6 +214,13 @@
     color: var(--default-text);
     font-weight: 500;
   }
+
+  .support-us-card-text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: var(--default-text);
+    font-weight: 500;
+  }
 }
 
 /* md */
@@ -280,6 +287,13 @@
     p {
       font-size: 1.2rem;
       line-height: 1.6rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
+
+    .support-us-card-text {
+      font-size: 1.1rem;
+      line-height: 1.3rem;
       color: var(--default-text);
       font-weight: 500;
     }
@@ -353,6 +367,13 @@
       color: var(--default-text);
       font-weight: 500;
     }
+
+    .support-us-card-text {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
   }
 }
 
@@ -422,6 +443,13 @@
       color: var(--default-text);
       font-weight: 500;
     }
+
+    .support-us-card-text {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
   }
 }
 
@@ -476,6 +504,13 @@
     p {
       font-size: 1.5rem;
       line-height: 1.9rem;
+      color: var(--default-text);
+      font-weight: 500;
+    }
+
+    .support-us-card-text {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
       color: var(--default-text);
       font-weight: 500;
     }

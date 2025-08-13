@@ -1,8 +1,4 @@
 {
-  "Root": {
-    "SE_Title": "BrickBot",
-    "SE_Description": "Official Website of FTC Team #15996 BrickBot."
-  },
   "Nav": {
     "title": "Menu",
     "DesktopButtons": {
@@ -122,6 +118,9 @@
     "title": "Projects",
     "tag": "Project",
     "TheVault": {
+      "submitTitle": "Submit your Engineering Portfolio",
+      "submitText": "Inspire the FTC community with your work.",
+      "submitButton": "Submit",
       "otherTeams": "Other Teams"
     },
     "Checkpoint": {
@@ -168,7 +167,7 @@
       },
       "Donate": {
         "title": "Donate",
-        "text": "Anyone can support the BrickBot Association by making a secure donation of up to €100 through Stripe."
+        "text": "Soon, anyone will be able to support the BrickBot Association by making a secure donation of up to €100 through Stripe."
       },
       "Contracts": {
         "title": "Sponsorship Contracts",
