@@ -77,7 +77,7 @@ export default function MobileNav({
               opacity: 0,
               translateX: -30,
             }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="relative flex flex-row w-full h-auto px-[var(--md-space-x)] mt-[var(--lg-space-y)]"
           >
             <DefaultMenu
@@ -100,7 +100,7 @@ export default function MobileNav({
               opacity: 0,
               translateX: 30,
             }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="relative flex flex-row w-full h-auto px-[var(--md-space-x)] mt-[var(--lg-space-y)]"
           >
             <ProjectMenu

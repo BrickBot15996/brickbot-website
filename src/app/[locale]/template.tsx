@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Footer from "./_components/brick-footer";
 import { useEffect } from "react";
+import { useProjectList } from "./_data/projects-data";
+import Image from "next/image";
 
 const pageVariants: Variants = {
   hidden: {
@@ -28,6 +30,7 @@ const pageVariants: Variants = {
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const projectList = useProjectList();
 
   useEffect(() => {
     if (
@@ -92,6 +95,18 @@ export default function Template({ children }: { children: React.ReactNode }) {
           <Footer />
         </motion.div>
       </AnimatePresence>
+      {projectList.map((project) => (
+        <Image
+          key={project.iconPath}
+          src={project.iconPath}
+          alt=""
+          height={0}
+          width={0}
+          priority
+          fetchPriority="high"
+          style={{ display: "none" }}
+        />
+      ))}
     </>
   );
 }

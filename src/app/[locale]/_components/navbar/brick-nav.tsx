@@ -8,17 +8,14 @@ import DesktopNav from "./brick-desktop-nav";
 import MobileNav from "./brick-mobile-nav";
 import { useLocale as useNextIntlLocale } from "next-intl";
 import { useScrollLock } from "../../_hooks/lock-scroll";
-import { useProjectList } from "../../_data/projects-data";
 import { useLocaleTogglePath } from "../../_hooks/toggle-locale";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export default function Nav() {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const { setNavbarAnimation } = useGlobalContext();
-  const projectList = useProjectList();
 
   useScrollLock(isOpen && isMobile!);
 
@@ -76,17 +73,6 @@ export default function Nav() {
           <DesktopNav />
         )}
       </motion.div>
-      {projectList.map((project) => (
-        <Image
-          key={project.iconPath}
-          src={project.iconPath}
-          alt=""
-          height={0}
-          width={0}
-          priority
-          style={{ display: "none" }}
-        />
-      ))}
     </div>
   );
 }
