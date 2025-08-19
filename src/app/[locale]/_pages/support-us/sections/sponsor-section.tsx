@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AnimationWhenInView,
   defaultFadeIn,

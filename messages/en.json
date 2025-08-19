@@ -184,6 +184,51 @@
     }
   },
 
+  "Footer": {
+    "Projects": {
+      "title": "Projects",
+      "links": {
+        "TheVault": "The Vault",
+        "Checkpoint": "Checkpoint",
+        "Sparks": "Sparks",
+        "BrickDocs": "BrickDocs",
+        "SimplicityFTC": "SimplicityFTC"
+      }
+    },
+    "Team": {
+      "title": "Team",
+      "links": {
+        "OurTeam": "Our Team",
+        "BrickLog": "BrickLog",
+        "JoinBrickBot": "Join Us",
+        "BrickLinks": "Links"
+      }
+    },
+    "GetInvolved": {
+      "title": "Get Involved",
+      "links": {
+        "SupportUs": "Support Us",
+        "Contact": "Contact"
+      }
+    }
+  },
+
+  "Contact": {
+    "title": "Contact",
+    "primary": "Primary",
+    "Association": {
+      "title": "Association Details",
+      "subsidiary": "Focșani Subsidiary",
+      "iban": "RO55BTRLRONCRT0690572901"
+    },
+    "Address": {
+      "title": "Address",
+      "address": "13-15 Cezar Bolliac Street, Focșani, Vrancea, Romania"
+    }
+  },
+
+  "Author": "Built by Marius Baican",
+
   "ProjectData": {
     "TheVault": {
       "name": "The Vault",

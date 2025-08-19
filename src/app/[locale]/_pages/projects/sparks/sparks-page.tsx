@@ -1,5 +1,3 @@
-"use client";
-
 import ProjectTitle from "../sections/project-title";
 import ImageCarousel, {
   CarouselItem,

@@ -18,6 +18,8 @@ import { theVaultMetadata } from "../_pages/projects/the-vault/the-vault-metadat
 import { checkpointMetadata } from "../_pages/projects/checkpoint/checkpoint-metadata";
 import { sparksMetadata } from "../_pages/projects/sparks/sparks-metadata";
 import { supportUsMetadata } from "../_pages/support-us/support-us-metadata";
+import { contactMetadata } from "../_pages/contact/contact-metadata";
+import ContactPage from "../_pages/contact/contact-page";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +32,7 @@ const metadataMap: Record<RouteKey, Record<string, Metadata>> = {
   checkpoint: checkpointMetadata,
   sparks: sparksMetadata,
   supportUs: supportUsMetadata,
+  contact: contactMetadata,
 };
 
 const componentMap: Record<RouteKey, React.ComponentType> = {
@@ -41,6 +44,7 @@ const componentMap: Record<RouteKey, React.ComponentType> = {
   checkpoint: CheckpointPage,
   sparks: SparksPage,
   supportUs: SupportUsPage,
+  contact: ContactPage,
 };
 
 const redirectMap: Record<RedirectKey, string> = {

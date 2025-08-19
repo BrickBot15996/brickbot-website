@@ -1,9 +1,15 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 
 import Box from "../../../_components/brick-box";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { ProjectProps } from "../../../_data/projects-data";
+import { ProjectProps, useProjectList } from "../../../_data/projects-data";
 import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
+import {
+  AnimationWhenInView,
+  defaultFadeIn,
+} from "@/app/[locale]/_components/animations";
 
 export function SmallProjectCard({ project }: SmallProjectCardProps) {
   const router = useRouter();
@@ -98,3 +104,21 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
 type LargeProjectCardProps = {
   project: ProjectProps;
 };
+
+export function ProjectGrid() {
+  const projectList = useProjectList();
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 grid-flow-row items-stretch gap-x-[var(--xl-space-x)] gap-y-[var(--2xl-space-y)]">
+      {projectList.map((project, index) => {
+        return (
+          <AnimationWhenInView
+            key={index}
+            variants={defaultFadeIn}
+          >
+            <LargeProjectCard project={project} />
+          </AnimationWhenInView>
+        );
+      })}
+    </div>
+  );
+}

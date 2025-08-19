@@ -44,11 +44,12 @@ export default function MobileNav({
           className="relative ml-[var(--sm-space-x)] mr-auto hover:opacity-75 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           <Image
-            src="/assets/brick-mobile-logo.svg"
+            src="/assets/branding/brick-mobile-logo.svg"
             alt="BrickBot Logo"
             priority
-            width={1325}
-            height={151}
+            fetchPriority="high"
+            width={600}
+            height={75}
             className="h-[2rem] w-auto object-contain inline-block mr-[0.5rem] mt-[calc((var(--navbar-height)-2rem)/2)]"
           />
         </Link>

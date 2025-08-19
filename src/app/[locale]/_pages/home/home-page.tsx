@@ -1,5 +1,3 @@
-"use client";
-
 import SponsorMarquee from "./sections/sponsor-marquee";
 import Banner from "./sections/banner";
 import AboutUs from "./sections/about-us";

@@ -1,5 +1,3 @@
-"use client";
-
 import ImageCarousel, {
   CarouselItem,
 } from "@/app/[locale]/_components/image-carousel";

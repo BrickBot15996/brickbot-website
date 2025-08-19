@@ -8,12 +8,12 @@ import {
   AnimationWhenInView,
   defaultFadeIn,
 } from "@/app/[locale]/_components/animations";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
-import { RiFacebookFill, RiInstagramLine, RiMailFill } from "react-icons/ri";
-import { createPortal } from "react-dom";
 import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
+import { useRouter } from "next/navigation";
+import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
+import { useLocale } from "@/app/[locale]/_hooks/use-locale";
 
 export default function HowToHelpSection() {
   const t = useTranslations("SupportUs.HowToHelp");
@@ -127,87 +127,18 @@ function Donate() {
 
 export function Contract() {
   const [buttonsCol, setButtonsCol] = useState(false);
-  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
-  const [popupPosition, setPopupPosition] = useState<{
-    top: number;
-    left: number;
-  } | null>(null);
-  const [currentBreakpoint, setCurrentBreakpoint] = useState<
-    "sm" | "md" | "lg"
-  >("md");
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const popupRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("SupportUs.HowToHelp.Contracts");
-  const [mounted, setMounted] = useState(false);
-
-  const popupDimensions = {
-    sm: { width: 320 },
-    md: { width: 300 },
-    lg: { width: 400 },
-  };
-
-  const getCurrentBreakpoint = (): "sm" | "md" | "lg" => {
-    const width = window.innerWidth;
-    if (width < 640) return "sm";
-    if (width < 1024) return "md";
-    return "lg";
-  };
+  const router = useRouter();
+  const locale = useLocale();
 
   useEffect(() => {
-    setMounted(true);
     const handleResize = () => {
       setButtonsCol(window.innerWidth <= 530);
-      setCurrentBreakpoint(getCurrentBreakpoint());
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => {
-    if (isPopUpOpen) {
-      const calculatePosition = () => {
-        if (!buttonRef.current) return;
-
-        const buttonRect = buttonRef.current.getBoundingClientRect();
-        const buttonCenterX = buttonRect.left + buttonRect.width / 2;
-
-        const popupWidth = popupDimensions[currentBreakpoint].width;
-
-        setPopupPosition({
-          top: buttonRect.bottom + window.scrollY + 8,
-          left: buttonCenterX - popupWidth / 2 + window.scrollX,
-        });
-      };
-
-      calculatePosition();
-
-      window.addEventListener("resize", calculatePosition);
-      window.addEventListener("scroll", calculatePosition, { passive: true });
-      return () => {
-        window.removeEventListener("resize", calculatePosition);
-        window.removeEventListener("scroll", calculatePosition);
-      };
-    }
-  }, [isPopUpOpen, currentBreakpoint, popupDimensions]);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (
-        popupRef.current &&
-        !popupRef.current.contains(target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(target)
-      ) {
-        setIsPopUpOpen(false);
-      }
-    };
-    if (isPopUpOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isPopUpOpen]);
 
   return (
     <SimpleBox
@@ -253,121 +184,13 @@ export function Contract() {
           className="px-[2rem]"
         />
         <Button
-          ref={buttonRef}
           text={t("contactButton")}
           action={() => {
-            if (isPopUpOpen) {
-              setIsPopUpOpen(false);
-            } else {
-              setIsPopUpOpen(true);
-            }
+            router.push(i18nPath(locale, "contact"));
           }}
-          className="px-[1rem] sm:px-[2rem]"
+          className="px-[1.5rem] sm:px-[2rem]"
         />
       </div>
-
-      {mounted &&
-        createPortal(
-          <AnimatePresence>
-            {isPopUpOpen && (
-              <motion.div
-                ref={popupRef}
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{
-                  scale: 1,
-                  opacity: 1,
-                }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-                className="popup-content absolute origin-top-center"
-                style={{
-                  top: popupPosition?.top ?? 0,
-                  left: popupPosition?.left ?? 0,
-                  width: `${popupDimensions[currentBreakpoint].width}px`,
-                  zIndex: 9999,
-                }}
-                onClick={(e: React.MouseEvent) => e.stopPropagation()}
-              >
-                <ContactUsPopUp />
-              </motion.div>
-            )}
-          </AnimatePresence>,
-          document.body
-        )}
-    </SimpleBox>
-  );
-}
-
-function ContactUsPopUp() {
-  const [showTooltip, setShowTooltip] = useState(false);
-  const handleCopy = () => {
-    navigator.clipboard.writeText("brickbot@liceulunirea.ro").then(() => {
-      setShowTooltip(true);
-      setTimeout(() => setShowTooltip(false), 1000);
-    });
-  };
-
-  return (
-    <SimpleBox className="relative flex flex-col items-center justify-start py-[var(--sm-space-y)] px-[var(--sm-space-x)] space-y-[var(--sm-space-y)] select-none w-full">
-      <SimpleBox
-        width="100%"
-        className="group relative flex flex-row flex-1 w-full items-center justify-start space-x-[var(--sm-space-x)] px-[var(--sm-space-x)] py-[calc(var(--sm-space-y)/2)] cursor-pointer"
-        hoverEffect={true}
-        action={handleCopy}
-      >
-        <RiMailFill className="w-[2rem] h-[2rem] fill-[var(--alternate-text)]" />
-        <div className="flex flex-col">
-          <h6
-            className="group-hover:underline"
-            style={{ color: "var(--default-text)", fontWeight: 500 }}
-          >
-            brickbot@liceulunirea.ro
-          </h6>
-        </div>
-        <h6
-          className="pointer-events-none absolute top-[-3rem] left-1/2 -translate-x-1/2 bg-[var(--default-dark)] text-sm px-3 py-1 rounded-md shadow z-10 whitespace-nowrap transition-opacity duration-300"
-          style={{
-            fontWeight: 500,
-            opacity: showTooltip ? "1" : "0",
-            color: "var(--default-text)",
-          }}
-        >
-          Copied!
-        </h6>
-      </SimpleBox>
-      <SimpleBox
-        width="100%"
-        className="flex flex-row flex-1 w-full items-center justify-start space-x-[var(--sm-space-x)] px-[var(--sm-space-x)] py-[calc(var(--sm-space-y)/2)] cursor-pointer"
-        hoverEffect={true}
-        action={() => {
-          window.open("https://www.instagram.com/brickbotcnu/", "_blank");
-        }}
-      >
-        <RiInstagramLine className="w-[2rem] h-[2rem]" />
-        <div className="flex flex-col pr-[var(--lg-space-x)]">
-          <h6 style={{ color: "var(--default-text)", fontWeight: 500 }}>
-            brickbotcnu
-          </h6>
-        </div>
-      </SimpleBox>
-      <SimpleBox
-        width="100%"
-        className="flex flex-row flex-1 w-full items-center justify-start space-x-[var(--sm-space-x)] px-[var(--sm-space-x)] py-[calc(var(--sm-space-y)/2)] cursor-pointer"
-        hoverEffect={true}
-        action={() => {
-          window.open(
-            "https://www.facebook.com/brickbotcnu/?locale=ro_RO",
-            "_blank"
-          );
-        }}
-      >
-        <RiFacebookFill className="w-[2rem] h-[2rem]" />
-        <div className="flex flex-col pr-[var(--lg-space-x)]">
-          <h6 style={{ color: "var(--default-text)", fontWeight: 500 }}>
-            brickbotcnu
-          </h6>
-        </div>
-      </SimpleBox>
     </SimpleBox>
   );
 }

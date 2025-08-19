@@ -1,3 +1,5 @@
+"use client";
+
 import ArrowButton from "@/app/[locale]/_components/arrow-button";
 import { useEffect, useState } from "react";
 import { SponsorshipTierDesktop, SponsorshipTierMobile } from "./sponsor-tiers";

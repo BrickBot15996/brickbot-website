@@ -183,6 +183,52 @@
       "title": "Sponsori"
     }
   },
+
+  "Footer": {
+    "Projects": {
+      "title": "Proiecte",
+      "links": {
+        "TheVault": "The Vault",
+        "Checkpoint": "Checkpoint",
+        "Sparks": "Sparks",
+        "BrickDocs": "BrickDocs",
+        "SimplicityFTC": "SimplicityFTC"
+      }
+    },
+    "Team": {
+      "title": "Echipa",
+      "links": {
+        "OurTeam": "Despre noi",
+        "BrickLog": "BrickLog",
+        "JoinBrickBot": "Înscrie-te",
+        "BrickLinks": "Link-uri"
+      }
+    },
+    "GetInvolved": {
+      "title": "Implică-te",
+      "links": {
+        "SupportUs": "Susține-ne",
+        "Contact": "Contact"
+      }
+    }
+  },
+
+  "Contact": {
+    "title": "Contact",
+    "primary": "Principal",
+    "Association": {
+      "title": "Detaliile asociației",
+      "subsidiary": "Sucursala Focșani",
+      "iban": "RO55BTRLRONCRT0690572901"
+    },
+    "Address": {
+      "title": "Address",
+      "address": "Strada Cezar Bolliac 13-15, Focșani, Vrancea, România"
+    }
+  },
+
+  "Author": "Realizat de Marius Baican",
+
   "ProjectData": {
     "TheVault": {
       "name": "The Vault",
@@ -216,6 +262,7 @@
       "description": "Bibliotecă software ce are ca scop simplificarea programării pentru echipele FTC."
     }
   },
+
   "SeasonData": {
     "Decode": {
       "awards": [

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import Button from "../../../_components/brick-button";
@@ -48,7 +50,7 @@ export default function Banner() {
       <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-3">
         <div className="relative h-[5rem] w-[30rem] md:h-[7rem] md:w-[40rem] lg:h-[10rem] lg:w-[50rem] max-w-[80vw] mb-[var(--2xl-space-y)]">
           <Image
-            src="/assets/banner-text.svg"
+            src="/assets/branding/banner-text.svg"
             alt="We build our future brick by brick!"
             fill
             priority
@@ -74,7 +76,7 @@ export default function Banner() {
           infinite={true}
           arrows={false}
         >
-          {bannerImages.map((image) => {
+          {bannerImages.map((image, index) => {
             return (
               <div
                 key={image.alt}
@@ -85,6 +87,7 @@ export default function Banner() {
                   alt={image.alt}
                   fill
                   priority
+                  fetchPriority={index === 0 ? "high" : "low"}
                   className="object-cover w-full h-full opacity-25"
                 />
               </div>

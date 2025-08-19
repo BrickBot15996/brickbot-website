@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback, useState, useEffect } from "react";
 
 import useEmblaCarousel from "embla-carousel-react";
@@ -99,6 +101,8 @@ export default function ImageCarousel({
                         gradientLight: buttonGradientLight,
                         gradientDark: buttonGradientDark,
                       }}
+                      priority={index < 2 ? true : false}
+                      fetchPriority={index < 2 ? "high" : "auto"}
                       className="object-cover rounded-[1rem] contain-content"
                     />
                     <div

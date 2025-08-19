@@ -18,7 +18,8 @@ export type RouteKey =
   | "theVault"
   | "checkpoint"
   | "sparks"
-  | "supportUs";
+  | "supportUs"
+  | "contact";
 
 export const routeMap: Record<
   RouteKey | RedirectKey,
@@ -63,5 +64,9 @@ export const routeMap: Record<
   supportUs: {
     en: ["support-us"],
     ro: ["sustine-ne"],
+  },
+  contact: {
+    en: ["contact"],
+    ro: ["contact"],
   },
 };

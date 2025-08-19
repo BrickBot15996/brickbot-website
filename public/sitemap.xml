@@ -51,4 +51,10 @@
         <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/sustine-ne"/>
     </url>
 
+    <url>
+        <loc>https://brickbot.ro/en/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/contact"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/contact"/>
+    </url>
+
 </urlset>

@@ -1,23 +1,14 @@
-"use client";
-
 import ProjectTitle from "../sections/project-title";
 import { ProjectProps, useTheVault } from "../../../_data/projects-data";
+import { teamList, TeamProps } from "@/app/[locale]/_data/team-data";
 import {
   useBrickbotPortfolioList,
   usePortfolioList,
-  PortfolioProps,
-} from "../../../_data/portfolio-data";
-import SimpleBox from "@/app/[locale]/_components/simple-box";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { teamList, TeamProps } from "../../../_data/team-data";
-import {
-  AnimationWhenInView,
-  defaultFadeIn,
-} from "@/app/[locale]/_components/animations";
-import { useEffect, useState } from "react";
+} from "@/app/[locale]/_data/portfolio-data";
+import { Portfolio } from "./sections/portfolio";
 import { useTranslations } from "next-intl";
-import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 import Button from "@/app/[locale]/_components/brick-button";
+import Link from "next/link";
 
 export function TheVaultPage() {
   const project: ProjectProps = useTheVault();
@@ -33,7 +24,7 @@ export function TheVaultPage() {
   );
 }
 
-function BrickBotPortfolios(project: ProjectProps) {
+export default function BrickBotPortfolios(project: ProjectProps) {
   const brickbotPortfolioList = useBrickbotPortfolioList();
 
   return (
@@ -59,28 +50,32 @@ function BrickBotPortfolios(project: ProjectProps) {
   );
 }
 
-function SubmitPortfolio(project: ProjectProps) {
+export function SubmitPortfolio(project: ProjectProps) {
   const t = useTranslations("Projects.TheVault");
 
   return (
-    <section className="flex flex-col items-center justify-center space-y-[var(--md-space-y)]">
+    <section className="flex flex-col items-center justify-center space-y-[var(--md-space-y)] w-full bg-[linear-gradient(0deg,_#211906,_transparent)] rounded-[1.5rem] py-[var(--md-space-y)]">
       <h2 style={{ color: project.textColor }}>{t("submitTitle")}</h2>
-      <p>{t("submitText")}</p>
-      <Button
-        text={t("submitButton")}
-        action={() => {
-          window.open("/submit-portfolio", "_blank");
-        }}
-        color={project.color}
-        gradientLight={project.buttonGradientLight}
-        gradientDark={project.buttonGradientDark}
-        className="px-[3rem]"
-      />
+      <h3 style={{ color: "var(--alternate-text)", fontWeight: 500 }}>
+        {t("submitText")}
+      </h3>
+      <Link
+        href="/submit-portfolio"
+        target="_blank"
+      >
+        <Button
+          text={t("submitButton")}
+          color={project.color}
+          gradientLight={project.buttonGradientLight}
+          gradientDark={project.buttonGradientDark}
+          className="px-[3rem]"
+        />
+      </Link>
     </section>
   );
 }
 
-function OtherTeamPortfolios(project: ProjectProps) {
+export function OtherTeamPortfolios(project: ProjectProps) {
   const t = useTranslations("Projects.TheVault");
   return (
     <section>
@@ -110,7 +105,7 @@ type TeamPortfoliosProps = {
   textColor: string;
 };
 
-function TeamPortfolios({ team, textColor }: TeamPortfoliosProps) {
+export function TeamPortfolios({ team, textColor }: TeamPortfoliosProps) {
   const portfolioList = usePortfolioList();
 
   return (
@@ -137,122 +132,5 @@ function TeamPortfolios({ team, textColor }: TeamPortfoliosProps) {
           })}
       </div>
     </section>
-  );
-}
-
-type PortfolioDisplayProps = {
-  portfolio: PortfolioProps;
-  textColor: string;
-};
-
-function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [setIsMobile]);
-
-  return (
-    <AnimationWhenInView variants={defaultFadeIn}>
-      {!isMobile ? (
-        <SimpleBox
-          width="fit"
-          height="fit"
-          borderRadius={2}
-          hoverEffect={true}
-          action={() => {
-            window.open(portfolio.portfolioPath, "_blank");
-          }}
-          className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start p-[1rem] lg:p-[2rem] cursor-pointer group"
-        >
-          <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden select-none">
-            <LoadFadeImage
-              src={portfolio.thumbnailPath}
-              alt={
-                portfolio.team.name + " portfolio in " + portfolio.season.name
-              }
-              fill
-              className="object-cover h-full w-auto"
-            />
-          </div>
-          <div className="flex flex-col flex-1 h-full">
-            <h4
-              className="mb-[var(--md-space-y)] group-hover:underline"
-              style={{ color: textColor }}
-            >
-              {portfolio.season.name.toUpperCase()}
-              <HiArrowNarrowRight className="inline-flex h-auto w-auto ml-[0.5rem] mt-[-0.17rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-transform duration-200" />
-            </h4>
-
-            {portfolio.awards.map((award, index) => (
-              <div
-                key={index}
-                className="h-fit w-full flex flex-col"
-              >
-                <h5>{award.event}</h5>
-                <h6
-                  style={{ color: "var(--default-text)" }}
-                  className="mb-[var(--sm-space-y)]"
-                >
-                  {award.awardName}
-                </h6>
-              </div>
-            ))}
-          </div>
-        </SimpleBox>
-      ) : (
-        <SimpleBox
-          width="fit"
-          height="fit"
-          borderRadius={2}
-          hoverEffect={true}
-          action={() => {
-            window.open(portfolio.portfolioPath, "_blank");
-          }}
-          className="flex flex-col items-stretch justify-start space-y-[var(--md-space-y)] self-start p-[1rem] cursor-pointer group"
-        >
-          <h4
-            className="group-hover:underline pl-[1rem] pt-[1rem]"
-            style={{ color: textColor }}
-          >
-            {portfolio.season.name.toUpperCase()}
-            <HiArrowNarrowRight className="inline-flex h-auto w-auto ml-[0.5rem] mt-[-0.17rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-transform duration-200" />
-          </h4>
-          <div className="flex flex-row items-stretch justify-start space-x-[var(--md-space-x)] self-start pl-[1rem] pb-[1rem] cursor-pointer group">
-            <div className="relative h-[12rem] md:h-[15rem] lg:h-[18rem] xl:h-[20rem] 2xl:h-[25rem] aspect-[1/1.414] bg-[linear-gradient(0deg,_var(--the-vault),_var(--default-yellow))] rounded-[1.5rem] lg:rounded-[1rem] overflow-hidden">
-              <LoadFadeImage
-                src={portfolio.thumbnailPath}
-                alt={
-                  portfolio.team.name + " portfolio in " + portfolio.season.name
-                }
-                fill
-                className="object-cover h-full w-auto"
-              />
-            </div>
-            <div className="flex flex-col flex-1 h-full">
-              {portfolio.awards.map((award, index) => (
-                <div
-                  key={index}
-                  className="h-fit w-full flex flex-col"
-                >
-                  <h5>{award.event}</h5>
-                  <h6
-                    style={{ color: "var(--default-text)" }}
-                    className="mb-[var(--sm-space-y)]"
-                  >
-                    {award.awardName}
-                  </h6>
-                </div>
-              ))}
-            </div>
-          </div>
-        </SimpleBox>
-      )}
-    </AnimationWhenInView>
   );
 }

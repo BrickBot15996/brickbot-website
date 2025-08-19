@@ -1,4 +1,4 @@
-"useClient";
+"use client";
 
 import { CSSProperties, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -11,14 +11,12 @@ import { IoMdClose } from "react-icons/io";
 import { useGlobalContext } from "../global-context";
 import { useScrollLock } from "../_hooks/lock-scroll";
 import LoadFadeImage from "./fade-in-on-load-image";
+import { ImageProps } from "next/image";
 
-interface ExpandableImageProps {
-  src: string;
-  alt: string;
-  className?: string;
+type ExpandableImageProps = ImageProps & {
   aspectRatio?: string;
   buttonProps?: CloseButtonProps;
-}
+};
 
 export default function ExpandableImage({
   src,

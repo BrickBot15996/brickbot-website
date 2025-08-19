@@ -1,3 +1,5 @@
+"use client";
+
 import React, { CSSProperties, useState, useEffect, forwardRef } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { motion, Variants } from "framer-motion";

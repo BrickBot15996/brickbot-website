@@ -134,6 +134,10 @@
     -webkit-user-drag: none;
   }
 
+  a {
+    -webkit-user-drag: none;
+  }
+
   html,
   body {
     overscroll-behavior-y: contain;

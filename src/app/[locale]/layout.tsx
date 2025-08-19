@@ -58,6 +58,13 @@ export default async function RootLayout({
       lang={locale}
       className="overflow-x-hidden"
     >
+      <head>
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/favicon.ico"
+        />
+      </head>
       <body
         className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
       >

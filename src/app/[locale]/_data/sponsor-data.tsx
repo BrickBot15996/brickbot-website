@@ -82,7 +82,7 @@ export const useSponsorList = (): SponsorData[] => {
     },
     {
       name: "Banca Transilvania",
-      logoPath: "/assets/support-us/sponsors/banca_transilvania.webp",
+      logoPath: "/assets/support-us/sponsors/banca-transilvania.webp",
       websiteLink: "https://www.bancatransilvania.ro/",
       tier: gold,
     },

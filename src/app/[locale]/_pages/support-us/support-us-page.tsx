@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import PageTitle from "../../_components/page-title";
 import HowToHelpSection from "./sections/how-to-help";
