@@ -32,6 +32,7 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
             alt={project.name + "Logo"}
             width={275}
             height={275}
+            quality={60}
             className="object-contain w-[70%] h-auto opacity-80"
           />
         </div>
@@ -80,6 +81,7 @@ export function LargeProjectCard({ project }: LargeProjectCardProps) {
             alt={project.extendedName + " logo"}
             height={200}
             width={200}
+            quality={60}
             className="object-cover contain-content max-h-[35%] max-w-[80%] h-auto w-auto"
           />
         </Box>

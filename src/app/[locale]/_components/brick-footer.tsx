@@ -138,7 +138,7 @@ function NavMenuDesktop() {
               href={project.pagePath}
               key={project.name}
             >
-              <p className="hover:opacity-60">{project.name}</p>
+              <p className="hover:brightness-75">{project.name}</p>
             </Link>
           );
         })}
@@ -151,16 +151,16 @@ function NavMenuDesktop() {
           {t("Team.title")}
         </h3>
         <Link href={i18nPath(locale, "ourTeam")}>
-          <p className="hover:opacity-60">{t("Team.links.OurTeam")}</p>
+          <p className="hover:brightness-75">{t("Team.links.OurTeam")}</p>
         </Link>
         <Link href={i18nPath(locale, "blog")}>
-          <p className="hover:opacity-60">{t("Team.links.BrickLog")}</p>
+          <p className="hover:brightness-75">{t("Team.links.BrickLog")}</p>
         </Link>
         <Link href={"/apply"}>
-          <p className="hover:opacity-60">{t("Team.links.JoinBrickBot")}</p>
+          <p className="hover:brightness-75">{t("Team.links.JoinBrickBot")}</p>
         </Link>
         <Link href={"https://links.brickbot.ro"}>
-          <p className="hover:opacity-60">{t("Team.links.BrickLinks")}</p>
+          <p className="hover:brightness-75">{t("Team.links.BrickLinks")}</p>
         </Link>
       </div>
       <div className="flex flex-col space-y-[0.75rem]">
@@ -171,10 +171,14 @@ function NavMenuDesktop() {
           {t("GetInvolved.title")}
         </h3>
         <Link href={i18nPath(locale, "supportUs")}>
-          <p className="hover:opacity-60">{t("GetInvolved.links.SupportUs")}</p>
+          <p className="hover:brightness-75">
+            {t("GetInvolved.links.SupportUs")}
+          </p>
         </Link>
         <Link href={i18nPath(locale, "contact")}>
-          <p className="hover:opacity-60">{t("GetInvolved.links.Contact")}</p>
+          <p className="hover:brightness-75">
+            {t("GetInvolved.links.Contact")}
+          </p>
         </Link>
       </div>
     </div>
@@ -259,7 +263,7 @@ function NavMenuMobile() {
                   href={project.pagePath}
                   key={project.name}
                 >
-                  <p className="hover:opacity-60">{project.name}</p>
+                  <p className="hover:brightness-75">{project.name}</p>
                 </Link>
               );
             })}
@@ -286,16 +290,20 @@ function NavMenuMobile() {
               {t("Team.title")}
             </h3>
             <Link href={i18nPath(locale, "ourTeam")}>
-              <p className="hover:opacity-60">{t("Team.links.OurTeam")}</p>
+              <p className="hover:brightness-75">{t("Team.links.OurTeam")}</p>
             </Link>
             <Link href={i18nPath(locale, "blog")}>
-              <p className="hover:opacity-60">{t("Team.links.BrickLog")}</p>
+              <p className="hover:brightness-75">{t("Team.links.BrickLog")}</p>
             </Link>
             <Link href={"/apply"}>
-              <p className="hover:opacity-60">{t("Team.links.JoinBrickBot")}</p>
+              <p className="hover:brightness-75">
+                {t("Team.links.JoinBrickBot")}
+              </p>
             </Link>
             <Link href={"https://links.brickbot.ro"}>
-              <p className="hover:opacity-60">{t("Team.links.BrickLinks")}</p>
+              <p className="hover:brightness-75">
+                {t("Team.links.BrickLinks")}
+              </p>
             </Link>
           </div>
           <div className="flex flex-col space-y-[1rem]">
@@ -306,12 +314,12 @@ function NavMenuMobile() {
               {t("GetInvolved.title")}
             </h3>
             <Link href={i18nPath(locale, "supportUs")}>
-              <p className="hover:opacity-60">
+              <p className="hover:brightness-75">
                 {t("GetInvolved.links.SupportUs")}
               </p>
             </Link>
             <Link href={i18nPath(locale, "contact")}>
-              <p className="hover:opacity-60">
+              <p className="hover:brightness-75">
                 {t("GetInvolved.links.Contact")}
               </p>
             </Link>

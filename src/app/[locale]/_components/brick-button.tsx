@@ -83,12 +83,12 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
           }}
         >
           <div className="flex flex-row space-x-[0.6rem] items-center justify-center">
-            <h4
-              className="py-[0.5rem] md:py-[0.6rem] lg:py-[0.75rem]"
+            <button
+              className="button-text py-[0.5rem] md:py-[0.6rem] lg:py-[0.75rem]"
               style={{ color }}
             >
               {text.toUpperCase()}
-            </h4>
+            </button>
             {arrow && (
               <HiArrowNarrowRight
                 className="mr-[-0.3rem] mt-[0.03rem] h-[1.4rem] lg:h-[1.6rem] w-auto"

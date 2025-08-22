@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Anek_Latin } from "next/font/google";
+import { Anek_Latin } from "next/font/google";
 import { GlobalProvider } from "./global-context";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Analytics } from "@vercel/analytics/next";
@@ -8,14 +8,10 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Nav from "./_components/navbar/brick-nav";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
 const anekLatin = Anek_Latin({
   variable: "--font-anek-latin",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -64,10 +60,24 @@ export default async function RootLayout({
           type="image/x-icon"
           href="/favicon.ico"
         />
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/_next/static/media/dbb9a2128d94625d-s.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body
-        className={`${anekLatin.variable} ${inter.variable} antialiased flex flex-col`}
-      >
+      <body className={`${anekLatin.variable} antialiased flex flex-col`}>
         <NextIntlClientProvider>
           <GlobalProvider>
             <Nav />

@@ -37,7 +37,7 @@ export default function FAQ() {
                 <Link
                   href="https://www.firstinspires.org/robotics/ftc"
                   target="_blank"
-                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {chunks}
@@ -51,7 +51,7 @@ export default function FAQ() {
                 <Link
                   href="https://natieprineducatie.ro/"
                   target="_blank"
-                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {chunks}
@@ -61,7 +61,7 @@ export default function FAQ() {
                 <Link
                   href="https://www.brd.ro/"
                   target="_blank"
-                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {chunks}
@@ -93,7 +93,7 @@ export default function FAQ() {
                 <Link
                   href="http://cnu.lufo.ro/"
                   target="_blank"
-                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {chunks}
@@ -108,7 +108,7 @@ export default function FAQ() {
                 <Link
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdhuVfh2RyC0MiKmwmsHwoun3WSluxmfESnBfrRO5NKK9T28Q/viewform"
                   target="_blank"
-                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {chunks}
@@ -130,7 +130,7 @@ export default function FAQ() {
               supportUs: (chunks) => (
                 <Link
                   href={i18nPath(locale, "supportUs")}
-                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+                  className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {chunks}

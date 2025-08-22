@@ -10,7 +10,6 @@ import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
 import { useLocale } from "@/app/[locale]/_hooks/use-locale";
 import { useRouter } from "next/navigation";
 import { Fade } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
 
 export default function Banner() {
   const locale = useLocale();

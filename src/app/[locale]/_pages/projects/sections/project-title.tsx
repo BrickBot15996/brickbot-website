@@ -46,7 +46,7 @@ export default function ProjectTitle({ project }: ProjectTitleProps) {
             <div className="flex flex-row space-x-[var(--md-space-x)] items-center mb-[var(--md-space-y)] h-fit">
               <h1 style={{ color: project.textColor }}>{project.name}</h1>
               {showProjectBadge && (
-                <div className="bg-[var(--default-dark)] border-[0.075rem] border-[#5D5D5D] rounded-full px-[1.5rem] lg:px-[1.9rem] text-[#5D5D5D] text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] py-[0.1rem] font-semibold h-fit select-none">
+                <div className="bg-[var(--default-dark)] border-[0.075rem] border-[#9d9d9d] rounded-full px-[1.5rem] lg:px-[1.9rem] text-[#9d9d9d] text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] py-[0.1rem] font-semibold h-fit select-none">
                   {t("tag")}
                 </div>
               )}

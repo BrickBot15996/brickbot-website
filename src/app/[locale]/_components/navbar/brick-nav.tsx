@@ -94,12 +94,12 @@ export function LanguageToggle() {
       aria-label="Toggle language"
       onClick={handleLocaleToggle}
     >
-      <div className="absolute inset-0 transition-opacity duration-200 bg-[#1A1A1A] border-[#5d5d5d] rounded-full border-[0.15rem]">
+      <div className="absolute inset-0 transition-opacity duration-200 bg-[#1A1A1A] border-[#9d9d9d] rounded-full border-[0.15rem]">
         <div className="w-full h-full bg-[#ffffff] opacity-0 group-hover:opacity-5 group-active:opacity-10 rounded-full" />
       </div>
 
       <div
-        className="relative z-2 h-full w-full px-[1.2rem] text-[#5D5D5D] py-[0.1rem] font-semibold"
+        className="relative z-2 h-full w-full px-[1.2rem] text-[#9D9D9D] py-[0.1rem] font-semibold"
         style={{ fontSize: "1.4rem" }}
       >
         {locale === "en" ? "RO" : "EN"}

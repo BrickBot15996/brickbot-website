@@ -181,7 +181,8 @@ export function Contract() {
           action={() => {
             window.open("/assets/contract-brickbot.pdf", "_blank");
           }}
-          className="px-[2rem]"
+          className="px-[2rem] flex-[0_0_30%]"
+          width={buttonsCol ? "14rem" : ""}
         />
         <Button
           text={t("contactButton")}
@@ -189,6 +190,7 @@ export function Contract() {
             router.push(i18nPath(locale, "contact"));
           }}
           className="px-[1.5rem] sm:px-[2rem]"
+          width={buttonsCol ? "14rem" : ""}
         />
       </div>
     </SimpleBox>

@@ -60,6 +60,7 @@ export default function MobileNav({
             onToggle={() => {
               setSkipInitialAnimation(false);
             }}
+            label="Expand navigation menu"
             color="var(--default-yellow)"
             size={32}
           />

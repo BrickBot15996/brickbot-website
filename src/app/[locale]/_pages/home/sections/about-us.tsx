@@ -14,7 +14,7 @@ export default function AboutUs() {
             <Link
               href="http://cnu.lufo.ro/"
               target="_blank"
-              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
             >
               {chunks}
             </Link>
@@ -27,7 +27,7 @@ export default function AboutUs() {
             <Link
               href="https://www.firstinspires.org/robotics/ftc"
               target="_blank"
-              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
             >
               {chunks}
             </Link>

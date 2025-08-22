@@ -72,7 +72,7 @@ export default function Introduction() {
             <Link
               href="https://www.firstinspires.org/robotics/ftc"
               target="_blank"
-              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)]"
+              className="text-[var(--alternate-text)] hover:text-[var(--default-yellow)] underline"
             >
               {chunks}
             </Link>

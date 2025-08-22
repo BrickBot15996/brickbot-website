@@ -24,7 +24,7 @@
   --carousel-gradient-light: rgba(255, 255, 255, 0.0706);
   --carousel-gradient-dark: rgba(88, 88, 88, 0.0706);
 
-  --default-text: rgba(177, 177, 177, 1);
+  --default-text: rgb(177, 177, 177);
   --alternate-text: rgba(255, 255, 255, 1);
   --darker-text: rgba(108, 108, 108, 1);
 
@@ -191,6 +191,7 @@
     font-weight: 600;
   }
 
+  .button-text,
   h4 {
     font-size: 1.3rem;
     line-height: 1.4rem;
@@ -267,6 +268,7 @@
       font-weight: 600;
     }
 
+    .button-text,
     h4 {
       font-size: 1.3rem;
       line-height: 1.3rem;
@@ -344,6 +346,7 @@
       font-weight: 600;
     }
 
+    .button-text,
     h4 {
       font-size: 1.4rem;
       line-height: 1.4rem;
@@ -420,6 +423,7 @@
       font-weight: 600;
     }
 
+    .button-text,
     h4 {
       font-size: 1.5rem;
       line-height: 1.5rem;
@@ -484,6 +488,7 @@
       font-weight: 600;
     }
 
+    .button-text,
     h4 {
       font-size: 1.5rem;
       line-height: 1.5rem;
@@ -561,5 +566,5 @@ body {
   background: var(--background, #121212);
   background-color: var(--background, #121212);
   color: var(--foreground);
-  font-family: var(--font-anek-latin), var(--font-inter), sans-serif;
+  font-family: var(--font-anek-latin), sans-serif;
 }
