@@ -55,7 +55,7 @@ export default function ExpandableImage({
           className={className}
           width={0}
           height={0}
-          sizes="80vw"
+          sizes="100vw"
           style={{ width: "100%", height: "auto" }}
         />
       </div>
@@ -84,7 +84,6 @@ export default function ExpandableImage({
                   <LoadFadeImage
                     src={src}
                     alt={alt}
-                    quality={100}
                     fill
                     className="object-cover rounded-[1.5rem] lg:rounded-[3rem]"
                   />

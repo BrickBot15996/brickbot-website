@@ -58,7 +58,7 @@ export default async function RootLayout({
         <link
           rel="icon"
           type="image/x-icon"
-          href="/favicon.ico"
+          href="/dark-bg-favicon.ico"
         />
         <link
           rel="preconnect"
