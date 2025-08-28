@@ -26,8 +26,8 @@ export const routeMap: Record<
   Record<Locale, string[]>
 > = {
   home: {
-    en: ["home"],
-    ro: ["acasa"],
+    en: [],
+    ro: [],
   },
   apply: {
     en: ["apply"],

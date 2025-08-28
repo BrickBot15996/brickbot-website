@@ -4,7 +4,7 @@ export const homeMetadata = {
     description:
       "Discover BrickBot, a high school robotics team competing in FIRST Tech Challenge, building innovative robots and promoting STEM values.",
     alternates: {
-      canonical: "https://brickbot.ro/en/home",
+      canonical: "https://brickbot.ro/en",
     },
   },
   ro: {
@@ -12,7 +12,7 @@ export const homeMetadata = {
     description:
       "Fă cunoștință cu BrickBot, o echipă de robotică de liceu care concurează în FIRST Tech Challenge, construind roboți inovatori și promovând valorile STEM.",
     alternates: {
-      canonical: "https://brickbot.ro/en/home",
+      canonical: "https://brickbot.ro/en",
     },
   },
 };

@@ -30,8 +30,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/",
-        destination: "/en/home",
+        source: "/en/home",
+        destination: "https://brickbot.ro/en",
+        permanent: true,
+      },
+      {
+        source: "/ro/acasa",
+        destination: "https://brickbot.ro/ro",
         permanent: true,
       },
     ];

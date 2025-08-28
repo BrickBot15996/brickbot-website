@@ -114,7 +114,7 @@ function NavMenuDesktop() {
         </div>
         <span className="inline h-auto w-auto mr-auto">
           <Link
-            href="https://www.linkedin.com/in/marius-baican/"
+            href="https://mariusbaican.com/"
             className="hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
             target="_blank"
           >
@@ -270,7 +270,7 @@ function NavMenuMobile() {
           </div>
           <span className="inline lg:hidden h-auto w-auto mr-auto">
             <Link
-              href="https://www.linkedin.com/in/marius-baican/"
+              href="https://mariusbaican.com/"
               className="hover:brightness-75 active:scale-3d active:brightness-100 transition-transform duration-150 cursor-pointer w-fit"
               target="_blank"
             >

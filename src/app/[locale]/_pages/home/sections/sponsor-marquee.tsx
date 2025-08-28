@@ -90,7 +90,7 @@ export default function SponsorMarquee() {
           ))}
         </Marquee>
 
-        {/* Mobile Marquee (no tooltip) */}
+        {/* Mobile Marquee */}
         <Marquee
           pauseOnHover={true}
           pauseOnClick={true}
@@ -98,7 +98,7 @@ export default function SponsorMarquee() {
           autoFill={true}
           gradient={true}
           gradientColor="var(--default-dark)"
-          className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none mb-[var(--2xl-space-y)] lg:mb-[0rem]"
+          className="h-[4rem] md:h-[5rem] lg:h-[0rem] select-none mb-[var(--2xl-space-y)] lg:mb-[0rem]"
         >
           {marqueeSponsors
             .slice(0, Math.ceil(marqueeSponsors.length / 2))
@@ -128,7 +128,7 @@ export default function SponsorMarquee() {
           gradient={true}
           direction="right"
           gradientColor="var(--default-dark)"
-          className="h-[3rem] md:h-[4rem] lg:h-[0rem] select-none"
+          className="h-[4rem] md:h-[5rem] lg:h-[0rem] select-none"
         >
           {marqueeSponsors
             .slice(Math.ceil(marqueeSponsors.length / 2))

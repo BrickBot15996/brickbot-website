@@ -4,9 +4,9 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <url>
-        <loc>https://brickbot.ro/en/home</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en/home"/>
-        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro/acasa"/>
+        <loc>https://brickbot.ro/en</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://brickbot.ro/en"/>
+        <xhtml:link rel="alternate" hreflang="ro" href="https://brickbot.ro/ro"/>
     </url>
 
     <url>
