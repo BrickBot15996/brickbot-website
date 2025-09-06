@@ -64,6 +64,7 @@ export default function SimpleBox({
         setIsClicked(false);
       }}
       style={{
+        cursor: hoverEffect ? "pointer" : "default",
         ...(width && { width: width }),
         ...(height && { height: height }),
         ...style,

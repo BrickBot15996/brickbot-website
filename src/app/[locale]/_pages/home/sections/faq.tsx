@@ -208,7 +208,7 @@ function Question({
                 transition={{ duration: 0.2, ease: "easeInOut" }}
                 className="overflow-hidden w-full"
               >
-                <div className="flex flex-col space-y-[var(--sm-space-y)] mb-[var(--sm-space-y)]">
+                <div className="flex flex-col space-y-[var(--sm-space-y)] mb-[var(--md-space-y)]">
                   {answer.map((paragraph, index) => {
                     return (
                       <div

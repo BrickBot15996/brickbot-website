@@ -37,7 +37,7 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
           />
         </div>
         <div className="flex flex-row w-full h-full items-end justify-start">
-          <div className="mb-[1.5rem] xl:mb-[1rem] 2xl:mb-[1.5rem] ml-[1.5rem] xl:ml-[1rem] 2xl:ml-[1.5rem] w-full pointer-events-none">
+          <div className="mb-[1.5rem] xl:mb-[1rem] 2xl:mb-[1.5rem] ml-[1.5rem] xl:ml-[1rem] 2xl:ml-[1.5rem] mr-[0.5rem] w-full pointer-events-none">
             <h3
               className=""
               style={{ color: project.textColor }}

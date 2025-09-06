@@ -7,6 +7,8 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import DefaultMenu from "./mobile-menus/default-menu";
 import ProjectMenu from "./mobile-menus/project-menu";
 import { usePathname } from "next/navigation";
+import { i18nPath } from "../../_utils/redirectPath";
+import { useLocale } from "../../_hooks/use-locale";
 
 export default function MobileNav({
   isOpen,
@@ -18,6 +20,7 @@ export default function MobileNav({
   const [skipInitialAnimation, setSkipInitialAnimation] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string>("default");
   const pathname = usePathname();
+  const locale = useLocale();
 
   useEffect(() => {
     if (!isOpen) {
@@ -40,7 +43,7 @@ export default function MobileNav({
     >
       <div className="flex flex-row items-start justify-center w-full h-auto">
         <Link
-          href="/home"
+          href={i18nPath(locale, "home")}
           className="relative ml-[var(--sm-space-x)] mr-auto hover:opacity-75 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           <Image
