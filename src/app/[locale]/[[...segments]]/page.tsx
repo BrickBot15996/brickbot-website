@@ -1,55 +1,73 @@
 import { notFound, redirect } from "next/navigation";
-import { routeMap, RouteKey, RedirectKey } from "@/i18n/routing";
+import { routeMap, RouteKey } from "@/i18n/routing";
 import { Metadata } from "next";
-
-import { HomePage } from "../_pages/home/home-page";
-import { BlogPage } from "../_pages/blog/blog-page";
-import { ProjectsPage } from "../_pages/projects/projects-page";
-import { TheVaultPage } from "../_pages/projects/the-vault/the-vault-page";
-import { CheckpointPage } from "../_pages/projects/checkpoint/checkpoint-page";
-import { SparksPage } from "../_pages/projects/sparks/sparks-page";
-import { SupportUsPage } from "../_pages/support-us/support-us-page";
-import { OurTeamPage } from "../_pages/our-team/our-team-page";
-import { homeMetadata } from "../_pages/home/home-metadata";
-import { blogMetadata } from "../_pages/blog/blog-metadata";
-import { ourTeamMetadata } from "../_pages/our-team/our-team-metadata";
-import { projectsMetadata } from "../_pages/projects/projects-metadata";
-import { theVaultMetadata } from "../_pages/projects/the-vault/the-vault-metadata";
-import { checkpointMetadata } from "../_pages/projects/checkpoint/checkpoint-metadata";
-import { sparksMetadata } from "../_pages/projects/sparks/sparks-metadata";
-import { supportUsMetadata } from "../_pages/support-us/support-us-metadata";
-import { contactMetadata } from "../_pages/contact/contact-metadata";
-import ContactPage from "../_pages/contact/contact-page";
-
-export const dynamic = "force-dynamic";
-
-const metadataMap: Record<RouteKey, Record<string, Metadata>> = {
-  home: homeMetadata,
-  blog: blogMetadata,
-  ourTeam: ourTeamMetadata,
-  projects: projectsMetadata,
-  theVault: theVaultMetadata,
-  checkpoint: checkpointMetadata,
-  sparks: sparksMetadata,
-  supportUs: supportUsMetadata,
-  contact: contactMetadata,
-};
+import dynamic from "next/dynamic";
 
 const componentMap: Record<RouteKey, React.ComponentType> = {
-  home: HomePage,
-  blog: BlogPage,
-  ourTeam: OurTeamPage,
-  projects: ProjectsPage,
-  theVault: TheVaultPage,
-  checkpoint: CheckpointPage,
-  sparks: SparksPage,
-  supportUs: SupportUsPage,
-  contact: ContactPage,
+  home: dynamic(() =>
+    import("../_pages/home/home-page").then((m) => m.HomePage)
+  ),
+  blog: dynamic(() =>
+    import("../_pages/blog/blog-page").then((m) => m.BlogPage)
+  ),
+  ourTeam: dynamic(() =>
+    import("../_pages/our-team/our-team-page").then((m) => m.OurTeamPage)
+  ),
+  projects: dynamic(() =>
+    import("../_pages/projects/projects-page").then((m) => m.ProjectsPage)
+  ),
+  theVault: dynamic(() =>
+    import("../_pages/projects/the-vault/the-vault-page").then(
+      (m) => m.TheVaultPage
+    )
+  ),
+  checkpoint: dynamic(() =>
+    import("../_pages/projects/checkpoint/checkpoint-page").then(
+      (m) => m.CheckpointPage
+    )
+  ),
+  sparks: dynamic(() =>
+    import("../_pages/projects/sparks/sparks-page").then((m) => m.SparksPage)
+  ),
+  supportUs: dynamic(() =>
+    import("../_pages/support-us/support-us-page").then((m) => m.SupportUsPage)
+  ),
+  contact: dynamic(() =>
+    import("../_pages/contact/contact-page").then((m) => m.default)
+  ),
 };
 
-const redirectMap: Record<RedirectKey, string> = {
-  apply: "https://forms.gle/yBG1R8YJoQaGmYez7",
-  docs: "https://brickbot15996.github.io/brickbot-docs/",
+const metadataMap: Record<RouteKey, () => Promise<Record<string, Metadata>>> = {
+  home: () =>
+    import("../_pages/home/home-metadata").then((m) => m.homeMetadata),
+  blog: () =>
+    import("../_pages/blog/blog-metadata").then((m) => m.blogMetadata),
+  ourTeam: () =>
+    import("../_pages/our-team/our-team-metadata").then(
+      (m) => m.ourTeamMetadata
+    ),
+  projects: () =>
+    import("../_pages/projects/projects-metadata").then(
+      (m) => m.projectsMetadata
+    ),
+  theVault: () =>
+    import("../_pages/projects/the-vault/the-vault-metadata").then(
+      (m) => m.theVaultMetadata
+    ),
+  checkpoint: () =>
+    import("../_pages/projects/checkpoint/checkpoint-metadata").then(
+      (m) => m.checkpointMetadata
+    ),
+  sparks: () =>
+    import("../_pages/projects/sparks/sparks-metadata").then(
+      (m) => m.sparksMetadata
+    ),
+  supportUs: () =>
+    import("../_pages/support-us/support-us-metadata").then(
+      (m) => m.supportUsMetadata
+    ),
+  contact: () =>
+    import("../_pages/contact/contact-metadata").then((m) => m.contactMetadata),
 };
 
 function findRouteMatch(segments: string[], locale?: string) {
@@ -62,7 +80,7 @@ function findRouteMatch(segments: string[], locale?: string) {
       );
     });
     if (match) {
-      return { key: match[0], detectedLocale: locale };
+      return { key: match[0] as RouteKey, detectedLocale: locale };
     }
   }
 
@@ -72,7 +90,7 @@ function findRouteMatch(segments: string[], locale?: string) {
         path.length === segments.length &&
         path.every((seg, idx) => seg === segments[idx])
       ) {
-        return { key: routeKey, detectedLocale: lang };
+        return { key: routeKey as RouteKey, detectedLocale: lang };
       }
     }
   }
@@ -86,7 +104,6 @@ export async function generateMetadata({
   params: Promise<{ locale: string; segments?: string[] }>;
 }): Promise<Metadata> {
   const { locale, segments = [] } = await params;
-
   const match = findRouteMatch(segments, locale);
 
   if (!match) {
@@ -101,27 +118,27 @@ export async function generateMetadata({
 
   const { key } = match;
 
-  if (key in redirectMap) {
-    return {
-      title: locale === "en" ? "Redirecting..." : "Redirecționare...",
-      description:
-        locale === "en"
-          ? "Redirecting to external resource."
-          : "Ești redirecționat către o resursă externă",
-    };
+  const loader = metadataMap[key];
+  if (loader) {
+    const metadata = await loader();
+    return (
+      metadata?.[locale] ?? {
+        title: "BrickBot",
+        description:
+          locale === "en"
+            ? "Official website of team BrickBot."
+            : "Website-ul oficial al echipei BrickBot.",
+      }
+    );
   }
 
-  const pageMeta = metadataMap[key as RouteKey];
-
-  return (
-    pageMeta?.[locale] ?? {
-      title: "BrickBot",
-      description:
-        locale === "en"
-          ? "Official website of team BrickBot."
-          : "Website-ul oficial al echipei BrickBot.",
-    }
-  );
+  return {
+    title: "BrickBot",
+    description:
+      locale === "en"
+        ? "Official website of team BrickBot."
+        : "Website-ul oficial al echipei BrickBot.",
+  };
 }
 
 export default async function Page({
@@ -142,10 +159,6 @@ export default async function Page({
   if (detectedLocale !== locale) {
     const correctPath = `/${detectedLocale}/${segments.join("/")}`;
     redirect(correctPath);
-  }
-
-  if (key in redirectMap) {
-    redirect(redirectMap[key as RedirectKey]);
   }
 
   const Component = componentMap[key as RouteKey];

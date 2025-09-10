@@ -46,6 +46,17 @@ export default function Footer() {
           />
         </Link>
       </section>
+      <Link
+        href="https://natieprineducatie.ro/home"
+        className="relative h-[3rem] lg:h-[4rem] w-full hover:brightness-75 mt-[var(--lg-space-y)]"
+      >
+        <Image
+          src="/assets/natie/natie-bar.svg"
+          alt="Nație prin Educatție logos"
+          fill
+          className="object-fill"
+        />
+      </Link>
     </footer>
   );
 }
