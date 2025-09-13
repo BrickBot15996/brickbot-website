@@ -11,34 +11,38 @@ import { useLocale } from "@/app/[locale]/_hooks/use-locale";
 import { useRouter } from "next/navigation";
 import { Fade } from "react-slideshow-image";
 
-export default function Banner() {
+export default function Hero() {
   const locale = useLocale();
   const router = useRouter();
   const t = useTranslations("Home");
 
   const bannerImages = [
     {
-      src: "/assets/home/about-us/sparkhope-2025.webp",
+      src: "/assets/home/hero/group-photo-2025.webp",
+      alt: "BrickBot 2025-26",
+    },
+    {
+      src: "/assets/home/hero/sparkhope-2025.webp",
       alt: t("AboutUs.Carousel.SparkHope2025"),
     },
     {
-      src: "/assets/home/about-us/italy-2025.webp",
+      src: "/assets/home/hero/italy-2025.webp",
       alt: t("AboutUs.Carousel.Italy2025"),
     },
     {
-      src: "/assets/home/about-us/regionals-2025.webp",
+      src: "/assets/home/hero/regionals-2025.webp",
       alt: t("AboutUs.Carousel.Regionals2025"),
     },
     {
-      src: "/assets/home/about-us/focsani-meet-2025.webp",
+      src: "/assets/home/hero/focsani-meet-2025.webp",
       alt: t("AboutUs.Carousel.FocsaniMeet2025"),
     },
     {
-      src: "/assets/home/about-us/btc-2024.webp",
+      src: "/assets/home/hero/btc-2024.webp",
       alt: t("AboutUs.Carousel.BTC2024"),
     },
     {
-      src: "/assets/home/about-us/regionals-2023.webp",
+      src: "/assets/home/hero/regionals-2023.webp",
       alt: t("AboutUs.Carousel.Regionals2023"),
     },
   ];

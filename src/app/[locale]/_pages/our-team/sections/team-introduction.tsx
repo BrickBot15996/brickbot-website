@@ -9,6 +9,12 @@ export default function Introduction() {
   const t = useTranslations("OurTeam.Introduction");
   const ourTeamImages: CarouselItem[] = [
     {
+      imageSrc: "/assets/our-team/brickbot-decode.webp",
+      alt: t("Carousel.2025-26"),
+      aspectRatio: "16/9",
+      description: t("Carousel.2025-26"),
+    },
+    {
       imageSrc: "/assets/our-team/brickbot-into-the-deep.webp",
       alt: t("Carousel.2024-25"),
       aspectRatio: "16/9",
