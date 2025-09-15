@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Analytics } from "@vercel/analytics/next";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "./_components/navbar/brick-nav";
 
 const anekLatin = Anek_Latin({
@@ -83,6 +84,7 @@ export default async function RootLayout({
             <Nav />
             {children}
             <Analytics />
+            <SpeedInsights />
           </GlobalProvider>
         </NextIntlClientProvider>
       </body>

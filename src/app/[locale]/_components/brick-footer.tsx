@@ -17,7 +17,7 @@ import LoadFadeImage from "./fade-in-on-load-image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--footer)] h-auto w-full flex flex-col justify-center mt-[var(--2xl-space-y)] py-[var(--xl-space-y)] px-[calc((100vw-var(--page-width))/2)]">
+    <footer className="bg-[var(--footer)] h-auto w-full flex flex-col items-center justify-center mt-[var(--2xl-space-y)] py-[var(--xl-space-y)] px-[calc((100vw-var(--page-width))/2)]">
       <NavMenuDesktop />
       <NavMenuMobile />
       <section className="flex flex-col sm:flex-row w-full h-auto mt-[var(--lg-space-y)] space-x-0 sm:space-x-[var(--md-space-x)] lg:space-x-[var(--lg-space-x)] items-center justify-center">
@@ -48,13 +48,14 @@ export default function Footer() {
       </section>
       <Link
         href="https://natieprineducatie.ro/home"
-        className="relative h-[3rem] lg:h-[4rem] w-full hover:brightness-75 mt-[var(--lg-space-y)]"
+        className="relative h-[3rem] lg:h-[4rem] w-fit hover:brightness-75 mt-[var(--lg-space-y)] overflow-hidden"
       >
         <Image
           src="/assets/natie/natie-bar.svg"
-          alt="Nație prin Educatție logos"
-          fill
-          className="object-fill"
+          alt="Nație prin Educație logos"
+          width={1000}
+          height={200}
+          className="object-contain h-full w-full"
         />
       </Link>
     </footer>
