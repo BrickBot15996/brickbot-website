@@ -67,7 +67,7 @@ export default function DefaultMenu({
                 router.push(i18nPath(locale, "home"));
               }}
               skipInitialAnimation={skipInitialAnimation}
-              isActive={pathname.includes(i18nPath(locale, "home"))}
+              isActive={pathname.split("/").length == 2}
               translateY={60}
             />
             <MobileButton

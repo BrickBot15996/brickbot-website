@@ -144,12 +144,24 @@
     overscroll-behavior-x: none;
   }
 
-  scrollbar-color: rgb(47, 47, 47) rgb(27, 27, 27);
-  scrollbar-width: thin;
-
   * {
     box-sizing: border-box;
   }
+}
+
+html,
+body,
+#__next {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari, Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#__next::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 /* sm */
@@ -186,7 +198,7 @@
 
   h3 {
     font-size: 1.35rem;
-    line-height: 1.35rem;
+    line-height: 1.7rem;
     color: var(--default-yellow);
     font-weight: 600;
   }
@@ -341,7 +353,7 @@
 
     h3 {
       font-size: 1.55rem;
-      line-height: 1.8rem;
+      line-height: 1.9rem;
       color: var(--default-yellow);
       font-weight: 600;
     }
