@@ -39,6 +39,11 @@ const nextConfig: NextConfig = {
         destination: "https://brickbot.ro/ro",
         permanent: true,
       },
+      {
+        source: "/meet",
+        destination: "https://forms.gle/SwLmuYCgrxBA9AKX9",
+        permanent: true,
+      },
     ];
   },
 };
