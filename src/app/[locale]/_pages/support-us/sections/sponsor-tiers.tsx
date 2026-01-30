@@ -51,7 +51,7 @@ export function SponsorshipTierDesktop({
             return (
               <li
                 key={index}
-                className="flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(/assets/support-us/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]"
+                className={`flex items-start before:content-[''] before:w-[1rem] before:h-[1rem] before:bg-[url(https://cdn.brickbot.ro/website/support-us/green-checkmark.png)] before:bg-contain before:bg-no-repeat before:mr-[0.5rem] before:flex-shrink-0 before:mt-[0.4rem] mx-[1rem]`}
               >
                 {benefit}
               </li>

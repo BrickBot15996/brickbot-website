@@ -95,18 +95,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
           <Footer />
         </motion.div>
       </AnimatePresence>
-      {projectList.map((project) => (
-        <Image
-          key={project.iconPath}
-          src={project.iconPath}
-          alt=""
-          height={0}
-          width={0}
-          priority
-          fetchPriority="high"
-          style={{ display: "none" }}
-        />
-      ))}
     </>
   );
 }
