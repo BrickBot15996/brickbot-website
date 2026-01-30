@@ -4,6 +4,7 @@ import ImageCarousel, {
 } from "@/app/[locale]/_components/image-carousel";
 import { ProjectProps, useSparks } from "../../../_data/projects-data";
 import { useTranslations } from "next-intl";
+import { CDN_LINK } from "@/app/[locale]/constants";
 
 export function SparksPage() {
   const project: ProjectProps = useSparks();
@@ -20,27 +21,27 @@ export function SparksPage() {
 function Sparks1(project: ProjectProps) {
   const sparks1: CarouselItem[] = [
     {
-      imageSrc: "/assets/projects/sparks/sirius1.webp",
+      imageSrc: CDN_LINK + "/website/projects/sparks/sirius1.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: "/assets/projects/sparks/sirius2.webp",
+      imageSrc: CDN_LINK + "/website/projects/sparks/sirius2.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: "/assets/projects/sparks/sirius3.webp",
+      imageSrc: CDN_LINK + "/website/projects/sparks/sirius3.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: "/assets/projects/sparks/sirius4.webp",
+      imageSrc: CDN_LINK + "/website/projects/sparks/sirius4.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: "/assets/projects/sparks/sirius5.webp",
+      imageSrc: CDN_LINK + "/website/projects/sparks/sirius5.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },

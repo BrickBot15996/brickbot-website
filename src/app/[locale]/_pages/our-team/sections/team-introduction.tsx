@@ -4,66 +4,67 @@ import ImageCarousel, {
   CarouselItem,
 } from "../../../_components/image-carousel";
 import { useTranslations } from "next-intl";
+import { CDN_LINK } from "@/app/[locale]/constants";
 
 export default function Introduction() {
   const t = useTranslations("OurTeam.Introduction");
   const ourTeamImages: CarouselItem[] = [
     {
-      imageSrc: "/assets/our-team/brickbot-decode.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-decode.webp",
       alt: t("Carousel.2025-26"),
       aspectRatio: "16/9",
       description: t("Carousel.2025-26"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-into-the-deep.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-into-the-deep.webp",
       alt: t("Carousel.2024-25"),
       aspectRatio: "16/9",
       description: t("Carousel.2024-25"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-centerstage.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-centerstage.webp",
       alt: t("Carousel.2023-24"),
       aspectRatio: "16/9",
       description: t("Carousel.2023-24"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-powerplay.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-powerplay.webp",
       alt: t("Carousel.2022-23"),
       aspectRatio: "16/9",
       description: t("Carousel.2022-23"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-freight-frenzy.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-freight-frenzy.webp",
       alt: t("Carousel.2021-22"),
       aspectRatio: "16/9",
       description: t("Carousel.2021-22"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-ultimate-goal.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-ultimate-goal.webp",
       alt: t("Carousel.2020-21"),
       aspectRatio: "16/9",
       description: t("Carousel.2020-21"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-skystone.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-skystone.webp",
       alt: t("Carousel.2019-20"),
       aspectRatio: "16/9",
       description: t("Carousel.2019-20"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-rover-ruckus.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-rover-ruckus.webp",
       alt: t("Carousel.2018-19"),
       aspectRatio: "16/9",
       description: t("Carousel.2018-19"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-relic-recovery.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-relic-recovery.webp",
       alt: t("Carousel.2017-18"),
       aspectRatio: "16/9",
       description: t("Carousel.2017-18"),
     },
     {
-      imageSrc: "/assets/our-team/brickbot-velocity-vortex.webp",
+      imageSrc: CDN_LINK + "/website/our-team/brickbot-velocity-vortex.webp",
       alt: t("Carousel.2016-17"),
       aspectRatio: "16/9",
       description: t("Carousel.2016-17"),

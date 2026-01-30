@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import { CDN_LINK } from "../constants";
 
 const MIN_DURATION = 150;
 
@@ -39,7 +40,7 @@ export default function LoadingScreen() {
     >
       <div className="relative w-[12rem] h-[12rem] md:w-[18rem] md:h-[18rem] overflow-hidden rotate-slow mt-[-6rem]">
         <Image
-          src="/assets/branding/loading-logo.svg"
+          src={CDN_LINK + "/website/branding/loading-logo.svg"}
           alt="Radioactive Logo"
           fill
           className="object-contain rounded-[0.75rem]"

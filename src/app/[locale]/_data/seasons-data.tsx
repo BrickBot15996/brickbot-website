@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { CDN_LINK } from "../constants";
 
 export type AwardProps = {
   event: string;
@@ -22,7 +23,7 @@ export const useDecode = (): SeasonProps => {
     years: "2025-2026",
     textColor: "var(--default-yellow)",
     gradientColor: "var(--default-yellow)",
-    logoPath: "/assets/our-team/seasons/decode-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/decode-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -39,7 +40,7 @@ export const useIntoTheDeep = (): SeasonProps => {
     years: "2024-2025",
     textColor: "var(--into-the-deep-text)",
     gradientColor: "var(--into-the-deep-gradient)",
-    logoPath: "/assets/our-team/seasons/into-the-deep-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/into-the-deep-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -64,7 +65,7 @@ export const useCenterstage = (): SeasonProps => {
     years: "2023-2024",
     textColor: "var(--centerstage-text)",
     gradientColor: "var(--centerstage-gradient)",
-    logoPath: "/assets/our-team/seasons/centerstage-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/centerstage-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -85,7 +86,7 @@ export const usePowerplay = (): SeasonProps => {
     years: "2022-2023",
     textColor: "var(--powerplay-text)",
     gradientColor: "var(--powerplay-gradient)",
-    logoPath: "/assets/our-team/seasons/powerplay-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/powerplay-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -110,7 +111,7 @@ export const useFreightFrenzy = (): SeasonProps => {
     years: "2021-2022",
     textColor: "var(--freight-frenzy-text)",
     gradientColor: "var(--freight-frenzy-gradient)",
-    logoPath: "/assets/our-team/seasons/freight-frenzy-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/freight-frenzy-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -127,7 +128,7 @@ export const useUltimateGoal = (): SeasonProps => {
     years: "2020-2021",
     textColor: "var(--ultimate-goal-text)",
     gradientColor: "var(--ultimate-goal-gradient)",
-    logoPath: "/assets/our-team/seasons/ultimate-goal-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/ultimate-goal-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -148,7 +149,7 @@ export const useSkystone = (): SeasonProps => {
     years: "2019-2020",
     textColor: "var(--skystone-text)",
     gradientColor: "var(--skystone-gradient)",
-    logoPath: "/assets/our-team/seasons/skystone-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/skystone-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -165,7 +166,7 @@ export const useRoverRuckus = (): SeasonProps => {
     years: "2018-2019",
     textColor: "var(--rover-ruckus-text)",
     gradientColor: "var(--rover-ruckus-gradient)",
-    logoPath: "/assets/our-team/seasons/rover-ruckus-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/rover-ruckus-logo.webp",
     awards: [
       {
         event: t("0.event"),
@@ -193,7 +194,7 @@ export const useRelicRecovery = (): SeasonProps => {
     years: "2017-2018",
     textColor: "var(--relic-recovery-text)",
     gradientColor: "var(--relic-recovery-gradient)",
-    logoPath: "/assets/our-team/seasons/relic-recovery-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/relic-recovery-logo.webp",
     awards: [],
   };
 };
@@ -204,7 +205,7 @@ export const useVelocityVortex = (): SeasonProps => {
     years: "2016-2017",
     textColor: "var(--velocity-vortex-text)",
     gradientColor: "var(--velocity-vortex-gradient)",
-    logoPath: "/assets/our-team/seasons/velocity-vortex-logo.webp",
+    logoPath: CDN_LINK + "/website/our-team/seasons/velocity-vortex-logo.webp",
     awards: [],
   };
 };

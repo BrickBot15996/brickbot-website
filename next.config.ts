@@ -40,16 +40,14 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/meet",
-        destination: "https://forms.gle/SwLmuYCgrxBA9AKX9",
-        permanent: true,
-      },
-      {
         source: "/formular230",
         destination: "https://formular230.ro/asociatia-brickbot",
         permanent: true,
-      }
+      },
     ];
+  },
+  images: {
+    remotePatterns: [new URL("https://cdn.brickbot.ro/**")],
   },
 };
 

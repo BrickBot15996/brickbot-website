@@ -10,8 +10,16 @@ export function SubmitPortfolio() {
 
   return (
     <section className="flex flex-col items-center justify-center space-y-[var(--md-space-y)] w-full bg-[linear-gradient(0deg,_#211906,_transparent)] rounded-[1.5rem] py-[var(--md-space-y)]">
-      <h2 style={{ color: project.textColor }}>{t("submitTitle")}</h2>
-      <h3 style={{ color: "var(--alternate-text)", fontWeight: 500 }}>
+      <h2 style={{ color: project.textColor, textAlign: "center" }}>
+        {t("submitTitle")}
+      </h2>
+      <h3
+        style={{
+          color: "var(--alternate-text)",
+          fontWeight: 500,
+          textAlign: "center",
+        }}
+      >
         {t("submitText")}
       </h3>
       <Button

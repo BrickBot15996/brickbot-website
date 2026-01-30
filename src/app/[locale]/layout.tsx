@@ -63,19 +63,7 @@ export default async function RootLayout({
         />
         <link
           rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/_next/static/media/dbb9a2128d94625d-s.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
+          href="https://cdn.brickbot.ro"
         />
       </head>
       <body className={`${anekLatin.variable} antialiased flex flex-col`}>

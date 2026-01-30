@@ -103,7 +103,7 @@ export default function ExpandableImage({
               </motion.div>
             )}
           </AnimatePresence>,
-          document.body
+          document.body,
         )}
     </>
   );

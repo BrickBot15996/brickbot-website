@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { useLocale } from "../_hooks/use-locale";
 import { i18nPath } from "../_utils/redirectPath";
+import { CDN_LINK } from "../constants";
 
 export type ProjectProps = {
   name: string;
@@ -28,8 +29,8 @@ export const useTheVault = (): ProjectProps => {
     extendedName: t("extendedName"),
     subtitle: t("subtitle"),
     description: t("description"),
-    logoPath: "/assets/projects/the-vault-logo.svg",
-    iconPath: "/assets/projects/the-vault-icon.svg",
+    logoPath: CDN_LINK + "/website/projects/the-vault-logo.svg",
+    iconPath: CDN_LINK + "/website/projects/the-vault-icon.svg",
     pagePath: i18nPath(locale, "theVault"),
     color: "#ffb700",
     textColor: "var(--the-vault-text)",
@@ -50,8 +51,8 @@ export const useCheckpoint = (): ProjectProps => {
     extendedName: t("extendedName"),
     subtitle: t("subtitle"),
     description: t("description"),
-    logoPath: "/assets/projects/checkpoint-logo.svg",
-    iconPath: "/assets/projects/checkpoint-icon.svg",
+    logoPath: CDN_LINK + "/website/projects/checkpoint-logo.svg",
+    iconPath: CDN_LINK + "/website/projects/checkpoint-icon.svg",
     pagePath: i18nPath(locale, "checkpoint"),
     color: "#30caae",
     textColor: "var(--checkpoint-text)",
@@ -72,8 +73,8 @@ export const useSparks = (): ProjectProps => {
     extendedName: t("extendedName"),
     subtitle: t("subtitle"),
     description: t("description"),
-    logoPath: "/assets/projects/sparks-logo.svg",
-    iconPath: "/assets/projects/sparks-icon.svg",
+    logoPath: CDN_LINK + "/website/projects/sparks-logo.svg",
+    iconPath: CDN_LINK + "/website/projects/sparks-icon.svg",
     pagePath: i18nPath(locale, "sparks"),
     color: "#9e50ff",
     textColor: "var(--sparks-text)",
@@ -93,8 +94,8 @@ export const useBrickDocs = (): ProjectProps => {
     extendedName: t("extendedName"),
     subtitle: t("subtitle"),
     description: t("description"),
-    logoPath: "/assets/projects/brickdocs-logo.svg",
-    iconPath: "/assets/projects/brickdocs-icon.svg",
+    logoPath: CDN_LINK + "/website/projects/brickdocs-logo.svg",
+    iconPath: CDN_LINK + "/website/projects/brickdocs-icon.svg",
     pagePath: "https://docs.brickbot.ro",
     color: "#ff6750",
     textColor: "var(--brickdocs-text)",
@@ -113,8 +114,8 @@ export const useSimplicityFTC = (): ProjectProps => {
     extendedName: t("extendedName"),
     subtitle: t("subtitle"),
     description: t("description"),
-    logoPath: "/assets/projects/simplicityftc-logo.svg",
-    iconPath: "/assets/projects/simplicityftc-icon.svg",
+    logoPath: CDN_LINK + "/website/projects/simplicityftc-logo.svg",
+    iconPath: CDN_LINK + "/website/projects/simplicityftc-icon.svg",
     pagePath: "https://github.com/SimplicityFTC",
     color: "#aae348",
     textColor: "var(--simplicityftc-text)",

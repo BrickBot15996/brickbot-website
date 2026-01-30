@@ -90,7 +90,6 @@ export default function ImageCarousel({
                     aspectRatio: `${item.aspectRatio}`,
                   }}
                 >
-                  {/* <div className="bg-[linear-gradient(180deg,_var(--carousel-gradient-light),_var(--carousel-gradient-dark))] w-full h-full p-[0.25rem] rounded-[1rem]"> */}
                   <div className="relative w-full h-full overflow-hidden rounded-[1rem]">
                     <ExpandableImage
                       src={item.imageSrc}
@@ -101,7 +100,6 @@ export default function ImageCarousel({
                         gradientLight: buttonGradientLight,
                         gradientDark: buttonGradientDark,
                       }}
-                      priority={index < 2 ? true : false}
                       fetchPriority={index < 2 ? "high" : "auto"}
                       className="object-cover rounded-[1rem] contain-content"
                     />

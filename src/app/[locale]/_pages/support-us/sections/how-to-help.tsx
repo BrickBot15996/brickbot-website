@@ -14,6 +14,7 @@ import LoadFadeImage from "@/app/[locale]/_components/fade-in-on-load-image";
 import { useRouter } from "next/navigation";
 import { i18nPath } from "@/app/[locale]/_utils/redirectPath";
 import { useLocale } from "@/app/[locale]/_hooks/use-locale";
+import { CDN_LINK } from "@/app/[locale]/constants";
 
 export default function HowToHelpSection() {
   const t = useTranslations("SupportUs.HowToHelp");
@@ -67,7 +68,7 @@ function RedirectTax() {
       >
         <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
           <LoadFadeImage
-            src="/assets/support-us/230.svg"
+            src={CDN_LINK + "/website/support-us/230.svg"}
             alt="230 Form Icon"
             fill
             priority
@@ -105,7 +106,7 @@ function Donate() {
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <LoadFadeImage
-            src="/assets/support-us/donate.svg"
+            src={CDN_LINK + "/website/support-us/donate.svg"}
             alt="Donate Icon"
             fill
             priority
@@ -152,7 +153,7 @@ export function Contract() {
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <LoadFadeImage
-            src="/assets/support-us/contract.svg"
+            src={CDN_LINK + "/website/support-us/contract.svg"}
             alt="Contract Icon"
             fill
             priority
@@ -179,7 +180,7 @@ export function Contract() {
         <Button
           text={t("sampleButton")}
           action={() => {
-            window.open("/assets/contract-brickbot.pdf", "_blank");
+            window.open(CDN_LINK + "/website/contract-brickbot.pdf", "_blank");
           }}
           className="px-[2rem] flex-[0_0_30%]"
           width={buttonsCol ? "14rem" : ""}

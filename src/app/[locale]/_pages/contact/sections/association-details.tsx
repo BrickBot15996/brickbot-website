@@ -7,6 +7,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
+import { CDN_LINK } from "@/app/[locale]/constants";
 
 export default function AssociationDetails() {
   const t = useTranslations("Contact.Association");
@@ -25,7 +26,10 @@ export default function AssociationDetails() {
         >
           <div className="relative h-[2rem] md:h-[2.5rem] lg:h-[3rem] w-auto aspect-1/1">
             <Image
-              src="/assets/support-us/sponsors/banca-transilvania.webp"
+              src={
+                CDN_LINK +
+                "/website/support-us/sponsors/banca-transilvania.webp"
+              }
               alt="Banca Transilvania logo"
               fill
               priority

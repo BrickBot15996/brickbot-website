@@ -9,6 +9,7 @@ import ProjectMenu from "./mobile-menus/project-menu";
 import { usePathname } from "next/navigation";
 import { i18nPath } from "../../_utils/redirectPath";
 import { useLocale } from "../../_hooks/use-locale";
+import { CDN_LINK } from "../../constants";
 
 export default function MobileNav({
   isOpen,
@@ -47,7 +48,7 @@ export default function MobileNav({
           className="relative ml-[var(--sm-space-x)] mr-auto hover:opacity-75 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           <Image
-            src="/assets/branding/brick-mobile-logo.svg"
+            src={CDN_LINK + "/website/branding/brick-mobile-logo.svg"}
             alt="BrickBot Logo"
             priority
             fetchPriority="high"
@@ -153,10 +154,10 @@ export function MobileButton({
       return isActive
         ? "clicked"
         : isClicked
-        ? "clicked"
-        : isHovered
-        ? "hovered"
-        : "default";
+          ? "clicked"
+          : isHovered
+            ? "hovered"
+            : "default";
   };
 
   const handleClick = (e: React.MouseEvent | React.TouchEvent) => {

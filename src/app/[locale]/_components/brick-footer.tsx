@@ -14,6 +14,7 @@ import { BiLogoFacebook } from "react-icons/bi";
 import { i18nPath } from "../_utils/redirectPath";
 import { useLocale } from "../_hooks/use-locale";
 import LoadFadeImage from "./fade-in-on-load-image";
+import { CDN_LINK } from "../constants";
 
 export default function Footer() {
   return (
@@ -27,7 +28,7 @@ export default function Footer() {
           className="cursor-pointer hover:brightness-85"
         >
           <LoadFadeImage
-            src="/assets/anpc/anpc-sal.webp"
+            src={CDN_LINK + "/website/anpc/anpc-sal.webp"}
             alt="ANPC – Soluționarea alternativă a litigiilor"
             width={250}
             height={50}
@@ -39,7 +40,7 @@ export default function Footer() {
           className="cursor-pointer hover:brightness-85"
         >
           <LoadFadeImage
-            src="/assets/anpc/anpc-sol.webp"
+            src={CDN_LINK + "/website/anpc/anpc-sol.webp"}
             alt="ANPC – Soluționarea online a litigiilor"
             width={250}
             height={50}
@@ -51,7 +52,7 @@ export default function Footer() {
         className="relative h-[3rem] lg:h-[4rem] w-fit hover:brightness-75 mt-[var(--lg-space-y)] overflow-hidden"
       >
         <Image
-          src="/assets/natie/natie-bar.svg"
+          src={CDN_LINK + "/website/natie/natie-bar.svg"}
           alt="Nație prin Educație logos"
           width={1000}
           height={200}
@@ -74,7 +75,7 @@ function NavMenuDesktop() {
       <div className="flex flex-col w-auto h-auto space-y-[var(--md-space-y)] items-start">
         <div className="relative w-full h-[2rem]">
           <Image
-            src="/assets/branding/brick-text.svg"
+            src={CDN_LINK + "/website/branding/brick-text.svg"}
             alt="BrickBot"
             fill
             className="object-left object-contain w-full h-full"
@@ -209,7 +210,7 @@ function NavMenuMobile() {
       <div className="flex flex-col w-auto h-auto space-y-[var(--lg-space-y)] items-start">
         <div className="relative w-full h-[1.5rem] overflow-hidden">
           <Image
-            src="/assets/branding/brick-text.svg"
+            src={CDN_LINK + "/website/branding/brick-text.svg"}
             alt="BrickBot"
             fill
             className="object-left object-contain w-full h-full"

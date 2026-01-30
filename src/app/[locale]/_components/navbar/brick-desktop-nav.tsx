@@ -10,6 +10,7 @@ import { ProjectProps, useProjectList } from "../../_data/projects-data";
 import { useRouter } from "next/navigation";
 import { i18nPath } from "../../_utils/redirectPath";
 import { useLocale } from "../../_hooks/use-locale";
+import { CDN_LINK } from "../../constants";
 
 export default function DesktopNav() {
   const router = useRouter();
@@ -48,7 +49,7 @@ export default function DesktopNav() {
         className="mx-[0.5rem] xl:mx-[1rem] hover:opacity-75 hover:scale-115 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.275rem] active:opacity-100 active:scale-95 active:translate-y-[-0.8rem] active:lg:translate-y-[-0.12rem] cursor-pointer"
       >
         <Image
-          src="/assets/branding/brick-yellow.svg"
+          src={CDN_LINK + "/website/branding/brick-yellow.svg"}
           alt="BrickBot Logo"
           priority
           fetchPriority="high"
@@ -243,16 +244,16 @@ function DesktopProjectButton({ project }: { project: ProjectProps }) {
       return pathname.includes(project.pagePath)
         ? "clicked"
         : isClicked
-        ? "clicked"
-        : "default";
+          ? "clicked"
+          : "default";
     else
       return pathname.includes(project.pagePath)
         ? "clicked"
         : isClicked
-        ? "clicked"
-        : isHovered
-        ? "hovered"
-        : "default";
+          ? "clicked"
+          : isHovered
+            ? "hovered"
+            : "default";
   };
 
   useEffect(() => {
