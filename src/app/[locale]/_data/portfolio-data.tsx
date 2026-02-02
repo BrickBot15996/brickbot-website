@@ -38,44 +38,37 @@ export const useBrickbotPortfolioList = (): PortfolioProps[] => {
       season: intoTheDeep,
       awards: intoTheDeep.awards,
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/brickbot-into-the-deep.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/brickbot-into-the-deep.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/brickbot-into-the-deep.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/brickbot-into-the-deep.webp",
     },
     {
       team: brickbot,
       season: centerstage,
       awards: centerstage.awards,
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/brickbot-centerstage.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/brickbot-centerstage.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/brickbot-centerstage.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/brickbot-centerstage.webp",
     },
     {
       team: brickbot,
       season: powerplay,
       awards: powerplay.awards,
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/brickbot-powerplay.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/brickbot-powerplay.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/brickbot-powerplay.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/brickbot-powerplay.webp",
     },
     {
       team: brickbot,
       season: freightFrenzy,
       awards: freightFrenzy.awards,
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/brickbot-freight-frenzy.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/brickbot-freight-frenzy.pdf",
       thumbnailPath:
         CDN_LINK +
-        "/website/projects/the-vault/thumbnails/brickbot-freight-frenzy.webp",
+        "/projects/the-vault/thumbnails/brickbot-freight-frenzy.webp",
     },
   ];
 };
@@ -93,22 +86,18 @@ export const usePortfolioList = (): PortfolioProps[] => {
       season: centerstage,
       awards: [],
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/perpetuum-centerstage.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/perpetuum-centerstage.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/perpetuum-centerstage.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/perpetuum-centerstage.webp",
     },
     {
       team: perpetuum,
       season: powerplay,
       awards: [],
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/perpetuum-powerplay.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/perpetuum-powerplay.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/perpetuum-powerplay.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/perpetuum-powerplay.webp",
     },
     {
       team: infinityedge,
@@ -121,21 +110,19 @@ export const usePortfolioList = (): PortfolioProps[] => {
       ],
       portfolioPath:
         CDN_LINK +
-        "/website/projects/the-vault/portfolios/infinityedge-centerstage.pdf",
+        "/projects/the-vault/portfolios/infinityedge-centerstage.pdf",
       thumbnailPath:
         CDN_LINK +
-        "/website/projects/the-vault/thumbnails/infinityedge-centerstage.webp",
+        "/projects/the-vault/thumbnails/infinityedge-centerstage.webp",
     },
     {
       team: infinityedge,
       season: powerplay,
       awards: [],
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/infinityedge-powerplay.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/infinityedge-powerplay.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/infinityedge-powerplay.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/infinityedge-powerplay.webp",
     },
     {
       team: infinityedge,
@@ -152,10 +139,10 @@ export const usePortfolioList = (): PortfolioProps[] => {
       ],
       portfolioPath:
         CDN_LINK +
-        "/website/projects/the-vault/portfolios/infinityedge-freight-frenzy.pdf",
+        "/projects/the-vault/portfolios/infinityedge-freight-frenzy.pdf",
       thumbnailPath:
         CDN_LINK +
-        "/website/projects/the-vault/thumbnails/infinityedge-freight-frenzy.webp",
+        "/projects/the-vault/thumbnails/infinityedge-freight-frenzy.webp",
     },
     {
       team: infinityedge,
@@ -168,10 +155,10 @@ export const usePortfolioList = (): PortfolioProps[] => {
       ],
       portfolioPath:
         CDN_LINK +
-        "/website/projects/the-vault/portfolios/infinityedge-ultimate-goal.pdf",
+        "/projects/the-vault/portfolios/infinityedge-ultimate-goal.pdf",
       thumbnailPath:
         CDN_LINK +
-        "/website/projects/the-vault/thumbnails/infinityedge-ultimate-goal.webp",
+        "/projects/the-vault/thumbnails/infinityedge-ultimate-goal.webp",
     },
     {
       team: alphabit,
@@ -183,11 +170,9 @@ export const usePortfolioList = (): PortfolioProps[] => {
         },
       ],
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/alphabit-powerplay.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/alphabit-powerplay.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/alphabit-powerplay.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/alphabit-powerplay.webp",
     },
     {
       team: snaketech,
@@ -199,11 +184,9 @@ export const usePortfolioList = (): PortfolioProps[] => {
         },
       ],
       portfolioPath:
-        CDN_LINK +
-        "/website/projects/the-vault/portfolios/snake-tech-centerstage.pdf",
+        CDN_LINK + "/projects/the-vault/portfolios/snake-tech-centerstage.pdf",
       thumbnailPath:
-        CDN_LINK +
-        "/website/projects/the-vault/thumbnails/snake-tech-centerstage.webp",
+        CDN_LINK + "/projects/the-vault/thumbnails/snake-tech-centerstage.webp",
     },
   ];
 };

@@ -22,50 +22,42 @@ export function CheckpointPage() {
 function BrickbotInSchools(project: ProjectProps) {
   const brickbotInSchools: CarouselItem[] = [
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis1.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis1.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis2.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis2.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis3.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis3.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis4.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis4.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis5.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis5.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis6.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis6.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis7.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis7.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
     {
-      imageSrc:
-        CDN_LINK + "/website/projects/checkpoint/brickbot-in-schools/bis8.webp",
+      imageSrc: CDN_LINK + "/projects/checkpoint/images/schools/bis8.webp",
       alt: "BrickBot presentation in school",
       aspectRatio: "16/9",
     },
@@ -96,56 +88,49 @@ function PublicInteractions(project: ProjectProps) {
   const publicInteractions: CarouselItem[] = [
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/behind-the-screws.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/behind-the-screws.webp",
       alt: t("Carousel.BehindTheScrews"),
       aspectRatio: "16/9",
       description: t("Carousel.BehindTheScrews"),
     },
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/open-doors-day.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/open-doors-day.webp",
       alt: t("Carousel.OpenDoorsDay"),
       aspectRatio: "16/9",
       description: t("Carousel.OpenDoorsDay"),
     },
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/micromet-meeting.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/micromet-meeting.webp",
       alt: t("Carousel.MicrometEvent"),
       aspectRatio: "16/9",
       description: t("Carousel.MicrometEvent"),
     },
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/joy-in-motion.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/joy-in-motion.webp",
       alt: t("Carousel.JoyInMotion"),
       aspectRatio: "16/9",
       description: t("Carousel.JoyInMotion"),
     },
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/christmas-2024.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/christmas-2024.webp",
       alt: t("Carousel.Christmas2024"),
       aspectRatio: "16/9",
       description: t("Carousel.Christmas2024"),
     },
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/christmas-2023.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/christmas-2023.webp",
       alt: t("Carousel.Christmas2023"),
       aspectRatio: "16/9",
       description: t("Carousel.Christmas2023"),
     },
     {
       imageSrc:
-        CDN_LINK +
-        "/website/projects/checkpoint/interacting-with-the-public/meet-keynote.webp",
+        CDN_LINK + "/projects/checkpoint/images/public/meet-keynote.webp",
       alt: t("Carousel.MeetRobotics"),
       aspectRatio: "16/9",
       description: t("Carousel.MeetRobotics"),

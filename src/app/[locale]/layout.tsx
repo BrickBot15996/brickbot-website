@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "./_components/navbar/brick-nav";
+import { CDN_LINK } from "./constants";
 
 const anekLatin = Anek_Latin({
   variable: "--font-anek-latin",
@@ -17,14 +18,14 @@ const anekLatin = Anek_Latin({
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/favicon.ico",
+    icon: CDN_LINK + "/branding/favicon.ico",
   },
   openGraph: {
     url: "https://brickbot.ro/",
     siteName: "BrickBot",
     images: [
       {
-        url: "https://brickbot.ro/embed-icon.png",
+        url: CDN_LINK + "/embed.png",
         width: 256,
         height: 256,
         alt: "BrickBot Icon",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://brickbot.ro/embed-icon.png"],
+    images: [CDN_LINK + "/embed.png"],
   },
 };
 
@@ -59,7 +60,7 @@ export default async function RootLayout({
         <link
           rel="icon"
           type="image/x-icon"
-          href="/dark-bg-favicon.ico"
+          href={CDN_LINK + "/branding/dark-favicon.ico"}
         />
         <link
           rel="preconnect"

@@ -26,10 +26,7 @@ export default function AssociationDetails() {
         >
           <div className="relative h-[2rem] md:h-[2.5rem] lg:h-[3rem] w-auto aspect-1/1">
             <Image
-              src={
-                CDN_LINK +
-                "/website/support-us/sponsors/banca-transilvania.webp"
-              }
+              src={CDN_LINK + "/sponsors/banca-transilvania.webp"}
               alt="Banca Transilvania logo"
               fill
               priority

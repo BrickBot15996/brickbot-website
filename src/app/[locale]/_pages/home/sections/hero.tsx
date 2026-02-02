@@ -19,31 +19,31 @@ export default function Hero() {
 
   const bannerImages = [
     {
-      src: CDN_LINK + "/website/home/hero/group-photo-2025.webp",
+      src: CDN_LINK + "/images/hero/group-photo-2025.webp",
       alt: "BrickBot 2025-26",
     },
     {
-      src: CDN_LINK + "/website/home/hero/sparkhope-2025.webp",
+      src: CDN_LINK + "/images/hero/sparkhope-2025.webp",
       alt: t("AboutUs.Carousel.SparkHope2025"),
     },
     {
-      src: CDN_LINK + "/website/home/hero/italy-2025.webp",
+      src: CDN_LINK + "/images/hero/italy-2025.webp",
       alt: t("AboutUs.Carousel.Italy2025"),
     },
     {
-      src: CDN_LINK + "/website/home/hero/regionals-2025.webp",
+      src: CDN_LINK + "/images/hero/regionals-2025.webp",
       alt: t("AboutUs.Carousel.Regionals2025"),
     },
     {
-      src: CDN_LINK + "/website/home/hero/focsani-meet-2025.webp",
+      src: CDN_LINK + "/images/hero/focsani-meet-2025.webp",
       alt: t("AboutUs.Carousel.FocsaniMeet2025"),
     },
     {
-      src: CDN_LINK + "/website/home/hero/btc-2024.webp",
+      src: CDN_LINK + "/images/hero/btc-2024.webp",
       alt: t("AboutUs.Carousel.BTC2024"),
     },
     {
-      src: CDN_LINK + "/website/home/hero/regionals-2023.webp",
+      src: CDN_LINK + "/images/hero/regionals-2023.webp",
       alt: t("AboutUs.Carousel.Regionals2023"),
     },
   ];
@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-3">
         <div className="relative h-[5rem] w-[30rem] md:h-[7rem] md:w-[40rem] lg:h-[10rem] lg:w-[50rem] max-w-[80vw] mb-[var(--2xl-space-y)]">
           <Image
-            src={CDN_LINK + "/website/branding/banner-text.svg"}
+            src={CDN_LINK + "/branding/banner-text.svg"}
             alt="We build our future brick by brick!"
             fill
             priority

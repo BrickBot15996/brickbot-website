@@ -21,27 +21,27 @@ export function SparksPage() {
 function Sparks1(project: ProjectProps) {
   const sparks1: CarouselItem[] = [
     {
-      imageSrc: CDN_LINK + "/website/projects/sparks/sirius1.webp",
+      imageSrc: CDN_LINK + "/projects/sparks/images/sirius1.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: CDN_LINK + "/website/projects/sparks/sirius2.webp",
+      imageSrc: CDN_LINK + "/projects/sparks/images/sirius2.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: CDN_LINK + "/website/projects/sparks/sirius3.webp",
+      imageSrc: CDN_LINK + "/projects/sparks/images/sirius3.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: CDN_LINK + "/website/projects/sparks/sirius4.webp",
+      imageSrc: CDN_LINK + "/projects/sparks/images/sirius4.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },
     {
-      imageSrc: CDN_LINK + "/website/projects/sparks/sirius5.webp",
+      imageSrc: CDN_LINK + "/projects/sparks/images/sirius5.webp",
       alt: "Meeting with Moldovan teams",
       aspectRatio: "16/9",
     },

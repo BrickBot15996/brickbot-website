@@ -68,7 +68,7 @@ function RedirectTax() {
       >
         <div className="relative h-[4rem] lg:h-[4.5rem] xl:h-[5rem] aspect-1/1 w-auto mb-[calc(var(--sm-space-y)/2)]">
           <LoadFadeImage
-            src={CDN_LINK + "/website/support-us/230.svg"}
+            src={CDN_LINK + "/icons/230.svg"}
             alt="230 Form Icon"
             fill
             priority
@@ -106,7 +106,7 @@ function Donate() {
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <LoadFadeImage
-            src={CDN_LINK + "/website/support-us/donate.svg"}
+            src={CDN_LINK + "/icons/donate.svg"}
             alt="Donate Icon"
             fill
             priority
@@ -153,7 +153,7 @@ export function Contract() {
       >
         <div className="relative h-[3rem] lg:h-[3.5rem] xl:h-[4rem] aspect-1/1 w-auto mb-[var(--sm-space-y)]">
           <LoadFadeImage
-            src={CDN_LINK + "/website/support-us/contract.svg"}
+            src={CDN_LINK + "/icons/contract.svg"}
             alt="Contract Icon"
             fill
             priority
@@ -180,7 +180,7 @@ export function Contract() {
         <Button
           text={t("sampleButton")}
           action={() => {
-            window.open(CDN_LINK + "/website/contract-brickbot.pdf", "_blank");
+            window.open(CDN_LINK + "/contract.pdf", "_blank");
           }}
           className="px-[2rem] flex-[0_0_30%]"
           width={buttonsCol ? "14rem" : ""}

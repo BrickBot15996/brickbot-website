@@ -49,7 +49,7 @@ export default function DesktopNav() {
         className="mx-[0.5rem] xl:mx-[1rem] hover:opacity-75 hover:scale-115 transition-transform duration-150 hover:translate-y-[0.15rem] hover:lg:translate-y-[0.275rem] active:opacity-100 active:scale-95 active:translate-y-[-0.8rem] active:lg:translate-y-[-0.12rem] cursor-pointer"
       >
         <Image
-          src={CDN_LINK + "/website/branding/brick-yellow.svg"}
+          src={CDN_LINK + "/branding/logo.svg"}
           alt="BrickBot Logo"
           priority
           fetchPriority="high"

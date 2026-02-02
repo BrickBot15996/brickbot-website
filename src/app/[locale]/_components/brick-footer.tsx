@@ -28,7 +28,7 @@ export default function Footer() {
           className="cursor-pointer hover:brightness-85"
         >
           <LoadFadeImage
-            src={CDN_LINK + "/website/anpc/anpc-sal.webp"}
+            src={CDN_LINK + "/anpc/sal.webp"}
             alt="ANPC – Soluționarea alternativă a litigiilor"
             width={250}
             height={50}
@@ -40,7 +40,7 @@ export default function Footer() {
           className="cursor-pointer hover:brightness-85"
         >
           <LoadFadeImage
-            src={CDN_LINK + "/website/anpc/anpc-sol.webp"}
+            src={CDN_LINK + "/anpc/sol.webp"}
             alt="ANPC – Soluționarea online a litigiilor"
             width={250}
             height={50}
@@ -52,7 +52,7 @@ export default function Footer() {
         className="relative h-[3rem] lg:h-[4rem] w-fit hover:brightness-75 mt-[var(--lg-space-y)] overflow-hidden"
       >
         <Image
-          src={CDN_LINK + "/website/natie/natie-bar.svg"}
+          src={CDN_LINK + "/natie/logo-bar.svg"}
           alt="Nație prin Educație logos"
           width={1000}
           height={200}
@@ -75,7 +75,7 @@ function NavMenuDesktop() {
       <div className="flex flex-col w-auto h-auto space-y-[var(--md-space-y)] items-start">
         <div className="relative w-full h-[2rem]">
           <Image
-            src={CDN_LINK + "/website/branding/brick-text.svg"}
+            src={CDN_LINK + "/branding/name.svg"}
             alt="BrickBot"
             fill
             className="object-left object-contain w-full h-full"
@@ -210,7 +210,7 @@ function NavMenuMobile() {
       <div className="flex flex-col w-auto h-auto space-y-[var(--lg-space-y)] items-start">
         <div className="relative w-full h-[1.5rem] overflow-hidden">
           <Image
-            src={CDN_LINK + "/website/branding/brick-text.svg"}
+            src={CDN_LINK + "/branding/name.svg"}
             alt="BrickBot"
             fill
             className="object-left object-contain w-full h-full"
