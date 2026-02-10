@@ -3,10 +3,8 @@ import type { Metadata } from "next";
 import { Anek_Latin } from "next/font/google";
 import { GlobalProvider } from "./global-context";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { Analytics } from "@vercel/analytics/next";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "./_components/navbar/brick-nav";
 import { CDN_LINK } from "./constants";
 
@@ -72,8 +70,6 @@ export default async function RootLayout({
           <GlobalProvider>
             <Nav />
             {children}
-            <Analytics />
-            <SpeedInsights />
           </GlobalProvider>
         </NextIntlClientProvider>
       </body>
