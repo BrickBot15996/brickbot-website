@@ -44,10 +44,17 @@ const nextConfig: NextConfig = {
         destination: "https://formular230.ro/asociatia-brickbot",
         permanent: true,
       },
+      {
+        source: "/comunicare",
+        destination: "https://forms.gle/yfmeYhP91GpE1Dbj6",
+        permanent: true,
+      },
     ];
   },
   images: {
     remotePatterns: [new URL("https://cdn.brickbot.ro/**")],
+    minimumCacheTTL: 2678400, // 1 month
+    unoptimized: true,
   },
 };
 

@@ -33,6 +33,7 @@ export function SmallProjectCard({ project }: SmallProjectCardProps) {
             width={275}
             height={275}
             quality={60}
+            unoptimized
             className="object-contain w-[70%] h-auto opacity-80"
           />
         </div>

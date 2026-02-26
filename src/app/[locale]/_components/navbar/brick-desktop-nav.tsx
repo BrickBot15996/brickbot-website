@@ -52,6 +52,7 @@ export default function DesktopNav() {
           src={CDN_LINK + "/branding/logo.svg"}
           alt="BrickBot Logo"
           priority
+          unoptimized
           fetchPriority="high"
           width={928}
           height={502}

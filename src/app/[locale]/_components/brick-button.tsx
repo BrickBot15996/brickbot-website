@@ -29,7 +29,7 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
       className = "px-[1rem] md:px-[1.3rem] lg:px-[1.5rem]",
       style = {},
     },
-    ref
+    ref,
   ) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
@@ -105,7 +105,7 @@ const Button = forwardRef<HTMLDivElement, ButtonParams>(
         </motion.div>
       </div>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

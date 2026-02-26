@@ -57,6 +57,7 @@ export default function Hero() {
             src={CDN_LINK + "/branding/banner-text.svg"}
             alt="We build our future brick by brick!"
             fill
+            unoptimized
             priority
             className="object-contain select-none opacity-100 h-full w-full"
           />
