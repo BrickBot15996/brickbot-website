@@ -71,7 +71,7 @@ function RedirectTax() {
             src={CDN_LINK + "/icons/230.svg"}
             alt="230 Form Icon"
             fill
-            priority
+            unoptimized
             className="object-contain"
           />
         </div>
@@ -109,7 +109,7 @@ function Donate() {
             src={CDN_LINK + "/icons/donate.svg"}
             alt="Donate Icon"
             fill
-            priority
+            unoptimized
             className="object-contain"
           />
         </div>
@@ -156,7 +156,7 @@ export function Contract() {
             src={CDN_LINK + "/icons/contract.svg"}
             alt="Contract Icon"
             fill
-            priority
+            unoptimized
             className="object-contain"
           />
         </div>

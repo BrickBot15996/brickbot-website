@@ -54,6 +54,7 @@ export default function Footer() {
         <Image
           src={CDN_LINK + "/natie/logo-bar.svg"}
           alt="Nație prin Educație logos"
+          unoptimized
           width={1000}
           height={200}
           className="object-contain h-full w-full"
@@ -78,6 +79,7 @@ function NavMenuDesktop() {
             src={CDN_LINK + "/branding/name.svg"}
             alt="BrickBot"
             fill
+            unoptimized
             className="object-left object-contain w-full h-full"
           />
         </div>
@@ -213,6 +215,7 @@ function NavMenuMobile() {
             src={CDN_LINK + "/branding/name.svg"}
             alt="BrickBot"
             fill
+            unoptimized
             className="object-left object-contain w-full h-full"
           />
         </div>
