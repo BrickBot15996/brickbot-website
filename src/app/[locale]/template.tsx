@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Analytics } from "@vercel/analytics/next";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Footer from "./_components/brick-footer";
 import { useEffect } from "react";
@@ -88,10 +87,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           animate="visible"
           //exit="exit"
         >
-          <main className="mt-[var(--navbar-height)]">
-            {children}
-            <Analytics />
-          </main>
+          <main className="mt-[var(--navbar-height)]">{children}</main>
           <Footer />
         </motion.div>
       </AnimatePresence>
