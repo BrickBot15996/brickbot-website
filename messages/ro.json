@@ -270,6 +270,14 @@
         {
           "event": "Turneul Ligii Est",
           "awardName": "Locul 2 Think Award"
+        },
+        {
+          "event": "Romania National Championship",
+          "awardName": "Alianța câștigătoare a diviziei"
+        },
+        {
+          "event": "Romania National Championship",
+          "awardName": "Alianța finalistă a evenimentului"
         }
       ]
     },

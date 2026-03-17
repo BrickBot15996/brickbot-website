@@ -269,6 +269,14 @@
         "0": {
           "event": "Romania East League Tournament",
           "awardName": "Think Award 2nd Place"
+        },
+        "1": {
+          "event": "Romania National Championship",
+          "awardName": "Division Winning Alliance"
+        },
+        "2": {
+          "event": "Romania National Championship",
+          "awardName": "Event Finalist Alliance"
         }
       }
     },
