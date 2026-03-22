@@ -168,7 +168,7 @@
       },
       "Donate": {
         "title": "Donate",
-        "text": "Soon, anyone will be able to support the BrickBot Association by making a secure donation of up to €100 through Stripe."
+        "text": "Anyone can support the BrickBot Association by making a secure donation through Stripe."
       },
       "Contracts": {
         "title": "Sponsorship Contracts",
@@ -209,7 +209,9 @@
       "title": "Get Involved",
       "links": {
         "SupportUs": "Support Us",
-        "Contact": "Contact"
+        "Contact": "Contact",
+        "TermsAndConditions": "Terms and Conditions",
+        "ConfidentialityPolicy": "Privacy Policy"
       }
     }
   },
@@ -226,6 +228,16 @@
       "title": "Address",
       "address": "13-15 Cezar Bolliac Street, Focșani, Vrancea, Romania"
     }
+  },
+
+  "TermsAndConditions": {
+    "title": "Terms and Conditions - BrickBot Association",
+    "content": "Last updated: 26.03.2026\n\n1. General Information\nThis site is operated by the Brickbot Association, a non-governmental, non-profit organization, headquartered in Focșani, 15 Cezar Bolliac Street, Vrancea, legally registered in Romania with CIF 50846996. The purpose of our platform is to support STEM education and ensure the necessary infrastructure for our robotics team's participation in national and international competitions.\n\n2. Nature of Transactions: Donations and Sponsorships\nAll payments processed through this site represent voluntary donations or sponsorships intended exclusively to support the educational activities of the Brickbot Association.\nThese contributions do not represent payment for commercial goods, services, pre-orders, or financial investments.\nDonors do not receive material goods in exchange for the amounts offered, their contribution having a strictly philanthropic and performance-supporting purpose.\n\n3. Refund Policy\nConsidering the legal nature of donations to an NGO, the transferred amounts are, in principle, non-refundable. However, we treat every interaction with transparency and fairness. We will process a full refund exclusively under the following exceptional conditions:\nTechnical errors: If a donation was processed twice due to a system error.\nUnauthorized transactions: If it is determined that the payment was made fraudulently, without the cardholder's consent.\nTo request a refund for the reasons mentioned above, please contact us within a maximum of 14 days from the transaction date at the email address: brickbot@liceulunirea.ro. Requests will be analyzed and resolved within 5-7 business days.\n\n4. Payment Security\nAll financial transactions are processed in a strictly secure environment by our partner, Stripe. The Brickbot Association does not request or store your bank card data. Payment processing is done in RON / EUR, and the association does not charge any additional transaction fees.\n\n5. Contact Information\nFor any questions related to donations, partnerships, or the operation of the association, you can contact us anytime at:\nEmail: brickbot@liceulunirea.ro\nPhone: +40744707212\nPhysical address: Focsani, 15 Cezar Bolliac Street, Vrancea, Romania"
+  },
+
+  "ConfidentialityPolicy": {
+    "title": "Privacy Policy - BrickBot Association",
+    "content": "Privacy Policy – Brickbot Association\nLast updated: 22.03.2026\n\nAt the Brickbot Association, we build robots with precision and treat your personal data with the exact same care. This policy simply and transparently explains what information we collect when you visit brickbot.ro or choose to support STEM education through donations, and how we use this data.\n\n1. What data we collect and why\nWhen you make a donation or sponsorship to support our team, we collect only the data strictly necessary to process the transaction and comply with current financial legislation:\nIdentification data: First name, last name, email address (to send you the donation confirmation and our thanks).\nFinancial data: We do not store your card data. All transactions are securely processed by our payment partner, Stripe. We only receive the transaction confirmation and a history necessary for our accounting (as an NGO).\n\n2. The intent behind the data\nWe do not trade information. We use your data exclusively for:\nSecure processing of donations and sponsorships.\nIssuing supporting documents according to the law (receipts, sponsorship contracts).\nCommunication related to payment confirmation or, if you have given your consent, brief updates about our team's progress in robotics competitions.\n\n3. Who else has access to your data\nOur ecosystem is closed and secure. The only external entities that interact with your data are:\nStripe: Our payment processor, which handles financial transactions at the highest global security standards.\nState authorities: Only if the law compels us to report the Association's financial-accounting documents.\n\n4. Your rights (GDPR)\nYou have total control over the data you provide to us. You have the right to request access to it, correct it, or request its deletion from our database (within the limits imposed by financial legislation regarding the archiving of donations).\n\n5. Contact\nIf you have questions about how we protect your data, you can write directly to us at: brickbot@liceulunirea.ro"
   },
 
   "Author": "Built by Marius Baican",

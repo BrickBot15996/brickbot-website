@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/apply",
-        destination: "https://forms.gle/yBG1R8YJoQaGmYez7",
+        destination: "https://forms.gle/7XJ4rZHvPQKYvPXbA",
         permanent: true,
       },
       {
@@ -47,6 +47,16 @@ const nextConfig: NextConfig = {
       {
         source: "/comunicare",
         destination: "https://forms.gle/yfmeYhP91GpE1Dbj6",
+        permanent: true,
+      },
+      {
+        source: "/donate",
+        destination: "https://donate.stripe.com/00w6oI2wK5wBfQT0Sw5J602",
+        permanent: true,
+      },
+      {
+        source: "/doneaza",
+        destination: "https://donate.stripe.com/00w6oI2wK5wBfQT0Sw5J602",
         permanent: true,
       },
     ];

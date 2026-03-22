@@ -27,7 +27,7 @@
     "react-slideshow-image": "^4.3.2",
     "react-tooltip": "^5.30.0",
     "styled-components": "^6.1.19",
-    "vercel": "^50.20.0"
+    "vercel": "^50.34.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -5,35 +5,45 @@ import dynamic from "next/dynamic";
 
 const componentMap: Record<RouteKey, React.ComponentType> = {
   home: dynamic(() =>
-    import("../_pages/home/home-page").then((m) => m.HomePage)
+    import("../_pages/home/home-page").then((m) => m.HomePage),
   ),
   blog: dynamic(() =>
-    import("../_pages/blog/blog-page").then((m) => m.BlogPage)
+    import("../_pages/blog/blog-page").then((m) => m.BlogPage),
   ),
   ourTeam: dynamic(() =>
-    import("../_pages/our-team/our-team-page").then((m) => m.OurTeamPage)
+    import("../_pages/our-team/our-team-page").then((m) => m.OurTeamPage),
   ),
   projects: dynamic(() =>
-    import("../_pages/projects/projects-page").then((m) => m.ProjectsPage)
+    import("../_pages/projects/projects-page").then((m) => m.ProjectsPage),
   ),
   theVault: dynamic(() =>
     import("../_pages/projects/the-vault/the-vault-page").then(
-      (m) => m.TheVaultPage
-    )
+      (m) => m.TheVaultPage,
+    ),
   ),
   checkpoint: dynamic(() =>
     import("../_pages/projects/checkpoint/checkpoint-page").then(
-      (m) => m.CheckpointPage
-    )
+      (m) => m.CheckpointPage,
+    ),
   ),
   sparks: dynamic(() =>
-    import("../_pages/projects/sparks/sparks-page").then((m) => m.SparksPage)
+    import("../_pages/projects/sparks/sparks-page").then((m) => m.SparksPage),
   ),
   supportUs: dynamic(() =>
-    import("../_pages/support-us/support-us-page").then((m) => m.SupportUsPage)
+    import("../_pages/support-us/support-us-page").then((m) => m.SupportUsPage),
   ),
   contact: dynamic(() =>
-    import("../_pages/contact/contact-page").then((m) => m.default)
+    import("../_pages/contact/contact-page").then((m) => m.default),
+  ),
+  "terms-and-conditions": dynamic(() =>
+    import("../_pages/terms-and-conditions/terms-and-conditions-page").then(
+      (m) => m.TermsAndConditionsPage,
+    ),
+  ),
+  "confidentiality-policy": dynamic(() =>
+    import("../_pages/confidentiality-policy/confidentiality-policy-page").then(
+      (m) => m.ConfidentialityPolicy,
+    ),
   ),
 };
 
@@ -44,30 +54,38 @@ const metadataMap: Record<RouteKey, () => Promise<Record<string, Metadata>>> = {
     import("../_pages/blog/blog-metadata").then((m) => m.blogMetadata),
   ourTeam: () =>
     import("../_pages/our-team/our-team-metadata").then(
-      (m) => m.ourTeamMetadata
+      (m) => m.ourTeamMetadata,
     ),
   projects: () =>
     import("../_pages/projects/projects-metadata").then(
-      (m) => m.projectsMetadata
+      (m) => m.projectsMetadata,
     ),
   theVault: () =>
     import("../_pages/projects/the-vault/the-vault-metadata").then(
-      (m) => m.theVaultMetadata
+      (m) => m.theVaultMetadata,
     ),
   checkpoint: () =>
     import("../_pages/projects/checkpoint/checkpoint-metadata").then(
-      (m) => m.checkpointMetadata
+      (m) => m.checkpointMetadata,
     ),
   sparks: () =>
     import("../_pages/projects/sparks/sparks-metadata").then(
-      (m) => m.sparksMetadata
+      (m) => m.sparksMetadata,
     ),
   supportUs: () =>
     import("../_pages/support-us/support-us-metadata").then(
-      (m) => m.supportUsMetadata
+      (m) => m.supportUsMetadata,
     ),
   contact: () =>
     import("../_pages/contact/contact-metadata").then((m) => m.contactMetadata),
+  "terms-and-conditions": () =>
+    import("../_pages/terms-and-conditions/terms-and-conditions-metadata").then(
+      (m) => m.termsAndConditionsMetadata,
+    ),
+  "confidentiality-policy": () =>
+    import("../_pages/confidentiality-policy/confidentiality-policy-metadata").then(
+      (m) => m.confidentialityPolicyMetadata,
+    ),
 };
 
 function findRouteMatch(segments: string[], locale?: string) {

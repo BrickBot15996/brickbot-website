@@ -168,7 +168,7 @@
       },
       "Donate": {
         "title": "Donează",
-        "text": "În curând, oricine va putea susține Asociația BrickBot printr-o donație sigură de pănâ la 500 RON prin intermediul platformei Stripe."
+        "text": "Oricine poate susține Asociația BrickBot printr-o donație sigură prin intermediul platformei Stripe."
       },
       "Contracts": {
         "title": "Contracte de sponsorizare",
@@ -183,6 +183,16 @@
     "Sponsors": {
       "title": "Sponsori 2024-25"
     }
+  },
+
+  "TermsAndConditions": {
+    "title": "Termeni și condiții - Asociația BrickBot",
+    "content": "Ultima actualizare: 26.03.2026\n\n1. Informații Generale\nAcest site este operat de Asociația Brickbot, o organizație non-guvernamentală, non-profit, cu sediul în Focsani, str. Cezar Bolliac, nr. 15, Vrancea, înregistrată legal în România cu CIF 50846996. Scopul platformei noastre este de a susține educația STEM și de a asigura infrastructura necesară participării echipei noastre de robotică la competiții naționale și internaționale.\n\n2. Natura Tranzacțiilor: Donații și Sponsorizări\nToate plățile procesate prin intermediul acestui site reprezintă donații voluntare sau sponsorizări destinate exclusiv susținerii activităților educaționale ale Asociației Brickbot.\nAceste contribuții nu reprezintă plata pentru bunuri comerciale, servicii, precomenzi sau investiții financiare.\nDonatorii nu primesc bunuri materiale în schimbul sumelor oferite, contribuția lor având un scop strict filantropic și de susținere a performanței.\n\n3. Politica de Returnare (Refund Policy)\nAvând în vedere natura legală a donațiilor către un ONG, sumele transferate sunt, în principiu, nerambursabile. Totuși, tratăm fiecare interacțiune cu transparență și corectitudine. Vom procesa returnarea integrală a fondurilor (refund) exclusiv în următoarele condiții excepționale:\nErori tehnice: Dacă o donație a fost procesată de două ori dintr-o eroare a sistemului.\nTranzacții neautorizate: Dacă se constată că plata a fost făcută fraudulos, fără acordul titularului de card.\nPentru a solicita o returnare din motivele menționate mai sus, te rugăm să ne contactezi în termen de maxim 14 zile de la data tranzacției la adresa de email: brickbot@liceulunirea.ro. Cererile vor fi analizate și soluționate în termen de 5-7 zile lucrătoare.\n\n4. Securitatea Plăților\nToate tranzacțiile financiare sunt procesate într-un mediu strict securizat de către partenerul nostru, Stripe. Asociația Brickbot nu solicită și nu stochează datele cardului tău bancar. Procesarea plăților se face în RON / EUR, iar asociația nu percepe niciun comision suplimentar la tranzacție.\n\n5. Date de Contact\nPentru orice întrebări legate de donații, parteneriate sau funcționarea asociației, ne poți contacta oricând la:\nEmail: brickbot@liceulunirea.ro\nTelefon: +40744707212\nAdresă fizică: Focsani, str. Cezar Bolliac, nr. 15, Vrancea, Romania"
+  },
+
+  "ConfidentialityPolicy": {
+    "title": "Politica de confidențialitate - Asociația BrickBot",
+    "content": "Politica de Confidențialitate – Asociația Brickbot\nUltima actualizare: 22.03.2026\n\nLa Asociația Brickbot, construim roboți cu precizie și tratăm datele tale personale cu exact aceeași grijă. Această politică explică simplu și transparent ce informații colectăm atunci când vizitezi brickbot.ro sau alegi să susții educația STEM prin donații, și cum folosim aceste date.\n\n1. Ce date colectăm și de ce\nAtunci când faci o donație sau o sponsorizare pentru a susține echipa noastră, colectăm doar datele strict necesare pentru a procesa tranzacția și a respecta legislația financiară în vigoare:\nDate de identificare: Nume, prenume, adresă de e-mail (pentru a-ți trimite confirmarea donației și mulțumirile noastre).\nDate financiare: Nu stocăm datele cardului tău. Toate tranzacțiile sunt procesate în siguranță de partenerul nostru de plăți, Stripe. Noi primim doar confirmarea tranzacției și un istoric necesar contabilității noastre (ca ONG).\n\n2. Intenția din spatele datelor\nNu facem comerț cu informații. Folosim datele tale exclusiv pentru:\nProcesarea sigură a donațiilor și sponsorizărilor.\nEmiterea documentelor justificative conform legii (chitanțe, contracte de sponsorizare).\nComunicarea legată de confirmarea plății sau, dacă ți-ai dat acordul, scurte actualizări despre evoluția echipei noastre la competițiile de robotică.\n\n3. Cine mai are acces la datele tale\nEcosistemul nostru este închis și securizat. Singurele entități externe care interacționează cu datele tale sunt:\nStripe: Procesatorul nostru de plăți, care gestionează tranzacțiile financiare la cele mai înalte standarde globale de securitate.\nAutoritățile statului: Doar în cazul în care legea ne obligă să raportăm documentele financiar-contabile ale Asociației.\n\n4. Drepturile tale (GDPR)\nAi control total asupra datelor pe care ni le oferi. Ai dreptul să ne ceri accesul la ele, să le corectezi sau să ne soliciți ștergerea lor din baza noastră de date (în limitele impuse de legislația financiară privind arhivarea donațiilor).\n\n5. Contact\nDacă ai întrebări despre cum îți protejăm datele, ne poți scrie direct la: brickbot@liceulunirea.ro"
   },
 
   "Footer": {
@@ -209,7 +219,9 @@
       "title": "Implică-te",
       "links": {
         "SupportUs": "Susține-ne",
-        "Contact": "Contact"
+        "Contact": "Contact",
+        "TermsAndConditions": "Termeni și condiții",
+        "ConfidentialityPolicy": "Politică de confidențialitate"
       }
     }
   },

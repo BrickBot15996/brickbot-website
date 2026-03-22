@@ -17,7 +17,9 @@ export type RouteKey =
   | "checkpoint"
   | "sparks"
   | "supportUs"
-  | "contact";
+  | "contact"
+  | "terms-and-conditions"
+  | "confidentiality-policy";
 
 export const routeMap: Record<RouteKey, Record<Locale, string[]>> = {
   home: {
@@ -55,5 +57,13 @@ export const routeMap: Record<RouteKey, Record<Locale, string[]>> = {
   contact: {
     en: ["contact"],
     ro: ["contact"],
+  },
+  "terms-and-conditions": {
+    en: ["terms-and-conditions"],
+    ro: ["termeni-si-conditii"],
+  },
+  "confidentiality-policy": {
+    en: ["privacy-policy"],
+    ro: ["politica-de-confidentialitate"],
   },
 };

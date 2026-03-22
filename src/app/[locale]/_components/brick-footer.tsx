@@ -195,6 +195,16 @@ function NavMenuDesktop() {
             {t("GetInvolved.links.Contact")}
           </p>
         </Link>
+        <Link href={i18nPath(locale, "terms-and-conditions")}>
+          <p className="hover:brightness-75">
+            {t("GetInvolved.links.TermsAndConditions")}
+          </p>
+        </Link>
+        <Link href={i18nPath(locale, "confidentiality-policy")}>
+          <p className="hover:brightness-75">
+            {t("GetInvolved.links.ConfidentialityPolicy")}
+          </p>
+        </Link>
       </div>
     </div>
   );
@@ -337,6 +347,16 @@ function NavMenuMobile() {
             <Link href={i18nPath(locale, "contact")}>
               <p className="hover:brightness-75">
                 {t("GetInvolved.links.Contact")}
+              </p>
+            </Link>
+            <Link href={i18nPath(locale, "terms-and-conditions")}>
+              <p className="hover:brightness-75">
+                {t("GetInvolved.links.TermsAndConditions")}
+              </p>
+            </Link>
+            <Link href={i18nPath(locale, "confidentiality-policy")}>
+              <p className="hover:brightness-75">
+                {t("GetInvolved.links.ConfidentialityPolicy")}
               </p>
             </Link>
           </div>

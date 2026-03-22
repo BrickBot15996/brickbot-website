@@ -95,7 +95,7 @@ function Donate() {
   const t = useTranslations("SupportUs.HowToHelp.Donate");
   return (
     <Link
-      href=""
+      href="https://donate.stripe.com/00w6oI2wK5wBfQT0Sw5J602"
       target="_blank"
       className="group cursor-pointer h-full"
     >
