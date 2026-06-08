@@ -37,6 +37,14 @@ export const useDecode = (): SeasonProps => {
         event: t("2.event"),
         awardName: t("2.awardName"),
       },
+      {
+        event: t("3.event"),
+        awardName: t("3.awardName"),
+      },
+      {
+        event: t("4.event"),
+        awardName: t("4.awardName"),
+      },
     ],
   };
 };

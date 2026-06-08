@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/apply",
-        destination: "https://forms.gle/7XJ4rZHvPQKYvPXbA",
+        destination: "https://forms.gle/kr4LBrLzFzvTW4S18",
         permanent: true,
       },
       {
@@ -42,11 +42,6 @@ const nextConfig: NextConfig = {
       {
         source: "/formular230",
         destination: "https://formular230.ro/asociatia-brickbot",
-        permanent: true,
-      },
-      {
-        source: "/comunicare",
-        destination: "https://forms.gle/yfmeYhP91GpE1Dbj6",
         permanent: true,
       },
       {

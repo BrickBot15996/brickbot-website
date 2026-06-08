@@ -59,20 +59,27 @@ export function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
               <HiArrowNarrowRight className="inline-flex h-auto w-auto ml-[0.5rem] mt-[-0.17rem] group-hover:translate-x-[1rem] group-active:translate-x-[0rem] transition-transform duration-200" />
             </h4>
 
-            {portfolio.awards.map((award, index) => (
-              <div
-                key={index}
-                className="h-fit w-full flex flex-col"
-              >
-                <h5>{award.event}</h5>
-                <h6
-                  style={{ color: "var(--default-text)" }}
-                  className="mb-[var(--sm-space-y)]"
+            {portfolio.awards
+              .slice(
+                portfolio.awards.length - 3 > 0
+                  ? portfolio.awards.length - 3
+                  : 0,
+                portfolio.awards.length,
+              )
+              .map((award, index) => (
+                <div
+                  key={index}
+                  className="h-fit w-full flex flex-col"
                 >
-                  {award.awardName}
-                </h6>
-              </div>
-            ))}
+                  <h5>{award.event}</h5>
+                  <h6
+                    style={{ color: "var(--default-text)" }}
+                    className="mb-[var(--sm-space-y)]"
+                  >
+                    {award.awardName}
+                  </h6>
+                </div>
+              ))}
           </div>
         </SimpleBox>
       ) : (
@@ -105,20 +112,27 @@ export function Portfolio({ portfolio, textColor }: PortfolioDisplayProps) {
               />
             </div>
             <div className="flex flex-col flex-1 h-full">
-              {portfolio.awards.map((award, index) => (
-                <div
-                  key={index}
-                  className="h-fit w-full flex flex-col"
-                >
-                  <h5>{award.event}</h5>
-                  <h6
-                    style={{ color: "var(--default-text)" }}
-                    className="mb-[var(--sm-space-y)]"
+              {portfolio.awards
+                .slice(
+                  portfolio.awards.length - 3 > 0
+                    ? portfolio.awards.length - 3
+                    : 0,
+                  portfolio.awards.length,
+                )
+                .map((award, index) => (
+                  <div
+                    key={index}
+                    className="h-fit w-full flex flex-col"
                   >
-                    {award.awardName}
-                  </h6>
-                </div>
-              ))}
+                    <h5>{award.event}</h5>
+                    <h6
+                      style={{ color: "var(--default-text)" }}
+                      className="mb-[var(--sm-space-y)]"
+                    >
+                      {award.awardName}
+                    </h6>
+                  </div>
+                ))}
             </div>
           </div>
         </SimpleBox>

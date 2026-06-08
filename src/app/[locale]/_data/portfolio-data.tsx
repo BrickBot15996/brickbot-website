@@ -6,6 +6,7 @@ import {
   usePowerplay,
   SeasonProps,
   useUltimateGoal,
+  useDecode,
 } from "@/app/[locale]/_data/seasons-data";
 import {
   alphabit,
@@ -27,12 +28,22 @@ export type PortfolioProps = {
 };
 
 export const useBrickbotPortfolioList = (): PortfolioProps[] => {
+  const decode = useDecode();
   const intoTheDeep = useIntoTheDeep();
   const centerstage = useCenterstage();
   const powerplay = usePowerplay();
   const freightFrenzy = useFreightFrenzy();
 
   return [
+    {
+      team: brickbot,
+      season: decode,
+      awards: decode.awards,
+      portfolioPath:
+        CDN_LINK + "/projects/the-vault/portfolios/brickbot-decode.pdf",
+      thumbnailPath:
+        CDN_LINK + "/projects/the-vault/thumbnails/brickbot-decode.webp",
+    },
     {
       team: brickbot,
       season: intoTheDeep,

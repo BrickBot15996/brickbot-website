@@ -279,7 +279,7 @@
     "Decode": {
       "awards": {
         "0": {
-          "event": "Romania East League Tournament",
+          "event": "East League Tournament",
           "awardName": "Think Award 2nd Place"
         },
         "1": {
@@ -289,6 +289,14 @@
         "2": {
           "event": "Romania National Championship",
           "awardName": "Event Finalist Alliance"
+        },
+        "3": {
+          "event": "FIRST Championship",
+          "awardName": "Design Award 2nd Place"
+        },
+        "4": {
+          "event": "FIRST Championship",
+          "awardName": "Division Finalist Alliance"
         }
       }
     },
