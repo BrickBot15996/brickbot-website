@@ -54,6 +54,11 @@ const nextConfig: NextConfig = {
         destination: "https://donate.stripe.com/00w6oI2wK5wBfQT0Sw5J602",
         permanent: true,
       },
+      {
+        source: "/academy",
+        destination: "https://forms.gle/16HcqxaW3yd2SXBd7",
+        permanent: true,
+      },
     ];
   },
   images: {
