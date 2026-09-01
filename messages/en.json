@@ -185,7 +185,7 @@
       "title": "Sponsorship Tiers"
     },
     "Sponsors": {
-      "title": "Sponsors 2024-25"
+      "title": "Sponsors 2025-26"
     }
   },
 
@@ -280,6 +280,14 @@
   },
 
   "SeasonData": {
+    "BioBuzz": {
+      "awards": {
+        "0": {
+          "event": "Season starts on",
+          "awardName": "September 12th"
+        }
+      }
+    },
     "Decode": {
       "awards": {
         "0": {

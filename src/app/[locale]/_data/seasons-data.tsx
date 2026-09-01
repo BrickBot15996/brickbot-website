@@ -15,6 +15,24 @@ export type SeasonProps = {
   awards: AwardProps[];
 };
 
+export const useBioBuzz = (): SeasonProps => {
+  const t = useTranslations("SeasonData.BioBuzz.awards");
+
+  return {
+    name: "BioBuzz",
+    years: "2026-2027",
+    textColor: "#A1A470",
+    gradientColor: "#A1A470",
+    logoPath: CDN_LINK + "/seasons/biobuzz/logo.svg",
+    awards: [
+      {
+        event: t("0.event"),
+        awardName: t("0.awardName"),
+      },
+    ],
+  };
+};
+
 export const useDecode = (): SeasonProps => {
   const t = useTranslations("SeasonData.Decode.awards");
 
@@ -228,6 +246,7 @@ export const useVelocityVortex = (): SeasonProps => {
 
 export const useSeasonList = (): SeasonProps[] => {
   return [
+    useBioBuzz(),
     useDecode(),
     useIntoTheDeep(),
     useCenterstage(),

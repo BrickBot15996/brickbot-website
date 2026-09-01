@@ -185,7 +185,7 @@
       "title": "Pachete de sponsorizare"
     },
     "Sponsors": {
-      "title": "Sponsori 2024-25"
+      "title": "Sponsori 2025-26"
     }
   },
 
@@ -281,6 +281,14 @@
   },
 
   "SeasonData": {
+    "BioBuzz": {
+      "awards": [
+        {
+          "event": "Sezonul începe pe",
+          "awardName": "12 septembrie"
+        }
+      ]
+    },
     "Decode": {
       "awards": [
         {
