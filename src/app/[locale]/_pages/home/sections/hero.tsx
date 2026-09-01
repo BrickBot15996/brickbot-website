@@ -19,7 +19,15 @@ export default function Hero() {
 
   const bannerImages = [
     {
-      src: CDN_LINK + "/images/hero/group-photo-2025.webp",
+      src: CDN_LINK + "/images/hero/nationals-celebrations-2026.webp",
+      alt: "BrickBot 2025-26",
+    },
+    {
+      src: CDN_LINK + "/images/hero/bricksapiens-at-field.webp",
+      alt: "BrickBot 2025-26",
+    },
+    {
+      src: CDN_LINK + "/images/hero/brickbot-practice-worlds.webp",
       alt: "BrickBot 2025-26",
     },
     {
@@ -31,20 +39,8 @@ export default function Hero() {
       alt: t("AboutUs.Carousel.Italy2025"),
     },
     {
-      src: CDN_LINK + "/images/hero/regionals-2025.webp",
-      alt: t("AboutUs.Carousel.Regionals2025"),
-    },
-    {
-      src: CDN_LINK + "/images/hero/focsani-meet-2025.webp",
-      alt: t("AboutUs.Carousel.FocsaniMeet2025"),
-    },
-    {
       src: CDN_LINK + "/images/hero/btc-2024.webp",
       alt: t("AboutUs.Carousel.BTC2024"),
-    },
-    {
-      src: CDN_LINK + "/images/hero/regionals-2023.webp",
-      alt: t("AboutUs.Carousel.Regionals2023"),
     },
   ];
 

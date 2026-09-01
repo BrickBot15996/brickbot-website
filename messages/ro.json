@@ -29,6 +29,10 @@
         "paragraph2": "Ne dedicăm cu pasiune construirii de roboți și promovării educației ȘTIAM în comunitatea noastră."
       },
       "Carousel": {
+        "BrickSapiens2026": "Finaliști ai Bucharest Twin Cup, august 2026",
+        "Worlds2026": "Finaliști ai Diviziei la FIRST Championship, mai 2026",
+        "Nationals2026": "Finaliști la Campionatul Național al României, martie 2026",
+        "Regionals2026": "Tuneul Ligii Est, februarie 2026",
         "SparkHope2025": "Alianța câștigătoare a SparkHope Robotics Cup, august 2025",
         "Caravan2025": "Caravana BrickBot, mai 2025",
         "Italy2025": "Campionatul din Italia, februarie 2025",
@@ -280,76 +284,88 @@
     "Decode": {
       "awards": [
         {
-          "event": "Turneul Ligii Est",
-          "awardName": "Locul 2 Think Award"
+          "event": "Bucharest Twin Cup",
+          "awardName": "Alianța finalistă"
         },
         {
-          "event": "Romania National Championship",
-          "awardName": "Alianța câștigătoare a diviziei"
-        },
-        {
-          "event": "Romania National Championship",
-          "awardName": "Alianța finalistă a evenimentului"
+          "event": "FIRST Championship",
+          "awardName": "Alianța finalistă a diviziei"
         },
         {
           "event": "FIRST Championship",
           "awardName": "Locul 2 Design Award"
         },
         {
-          "event": "FIRST Championship",
-          "awardName": "Alianța finalistă a diviziei"
+          "event": "Romania National Championship",
+          "awardName": "Alianța finalistă"
+        },
+        {
+          "event": "Turneul Ligii Est",
+          "awardName": "Locul 2 Think Award"
         }
       ]
     },
     "IntoTheDeep": {
       "awards": [
         {
-          "event": "Regionala Est",
-          "awardName": "Locul 2 Motivate Award"
+          "event": "SparkHope Robotics Cup",
+          "awardName": "Câștigători"
         },
         {
           "event": "Campionatul din Italia",
           "awardName": "Locul 2 Innovate Award"
         },
         {
-          "event": "SparkHope Robotics Cup",
-          "awardName": "Câștigători"
+          "event": "Regionala Est",
+          "awardName": "Locul 2 Motivate Award"
         }
       ]
     },
     "Centerstage": {
       "awards": [
         {
+          "event": "Bucharest Twin Cup",
+          "awardName": "Locul 8"
+        },
+        {
           "event": "Regionala Est",
           "awardName": "Locul 3 Think Award"
-        },
-        { "event": "Bucharest Twin Cup", "awardName": "Locul 8" }
+        }
       ]
     },
     "Powerplay": {
       "awards": [
         {
+          "event": "Quantum League",
+          "awardName": "Câștigători"
+        },
+        {
+          "event": "Dean's List",
+          "awardName": "Finalist"
+        },
+        {
           "event": "Turneu de calificare",
           "awardName": "Câștigători Innovate Award"
-        },
-        { "event": "Dean's List", "awardName": "Finalist" },
-        { "event": "Quantum League", "awardName": "Câștigători" }
+        }
       ]
     },
     "FreightFrenzy": {
       "awards": [
-        { "event": "Regionala #3", "awardName": "Câștigători Design Award" }
+        {
+          "event": "Regionala #3",
+          "awardName": "Câștigători Design Award"
+        }
       ]
     },
     "UltimateGoal": {
       "awards": [
         {
-          "event": "Turneu de calificare #3",
-          "awardName": "Câștigători Inspire Award"
-        },
-        {
           "event": "Campionatul Național",
           "awardName": "Locul 2 Innovate Award"
+        },
+        {
+          "event": "Turneu de calificare #3",
+          "awardName": "Câștigători Inspire Award"
         }
       ]
     },
@@ -363,25 +379,30 @@
     },
     "RoverRuckus": {
       "awards": [
-        { "event": "Regionala Moldova", "awardName": "Câștigători" },
+        {
+          "event": "Dean's List",
+          "awardName": "Finalist"
+        },
+        {
+          "event": "Campionatul Național",
+          "awardName": "Finaliști"
+        },
         {
           "event": "Regionala Moldova",
           "awardName": "Câștigători Control Award"
         },
-        { "event": "Campionatul Național", "awardName": "Finaliști" },
-        { "event": "Dean's List", "awardName": "Finalist" }
+        {
+          "event": "Regionala Moldova",
+          "awardName": "Câștigători"
+        }
       ]
     },
     "RelicRecovery": {
       "awards": [
-        { "event": "Eveniment temporar", "awardName": "Premiu temporar" },
-        { "event": "Eveniment temporar", "awardName": "Premiu temporar" }
       ]
     },
     "VelocityVortex": {
       "awards": [
-        { "event": "Eveniment temporar", "awardName": "Premiu temporar" },
-        { "event": "Eveniment temporar", "awardName": "Premiu temporar" }
       ]
     }
   },

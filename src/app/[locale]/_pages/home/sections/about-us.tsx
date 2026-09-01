@@ -41,6 +41,30 @@ export default function AboutUs() {
       <ImageCarousel
         content={[
           {
+            imageSrc: CDN_LINK + "/images/home/bricksapiens-2026.webp",
+            alt: t("Carousel.BrickSapiens2026"),
+            aspectRatio: "16/9",
+            description: t("Carousel.BrickSapiens2026"),
+          },
+          {
+            imageSrc: CDN_LINK + "/images/home/worlds-2026.webp",
+            alt: t("Carousel.Worlds2026"),
+            aspectRatio: "16/9",
+            description: t("Carousel.Worlds2026"),
+          },
+          {
+            imageSrc: CDN_LINK + "/images/home/nationals-2026.webp",
+            alt: t("Carousel.Nationals2026"),
+            aspectRatio: "16/9",
+            description: t("Carousel.Nationals2026"),
+          },
+          {
+            imageSrc: CDN_LINK + "/images/home/regionals-2026.webp",
+            alt: t("Carousel.Regionals2026"),
+            aspectRatio: "16/9",
+            description: t("Carousel.Regionals2026"),
+          },
+          {
             imageSrc: CDN_LINK + "/images/home/sparkhope-2025.webp",
             alt: t("Carousel.SparkHope2025"),
             aspectRatio: "16/9",

@@ -29,6 +29,10 @@
         "paragraph2": "We dedicate ourselves with a passion for building robots and promoting STEAM education within our community."
       },
       "Carousel": {
+        "BrickSapiens2026": "Bucharest Twin Cup Finalist Alliance, August 2026",
+        "Worlds2026": "FIRST Championship Division Finalists, May 2026",
+        "Nationals2026": "Romania Championship Finalists, March 2026",
+        "Regionals2026": "East League Tournament, February 2026",
         "SparkHope2025": "SparkHope Robotics Cup Winning Alliance, August 2025",
         "Caravan2025": "BrickBot In Schools, May 2025",
         "Italy2025": "Italy Championship, Feb 2025",
@@ -279,68 +283,68 @@
     "Decode": {
       "awards": {
         "0": {
-          "event": "East League Tournament",
-          "awardName": "Think Award 2nd Place"
+          "event": "Bucharest Twin Cup",
+          "awardName": "Finalist Alliance"
         },
         "1": {
-          "event": "Romania National Championship",
-          "awardName": "Division Winning Alliance"
+          "event": "FIRST Championship",
+          "awardName": "Division Finalist Alliance"
         },
         "2": {
-          "event": "Romania National Championship",
-          "awardName": "Event Finalist Alliance"
-        },
-        "3": {
           "event": "FIRST Championship",
           "awardName": "Design Award 2nd Place"
         },
+        "3": {
+          "event": "Romania National Championship",
+          "awardName": "Finalist Alliance"
+        },
         "4": {
-          "event": "FIRST Championship",
-          "awardName": "Division Finalist Alliance"
+          "event": "East League Tournament",
+          "awardName": "Think Award 2nd Place"
         }
       }
     },
     "IntoTheDeep": {
       "awards": {
         "0": {
-          "event": "Romania East Championship",
-          "awardName": "Motivate Award 2nd Place"
+          "event": "SparkHope Robotics Cup",
+          "awardName": "Winners"
         },
         "1": {
           "event": "Italy Championship",
           "awardName": "Innovate Award 2nd Place"
         },
         "2": {
-          "event": "SparkHope Robotics Cup",
-          "awardName": "Winners"
+          "event": "Romania East Championship",
+          "awardName": "Motivate Award 2nd Place"
         }
       }
     },
     "Centerstage": {
       "awards": {
         "0": {
-          "event": "Romania East Championship",
-          "awardName": "Think Award 3rd Place"
-        },
-        "1": {
           "event": "Bucharest Twin Cup",
           "awardName": "8th Place"
+        },
+        "1": {
+          "event": "Romania East Championship",
+          "awardName": "Think Award 3rd Place"
         }
       }
     },
     "Powerplay": {
       "awards": {
         "0": {
-          "event": "Qualifying Tournament",
-          "awardName": "Innovate Award 1st Place"
+          "event": "Quantum League",
+          "awardName": "Winners"
         },
         "1": {
           "event": "Dean's List",
           "awardName": "Finalist"
         },
         "2": {
-          "event": "Quantum League",
-          "awardName": "Winners"
+          "event": "Qualifying Tournament",
+          "awardName": "Innovate Award 1st Place"
         }
       }
     },
@@ -355,12 +359,12 @@
     "UltimateGoal": {
       "awards": {
         "0": {
-          "event": "Romania Qualifying Tournament #3",
-          "awardName": "Inspire Award Winners"
-        },
-        "1": {
           "event": "Romania National Championship",
           "awardName": "Innovate Award 2nd place"
+        },
+        "1": {
+          "event": "Romania Qualifying Tournament #3",
+          "awardName": "Inspire Award Winners"
         }
       }
     },
@@ -375,45 +379,29 @@
     "RoverRuckus": {
       "awards": {
         "0": {
-          "event": "Romania Moldova Regional",
-          "awardName": "Winners"
+          "event": "Dean's List",
+          "awardName": "Finalist"
         },
         "1": {
-          "event": "Romania Moldova Regional",
-          "awardName": "Control Award Winners"
-        },
-        "2": {
           "event": "Romania National Championship",
           "awardName": "Finalists"
         },
+        "2": {
+          "event": "Romania Moldova Regional",
+          "awardName": "Control Award Winners"
+        },
         "3": {
-          "event": "Dean's List",
-          "awardName": "Finalist"
+          "event": "Romania Moldova Regional",
+          "awardName": "Winners"
         }
       }
     },
     "RelicRecovery": {
       "awards": {
-        "0": {
-          "event": "Placeholder event",
-          "awardName": "Placeholder award"
-        },
-        "1": {
-          "event": "Placeholder event",
-          "awardName": "Placeholder award"
-        }
       }
     },
     "VelocityVortex": {
       "awards": {
-        "0": {
-          "event": "Placeholder event",
-          "awardName": "Placeholder award"
-        },
-        "1": {
-          "event": "Placeholder event",
-          "awardName": "Placeholder award"
-        }
       }
     }
   },
