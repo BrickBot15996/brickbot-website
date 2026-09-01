@@ -134,6 +134,5 @@ export const useProjectList = (): ProjectProps[] => {
     useCheckpoint(),
     useSparks(),
     useBrickDocs(),
-    useSimplicityFTC(),
   ];
 };
