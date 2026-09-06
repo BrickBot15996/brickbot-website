@@ -1,50 +1,37 @@
 import { notFound, redirect } from "next/navigation";
 import { routeMap, RouteKey } from "@/i18n/routing";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
-
-const componentMap: Record<RouteKey, React.ComponentType> = {
-  home: dynamic(() =>
+const componentLoaders: Record<RouteKey, () => Promise<React.ComponentType>> = {
+  home: () =>
     import("../_pages/home/home-page").then((m) => m.HomePage),
-  ),
-  blog: dynamic(() =>
+  blog: () =>
     import("../_pages/blog/blog-page").then((m) => m.BlogPage),
-  ),
-  ourTeam: dynamic(() =>
+  ourTeam: () =>
     import("../_pages/our-team/our-team-page").then((m) => m.OurTeamPage),
-  ),
-  projects: dynamic(() =>
+  projects: () =>
     import("../_pages/projects/projects-page").then((m) => m.ProjectsPage),
-  ),
-  theVault: dynamic(() =>
+  theVault: () =>
     import("../_pages/projects/the-vault/the-vault-page").then(
       (m) => m.TheVaultPage,
     ),
-  ),
-  checkpoint: dynamic(() =>
+  checkpoint: () =>
     import("../_pages/projects/checkpoint/checkpoint-page").then(
       (m) => m.CheckpointPage,
     ),
-  ),
-  sparks: dynamic(() =>
+  sparks: () =>
     import("../_pages/projects/sparks/sparks-page").then((m) => m.SparksPage),
-  ),
-  supportUs: dynamic(() =>
+  supportUs: () =>
     import("../_pages/support-us/support-us-page").then((m) => m.SupportUsPage),
-  ),
-  contact: dynamic(() =>
+  contact: () =>
     import("../_pages/contact/contact-page").then((m) => m.default),
-  ),
-  "terms-and-conditions": dynamic(() =>
+  "terms-and-conditions": () =>
     import("../_pages/terms-and-conditions/terms-and-conditions-page").then(
       (m) => m.TermsAndConditionsPage,
     ),
-  ),
-  "confidentiality-policy": dynamic(() =>
+  "confidentiality-policy": () =>
     import("../_pages/confidentiality-policy/confidentiality-policy-page").then(
       (m) => m.ConfidentialityPolicy,
     ),
-  ),
 };
 
 const metadataMap: Record<RouteKey, () => Promise<Record<string, Metadata>>> = {
@@ -179,10 +166,28 @@ export default async function Page({
     redirect(correctPath);
   }
 
-  const Component = componentMap[key as RouteKey];
-  if (!Component) {
+  const loader = componentLoaders[key as RouteKey];
+  if (!loader) {
     return notFound();
   }
 
+  const Component = await loader();
   return <Component />;
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  const params: { locale: string; segments: string[] }[] = [];
+
+  for (const locale of ["en", "ro"] as const) {
+    for (const route of Object.values(routeMap)) {
+      params.push({
+        locale,
+        segments: route[locale],
+      });
+    }
+  }
+
+  return params;
 }

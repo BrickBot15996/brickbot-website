@@ -87,7 +87,7 @@ export default function Hero() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  priority
+                  priority={index === 0}
                   fetchPriority={index === 0 ? "high" : "low"}
                   className="object-cover w-full h-full opacity-25"
                 />

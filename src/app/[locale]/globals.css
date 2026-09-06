@@ -123,7 +123,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--2xl-space-y); /* equivalent to space-y */
+    gap: var(--2xl-space-y);
+    /* equivalent to space-y */
     margin-top: var(--2xl-space-y);
     margin-bottom: var(--2xl-space-y);
     width: var(--page-width);
@@ -541,6 +542,7 @@ body::-webkit-scrollbar,
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -578,4 +580,14 @@ body {
   background-color: var(--background, #121212);
   color: var(--foreground);
   font-family: var(--font-anek-latin), sans-serif;
+}
+
+::selection {
+  background: var(--default-yellow);
+  color: var(--background, var(--default-dark, #121212));
+}
+
+::-moz-selection {
+  background: var(--default-yellow);
+  color: var(--background, var(--default-dark, #121212));
 }
