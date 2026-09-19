@@ -10,6 +10,12 @@ export default function Introduction() {
   const t = useTranslations("OurTeam.Introduction");
   const ourTeamImages: CarouselItem[] = [
     {
+      imageSrc: CDN_LINK + "/images/seasonal/biobuzz.webp",
+      alt: t("Carousel.2026-27"),
+      aspectRatio: "16/9",
+      description: t("Carousel.2026-27"),
+    },
+    {
       imageSrc: CDN_LINK + "/images/seasonal/decode.webp",
       alt: t("Carousel.2025-26"),
       aspectRatio: "16/9",
