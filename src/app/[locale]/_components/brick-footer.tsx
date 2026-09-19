@@ -49,7 +49,7 @@ export default function Footer() {
       </section>
       <Link
         href="https://natieprineducatie.ro/home"
-        className="relative h-[3rem] lg:h-[4rem] w-fit hover:brightness-75 mt-[var(--lg-space-y)] overflow-hidden"
+        className="relative h-[3rem] lg:h-[4rem] w-full hover:brightness-75 mt-[var(--lg-space-y)] overflow-hidden"
       >
         <Image
           src={CDN_LINK + "/natie/logo-bar.svg"}

@@ -584,10 +584,10 @@ body {
 
 ::selection {
   background: var(--default-yellow);
-  color: var(--background, var(--default-dark, #121212));
+  color: var(--default-dark);
 }
 
 ::-moz-selection {
   background: var(--default-yellow);
-  color: var(--background, var(--default-dark, #121212));
+  color: var(--default-dark);
 }
