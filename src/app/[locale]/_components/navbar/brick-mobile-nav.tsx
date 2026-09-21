@@ -48,13 +48,13 @@ export default function MobileNav({
           className="relative ml-[var(--sm-space-x)] mr-auto hover:opacity-75 active:opacity-100 active:scale-93 transition-transform duration-150"
         >
           <Image
-            src={CDN_LINK + "/branding/logo-name.svg"}
+            src={CDN_LINK + "/branding/new-logo-wordmark.svg"}
             alt="BrickBot Logo"
             priority
             fetchPriority="high"
             width={600}
             height={75}
-            className="h-[2rem] w-auto object-contain inline-block mr-[0.5rem] mt-[calc((var(--navbar-height)-2rem)/2)]"
+            className="h-[3rem] w-auto object-contain inline-block mr-[0.5rem] mt-[calc((var(--navbar-height)-3rem)/2)]"
           />
         </Link>
         <div className="relative ml-auto mr-[0.1rem] mt-[0.45rem] cursor-pointer fill-[var(--default-yellow)] h-full hover:opacity-75 active:opacity-100 transition-transform duration-150">

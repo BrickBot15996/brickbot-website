@@ -12,7 +12,7 @@ export const useBronze = (): TierProps => {
   const t = useTranslations("SponsorshipTierData.Benefits");
   return {
     name: "Bronze",
-    priceThreshold: 250,
+    priceThreshold: 200,
     textColor: "var(--bronze-tier-text)",
     gradientColor: "var(--bronze-tier-gradient)",
     benefits: [t("Benefit1"), t("Benefit2")],
@@ -45,7 +45,7 @@ export const useDiamond = (): TierProps => {
   const t = useTranslations("SponsorshipTierData.Benefits");
   return {
     name: "Diamond",
-    priceThreshold: 2500,
+    priceThreshold: 2000,
     textColor: "var(--diamond-tier-text)",
     gradientColor: "var(--diamond-tier-gradient)",
     benefits: [
@@ -62,7 +62,7 @@ export const useUltimate = (): TierProps => {
   const t = useTranslations("SponsorshipTierData.Benefits");
   return {
     name: "Ultimate",
-    priceThreshold: 5000,
+    priceThreshold: 3000,
     textColor: "var(--ultimate-tier-text)",
     gradientColor: "var(--ultimate-tier-gradient)",
     benefits: [
@@ -72,6 +72,7 @@ export const useUltimate = (): TierProps => {
       t("Benefit4"),
       t("Benefit5"),
       t("Benefit6"),
+      t("Benefit7")
     ],
   };
 };

@@ -44,18 +44,28 @@ export default function Hero() {
     },
   ];
 
+  const bannerMaskUrl = `url("${CDN_LINK}/branding/banner-text.svg")`;
+
   return (
     <section className="relative w-full h-[30rem] md:h-[40rem] lg:h-[calc(100vh-var(--navbar-height))]">
       <div className="absolute inset-0 w-full h-full bg-[linear-gradient(0deg,_var(--default-dark)_5%,_transparent)] z-2" />
       <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-3">
         <div className="relative h-[5rem] w-[30rem] md:h-[7rem] md:w-[40rem] lg:h-[10rem] lg:w-[50rem] max-w-[80vw] mb-[var(--2xl-space-y)]">
-          <Image
-            src={CDN_LINK + "/branding/banner-text.svg"}
-            alt="We build our future brick by brick!"
-            fill
-            unoptimized
-            priority
-            className="object-contain select-none opacity-100 h-full w-full"
+          <div
+            role="img"
+            aria-label="We build our future brick by brick!"
+            className="w-full h-full select-none"
+            style={{
+              backgroundColor: "var(--default-yellow)",
+              maskImage: bannerMaskUrl,
+              WebkitMaskImage: bannerMaskUrl,
+              maskRepeat: "no-repeat",
+              WebkitMaskRepeat: "no-repeat",
+              maskPosition: "center",
+              WebkitMaskPosition: "center",
+              maskSize: "contain",
+              WebkitMaskSize: "contain",
+            }}
           />
         </div>
         <Button
@@ -80,7 +90,7 @@ export default function Hero() {
           {bannerImages.map((image, index) => {
             return (
               <div
-                key={image.alt}
+                key={image.src}
                 className="relative w-full h-[30rem] md:h-[40rem] lg:h-[calc(100vh-var(--navbar-height))]"
               >
                 <Image

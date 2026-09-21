@@ -9,7 +9,7 @@ export default function PageTitle({
 }) {
   return (
     <section
-      className="relative bg-[linear-gradient(180deg,_transparent,_#201C03)] min-h-[12rem] md:min-h-[15rem] lg:min-h-[18rem] w-[100vw] flex flex-col items-center justify-center overflow-visible"
+      className="relative bg-[linear-gradient(180deg,_transparent,_#2E2800)] min-h-[12rem] md:min-h-[15rem] lg:min-h-[18rem] w-[100vw] flex flex-col items-center justify-center overflow-visible"
       style={{ ...style }}
     >
       <div className="w-[var(--page-width)] h-fit flex flex-col items-center justify-center my-[2rem]">

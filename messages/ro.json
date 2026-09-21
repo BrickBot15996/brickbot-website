@@ -483,12 +483,13 @@
   "SponsorshipTierData": {
     "Currency": "RON",
     "Benefits": {
-      "Benefit1": "Menționare pe social media",
-      "Benefit2": "Logo pe website",
-      "Benefit3": "Logo pe robot",
-      "Benefit4": "Logo pe roll-up",
-      "Benefit5": "Merch cu firma ta",
-      "Benefit6": "Campanie pe social media"
+      "Benefit1": "Postare pe social media",
+      "Benefit2": "Logo în Caietul Inginerului",
+      "Benefit3": "Logo pe website",
+      "Benefit4": "Logo pe roll-Up",
+      "Benefit5": "Logo pe robot",
+      "Benefit6": "Logo pe tricoul echipei",
+      "Benefit7": "Merch cu logo-ul tău"
     }
   },
 

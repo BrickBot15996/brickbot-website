@@ -74,9 +74,9 @@ function NavMenuDesktop() {
   return (
     <div className="hidden md:flex flex-row w-[var(--page-width)] h-auto justify-between">
       <div className="flex flex-col w-auto h-auto space-y-[var(--md-space-y)] items-start">
-        <div className="relative w-full h-[2rem]">
+        <div className="relative w-full h-[4rem]">
           <Image
-            src={CDN_LINK + "/branding/name.svg"}
+            src={CDN_LINK + "/branding/new-wordmark.svg"}
             alt="BrickBot"
             fill
             unoptimized
@@ -220,9 +220,9 @@ function NavMenuMobile() {
   return (
     <div className="flex md:hidden flex-col w-[var(--page-width)] h-auto space-y-[var(--xl-space-y)]">
       <div className="flex flex-col w-auto h-auto space-y-[var(--lg-space-y)] items-start">
-        <div className="relative w-full h-[1.5rem] overflow-hidden">
+        <div className="relative w-full h-[3rem] overflow-hidden">
           <Image
-            src={CDN_LINK + "/branding/name.svg"}
+            src={CDN_LINK + "/branding/new-wordmark.svg"}
             alt="BrickBot"
             fill
             unoptimized

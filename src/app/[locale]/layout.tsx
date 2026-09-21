@@ -16,14 +16,14 @@ const anekLatin = Anek_Latin({
 
 export const metadata: Metadata = {
   icons: {
-    icon: CDN_LINK + "/branding/favicon.ico",
+    icon: CDN_LINK + "/branding/new-favicon.ico",
   },
   openGraph: {
     url: "https://brickbot.ro/",
     siteName: "BrickBot",
     images: [
       {
-        url: CDN_LINK + "/embed.png",
+        url: CDN_LINK + "/new-embed.jpg",
         width: 256,
         height: 256,
         alt: "BrickBot Icon",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: [CDN_LINK + "/embed.png"],
+    images: [CDN_LINK + "/new-embed.jpg"],
   },
 };
 
@@ -58,7 +58,7 @@ export default async function RootLayout({
         <link
           rel="icon"
           type="image/x-icon"
-          href={CDN_LINK + "/branding/dark-favicon.ico"}
+          href={"new-dark-favicon.ico"}
         />
         <link
           rel="preconnect"

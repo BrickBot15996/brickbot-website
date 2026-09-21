@@ -11,7 +11,7 @@ export default function ComingSoon({
   pageName,
   pageDescription,
   textColor = "var(--default-yellow)",
-  gradientColor = "#1E1703",
+  gradientColor = "#2E2800",
 }: ComingSoonProps) {
   const t = useTranslations("ComingSoon");
 

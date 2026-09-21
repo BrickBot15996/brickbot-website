@@ -38,7 +38,7 @@ export default function Nav() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 850);
+      setIsMobile(window.innerWidth < 880);
       if (!isMobile) setIsOpen(false);
     };
 

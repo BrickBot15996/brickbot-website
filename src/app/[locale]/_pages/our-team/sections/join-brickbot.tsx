@@ -47,7 +47,7 @@ export default function JoinBrickBot() {
                 transition: { duration: 0.5, ease: "easeInOut" },
               }
         }
-        className="absolute bottom-0 left-0 bg-[linear-gradient(180deg,_transparent,_#1E1800)] w-full h-full z-[-1]"
+        className="absolute bottom-0 left-0 bg-[linear-gradient(180deg,_transparent,_#2E2800)] w-full h-full z-[-1]"
       />
     </section>
   );

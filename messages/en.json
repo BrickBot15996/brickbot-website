@@ -482,12 +482,13 @@
   "SponsorshipTierData": {
     "Currency": "EUR",
     "Benefits": {
-      "Benefit1": "Social Media Mentions",
-      "Benefit2": "Logo on Website",
-      "Benefit3": "Logo on Robot",
-      "Benefit4": "Logo on Roll-Up",
-      "Benefit5": "Merch with your Logo",
-      "Benefit6": "Social Media Campaign"
+      "Benefit1": "Post on social media",
+      "Benefit2": "Logo in Engineer's Notebook",
+      "Benefit3": "Logo on website",
+      "Benefit4": "Logo on roll-Up",
+      "Benefit5": "Logo on robot",
+      "Benefit6": "Logo on team shirt",
+      "Benefit7": "Merch with your logo"
     }
   },
 
