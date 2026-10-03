@@ -76,11 +76,11 @@ function NavMenuDesktop() {
       <div className="flex flex-col w-auto h-auto space-y-[var(--md-space-y)] items-start">
         <div className="relative w-full h-[4rem]">
           <Image
-            src={CDN_LINK + "/branding/new-wordmark.svg"}
+            src={CDN_LINK + "/branding/wordmark.svg"}
             alt="BrickBot"
             fill
             unoptimized
-            className="object-left object-contain w-full h-full"
+            className="object-left object-contain w-full h-full translate-y-[-0.5rem]"
           />
         </div>
         <div className="grid grid-cols-3 grid-flow-row gap-y-[var(--sm-space-y)] gap-x-[var(--md-space-x)]">
@@ -222,11 +222,11 @@ function NavMenuMobile() {
       <div className="flex flex-col w-auto h-auto space-y-[var(--lg-space-y)] items-start">
         <div className="relative w-full h-[3rem] overflow-hidden">
           <Image
-            src={CDN_LINK + "/branding/new-wordmark.svg"}
+            src={CDN_LINK + "/branding/wordmark.svg"}
             alt="BrickBot"
             fill
             unoptimized
-            className="object-left object-contain w-full h-full"
+            className="object-left object-contain w-full h-full translate-y-[-0.5rem]"
           />
         </div>
         <div className="grid grid-cols-6 gap-x-[var(--md-space-x)]">
