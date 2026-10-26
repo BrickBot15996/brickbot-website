@@ -14,7 +14,7 @@ export default function PrimaryContact() {
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full items-stretch gap-x-[var(--lg-space-x)] gap-y-[var(--md-space-y)]">
         <SimpleBox
           action={() => {
-            window.open("mailto:brickbot@liceulunirea.ro", "_blank");
+            window.open("mailto:contact@brickbot.ro", "_blank");
           }}
           hoverEffect={true}
           className="flex flex-row p-[calc(var(--sm-space-y)+0.25rem)] md:p-[var(--sm-space-y)] items-center space-x-[var(--sm-space-y)]"
@@ -22,7 +22,7 @@ export default function PrimaryContact() {
           <MdOutlineMailOutline className="h-[2rem] md:h-[2.5rem] lg:h-[3rem] w-auto aspect-square fill-white" />
           <div className="flex flex-col">
             <h5>Email</h5>
-            <p>brickbot@liceulunirea.ro</p>
+            <p>contact@brickbot.ro</p>
           </div>
         </SimpleBox>
         <SimpleBox

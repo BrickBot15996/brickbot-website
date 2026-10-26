@@ -120,7 +120,7 @@ function NavMenuDesktop() {
             <AiOutlineLinkedin className="hover:opacity-75 hover:scale-110 active:opacity-100 active:scale-90 h-[2rem] md:h-[2.5rem] lg:h-[3rem] w-auto transition-transform duration-150 fill-[var(--alternate-text)]" />
           </Link>
           <Link
-            href="mailto:brickbot@liceulunirea.ro"
+            href="mailto:contact@brickbot.ro"
             aria-label="BrickBot Email"
             target="_blank"
           >
